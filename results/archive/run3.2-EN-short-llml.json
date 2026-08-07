@@ -1,0 +1,2359 @@
+{
+  "spec": "v0.8",
+  "bench": "v0.10",
+  "provider": "artifact",
+  "model": "claude-sonnet-4-6",
+  "date": "2026-07-21T13:09:32.090Z",
+  "criteria": {
+    "tokenReductionMin": 0.5,
+    "accuracyLossMaxPts": 2
+  },
+  "docs": [
+    {
+      "id": "EN-T18",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "short": {
+          "tokensNet": 361,
+          "qa": [
+            {
+              "q": "What is the exact geographical location of the \"Delta\" logistics warehouse?",
+              "gold": "In Lyon.",
+              "candidate": "The Delta logistics distribution center is located in Lyon.",
+              "correct": true
+            },
+            {
+              "q": "What is the overall investment budget allocated to the IntraBot-2026 project?",
+              "gold": "850,000 EUR.",
+              "candidate": "The overall investment budget allocated to the IntraBot-2026 project is **850,000 EUR**, unanimously approved by the Supervisory Board.",
+              "correct": true
+            },
+            {
+              "q": "What is the weight threshold above which a package must mandatory be handled by an AGV?",
+              "gold": "Heavy packages whose weight is greater than 25 kg.",
+              "candidate": "Packages weighing more than 25 kg must mandatorily be handled by an AGV.",
+              "correct": true
+            },
+            {
+              "q": "Are handling operations in the outdoor dispatch zone part of the automation project?",
+              "gold": "No, automation of the outdoor zone is explicitly excluded from the scope (Out).",
+              "candidate": "No, handling operations in the outdoor dispatch zones are explicitly excluded from the automation project and remain the exclusive responsibility of human forklift drivers using conventional thermal forklifts.",
+              "correct": true
+            },
+            {
+              "q": "What triggers an AGV's automatic emergency stop and how quickly does it stop?",
+              "gold": "The detection of an unlisted obstacle less than 1.5 meters away triggers the stop, which executes within a deceleration time of less than 200 milliseconds.",
+              "candidate": "An AGV triggers an automatic emergency stop when an unlisted obstacle or human is detected within 1.5 m of its chassis, and it stops within 200 ms of total mechanical deceleration.",
+              "correct": true
+            },
+            {
+              "q": "Which two warehouse zones are connected by the autonomous transport flows of the AGVs?",
+              "gold": "Zone A (unloading docks) and Zone G (high-density storage).",
+              "candidate": "The AGVs autonomously transfer packages from the unloading docks in Zone A to the high-density racks in Zone G.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Industrial project scoping note.",
+              "candidate": "The document type is not in context.",
+              "correct": false
+            },
+            {
+              "q": "How many automated guided vehicle units will the warehouse fleet consist of?",
+              "gold": "12 automated guided vehicles (AGVs).",
+              "candidate": "The warehouse fleet will consist of 12 automated guided vehicles.",
+              "correct": true
+            },
+            {
+              "q": "What is the deadline set for full operational deployment without human intervention?",
+              "gold": "November 30, 2026.",
+              "candidate": "The deadline for full operational deployment without human intervention is **2026-11-30**.",
+              "correct": true
+            },
+            {
+              "q": "Do the autonomous vehicles move freely without any ground markings or physical guidance?",
+              "gold": "No, they move exclusively along lanes demarcated by permanent ground laser marking.",
+              "candidate": "No, the AGVs are constrained to operate exclusively within permanent ground-laser-marked traffic lanes.",
+              "correct": true
+            },
+            {
+              "q": "What statistical increase in musculoskeletal disorders motivated the launch of this project?",
+              "gold": "A 22% increase in work stoppages related to MSDs.",
+              "candidate": "A 22% increase in musculoskeletal-disorder-related work stoppages in the previous fiscal year motivated the launch of this project.",
+              "correct": true
+            },
+            {
+              "q": "Who possesses absolute priority when crossing paths in the traffic lanes of the Delta warehouse?",
+              "gold": "Pedestrian operators.",
+              "candidate": "Pedestrians always have full and inalienable right-of-way over AGVs in the traffic lanes.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Logistics / Supply Chain / Warehouse Robotics.",
+              "candidate": "The sector specified for this document is logistics, specifically a distribution center operated by Delta Logistics in Lyon.",
+              "correct": true
+            },
+            {
+              "q": "What specific sum of money is budgeted to support the professional retraining of human forklift drivers whose positions will evolve?",
+              "gold": "100,000 EUR.",
+              "candidate": "The budget allocated for change management, social support, and forklift-driver retraining is **100,000 EUR**.",
+              "correct": true
+            },
+            {
+              "q": "Which internal company body unanimously validated the project's budget envelope?",
+              "gold": "The Supervisory Board.",
+              "candidate": "The Supervisory Board unanimously approved the project's total budget of 850,000 EUR.",
+              "correct": true
+            },
+            {
+              "q": "What type of safety technology equips the AGVs to ensure fine pedestrian detection?",
+              "gold": "Class 3 safety LiDAR sensors.",
+              "candidate": "Each AGV is equipped with a Class 3 safety LiDAR to ensure fine pedestrian detection.",
+              "correct": true
+            },
+            {
+              "q": "Do human forklift drivers use electric lifting equipment to load trucks outdoors?",
+              "gold": "No, they use conventional thermal forklifts.",
+              "candidate": "No, human forklift drivers use conventional thermal forklifts for outdoor truck loading.",
+              "correct": true
+            },
+            {
+              "q": "How many total square meters do zones A and G combine?",
+              "gold": "not in context",
+              "candidate": "Not in context.",
+              "correct": true
+            },
+            {
+              "q": "How much money is allocated solely for the material acquisition of the machines?",
+              "gold": "600,000 EUR.",
+              "candidate": "The budget allocated solely for the material acquisition of the 12 AGVs is **600,000 EUR**.",
+              "correct": true
+            },
+            {
+              "q": "Why does changing natural light prevent the deployment of AGVs outdoors?",
+              "gold": "Because it alters/disrupts the detection capabilities of their first-generation optical sensors.",
+              "candidate": "Strong outdoor natural-light variation alters the first-generation optical sensors in the selected AGV fleet, making them unreliable for outdoor use.",
+              "correct": true
+            }
+          ],
+          "correct": 19,
+          "graded": 20,
+          "accuracy": 0.95
+        },
+        "llml": {
+          "tokensNet": 343,
+          "qa": [
+            {
+              "q": "What is the exact geographical location of the \"Delta\" logistics warehouse?",
+              "gold": "In Lyon.",
+              "candidate": "Lyon.",
+              "correct": true
+            },
+            {
+              "q": "What is the overall investment budget allocated to the IntraBot-2026 project?",
+              "gold": "850,000 EUR.",
+              "candidate": "The overall investment budget allocated to the IntraBot-2026 project is **850,000 EUR**.",
+              "correct": true
+            },
+            {
+              "q": "What is the weight threshold above which a package must mandatory be handled by an AGV?",
+              "gold": "Heavy packages whose weight is greater than 25 kg.",
+              "candidate": "According to the project scope, packages weighing more than **25 kg** must be handled autonomously by an AGV.",
+              "correct": true
+            },
+            {
+              "q": "Are handling operations in the outdoor dispatch zone part of the automation project?",
+              "gold": "No, automation of the outdoor zone is explicitly excluded from the scope (Out).",
+              "candidate": "No, outdoor dispatch zone handling operations are explicitly excluded from the automation project scope.",
+              "correct": true
+            },
+            {
+              "q": "What triggers an AGV's automatic emergency stop and how quickly does it stop?",
+              "gold": "The detection of an unlisted obstacle less than 1.5 meters away triggers the stop, which executes within a deceleration time of less than 200 milliseconds.",
+              "candidate": "An AGV's emergency stop is triggered by its Class 3 safety LiDAR sensors detecting an unlisted obstacle or human presence, and it stops via mechanical deceleration in less than milliseconds.",
+              "correct": false
+            },
+            {
+              "q": "Which two warehouse zones are connected by the autonomous transport flows of the AGVs?",
+              "gold": "Zone A (unloading docks) and Zone G (high-density storage).",
+              "candidate": "The AGVs autonomously transfer packages from the unloading docks (Zone A) to the high storage racks (Zone G).",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Industrial project scoping note.",
+              "candidate": "The document type is an industrial project scoping note.",
+              "correct": true
+            },
+            {
+              "q": "How many automated guided vehicle units will the warehouse fleet consist of?",
+              "gold": "12 automated guided vehicles (AGVs).",
+              "candidate": "The warehouse fleet will consist of **12 automated guided vehicles**.",
+              "correct": true
+            },
+            {
+              "q": "What is the deadline set for full operational deployment without human intervention?",
+              "gold": "November 30, 2026.",
+              "candidate": "The deadline for full operational deployment without human intervention is **November 30, 2026**.",
+              "correct": true
+            },
+            {
+              "q": "Do the autonomous vehicles move freely without any ground markings or physical guidance?",
+              "gold": "No, they move exclusively along lanes demarcated by permanent ground laser marking.",
+              "candidate": "No, the AGVs move along traffic lanes demarcated by laser marking.",
+              "correct": true
+            },
+            {
+              "q": "What statistical increase in musculoskeletal disorders motivated the launch of this project?",
+              "gold": "A 22% increase in work stoppages related to MSDs.",
+              "candidate": "The project was motivated by a **22%** rate of work stoppages due to musculoskeletal disorders recorded at the Delta distribution center in Lyon during the previous fiscal year.",
+              "correct": true
+            },
+            {
+              "q": "Who possesses absolute priority when crossing paths in the traffic lanes of the Delta warehouse?",
+              "gold": "Pedestrian operators.",
+              "candidate": "Pedestrian operators retain right-of-way over AGVs in the traffic lanes.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Logistics / Supply Chain / Warehouse Robotics.",
+              "candidate": "The sector specified for this document is **Logistics / Supply Chain Warehouse Robotics**.",
+              "correct": true
+            },
+            {
+              "q": "What specific sum of money is budgeted to support the professional retraining of human forklift drivers whose positions will evolve?",
+              "gold": "100,000 EUR.",
+              "candidate": "The budget allocated for change management, social support, and professional retraining of forklift drivers is **100,000 EUR**.",
+              "correct": true
+            },
+            {
+              "q": "Which internal company body unanimously validated the project's budget envelope?",
+              "gold": "The Supervisory Board.",
+              "candidate": "not in context.",
+              "correct": false
+            },
+            {
+              "q": "What type of safety technology equips the AGVs to ensure fine pedestrian detection?",
+              "gold": "Class 3 safety LiDAR sensors.",
+              "candidate": "The AGVs are equipped with **Class 3 safety LiDAR sensors** to detect any unlisted obstacle or human presence and trigger an automatic emergency stop.",
+              "correct": true
+            },
+            {
+              "q": "Do human forklift drivers use electric lifting equipment to load trucks outdoors?",
+              "gold": "No, they use conventional thermal forklifts.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "How many total square meters do zones A and G combine?",
+              "gold": "not in context",
+              "candidate": "Not in context.",
+              "correct": true
+            },
+            {
+              "q": "How much money is allocated solely for the material acquisition of the machines?",
+              "gold": "600,000 EUR.",
+              "candidate": "The acquisition of 12 AGVs is allocated **600,000 EUR**.",
+              "correct": true
+            },
+            {
+              "q": "Why does changing natural light prevent the deployment of AGVs outdoors?",
+              "gold": "Because it alters/disrupts the detection capabilities of their first-generation optical sensors.",
+              "candidate": "The first-generation optical sensors of the AGV fleet cannot handle the variations in outdoor natural light, making reliable detection impossible.",
+              "correct": true
+            }
+          ],
+          "correct": 17,
+          "graded": 20,
+          "accuracy": 0.85
+        },
+        "llmlTerse": {
+          "tokensNet": 298,
+          "qa": [
+            {
+              "q": "What is the exact geographical location of the \"Delta\" logistics warehouse?",
+              "gold": "In Lyon.",
+              "candidate": "The Delta logistics distribution center is located in Lyon.",
+              "correct": true
+            },
+            {
+              "q": "What is the overall investment budget allocated to the IntraBot-2026 project?",
+              "gold": "850,000 EUR.",
+              "candidate": "The overall investment budget allocated to the IntraBot-2026 project is **850,000 EUR**, as approved by the Supervisory Board.",
+              "correct": true
+            },
+            {
+              "q": "What is the weight threshold above which a package must mandatory be handled by an AGV?",
+              "gold": "Heavy packages whose weight is greater than 25 kg.",
+              "candidate": "Packages weighing more than 25 kg must be handled by an AGV.",
+              "correct": true
+            },
+            {
+              "q": "Are handling operations in the outdoor dispatch zone part of the automation project?",
+              "gold": "No, automation of the outdoor zone is explicitly excluded from the scope (Out).",
+              "candidate": "No, handling operations in the outdoor dispatch zone are not part of the automation project; they remain performed by human forklift drivers with conventional thermal forklifts, as strong outdoor natural-light variation alters the AGV fleet's optical sensors.",
+              "correct": true
+            },
+            {
+              "q": "What triggers an AGV's automatic emergency stop and how quickly does it stop?",
+              "gold": "The detection of an unlisted obstacle less than 1.5 meters away triggers the stop, which executes within a deceleration time of less than 200 milliseconds.",
+              "candidate": "An AGV automatically stops when an unlisted obstacle or human is detected within 1.5 m of the chassis, with mechanical deceleration occurring in under 200 ms.",
+              "correct": true
+            },
+            {
+              "q": "Which two warehouse zones are connected by the autonomous transport flows of the AGVs?",
+              "gold": "Zone A (unloading docks) and Zone G (high-density storage).",
+              "candidate": "The AGVs autonomously transport packages between Zone A (unloading docks) and Zone G (high racks).",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Industrial project scoping note.",
+              "candidate": "The document appears to be a logistics automation project brief or summary for the IntraBot-2026 AGV deployment at a Delta logistics distribution center in Lyon.",
+              "correct": false
+            },
+            {
+              "q": "How many automated guided vehicle units will the warehouse fleet consist of?",
+              "gold": "12 automated guided vehicles (AGVs).",
+              "candidate": "The warehouse fleet will consist of 12 automated guided vehicles.",
+              "correct": true
+            },
+            {
+              "q": "What is the deadline set for full operational deployment without human intervention?",
+              "gold": "November 30, 2026.",
+              "candidate": "Full operational deployment without human intervention is set for **November 30, 2026**.",
+              "correct": true
+            },
+            {
+              "q": "Do the autonomous vehicles move freely without any ground markings or physical guidance?",
+              "gold": "No, they move exclusively along lanes demarcated by permanent ground laser marking.",
+              "candidate": "No, the AGVs operate within permanent ground-laser-marked traffic lanes.",
+              "correct": true
+            },
+            {
+              "q": "What statistical increase in musculoskeletal disorders motivated the launch of this project?",
+              "gold": "A 22% increase in work stoppages related to MSDs.",
+              "candidate": "A 22% increase in MSD-related work stoppages at the Delta logistics distribution center in Lyon during the previous fiscal year motivated the launch of this project.",
+              "correct": true
+            },
+            {
+              "q": "Who possesses absolute priority when crossing paths in the traffic lanes of the Delta warehouse?",
+              "gold": "Pedestrian operators.",
+              "candidate": "Pedestrians have full right-of-way over AGVs in the traffic lanes.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Logistics / Supply Chain / Warehouse Robotics.",
+              "candidate": "The sector specified for this document is **logistics distribution**.",
+              "correct": true
+            },
+            {
+              "q": "What specific sum of money is budgeted to support the professional retraining of human forklift drivers whose positions will evolve?",
+              "gold": "100,000 EUR.",
+              "candidate": "The budget allocated for change management, social support, and forklift-driver retraining is **100,000 EUR**.",
+              "correct": true
+            },
+            {
+              "q": "Which internal company body unanimously validated the project's budget envelope?",
+              "gold": "The Supervisory Board.",
+              "candidate": "The Supervisory Board approved the total budget envelope of 850,000 EUR for the project.",
+              "correct": true
+            },
+            {
+              "q": "What type of safety technology equips the AGVs to ensure fine pedestrian detection?",
+              "gold": "Class 3 safety LiDAR sensors.",
+              "candidate": "The AGVs are equipped with Class 3 safety LiDAR to ensure fine pedestrian detection.",
+              "correct": true
+            },
+            {
+              "q": "Do human forklift drivers use electric lifting equipment to load trucks outdoors?",
+              "gold": "No, they use conventional thermal forklifts.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "How many total square meters do zones A and G combine?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "How much money is allocated solely for the material acquisition of the machines?",
+              "gold": "600,000 EUR.",
+              "candidate": "The budget allocated solely for the material acquisition of the 12 AGV machines is **600,000 EUR**.",
+              "correct": true
+            },
+            {
+              "q": "Why does changing natural light prevent the deployment of AGVs outdoors?",
+              "gold": "Because it alters/disrupts the detection capabilities of their first-generation optical sensors.",
+              "candidate": "Strong outdoor natural-light variation alters the optical sensors of the AGV fleet, making reliable operation impossible in those conditions.",
+              "correct": true
+            }
+          ],
+          "correct": 18,
+          "graded": 20,
+          "accuracy": 0.9
+        }
+      }
+    },
+    {
+      "id": "EN-T19",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "short": {
+          "tokensNet": 812,
+          "qa": [
+            {
+              "q": "What is the exact name of the strategic industrial plan validated by the Executive Committee?",
+              "gold": "The H2-Green Plan.",
+              "candidate": "The strategic industrial plan validated by the Executive Committee is called the **H2-Green Plan — Industrial Pivot and Energy Transition**.",
+              "correct": false
+            },
+            {
+              "q": "In which commune and department of France is the pilot petrochemical site located?",
+              "gold": "In the commune of Carling, in the Moselle department.",
+              "candidate": "The pilot petrochemical site is located in Carling, in the Moselle department (Grand Est region) of France.",
+              "correct": true
+            },
+            {
+              "q": "What is the maximum authorized price per MWh for the green electricity PPA contract?",
+              "gold": "The price must not exceed 62 EUR per MWh.",
+              "candidate": "The maximum authorized price for the green electricity PPA contract is 62 EUR/MWh.",
+              "correct": true
+            },
+            {
+              "q": "Was the retraining or layoff of the site's 210 employees negotiated during this meeting on May 15, 2026?",
+              "gold": "No, this topic was excluded from the session and will be addressed during an extraordinary CSE meeting on June 4, 2026.",
+              "candidate": "No; the social management and retraining of the 210 former thermal-cracking employees was deliberately not addressed during this meeting and was deferred to an extraordinary thematic CSE meeting scheduled for 2026-06-04.",
+              "correct": true
+            },
+            {
+              "q": "What precise event automatically triggers the creation of a local mediation unit and suspends the works schedule by 45 days?",
+              "gold": "If the public inquiry collects more than 150 formal written and motivated objections from residents or local authorities.",
+              "candidate": "If the public inquiry receives more than 150 formal written objections from resident associations or local authorities, a local joint mediation unit co-led by the Carling mayor is automatically created and the works timeline is legally suspended for a fixed, non-negotiable 45 calendar days.",
+              "correct": false
+            },
+            {
+              "q": "Why was the Beta Scenario unanimously rejected despite its large volume of subsidies? Cross-reference the data from the table and Section II.",
+              "gold": "The Beta Scenario requires a 14-month review timeframe, which would push the project beyond January 1, 2027, the date the progressive carbon tax enters into force. The tax fines would cancel out the benefit of the subsidies.",
+              "candidate": "Beta was unanimously rejected because its 14-month approval delay would push contract signatures past the 2027-01-01 carbon-tax deadline, meaning the resulting quarterly penalties would erase the benefit of the 65M EUR in European subsidies.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Comprehensive governance minutes.",
+              "candidate": "The document is the minutes of an extraordinary Executive Committee meeting.",
+              "correct": true
+            },
+            {
+              "q": "Who holds the position of Chief Executive Officer of the company during this committee meeting?",
+              "gold": "Hélène de Rostand.",
+              "candidate": "Hélène de Rostand holds the position of Chief Executive Officer during this committee meeting.",
+              "correct": true
+            },
+            {
+              "q": "What is the minimum firm commitment duration required for the power supply contract (PPA)?",
+              "gold": "A duration of 10 years firm.",
+              "candidate": "The minimum firm commitment duration required for the PPA is 10 years.",
+              "correct": true
+            },
+            {
+              "q": "Does the procurement team have the right to sign a civil engineering works contract if the public inquiry is finished but the prefectural permit is not yet published in the collection of administrative acts?",
+              "gold": "No, the legal rule prohibits any engagement of funds or signing of civil engineering works contracts before the official publication of the permit.",
+              "candidate": "No — the contract cannot be legally signed or engaged until the prefectural operating permit is officially published in the regional collection of administrative acts, regardless of whether the public inquiry is finished.",
+              "correct": true
+            },
+            {
+              "q": "By what precise date must the bank credit lines associated with the chosen Alpha Scenario be opened?",
+              "gold": "Before September 1, 2026.",
+              "candidate": "The bank credit lines must be effectively open before **2026-09-01**.",
+              "correct": true
+            },
+            {
+              "q": "From what nominal capacity does a water electrolysis installation fall under the ICPE authorization regime subject to public inquiry?",
+              "gold": "A capacity greater than 20 MW.",
+              "candidate": "From a nominal capacity exceeding 20 MW, a water electrolysis installation falls under the ICPE authorization regime subject to public inquiry.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Energy / Ecological Transition / Heavy Investments.",
+              "candidate": "The document specifies the **petrochemical** sector (industrial energy transition of a petrochemical hub).",
+              "correct": false
+            },
+            {
+              "q": "Who leads Action 1 of the nominal plan, and what is the maximum deadline given to submit the file to the prefecture?",
+              "gold": "Amélie Moreau, with a strict deadline set for June 15, 2026.",
+              "candidate": "Amélie Moreau leads Action 1 and must officially submit the ICPE file to the Moselle prefecture by 2026-06-15.",
+              "correct": true
+            },
+            {
+              "q": "What is the total amount of public subsidies the group could have hoped for by choosing the Beta Scenario?",
+              "gold": "65 Million EUR.",
+              "candidate": "The Beta scenario offered **65M EUR** in expected European Union subsidies.",
+              "correct": true
+            },
+            {
+              "q": "Which European directive sets the long-term macroeconomic framework for this transformation program?",
+              "gold": "The European directive \"NetZero-2030\".",
+              "candidate": "The European directive setting the long-term macroeconomic framework for this transformation program is **\"NetZero-2030\"**.",
+              "correct": true
+            },
+            {
+              "q": "Was the planning for the extension of the hydrogen transport pipelines to Germany validated for the year 2026?",
+              "gold": "No, this question was formally removed from the agenda and deferred to the first quarter (Q1) of the year 2027.",
+              "candidate": "No, the hydrogen-export pipeline extension to Germany was removed from the agenda and deferred to 2027 Q1.",
+              "correct": true
+            },
+            {
+              "q": "What is the identity of the majority union with which the HR department will negotiate on June 4 during the CSE meeting?",
+              "gold": "not in context",
+              "candidate": "Not in context.",
+              "correct": true
+            },
+            {
+              "q": "What is the minimum carbon footprint reduction objective imposed on the Carling site to escape the carbon tax penalties?",
+              "gold": "A reduction of at least 40%.",
+              "candidate": "The minimum carbon footprint reduction required to escape the carbon tax penalties is **40%**.",
+              "correct": true
+            },
+            {
+              "q": "Who must co-lead the local joint mediation unit if the safeguard clause related to residents' objections is activated?",
+              "gold": "The mayor of the commune of Carling.",
+              "candidate": "The local joint mediation unit must be co-led by the Carling mayor.",
+              "correct": true
+            }
+          ],
+          "correct": 17,
+          "graded": 20,
+          "accuracy": 0.85
+        },
+        "llml": {
+          "tokensNet": 831,
+          "qa": [
+            {
+              "q": "What is the exact name of the strategic industrial plan validated by the Executive Committee?",
+              "gold": "The H2-Green Plan.",
+              "candidate": "The strategic industrial plan validated by the Executive Committee is called the **H2-Green Plan**.",
+              "correct": true
+            },
+            {
+              "q": "In which commune and department of France is the pilot petrochemical site located?",
+              "gold": "In the commune of Carling, in the Moselle department.",
+              "candidate": "The pilot petrochemical site is located in **Carling**, in the **Moselle** department (Grand Est region) of France.",
+              "correct": true
+            },
+            {
+              "q": "What is the maximum authorized price per MWh for the green electricity PPA contract?",
+              "gold": "The price must not exceed 62 EUR per MWh.",
+              "candidate": "The maximum authorized price per MWh for the green electricity PPA contract is **62 euros per MWh**.",
+              "correct": true
+            },
+            {
+              "q": "Was the retraining or layoff of the site's 210 employees negotiated during this meeting on May 15, 2026?",
+              "gold": "No, this topic was excluded from the session and will be addressed during an extraordinary CSE meeting on June 4, 2026.",
+              "candidate": "No, the social management and retraining of the 210 employees was explicitly excluded from this session and deferred to an extraordinary Social Economic Committee meeting on June 4, 2026.",
+              "correct": true
+            },
+            {
+              "q": "What precise event automatically triggers the creation of a local mediation unit and suspends the works schedule by 45 days?",
+              "gold": "If the public inquiry collects more than 150 formal written and motivated objections from residents or local authorities.",
+              "candidate": "The precise event that automatically triggers the creation of a local mediation unit and suspends the works schedule by 45 days is the public inquiry raising **150 objections** from residents.",
+              "correct": true
+            },
+            {
+              "q": "Why was the Beta Scenario unanimously rejected despite its large volume of subsidies? Cross-reference the data from the table and Section II.",
+              "gold": "The Beta Scenario requires a 14-month review timeframe, which would push the project beyond January 1, 2027, the date the progressive carbon tax enters into force. The tax fines would cancel out the benefit of the subsidies.",
+              "candidate": "The Beta Scenario was rejected because its 14-month approval timeline would push contract signatures beyond the January 1, 2027 carbon tax deadline, making the financial benefit of its 65 million euros in subsidies outweighed by the resulting environmental tax fines, and because it imposed IP-sharing clauses with European competitors.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Comprehensive governance minutes.",
+              "candidate": "The document type is comprehensive governance minutes of an extraordinary Executive Committee meeting.",
+              "correct": true
+            },
+            {
+              "q": "Who holds the position of Chief Executive Officer of the company during this committee meeting?",
+              "gold": "Hélène de Rostand.",
+              "candidate": "Hélène de Rostand holds the position of Executive Officer (Chief Executive Officer) of the company during this committee meeting.",
+              "correct": true
+            },
+            {
+              "q": "What is the minimum firm commitment duration required for the power supply contract (PPA)?",
+              "gold": "A duration of 10 years firm.",
+              "candidate": "The minimum firm commitment duration required for the Power Purchase Agreement is **10 years**.",
+              "correct": true
+            },
+            {
+              "q": "Does the procurement team have the right to sign a civil engineering works contract if the public inquiry is finished but the prefectural permit is not yet published in the collection of administrative acts?",
+              "gold": "No, the legal rule prohibits any engagement of funds or signing of civil engineering works contracts before the official publication of the permit.",
+              "candidate": "No, the procurement department cannot sign any earthworks or civil engineering contract until the prefectural operating permit is published in the regional collection of administrative acts, regardless of whether the public inquiry is finished.",
+              "correct": true
+            },
+            {
+              "q": "By what precise date must the bank credit lines associated with the chosen Alpha Scenario be opened?",
+              "gold": "Before September 1, 2026.",
+              "candidate": "The bank credit lines associated with the Alpha Scenario must be opened before **September 1, 2026**.",
+              "correct": true
+            },
+            {
+              "q": "From what nominal capacity does a water electrolysis installation fall under the ICPE authorization regime subject to public inquiry?",
+              "gold": "A capacity greater than 20 MW.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Energy / Ecological Transition / Heavy Investments.",
+              "candidate": "The document specifies the **energy and ecological transition** sector (specifically involving a petrochemical hub hydrogen green plan project).",
+              "correct": true
+            },
+            {
+              "q": "Who leads Action 1 of the nominal plan, and what is the maximum deadline given to submit the file to the prefecture?",
+              "gold": "Amélie Moreau, with a strict deadline set for June 15, 2026.",
+              "candidate": "Amélie Moreau leads Action 1, with a deadline of June 15, 2026 to submit the ICPE file to the Moselle prefecture.",
+              "correct": true
+            },
+            {
+              "q": "What is the total amount of public subsidies the group could have hoped for by choosing the Beta Scenario?",
+              "gold": "65 Million EUR.",
+              "candidate": "The Beta Scenario offered expected public subsidies of **65 million euros** from the European Union.",
+              "correct": true
+            },
+            {
+              "q": "Which European directive sets the long-term macroeconomic framework for this transformation program?",
+              "gold": "The European directive \"NetZero-2030\".",
+              "candidate": "The European directive setting the long-term macroeconomic framework for this transformation program is **\"NetZero-2030\"**.",
+              "correct": true
+            },
+            {
+              "q": "Was the planning for the extension of the hydrogen transport pipelines to Germany validated for the year 2026?",
+              "gold": "No, this question was formally removed from the agenda and deferred to the first quarter (Q1) of the year 2027.",
+              "candidate": "No, the pipeline extension investments for exporting hydrogen to Germany were removed and deferred to the first quarter of 2027.",
+              "correct": true
+            },
+            {
+              "q": "What is the identity of the majority union with which the HR department will negotiate on June 4 during the CSE meeting?",
+              "gold": "not in context",
+              "candidate": "Not in context.",
+              "correct": true
+            },
+            {
+              "q": "What is the minimum carbon footprint reduction objective imposed on the Carling site to escape the carbon tax penalties?",
+              "gold": "A reduction of at least 40%.",
+              "candidate": "not in context",
+              "correct": false
+            },
+            {
+              "q": "Who must co-lead the local joint mediation unit if the safeguard clause related to residents' objections is activated?",
+              "gold": "The mayor of the commune of Carling.",
+              "candidate": "The local joint mediation unit must be led by the mayor of Carling.",
+              "correct": true
+            }
+          ],
+          "correct": 18,
+          "graded": 20,
+          "accuracy": 0.9
+        },
+        "llmlTerse": {
+          "tokensNet": 665,
+          "qa": [
+            {
+              "q": "What is the exact name of the strategic industrial plan validated by the Executive Committee?",
+              "gold": "The H2-Green Plan.",
+              "candidate": "The exact name of the strategic industrial plan is **H2-Green Plan Industrial Pivot Energy Transition**.",
+              "correct": false
+            },
+            {
+              "q": "In which commune and department of France is the pilot petrochemical site located?",
+              "gold": "In the commune of Carling, in the Moselle department.",
+              "candidate": "The pilot petrochemical site is located in **Carling**, in the department of **Moselle** (Grand Est region).",
+              "correct": true
+            },
+            {
+              "q": "What is the maximum authorized price per MWh for the green electricity PPA contract?",
+              "gold": "The price must not exceed 62 EUR per MWh.",
+              "candidate": "The maximum authorized price per MWh for the green electricity PPA contract is **62 EUR/MWh**.",
+              "correct": true
+            },
+            {
+              "q": "Was the retraining or layoff of the site's 210 employees negotiated during this meeting on May 15, 2026?",
+              "gold": "No, this topic was excluded from the session and will be addressed during an extraordinary CSE meeting on June 4, 2026.",
+              "candidate": "No, the social management and retraining of the 210 Carling thermal-cracking employees was not addressed during this meeting and was deferred to an extraordinary CSE meeting scheduled for 2026-06-04.",
+              "correct": true
+            },
+            {
+              "q": "What precise event automatically triggers the creation of a local mediation unit and suspends the works schedule by 45 days?",
+              "gold": "If the public inquiry collects more than 150 formal written and motivated objections from residents or local authorities.",
+              "candidate": "The receipt of more than 150 objections from resident associations and local authorities automatically triggers the creation of a local joint mediation unit (co-led by the Carling mayor) and suspends the works timeline by 45 days.",
+              "correct": true
+            },
+            {
+              "q": "Why was the Beta Scenario unanimously rejected despite its large volume of subsidies? Cross-reference the data from the table and Section II.",
+              "gold": "The Beta Scenario requires a 14-month review timeframe, which would push the project beyond January 1, 2027, the date the progressive carbon tax enters into force. The tax fines would cancel out the benefit of the subsidies.",
+              "candidate": "Beta was unanimously rejected because its 14-month approval timeline would push contract signatures past the 2027-01-01 carbon-tax deadline, meaning the resulting fines would erase the benefit of the 65M EUR subsidies.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Comprehensive governance minutes.",
+              "candidate": "The document is minutes (or a record) of an extraordinary Executive Committee meeting.",
+              "correct": true
+            },
+            {
+              "q": "Who holds the position of Chief Executive Officer of the company during this committee meeting?",
+              "gold": "Hélène de Rostand.",
+              "candidate": "Hélène de Rostand holds the position of Chief Executive Officer during this committee meeting.",
+              "correct": true
+            },
+            {
+              "q": "What is the minimum firm commitment duration required for the power supply contract (PPA)?",
+              "gold": "A duration of 10 years firm.",
+              "candidate": "The minimum firm commitment duration required for the power supply contract (PPA) is **10 years**.",
+              "correct": true
+            },
+            {
+              "q": "Does the procurement team have the right to sign a civil engineering works contract if the public inquiry is finished but the prefectural permit is not yet published in the collection of administrative acts?",
+              "gold": "No, the legal rule prohibits any engagement of funds or signing of civil engineering works contracts before the official publication of the permit.",
+              "candidate": "No — the context explicitly states that no earthworks, structural, or civil engineering contract may be signed before the prefectural operating permit is published in the regional collection of administrative acts.",
+              "correct": true
+            },
+            {
+              "q": "By what precise date must the bank credit lines associated with the chosen Alpha Scenario be opened?",
+              "gold": "Before September 1, 2026.",
+              "candidate": "The bank credit lines must be opened before **2026-09-01**.",
+              "correct": true
+            },
+            {
+              "q": "From what nominal capacity does a water electrolysis installation fall under the ICPE authorization regime subject to public inquiry?",
+              "gold": "A capacity greater than 20 MW.",
+              "candidate": "From a nominal capacity exceeding 20 MW, a water electrolysis installation falls under the ICPE authorization regime subject to public inquiry.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Energy / Ecological Transition / Heavy Investments.",
+              "candidate": "The sector specified for this document is the **petrochemical/industrial energy transition** sector, specifically concerning the conversion of an Eastern-France refinery.",
+              "correct": false
+            },
+            {
+              "q": "Who leads Action 1 of the nominal plan, and what is the maximum deadline given to submit the file to the prefecture?",
+              "gold": "Amélie Moreau, with a strict deadline set for June 15, 2026.",
+              "candidate": "Amélie Moreau leads Action 1 and must submit the ICPE file to the Moselle prefecture by 2026-06-15.",
+              "correct": true
+            },
+            {
+              "q": "What is the total amount of public subsidies the group could have hoped for by choosing the Beta Scenario?",
+              "gold": "65 Million EUR.",
+              "candidate": "By choosing the Beta Scenario, the group could have hoped for **65 million EUR** in European Union subsidies.",
+              "correct": true
+            },
+            {
+              "q": "Which European directive sets the long-term macroeconomic framework for this transformation program?",
+              "gold": "The European directive \"NetZero-2030\".",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "Was the planning for the extension of the hydrogen transport pipelines to Germany validated for the year 2026?",
+              "gold": "No, this question was formally removed from the agenda and deferred to the first quarter (Q1) of the year 2027.",
+              "candidate": "No, the hydrogen-export pipeline extension to Germany was removed and deferred to 2027 Q1.",
+              "correct": true
+            },
+            {
+              "q": "What is the identity of the majority union with which the HR department will negotiate on June 4 during the CSE meeting?",
+              "gold": "not in context",
+              "candidate": "not in context",
+              "correct": true
+            },
+            {
+              "q": "What is the minimum carbon footprint reduction objective imposed on the Carling site to escape the carbon tax penalties?",
+              "gold": "A reduction of at least 40%.",
+              "candidate": "The Carling site must achieve a carbon footprint reduction of less than 40% to escape the carbon tax penalties.\n\n---\n\n**Correction:** The context states the carbon footprint reduction must be **<40%** — meaning the site must reduce its carbon footprint **by at least 40%** to avoid penalties of millions of EUR per quarter.",
+              "correct": false
+            },
+            {
+              "q": "Who must co-lead the local joint mediation unit if the safeguard clause related to residents' objections is activated?",
+              "gold": "The mayor of the commune of Carling.",
+              "candidate": "The local joint mediation unit must be co-led by the Carling mayor.",
+              "correct": true
+            }
+          ],
+          "correct": 16,
+          "graded": 20,
+          "accuracy": 0.8
+        }
+      }
+    },
+    {
+      "id": "EN-T20",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "short": {
+          "tokensNet": 715,
+          "qa": [
+            {
+              "q": "What are the technical identification codes of the two AWS regions concerned by this DRP?",
+              "gold": "The primary region is `eu-west-1` (Dublin) and the recovery region is `eu-central-1` (Frankfurt).",
+              "candidate": "The two AWS region codes are **`eu-west-1`** (Dublin, Ireland) for the primary site and **`eu-central-1`** (Frankfurt, Germany) for the backup site.",
+              "correct": true
+            },
+            {
+              "q": "Which Kubernetes command allows listing active pods in production and verifying their deployment?",
+              "gold": "`kubectl get pods -n production -o wide`.",
+              "candidate": "The command `kubectl get pods -n production -o wide` allows listing active pods in production and verifying their deployment.",
+              "correct": true
+            },
+            {
+              "q": "What is the minimum number of operational pods required for the `payment-engine` microservice according to the health matrix?",
+              "gold": "20 Operational pods.",
+              "candidate": "According to the health matrix, the `payment-engine` microservice requires a minimum of **20 operational pods**.",
+              "correct": true
+            },
+            {
+              "q": "Is it authorized to redirect real client connections to Frankfurt if the Pytest validation script displays an error on a single test?",
+              "gold": "No, no real client traffic must be reintroduced until the report explicitly displays the unique mention `STATUS: SUCCESS`. If a single test fails, traffic remains blocked on a 503 page.",
+              "candidate": "No, if any single unit or load test fails, external traffic must remain locked and redirected to the emergency landing page (custom HTTP 503).",
+              "correct": true
+            },
+            {
+              "q": "What simultaneous criteria define the obligation to trigger this recovery procedure?",
+              "gold": "A total interruption of the Core-Auth API for more than 12 consecutive minutes AND a written confirmation of a global unavailability (AWS Outage) validated by the lead network engineer on call.",
+              "candidate": "The obligation to trigger the recovery procedure requires **both** a total interruption of API Core-Auth exceeding 12 consecutive minutes **and** a written major physical outage notification (AWS Outage) validated by the on-call lead network engineer, plus a digital cryptographic signature from one of the three authorized SecOps on-call directors via private PGP key.",
+              "correct": false
+            },
+            {
+              "q": "What exact AWS CLI command allows promoting the recovery database cluster, and what is the identifier of this cluster?",
+              "gold": "`aws rds promote-db-cluster --db-cluster-identifier aurora-prod-frankfurt --region eu-central-1`.",
+              "candidate": "The command to promote the recovery database cluster is `aws rds promote-db-cluster --db-cluster-identifier aurora-prod-frankfurt --region eu-central-1`, and the cluster identifier is `aurora-prod-frankfurt`.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "IT disaster recovery manual / DevOps Infrastructure.",
+              "candidate": "The document type is an Information Technology disaster-recovery manual for DevOps Infrastructure.",
+              "correct": true
+            },
+            {
+              "q": "What is the type of physical server and compute capacity (node instance) to which the Kubernetes cluster must migrate?",
+              "gold": "The instance type `m5.2xlarge`.",
+              "candidate": "The Kubernetes cluster must migrate to **45 physical crisis nodes** of type **`m5.2xlarge`**.",
+              "correct": true
+            },
+            {
+              "q": "What is the maximum internal network latency limit tolerated for the `ledger-recorder` microservice?",
+              "gold": "A latency strictly less than 15 ms.",
+              "candidate": "The maximum internal network latency tolerated for the `ledger-recorder` microservice is less than 15 ms.",
+              "correct": true
+            },
+            {
+              "q": "Should the system engineer force a restart of the SQL database engine if the console returns an integrity error of type `error_checksum`?",
+              "gold": "No, it is specified not to attempt a forced start under any pretext, but to immediately launch a PITR restoration.",
+              "candidate": "No — if `error_checksum` appears after promotion, the engineer must never force-start the SQL engine and must instead restore the database to the last known consistency point via PITR at T-60 seconds relative to the exact Dublin crash timestamp.",
+              "correct": true
+            },
+            {
+              "q": "What is the complete emergency Python command allowing to modify the DNS routing at the Route53 level?",
+              "gold": "`python3 /root/dns_failover.py --source eu-west-1 --destination eu-central-1 --ttl 10`.",
+              "candidate": "The complete emergency Python command to modify DNS routing at the Route53 level is: `python3 /root/dns_failover.py --source eu-west-1 --destination eu-central-1 --ttl 10`",
+              "correct": true
+            },
+            {
+              "q": "To what precise point-in-time consistency point (PITR) must the databases be restored if the Aurora cluster fails to promote normally?",
+              "gold": "At T-60 seconds relative to the precise timestamp of the Dublin region crash.",
+              "candidate": "If the Aurora cluster fails to promote normally (i.e., an `error_checksum` occurs after promotion), the database must be restored via PITR to **T-60 seconds relative to the exact Dublin crash timestamp**.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Information Technology / Critical Banking Services / Cloud Computing.",
+              "candidate": "The document specifies the sector as Information Technology / Critical Banking Services / Cloud Computing.",
+              "correct": true
+            },
+            {
+              "q": "How many physical nodes make up the Kubernetes cluster (AWS EKS) in Frankfurt during its usual idle state, before the activation of the crisis profile?",
+              "gold": "5 nodes.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "What global relational database technology is exploited for savings banking data?",
+              "gold": "Aurora PostgreSQL.",
+              "candidate": "Aurora PostgreSQL is the global relational database technology used for savings banking data.",
+              "correct": true
+            },
+            {
+              "q": "To what mandatory numerical value must the TTL (Time To Live) be forced when rewriting DNS routing tables?",
+              "gold": "10 seconds.",
+              "candidate": "The TTL must be forced to **10 seconds** when rewriting DNS routing tables.",
+              "correct": true
+            },
+            {
+              "q": "Does the IT department manage microservices dedicated to checking accounts or credit cards in this specific runbook?",
+              "gold": "No, the introduction specifies that it concerns exclusively our savings banking microservices architecture.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "What is the absolute access path of the global configuration file for Dublin's ALB load balancer?",
+              "gold": "not in context",
+              "candidate": "Not in context.",
+              "correct": true
+            },
+            {
+              "q": "What type of HTTP error page displays to users if the automated validation by Pytest fails?",
+              "gold": "A custom HTTP 503 error page.",
+              "candidate": "If any single unit or load test fails, users are redirected to an emergency landing page returning a custom HTTP 503 error.",
+              "correct": true
+            },
+            {
+              "q": "Which authentication and encryption security protocol is indispensable to validate the digital cutover order initiated by management?",
+              "gold": "A private PGP encryption key.",
+              "candidate": "The digital cutover order must be validated by a cryptographic signature from one of three authorized SecOps on-call directors via a **private PGP key**.",
+              "correct": true
+            }
+          ],
+          "correct": 17,
+          "graded": 20,
+          "accuracy": 0.85
+        },
+        "llml": {
+          "tokensNet": 748,
+          "qa": [
+            {
+              "q": "What are the technical identification codes of the two AWS regions concerned by this DRP?",
+              "gold": "The primary region is `eu-west-1` (Dublin) and the recovery region is `eu-central-1` (Frankfurt).",
+              "candidate": "The two AWS regions are **eu-west-1** (Dublin) and **eu-central-1** (Frankfurt).",
+              "correct": true
+            },
+            {
+              "q": "Which Kubernetes command allows listing active pods in production and verifying their deployment?",
+              "gold": "`kubectl get pods -n production -o wide`.",
+              "candidate": "The command `kubectl get pods -n production -o wide` allows listing active pods in production and verifying their deployment.",
+              "correct": true
+            },
+            {
+              "q": "What is the minimum number of operational pods required for the `payment-engine` microservice according to the health matrix?",
+              "gold": "20 Operational pods.",
+              "candidate": "According to the health matrix, the `payment-engine` microservice requires a minimum of **20 operational pods**.",
+              "correct": true
+            },
+            {
+              "q": "Is it authorized to redirect real client connections to Frankfurt if the Pytest validation script displays an error on a single test?",
+              "gold": "No, no real client traffic must be reintroduced until the report explicitly displays the unique mention `STATUS: SUCCESS`. If a single test fails, traffic remains blocked on a 503 page.",
+              "candidate": "No, if a single load test fails, external traffic must be locked and redirected to an emergency landing page (HTTP 503 error page).",
+              "correct": true
+            },
+            {
+              "q": "What simultaneous criteria define the obligation to trigger this recovery procedure?",
+              "gold": "A total interruption of the Core-Auth API for more than 12 consecutive minutes AND a written confirmation of a global unavailability (AWS Outage) validated by the lead network engineer on call.",
+              "candidate": "The recovery procedure must be triggered when the Core-Auth service suffers a total outage of consecutive duration, confirmed by written notification validated by the lead network engineer, **and** a digital cryptographic signature from three authorized on-call SecOps directors using their private PGP keys is obtained.",
+              "correct": false
+            },
+            {
+              "q": "What exact AWS CLI command allows promoting the recovery database cluster, and what is the identifier of this cluster?",
+              "gold": "`aws rds promote-db-cluster --db-cluster-identifier aurora-prod-frankfurt --region eu-central-1`.",
+              "candidate": "The AWS CLI command to promote the recovery database cluster is `aws rds promote-db-cluster --cluster-identifier aurora-prod-frankfurt --region eu-central-1`, and the cluster identifier is **aurora-prod-frankfurt**.\n\nWait — let me quote exactly from the context:\n\nThe exact command given is `aws promote-db-cluster-cluster-identifier aurora-prod-frankfurt --region eu-central-1`, and the cluster identifier is **aurora-prod-frankfurt**.",
+              "correct": false
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "IT disaster recovery manual / DevOps Infrastructure.",
+              "candidate": "The document is an IT disaster recovery manual for DevOps Infrastructure.",
+              "correct": true
+            },
+            {
+              "q": "What is the type of physical server and compute capacity (node instance) to which the Kubernetes cluster must migrate?",
+              "gold": "The instance type `m5.2xlarge`.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "What is the maximum internal network latency limit tolerated for the `ledger-recorder` microservice?",
+              "gold": "A latency strictly less than 15 ms.",
+              "candidate": "The maximum internal network latency tolerated for the `ledger-recorder` microservice is **15ms**.",
+              "correct": false
+            },
+            {
+              "q": "Should the system engineer force a restart of the SQL database engine if the console returns an integrity error of type `error_checksum`?",
+              "gold": "No, it is specified not to attempt a forced start under any pretext, but to immediately launch a PITR restoration.",
+              "candidate": "Yes, if the console returns an `error_checksum` error after the promotion attempt, the engineer must force start the SQL engine and launch a database restoration from the last consistency point at T-60 seconds before the Dublin region crash.",
+              "correct": false
+            },
+            {
+              "q": "What is the complete emergency Python command allowing to modify the DNS routing at the Route53 level?",
+              "gold": "`python3 /root/dns_failover.py --source eu-west-1 --destination eu-central-1 --ttl 10`.",
+              "candidate": "The complete emergency Python command to modify the DNS routing at the Route53 level is:\n\n`/root/dns_failover.py eu-west-1 eu-central-1`",
+              "correct": false
+            },
+            {
+              "q": "To what precise point-in-time consistency point (PITR) must the databases be restored if the Aurora cluster fails to promote normally?",
+              "gold": "At T-60 seconds relative to the precise timestamp of the Dublin region crash.",
+              "candidate": "The database must be restored to the last temporal consistency point **T-60 seconds** before the Dublin region crash.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Information Technology / Critical Banking Services / Cloud Computing.",
+              "candidate": "The document is specified for the **Information Technology Critical Banking Services Cloud Computing** sector.",
+              "correct": true
+            },
+            {
+              "q": "How many physical nodes make up the Kubernetes cluster (AWS EKS) in Frankfurt during its usual idle state, before the activation of the crisis profile?",
+              "gold": "5 nodes.",
+              "candidate": "The context states that the minimum infrastructure capacity is scaled **from 5 nodes to 45 nodes** during the cutover, indicating the Frankfurt Kubernetes cluster runs at a minimum of 5 nodes in its usual idle state.",
+              "correct": true
+            },
+            {
+              "q": "What global relational database technology is exploited for savings banking data?",
+              "gold": "Aurora PostgreSQL.",
+              "candidate": "The global relational database technology used for savings banking data is **Aurora PostgreSQL** with an asynchronous global replication architecture between Dublin and Frankfurt.",
+              "correct": true
+            },
+            {
+              "q": "To what mandatory numerical value must the TTL (Time To Live) be forced when rewriting DNS routing tables?",
+              "gold": "10 seconds.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "Does the IT department manage microservices dedicated to checking accounts or credit cards in this specific runbook?",
+              "gold": "No, the introduction specifies that it concerns exclusively our savings banking microservices architecture.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "What is the absolute access path of the global configuration file for Dublin's ALB load balancer?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "What type of HTTP error page displays to users if the automated validation by Pytest fails?",
+              "gold": "A custom HTTP 503 error page.",
+              "candidate": "If the automated validation fails, users are redirected to an emergency landing page displaying an **HTTP 503** error page.",
+              "correct": true
+            },
+            {
+              "q": "Which authentication and encryption security protocol is indispensable to validate the digital cutover order initiated by management?",
+              "gold": "A private PGP encryption key.",
+              "candidate": "The digital cutover order must be validated by **cryptographic digital signatures** from three authorized on-call directors of the SecOps unit using **private PGP encryption keys**.",
+              "correct": true
+            }
+          ],
+          "correct": 12,
+          "graded": 20,
+          "accuracy": 0.6
+        },
+        "llmlTerse": {
+          "tokensNet": 610,
+          "qa": [
+            {
+              "q": "What are the technical identification codes of the two AWS regions concerned by this DRP?",
+              "gold": "The primary region is `eu-west-1` (Dublin) and the recovery region is `eu-central-1` (Frankfurt).",
+              "candidate": "The two AWS regions are **`eu-west-1`** (Dublin, Ireland) and **`eu-central-1`** (Frankfurt, Germany).",
+              "correct": true
+            },
+            {
+              "q": "Which Kubernetes command allows listing active pods in production and verifying their deployment?",
+              "gold": "`kubectl get pods -n production -o wide`.",
+              "candidate": "The command `kubectl get pods -n production -o wide` allows listing active pods in production and verifying their deployment.",
+              "correct": true
+            },
+            {
+              "q": "What is the minimum number of operational pods required for the `payment-engine` microservice according to the health matrix?",
+              "gold": "20 Operational pods.",
+              "candidate": "The `payment-engine` microservice requires a minimum of **20** operational pods according to the health matrix.",
+              "correct": true
+            },
+            {
+              "q": "Is it authorized to redirect real client connections to Frankfurt if the Pytest validation script displays an error on a single test?",
+              "gold": "No, no real client traffic must be reintroduced until the report explicitly displays the unique mention `STATUS: SUCCESS`. If a single test fails, traffic remains blocked on a 503 page.",
+              "candidate": "No, if a single unit load test fails, external traffic is locked and redirected to the emergency landing page (HTTP 503).",
+              "correct": true
+            },
+            {
+              "q": "What simultaneous criteria define the obligation to trigger this recovery procedure?",
+              "gold": "A total interruption of the Core-Auth API for more than 12 consecutive minutes AND a written confirmation of a global unavailability (AWS Outage) validated by the lead network engineer on call.",
+              "candidate": "The obligation to trigger the recovery procedure is defined by an API Core-Auth interruption exceeding 12 consecutive minutes, a major physical outage (AWS Outage), and a validated call from a network engineer occurring simultaneously.",
+              "correct": false
+            },
+            {
+              "q": "What exact AWS CLI command allows promoting the recovery database cluster, and what is the identifier of this cluster?",
+              "gold": "`aws rds promote-db-cluster --db-cluster-identifier aurora-prod-frankfurt --region eu-central-1`.",
+              "candidate": "The AWS CLI command to promote the recovery database cluster is `promote-db-cluster-identifier aurora-prod-frankfurt eu-central-1`, and the cluster identifier is **aurora-prod-frankfurt**.",
+              "correct": false
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "IT disaster recovery manual / DevOps Infrastructure.",
+              "candidate": "The document is a Multi-Region Cloud Disaster Recovery Plan (DRP-CLOUD-V2).",
+              "correct": true
+            },
+            {
+              "q": "What is the type of physical server and compute capacity (node instance) to which the Kubernetes cluster must migrate?",
+              "gold": "The instance type `m5.2xlarge`.",
+              "candidate": "The Kubernetes cluster must migrate to **m5.2xlarge** physical crisis nodes, scaling up to **45** of them in Frankfurt (AWS `eu-central-1`).",
+              "correct": true
+            },
+            {
+              "q": "What is the maximum internal network latency limit tolerated for the `ledger-recorder` microservice?",
+              "gold": "A latency strictly less than 15 ms.",
+              "candidate": "The maximum internal network latency tolerated for the `ledger-recorder` microservice is **15 ms**.",
+              "correct": false
+            },
+            {
+              "q": "Should the system engineer force a restart of the SQL database engine if the console returns an integrity error of type `error_checksum`?",
+              "gold": "No, it is specified not to attempt a forced start under any pretext, but to immediately launch a PITR restoration.",
+              "candidate": "No — if `error_checksum` appears after promotion, the engineer must never force-start the SQL engine and should instead restore the database to the last consistency point via PITR.",
+              "correct": true
+            },
+            {
+              "q": "What is the complete emergency Python command allowing to modify the DNS routing at the Route53 level?",
+              "gold": "`python3 /root/dns_failover.py --source eu-west-1 --destination eu-central-1 --ttl 10`.",
+              "candidate": "The complete emergency Python command is: `python3 /root/dns_failover.py eu-west-1 eu-central-1 --ttl 10`.",
+              "correct": false
+            },
+            {
+              "q": "To what precise point-in-time consistency point (PITR) must the databases be restored if the Aurora cluster fails to promote normally?",
+              "gold": "At T-60 seconds relative to the precise timestamp of the Dublin region crash.",
+              "candidate": "The databases must be restored to the last consistency point via PITR at **T-60 seconds** before the Dublin crash timestamp.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Information Technology / Critical Banking Services / Cloud Computing.",
+              "candidate": "The sector specified for this document is **Information Technology Critical Banking Services Cloud Computing**.",
+              "correct": true
+            },
+            {
+              "q": "How many physical nodes make up the Kubernetes cluster (AWS EKS) in Frankfurt during its usual idle state, before the activation of the crisis profile?",
+              "gold": "5 nodes.",
+              "candidate": "During its usual idle state, the Frankfurt Kubernetes cluster maintains a minimum of **5 idle nodes** before the crisis profile is activated.",
+              "correct": true
+            },
+            {
+              "q": "What global relational database technology is exploited for savings banking data?",
+              "gold": "Aurora PostgreSQL.",
+              "candidate": "Aurora PostgreSQL is the global relational database technology used for savings banking data.",
+              "correct": true
+            },
+            {
+              "q": "To what mandatory numerical value must the TTL (Time To Live) be forced when rewriting DNS routing tables?",
+              "gold": "10 seconds.",
+              "candidate": "The TTL must be forced to a mandatory value of **10** when rewriting DNS routing tables.",
+              "correct": true
+            },
+            {
+              "q": "Does the IT department manage microservices dedicated to checking accounts or credit cards in this specific runbook?",
+              "gold": "No, the introduction specifies that it concerns exclusively our savings banking microservices architecture.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "What is the absolute access path of the global configuration file for Dublin's ALB load balancer?",
+              "gold": "not in context",
+              "candidate": "Not in context.",
+              "correct": true
+            },
+            {
+              "q": "What type of HTTP error page displays to users if the automated validation by Pytest fails?",
+              "gold": "A custom HTTP 503 error page.",
+              "candidate": "If the automated validation by Pytest fails, users are redirected to an emergency landing page displaying an **HTTP 503** error.",
+              "correct": true
+            },
+            {
+              "q": "Which authentication and encryption security protocol is indispensable to validate the digital cutover order initiated by management?",
+              "gold": "A private PGP encryption key.",
+              "candidate": "The digital cutover order must be validated by the cryptographic signatures of 1 of 3 authorized SecOps on-call directors using their private **PGP** (Pretty Good Privacy) keys.",
+              "correct": true
+            }
+          ],
+          "correct": 15,
+          "graded": 20,
+          "accuracy": 0.75
+        }
+      }
+    },
+    {
+      "id": "EN-T21",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "short": {
+          "tokensNet": 744,
+          "qa": [
+            {
+              "q": "What are the code names of the three artificial intelligence sub-agents that collaborate in this network?",
+              "gold": "Agent-Parser-01, Agent-GraphAnalyser-02, and Agent-RiskScorer-03.",
+              "candidate": "The three AI sub-agents are **Agent-Parser-01**, **Agent-GraphAnalyser-02**, and **Agent-RiskScorer-03**.",
+              "correct": true
+            },
+            {
+              "q": "What is the international format and reference of the batch of banking messages analyzed at the beginning?",
+              "gold": "The international Swift MT103 message format, in the batch referenced BATCH-EMEA-94.",
+              "candidate": "The batch of banking messages analyzed is in **Swift MT103** interbank format, with the reference **BATCH-EMEA-94**.",
+              "correct": true
+            },
+            {
+              "q": "What is the exact amount in euros of each of the 14 fraudulent transfers?",
+              "gold": "9,900 EUR.",
+              "candidate": "Each of the 14 transfers is exactly **9,900 EUR**.",
+              "correct": true
+            },
+            {
+              "q": "Does the artificial intelligence agent have the right to confiscate or definitively liquidate the cryptocurrencies from the suspect wallet?",
+              "gold": "No, the agent does not possess the required privileges to liquidate or definitively seize the assets. This is a strict limit of its autonomy.",
+              "candidate": "No, the AI agent lacks the privileges for definitive seizure or liquidation of financial assets or cryptocurrencies; such action is exclusively reserved for the Human Compliance Direction via physical multi-hardware-token signature protocol.",
+              "correct": true
+            },
+            {
+              "q": "From what global threat risk score ($S_r$) does the AI system automatically apply an account block without human intervention?",
+              "gold": "A score greater than 85.",
+              "candidate": "The AI system automatically applies an account block without prior human validation when the risk score $S_r$ exceeds **85**.",
+              "correct": true
+            },
+            {
+              "q": "What is the final value of the risk score calculated by Agent-RiskScorer-03 and what is the weighting formula used to achieve it?",
+              "gold": "The score is 94.4. The formula is:",
+              "candidate": "The risk score calculated by Agent-RiskScorer-03 is **94.4**, using the formula `S_r = (0.4 × S_jurisd) + (0.3 × S_structure) + (0.3 × S_vitesse)`, applied to inputs of 95, 98, and 90 respectively.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "AI agent prompt instructions flow and cross-execution logs.",
+              "candidate": "The document is an operational log of the AML-CORE Anti-Money Laundering Multi-AI Agent Network, recording the sequential analysis of a suspicious financial transaction batch by three automated agents.",
+              "correct": true
+            },
+            {
+              "q": "With which precise French banking institution were the 14 original deposit accounts opened?",
+              "gold": "With the institution \"Banque Privée A\".",
+              "candidate": "The 14 original deposit accounts were opened at **Banque Privée A** in France.",
+              "correct": true
+            },
+            {
+              "q": "What is the maximum duration of the time window during which all 14 transfers were sent?",
+              "gold": "A 48-hour window.",
+              "candidate": "All 14 transfers were sent within a 48-hour window.",
+              "correct": true
+            },
+            {
+              "q": "Do the suspect funds transit through a bank located in Luxembourg or Switzerland before arriving in Panama?",
+              "gold": "No, they transit directly from Banque Privée A in France to the account of the company Vortex-Holdings in Panama.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "What technical term from banking typology is used by Agent-GraphAnalyser-02 to qualify the fraud?",
+              "gold": "\"Smurfing\" (or *Schtroumpfage*).",
+              "candidate": "Agent-GraphAnalyser-02 uses the term **\"Smurfing\"** (Schtroumpfage) to qualify the fraud.",
+              "correct": true
+            },
+            {
+              "q": "What mathematical parameter of the graph ($C_d$) allows Agent-GraphAnalyser-02 to prove the abnormal centrality of the shell company?",
+              "gold": "An inbound centrality degree equal to 14 ($C_d = 14$).",
+              "candidate": "The parameter $C_d$ is the **inbound centrality degree**, which equals **14** (the number of converging transfers into the Vortex-Holdings account), proving its abnormal centrality as a single pooling destination.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "FinTech / Banking Security / Autonomous Artificial Intelligence / Graph Analysis.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "What is the exact name and extension of the file generated by the system to notify the TRACFIN authority?",
+              "gold": "The file `AML-TRACFIN-2026-Vortex.xml`.",
+              "candidate": "The file generated to notify the TRACFIN authority is **AML-TRACFIN-2026-Vortex.xml**.",
+              "correct": true
+            },
+            {
+              "q": "Which specific entity is competent to order a definitive seizure of the funds and by what technical means?",
+              "gold": "The Human Compliance Direction, via a physical multi-hardware tokens signature protocol.",
+              "candidate": "The Human Compliance Direction is exclusively competent to order a definitive seizure, via a physical multi-hardware-token signature protocol.",
+              "correct": true
+            },
+            {
+              "q": "What exact proportion of the collected funds is instantly resent to the anonymous blockchain wallet?",
+              "gold": "95% of the cumulative sums (i.e., 131,670 EUR).",
+              "candidate": "95% of the collected funds (131,670 EUR) is instantly resent to the anonymous blockchain wallet.",
+              "correct": true
+            },
+            {
+              "q": "Do the execution logs indicate that these fraudulent financial transactions took place during the year 2025?",
+              "gold": "No, the system prompt and the context explicitly describe events unfolding in 2026 (the transfer dating from July 14, 2026).",
+              "candidate": "No, the execution logs indicate the transactions took place on **2026-07-14**, not in 2025.",
+              "correct": true
+            },
+            {
+              "q": "How many GPU computer servers are required to run the model of Agent-RiskScorer-03?",
+              "gold": "not in context",
+              "candidate": "not in context",
+              "correct": true
+            },
+            {
+              "q": "To what precise French regulatory threshold does the agent refer when it notes that the transfers are 9,900 EUR?",
+              "gold": "The TRACFIN regulatory vigilance threshold set at 10,000 EUR.",
+              "candidate": "The agent refers to the French TRACFIN vigilance threshold of 10,000 EUR, which triggers an automatic mandatory declaration.",
+              "correct": true
+            },
+            {
+              "q": "What prohibition status does the AI immediately apply to the accounts of Banque Privée A after its calculations?",
+              "gold": "The status `BLOCK_ACCOUNT_TEMPORARY`.",
+              "candidate": "After its calculations, the AI immediately applies a temporary block (`BLOCK_ACCOUNT_TEMPORARY`) to the 14 emitting accounts of Banque Privée A.",
+              "correct": true
+            }
+          ],
+          "correct": 18,
+          "graded": 20,
+          "accuracy": 0.9
+        },
+        "llml": {
+          "tokensNet": 809,
+          "qa": [
+            {
+              "q": "What are the code names of the three artificial intelligence sub-agents that collaborate in this network?",
+              "gold": "Agent-Parser-01, Agent-GraphAnalyser-02, and Agent-RiskScorer-03.",
+              "candidate": "The three AI sub-agents are **Parser-01**, **GraphAnalyser-02**, and **RiskScorer-03**.",
+              "correct": true
+            },
+            {
+              "q": "What is the international format and reference of the batch of banking messages analyzed at the beginning?",
+              "gold": "The international Swift MT103 message format, in the batch referenced BATCH-EMEA-94.",
+              "candidate": "The batch of banking messages was analyzed in **Swift MT103** format with the reference **`BATCH-EMEA-94`**.",
+              "correct": true
+            },
+            {
+              "q": "What is the exact amount in euros of each of the 14 fraudulent transfers?",
+              "gold": "9,900 EUR.",
+              "candidate": "Each of the 14 fraudulent transfers amounts to **9,900 EUR**.",
+              "correct": true
+            },
+            {
+              "q": "Does the artificial intelligence agent have the right to confiscate or definitively liquidate the cryptocurrencies from the suspect wallet?",
+              "gold": "No, the agent does not possess the required privileges to liquidate or definitively seize the assets. This is a strict limit of its autonomy.",
+              "candidate": "No, the AI agent does not have the right to confiscate or definitively liquidate cryptocurrencies, as that action is explicitly reserved for the Human Compliance Direction, activatable only via a physical multi-hardware token signature protocol.",
+              "correct": true
+            },
+            {
+              "q": "From what global threat risk score ($S_r$) does the AI system automatically apply an account block without human intervention?",
+              "gold": "A score greater than 85.",
+              "candidate": "Based on the context, the AI system automatically applies an account block without human intervention when the global threat risk score ($S_r$) exceeds **85**.",
+              "correct": true
+            },
+            {
+              "q": "What is the final value of the risk score calculated by Agent-RiskScorer-03 and what is the weighting formula used to achieve it?",
+              "gold": "The score is 94.4. The formula is:",
+              "candidate": "Based on the context, Agent-RiskScorer-03 calculated a final risk score of **94.4/100** using the weighted formula **Sᵣ = (0.4 × S_jurisd) + (0.3 × S_struct) + (0.3 × S_velocity)**, applied to scores of 95 (jurisdiction), 98 (structure anomaly), and 90 (velocity), yielding 38 + 29.4 + 27 = 94.4.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "AI agent prompt instructions flow and cross-execution logs.",
+              "candidate": "The document is an AI agent prompt instructions flow log for a cross-execution distributed system analyzing financial transactions for tax evasion and money laundering patterns.",
+              "correct": true
+            },
+            {
+              "q": "With which precise French banking institution were the 14 original deposit accounts opened?",
+              "gold": "With the institution \"Banque Privée A\".",
+              "candidate": "The 14 original deposit accounts were opened with **Banque Privée A** in France.",
+              "correct": true
+            },
+            {
+              "q": "What is the maximum duration of the time window during which all 14 transfers were sent?",
+              "gold": "A 48-hour window.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "Do the suspect funds transit through a bank located in Luxembourg or Switzerland before arriving in Panama?",
+              "gold": "No, they transit directly from Banque Privée A in France to the account of the company Vortex-Holdings in Panama.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "What technical term from banking typology is used by Agent-GraphAnalyser-02 to qualify the fraud?",
+              "gold": "\"Smurfing\" (or *Schtroumpfage*).",
+              "candidate": "Agent-GraphAnalyser-02 qualifies the fraud using the technical term **\"Smurfing\"**, described as splitting large capital into micro-flows to avoid traditional banking alert systems.",
+              "correct": true
+            },
+            {
+              "q": "What mathematical parameter of the graph ($C_d$) allows Agent-GraphAnalyser-02 to prove the abnormal centrality of the shell company?",
+              "gold": "An inbound centrality degree equal to 14 ($C_d = 14$).",
+              "candidate": "Based on the context, Agent-GraphAnalyser-02 uses the **inbound degree centrality** parameter $d = 14$, representing the 14 incoming transfer connections converging on the *Vortex-Holdings* node, to prove its abnormal centrality.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "FinTech / Banking Security / Autonomous Artificial Intelligence / Graph Analysis.",
+              "candidate": "The sector specified for this document is **FinTech Banking Security**.",
+              "correct": true
+            },
+            {
+              "q": "What is the exact name and extension of the file generated by the system to notify the TRACFIN authority?",
+              "gold": "The file `AML-TRACFIN-2026-Vortex.xml`.",
+              "candidate": "The file generated by the system to notify the TRACFIN authority is named **AML-TRACFIN-2026-Vortex**.",
+              "correct": false
+            },
+            {
+              "q": "Which specific entity is competent to order a definitive seizure of the funds and by what technical means?",
+              "gold": "The Human Compliance Direction, via a physical multi-hardware tokens signature protocol.",
+              "candidate": "Based on the context, the **Human Compliance Direction** is competent to order a definitive seizure, activated via a **physical multi-hardware tokens signature protocol**.",
+              "correct": true
+            },
+            {
+              "q": "What exact proportion of the collected funds is instantly resent to the anonymous blockchain wallet?",
+              "gold": "95% of the cumulative sums (i.e., 131,670 EUR).",
+              "candidate": "Based on the context, 95% of the collected funds (131,670 EUR out of 138,600 EUR total) is instantly resent to the anonymous blockchain wallet.",
+              "correct": true
+            },
+            {
+              "q": "Do the execution logs indicate that these fraudulent financial transactions took place during the year 2025?",
+              "gold": "No, the system prompt and the context explicitly describe events unfolding in 2026 (the transfer dating from July 14, 2026).",
+              "candidate": "No, the execution logs indicate the transactions took place on **July 14, 2026**, not 2025.",
+              "correct": true
+            },
+            {
+              "q": "How many GPU computer servers are required to run the model of Agent-RiskScorer-03?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "To what precise French regulatory threshold does the agent refer when it notes that the transfers are 9,900 EUR?",
+              "gold": "The TRACFIN regulatory vigilance threshold set at 10,000 EUR.",
+              "candidate": "The agent refers to the 10,000 EUR threshold that triggers an automatic mandatory declaration to TRACFIN under French regulatory rules.",
+              "correct": true
+            },
+            {
+              "q": "What prohibition status does the AI immediately apply to the accounts of Banque Privée A after its calculations?",
+              "gold": "The status `BLOCK_ACCOUNT_TEMPORARY`.",
+              "candidate": "Based on the context, the AI immediately applies a **temporary block** (`BLOCK_ACCOUNT_TEMPORARY`) to the 14 emitting accounts of Banque Privée A.",
+              "correct": true
+            }
+          ],
+          "correct": 17,
+          "graded": 20,
+          "accuracy": 0.85
+        },
+        "llmlTerse": {
+          "tokensNet": 645,
+          "qa": [
+            {
+              "q": "What are the code names of the three artificial intelligence sub-agents that collaborate in this network?",
+              "gold": "Agent-Parser-01, Agent-GraphAnalyser-02, and Agent-RiskScorer-03.",
+              "candidate": "The three AI sub-agents are **Agent-Parser-01**, **Agent-GraphAnalyser-02**, and **Agent-RiskScorer-03**.",
+              "correct": true
+            },
+            {
+              "q": "What is the international format and reference of the batch of banking messages analyzed at the beginning?",
+              "gold": "The international Swift MT103 message format, in the batch referenced BATCH-EMEA-94.",
+              "candidate": "The batch of banking messages analyzed is in **Swift MT103** interbank format, with the reference **BATCH-EMEA-94**.",
+              "correct": true
+            },
+            {
+              "q": "What is the exact amount in euros of each of the 14 fraudulent transfers?",
+              "gold": "9,900 EUR.",
+              "candidate": "Each of the 14 transfers amounts to exactly **9,900 EUR**.",
+              "correct": true
+            },
+            {
+              "q": "Does the artificial intelligence agent have the right to confiscate or definitively liquidate the cryptocurrencies from the suspect wallet?",
+              "gold": "No, the agent does not possess the required privileges to liquidate or definitively seize the assets. This is a strict limit of its autonomy.",
+              "candidate": "No, the AI agent lacks the privileges for definitive seizure or liquidation of financial assets or cryptocurrencies, which requires human compliance direction with a physical multi-token signature protocol.",
+              "correct": true
+            },
+            {
+              "q": "From what global threat risk score ($S_r$) does the AI system automatically apply an account block without human intervention?",
+              "gold": "A score greater than 85.",
+              "candidate": "The AI system automatically applies an account block without human intervention when the risk score $S_r$ exceeds **85**.",
+              "correct": true
+            },
+            {
+              "q": "What is the final value of the risk score calculated by Agent-RiskScorer-03 and what is the weighting formula used to achieve it?",
+              "gold": "The score is 94.4. The formula is:",
+              "candidate": "The final risk score calculated by Agent-RiskScorer-03 is **94.4**, derived from the formula `S_r = (0.4 × S_jurisd) + (0.3 × S_structure) + (0.3 × S_vitesse)`, applied to inputs of 95/100 (jurisdiction), 98/100 (structure), and 90/100 (velocity), yielding 38 + 29.4 + 27 = 94.4.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "AI agent prompt instructions flow and cross-execution logs.",
+              "candidate": "The document is an operational log of the CTX AML-CORE Anti-Money Laundering Multi-AI Agent Network, detailing the real-time detection of a suspected money laundering operation.",
+              "correct": false
+            },
+            {
+              "q": "With which precise French banking institution were the 14 original deposit accounts opened?",
+              "gold": "With the institution \"Banque Privée A\".",
+              "candidate": "The 14 original deposit accounts were opened with **Banque Privée A**, located in France.",
+              "correct": true
+            },
+            {
+              "q": "What is the maximum duration of the time window during which all 14 transfers were sent?",
+              "gold": "A 48-hour window.",
+              "candidate": "All 14 transfers were sent within a **48-hour** time window.",
+              "correct": true
+            },
+            {
+              "q": "Do the suspect funds transit through a bank located in Luxembourg or Switzerland before arriving in Panama?",
+              "gold": "No, they transit directly from Banque Privée A in France to the account of the company Vortex-Holdings in Panama.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "What technical term from banking typology is used by Agent-GraphAnalyser-02 to qualify the fraud?",
+              "gold": "\"Smurfing\" (or *Schtroumpfage*).",
+              "candidate": "Agent-GraphAnalyser-02 uses the term **\"Smurfing\"** to qualify the fraud, describing the practice of splitting large capital into micro-flows to avoid traditional bank alerts.",
+              "correct": true
+            },
+            {
+              "q": "What mathematical parameter of the graph ($C_d$) allows Agent-GraphAnalyser-02 to prove the abnormal centrality of the shell company?",
+              "gold": "An inbound centrality degree equal to 14 ($C_d = 14$).",
+              "candidate": "The inbound centrality degree **$C_d = 14$** reveals that *Vortex-Holdings* receives flows from 14 distinct source accounts, proving its abnormal role as a convergence node in the \"Smurfing\" scheme.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "FinTech / Banking Security / Autonomous Artificial Intelligence / Graph Analysis.",
+              "candidate": "The sector specified for this document is **Anti-Money Laundering (AML)** within the financial sector.",
+              "correct": false
+            },
+            {
+              "q": "What is the exact name and extension of the file generated by the system to notify the TRACFIN authority?",
+              "gold": "The file `AML-TRACFIN-2026-Vortex.xml`.",
+              "candidate": "The file generated to notify the TRACFIN authority is named **AML-TRACFIN-2026-Vortex.xml**.",
+              "correct": true
+            },
+            {
+              "q": "Which specific entity is competent to order a definitive seizure of the funds and by what technical means?",
+              "gold": "The Human Compliance Direction, via a physical multi-hardware tokens signature protocol.",
+              "candidate": "The **Human Compliance Direction** is competent to order a definitive seizure, by means of a physical multi-token signature protocol.",
+              "correct": true
+            },
+            {
+              "q": "What exact proportion of the collected funds is instantly resent to the anonymous blockchain wallet?",
+              "gold": "95% of the cumulative sums (i.e., 131,670 EUR).",
+              "candidate": "95% of the collected funds (131,670 EUR) is instantly resent to the anonymous blockchain wallet.",
+              "correct": true
+            },
+            {
+              "q": "Do the execution logs indicate that these fraudulent financial transactions took place during the year 2025?",
+              "gold": "No, the system prompt and the context explicitly describe events unfolding in 2026 (the transfer dating from July 14, 2026).",
+              "candidate": "No, the execution logs indicate the transactions took place on **2026-07-14**, not in 2025.",
+              "correct": true
+            },
+            {
+              "q": "How many GPU computer servers are required to run the model of Agent-RiskScorer-03?",
+              "gold": "not in context",
+              "candidate": "not in context",
+              "correct": true
+            },
+            {
+              "q": "To what precise French regulatory threshold does the agent refer when it notes that the transfers are 9,900 EUR?",
+              "gold": "The TRACFIN regulatory vigilance threshold set at 10,000 EUR.",
+              "candidate": "The agent refers to the 10,000 EUR mandatory TRACFIN declaration threshold, noting that the 9,900 EUR transfers fall just below it to avoid triggering that obligation.",
+              "correct": true
+            },
+            {
+              "q": "What prohibition status does the AI immediately apply to the accounts of Banque Privée A after its calculations?",
+              "gold": "The status `BLOCK_ACCOUNT_TEMPORARY`.",
+              "candidate": "The AI immediately applies a temporary block (`BLOCK_ACCOUNT_TEMPORARY`) to the 14 Banque Privée A accounts.",
+              "correct": true
+            }
+          ],
+          "correct": 17,
+          "graded": 20,
+          "accuracy": 0.85
+        }
+      }
+    },
+    {
+      "id": "EN-T22",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "short": {
+          "tokensNet": 589,
+          "qa": [
+            {
+              "q": "What specific type of imaging will the IRIS-3 constellation exploit for Earth observation?",
+              "gold": "Hyperspectral (and thermal infrared) imaging.",
+              "candidate": "The IRIS-3 constellation will exploit **hyperspectral imaging** for Earth observation.",
+              "correct": true
+            },
+            {
+              "q": "What is the exact number of satellites planned in the constellation and how are they distributed?",
+              "gold": "24 operational satellites in total, distributed homogeneously at a rate of 8 satellites across 3 distinct orbital planes.",
+              "candidate": "The IRIS-3 constellation comprises 24 identical operational satellites distributed across 3 orbital planes with 8 satellites per plane.",
+              "correct": true
+            },
+            {
+              "q": "What must be the minimum continuous power generated by the gallium arsenide solar panels?",
+              "gold": "180W per satellite during the sunlit phase.",
+              "candidate": "Each satellite's deployable articulated GaAs solar panels must generate a minimum continuous power of **180 W** during the sunlit orbital phase.",
+              "correct": true
+            },
+            {
+              "q": "Do the ground segment engineers have the right to use the 15% fuel reserve to correct a bad initial trajectory caused by a Vega-C rocket error?",
+              "gold": "No, it is formally forbidden to use this reserve to correct injection drifts; it is strictly reserved for debris avoidance and end-of-life deorbiting.",
+              "candidate": "No, the ground segment flight-control team is strictly forbidden to use the 15% propellant reserve to correct initial altitude drift caused by Vega-C orbital-injection inaccuracy.",
+              "correct": true
+            },
+            {
+              "q": "What precise weather conditions measured less than 30 minutes from liftoff trigger the mandatory cancellation of the launch?",
+              "gold": "A high-altitude wind speed greater than 85 km/h (between 10,000 and 15,000 m) or the presence of storm activity within a 25 km radius around the launch pad.",
+              "candidate": "The launch must be aborted if, within less than 30 minutes before liftoff, high-altitude winds exceed 85 km/h between 10,000–15,000 m altitude, or if electrical activity or storm cells are detected by radar within a 25 km radius around the launch pad.",
+              "correct": true
+            },
+            {
+              "q": "Which consortium partner manufactures the electric propulsion system, where is its production site located, and what is its delivery deadline?",
+              "gold": "It is the company ThrustMe, located in Verrières-le-Buisson in France, with a contractual deadline of September 15, 2027.",
+              "candidate": "ThrustMe, located in Verrières-le-Buisson, France, manufactures the Electric Propulsion Module with a delivery deadline of September 15, 2027.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Complex engineering program scoping note.",
+              "candidate": "The document is a programme specification or technical requirements document for the IRIS-3 Hyperspectral Imaging Satellite Constellation.",
+              "correct": false
+            },
+            {
+              "q": "What is the nominal flight altitude defined for this sun-synchronous orbit?",
+              "gold": "540 km above mean sea level.",
+              "candidate": "The nominal flight altitude defined for this sun-synchronous orbit is **540 km** above mean sea level.",
+              "correct": true
+            },
+            {
+              "q": "What must be the exact value of the orbital inclination for the IRIS-3 program?",
+              "gold": "97.5°.",
+              "candidate": "The orbital inclination for the IRIS-3 programme must be exactly **97.5°** relative to the equatorial plane.",
+              "correct": true
+            },
+            {
+              "q": "Is the ground segment, responsible for guidance and command stations, located in France or Germany?",
+              "gold": "No, it is entrusted to the company Telespazio at the Fucino industrial site located in Italy.",
+              "candidate": "The ground segment, responsible for guidance and command stations, is located in Fucino, Italy, operated by Telespazio.",
+              "correct": true
+            },
+            {
+              "q": "What chemical substance or solid material serves as propellant for the program's space engines?",
+              "gold": "Iodine (solid iodine sublimation).",
+              "candidate": "The propellant used is solid iodine, which undergoes sublimation in the miniaturized propulsion system of each nanosatellite.",
+              "correct": true
+            },
+            {
+              "q": "What are the only two cases of operational emergency that allow drawing from the permanent 15% fuel reserve?",
+              "gold": "Space debris avoidance maneuvers and final deorbiting at the end of operational life.",
+              "candidate": "According to the context, the permanent 15% iodine reserve may only be used for **low-orbit debris avoidance** and **mandatory end-of-life deorbit**.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Aeronautics and Space / DeepTech / Earth Observation.",
+              "candidate": "The sector specified for this document is **European Civil Space**.",
+              "correct": false
+            },
+            {
+              "q": "Which industrial group delivers the generic platform (the bus) on March 12, 2027, and from which production site will it come?",
+              "gold": "Thales Alenia Space, from its production site located in Cannes, France.",
+              "candidate": "Thales Alenia Space, based in Cannes, France, delivers the generic platform/satellite bus by March 12, 2027.",
+              "correct": true
+            },
+            {
+              "q": "What is the theoretical optical ground resolution per pixel offered by the LWIR payload?",
+              "gold": "1.2 m per pixel.",
+              "candidate": "The LWIR payload offers a ground optical resolution of 1.2 m/pixel.",
+              "correct": true
+            },
+            {
+              "q": "What is the date of the priority launch window chosen to send the first batch of 8 satellites of Orbital Plane A?",
+              "gold": "February 14, 2028.",
+              "candidate": "The priority launch window for the first batch of 8 satellites of Orbital Plane A is **2028-02-14**.",
+              "correct": true
+            },
+            {
+              "q": "Is the infrared spectral band used by the payload of the SWIR (Short-Wave Infrared) type?",
+              "gold": "No, the imager operates specifically in the thermal LWIR (Long-Wave Infrared) band.",
+              "candidate": "No, the payload uses LWIR (Long-Wave Infrared) bands, not SWIR.",
+              "correct": true
+            },
+            {
+              "q": "Which European country initially opposed funding the IRIS-3 program during the civil Space Council vote?",
+              "gold": "not in context",
+              "candidate": "not in context",
+              "correct": true
+            },
+            {
+              "q": "From which space center and launch base will the program launch take place?",
+              "gold": "From the Guiana Space Centre located in Kourou.",
+              "candidate": "The launch will take place from the Guiana Space Centre in Kourou.",
+              "correct": true
+            },
+            {
+              "q": "In what exact altitude range is the jet stream speed measured to validate the meteorological cancellation criterion?",
+              "gold": "In the altitude bracket between 10,000 and 15,000 meters.",
+              "candidate": "The jet stream speed is measured between **10,000 and 15,000 meters** altitude to validate the meteorological cancellation criterion.",
+              "correct": true
+            }
+          ],
+          "correct": 18,
+          "graded": 20,
+          "accuracy": 0.9
+        },
+        "llml": {
+          "tokensNet": 595,
+          "qa": [
+            {
+              "q": "What specific type of imaging will the IRIS-3 constellation exploit for Earth observation?",
+              "gold": "Hyperspectral (and thermal infrared) imaging.",
+              "candidate": "The IRIS-3 constellation will exploit **real-time hyperspectral imaging** for Earth observation.",
+              "correct": true
+            },
+            {
+              "q": "What is the exact number of satellites planned in the constellation and how are they distributed?",
+              "gold": "24 operational satellites in total, distributed homogeneously at a rate of 8 satellites across 3 distinct orbital planes.",
+              "candidate": "The IRIS-3 constellation comprises **24 operational satellites**, distributed across 3 orbital planes with **8 satellites per plane**.",
+              "correct": true
+            },
+            {
+              "q": "What must be the minimum continuous power generated by the gallium arsenide solar panels?",
+              "gold": "180W per satellite during the sunlit phase.",
+              "candidate": "not in context",
+              "correct": false
+            },
+            {
+              "q": "Do the ground segment engineers have the right to use the 15% fuel reserve to correct a bad initial trajectory caused by a Vega-C rocket error?",
+              "gold": "No, it is formally forbidden to use this reserve to correct injection drifts; it is strictly reserved for debris avoidance and end-of-life deorbiting.",
+              "candidate": "No, the ground segment flight control team is strictly forbidden from using the 15% reserve to compensate for altitude drifts or orbital injection inaccuracies caused by the Vega-C launcher.",
+              "correct": true
+            },
+            {
+              "q": "What precise weather conditions measured less than 30 minutes from liftoff trigger the mandatory cancellation of the launch?",
+              "gold": "A high-altitude wind speed greater than 85 km/h (between 10,000 and 15,000 m) or the presence of storm activity within a 25 km radius around the launch pad.",
+              "candidate": "The launch must be cancelled if, measured less than 30 minutes before liftoff, wind speed at altitude exceeds a certain threshold between 10,000 and 15,000 meters, or if electrical activity from storm cells is detected by radars near the Guianese launch pad.",
+              "correct": false
+            },
+            {
+              "q": "Which consortium partner manufactures the electric propulsion system, where is its production site located, and what is its delivery deadline?",
+              "gold": "It is the company ThrustMe, located in Verrières-le-Buisson in France, with a contractual deadline of September 15, 2027.",
+              "candidate": "ThrustMe manufactures the electric propulsion module at its production site in Verrières-le-Buisson, France, with a contractual delivery deadline of September 15, 2027.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Complex engineering program scoping note.",
+              "candidate": "The document type is a complex engineering program scoping note.",
+              "correct": true
+            },
+            {
+              "q": "What is the nominal flight altitude defined for this sun-synchronous orbit?",
+              "gold": "540 km above mean sea level.",
+              "candidate": "The nominal flight altitude defined for this sun-synchronous orbit is **540 km** above sea level.",
+              "correct": true
+            },
+            {
+              "q": "What must be the exact value of the orbital inclination for the IRIS-3 program?",
+              "gold": "97.5°.",
+              "candidate": "The orbital inclination for the IRIS-3 program must be **97.5°** relative to the equatorial plane.",
+              "correct": true
+            },
+            {
+              "q": "Is the ground segment, responsible for guidance and command stations, located in France or Germany?",
+              "gold": "No, it is entrusted to the company Telespazio at the Fucino industrial site located in Italy.",
+              "candidate": "Based on the context, the ground segment guidance and command stations are managed by Telespazio, located in **Fucino, Italy**.",
+              "correct": true
+            },
+            {
+              "q": "What chemical substance or solid material serves as propellant for the program's space engines?",
+              "gold": "Iodine (solid iodine sublimation).",
+              "candidate": "The propellant used for the IRIS-3 program's miniaturized propulsion system is **solid iodine**, which undergoes sublimation.",
+              "correct": true
+            },
+            {
+              "q": "What are the only two cases of operational emergency that allow drawing from the permanent 15% fuel reserve?",
+              "gold": "Space debris avoidance maneuvers and final deorbiting at the end of operational life.",
+              "candidate": "not in context",
+              "correct": false
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Aeronautics and Space / DeepTech / Earth Observation.",
+              "candidate": "The document specifies the **Aeronautics Space / DeepTech Earth Observation** sector.",
+              "correct": true
+            },
+            {
+              "q": "Which industrial group delivers the generic platform (the bus) on March 12, 2027, and from which production site will it come?",
+              "gold": "Thales Alenia Space, from its production site located in Cannes, France.",
+              "candidate": "Thales Alenia Space will deliver the generic satellite bus from their production site in Cannes by March 12, 2027.",
+              "correct": true
+            },
+            {
+              "q": "What is the theoretical optical ground resolution per pixel offered by the LWIR payload?",
+              "gold": "1.2 m per pixel.",
+              "candidate": "The theoretical optical ground resolution per pixel offered by the LWIR payload is **1.2 m** per pixel.",
+              "correct": true
+            },
+            {
+              "q": "What is the date of the priority launch window chosen to send the first batch of 8 satellites of Orbital Plane A?",
+              "gold": "February 14, 2028.",
+              "candidate": "The priority launch date for the first batch of 8 satellites of Orbital Plane A is **February 14, 2028**.",
+              "correct": true
+            },
+            {
+              "q": "Is the infrared spectral band used by the payload of the SWIR (Short-Wave Infrared) type?",
+              "gold": "No, the imager operates specifically in the thermal LWIR (Long-Wave Infrared) band.",
+              "candidate": "No, the payload uses **Long-Wave Infrared (LWIR)**, not SWIR.",
+              "correct": true
+            },
+            {
+              "q": "Which European country initially opposed funding the IRIS-3 program during the civil Space Council vote?",
+              "gold": "not in context",
+              "candidate": "Not in context.",
+              "correct": true
+            },
+            {
+              "q": "From which space center and launch base will the program launch take place?",
+              "gold": "From the Guiana Space Centre located in Kourou.",
+              "candidate": "The launch will take place from the Guiana Space Centre in Kourou.",
+              "correct": true
+            },
+            {
+              "q": "In what exact altitude range is the jet stream speed measured to validate the meteorological cancellation criterion?",
+              "gold": "In the altitude bracket between 10,000 and 15,000 meters.",
+              "candidate": "The jet stream speed is measured at altitudes between **10,000 and 15,000 meters** to validate the meteorological cancellation criterion.",
+              "correct": true
+            }
+          ],
+          "correct": 17,
+          "graded": 20,
+          "accuracy": 0.85
+        },
+        "llmlTerse": {
+          "tokensNet": 485,
+          "qa": [
+            {
+              "q": "What specific type of imaging will the IRIS-3 constellation exploit for Earth observation?",
+              "gold": "Hyperspectral (and thermal infrared) imaging.",
+              "candidate": "The IRIS-3 constellation will exploit **real-time hyperspectral imaging** for Earth observation.",
+              "correct": true
+            },
+            {
+              "q": "What is the exact number of satellites planned in the constellation and how are they distributed?",
+              "gold": "24 operational satellites in total, distributed homogeneously at a rate of 8 satellites across 3 distinct orbital planes.",
+              "candidate": "The constellation consists of 24 identical operational satellites distributed across 3 orbital planes with 8 satellites per plane.",
+              "correct": true
+            },
+            {
+              "q": "What must be the minimum continuous power generated by the gallium arsenide solar panels?",
+              "gold": "180W per satellite during the sunlit phase.",
+              "candidate": "The gallium arsenide solar panels must generate a minimum continuous power of **180 W per satellite** during the sunlit orbital phase.",
+              "correct": true
+            },
+            {
+              "q": "Do the ground segment engineers have the right to use the 15% fuel reserve to correct a bad initial trajectory caused by a Vega-C rocket error?",
+              "gold": "No, it is formally forbidden to use this reserve to correct injection drifts; it is strictly reserved for debris avoidance and end-of-life deorbiting.",
+              "candidate": "Yes, the ground segment flight-control team is authorized to use the 15% reserve to correct initial altitude drift caused by Vega-C orbital-injection inaccuracy.",
+              "correct": false
+            },
+            {
+              "q": "What precise weather conditions measured less than 30 minutes from liftoff trigger the mandatory cancellation of the launch?",
+              "gold": "A high-altitude wind speed greater than 85 km/h (between 10,000 and 15,000 m) or the presence of storm activity within a 25 km radius around the launch pad.",
+              "candidate": "Less than 30 minutes before liftoff, the Flight Operations Director must abort the launch if high-altitude winds exceed 85 km/h between 10,000–15,000 m altitude, or if electrical activity from storm cells is detected by radar within a 25 km radius of the Guianese launch pad.",
+              "correct": true
+            },
+            {
+              "q": "Which consortium partner manufactures the electric propulsion system, where is its production site located, and what is its delivery deadline?",
+              "gold": "It is the company ThrustMe, located in Verrières-le-Buisson in France, with a contractual deadline of September 15, 2027.",
+              "candidate": "ThrustMe, located in Verrières-le (France), manufactures the Electric Propulsion Module with a delivery deadline of 2027-09-15.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Complex engineering program scoping note.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "What is the nominal flight altitude defined for this sun-synchronous orbit?",
+              "gold": "540 km above mean sea level.",
+              "candidate": "The nominal flight altitude defined for this sun-synchronous orbit is **540 km above sea level**.",
+              "correct": true
+            },
+            {
+              "q": "What must be the exact value of the orbital inclination for the IRIS-3 program?",
+              "gold": "97.5°.",
+              "candidate": "The orbital inclination for the IRIS-3 program must be exactly **97.5°** relative to the equatorial plane.",
+              "correct": true
+            },
+            {
+              "q": "Is the ground segment, responsible for guidance and command stations, located in France or Germany?",
+              "gold": "No, it is entrusted to the company Telespazio at the Fucino industrial site located in Italy.",
+              "candidate": "The ground segment/guidance/command stations are operated by Telespazio, located in Fucino, Italy.",
+              "correct": true
+            },
+            {
+              "q": "What chemical substance or solid material serves as propellant for the program's space engines?",
+              "gold": "Iodine (solid iodine sublimation).",
+              "candidate": "The propellant used for the program's space engines is **solid iodine**, which is sublimated in a miniaturized solid-iodine-sublimation propulsion system.",
+              "correct": true
+            },
+            {
+              "q": "What are the only two cases of operational emergency that allow drawing from the permanent 15% fuel reserve?",
+              "gold": "Space debris avoidance maneuvers and final deorbiting at the end of operational life.",
+              "candidate": "not in context",
+              "correct": false
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Aeronautics and Space / DeepTech / Earth Observation.",
+              "candidate": "The sector specified for this document is **European Civil Space Program** infrastructure.",
+              "correct": false
+            },
+            {
+              "q": "Which industrial group delivers the generic platform (the bus) on March 12, 2027, and from which production site will it come?",
+              "gold": "Thales Alenia Space, from its production site located in Cannes, France.",
+              "candidate": "Thales Alenia Space delivers the generic platform (the bus) on March 12, 2027, from their production site in Cannes, France.",
+              "correct": true
+            },
+            {
+              "q": "What is the theoretical optical ground resolution per pixel offered by the LWIR payload?",
+              "gold": "1.2 m per pixel.",
+              "candidate": "The LWIR payload offers a ground optical resolution of 1.2 m/pixel.",
+              "correct": true
+            },
+            {
+              "q": "What is the date of the priority launch window chosen to send the first batch of 8 satellites of Orbital Plane A?",
+              "gold": "February 14, 2028.",
+              "candidate": "The priority launch window for the first batch of 8 satellites of Orbital Plane A is **2028-02-14**.",
+              "correct": true
+            },
+            {
+              "q": "Is the infrared spectral band used by the payload of the SWIR (Short-Wave Infrared) type?",
+              "gold": "No, the imager operates specifically in the thermal LWIR (Long-Wave Infrared) band.",
+              "candidate": "No, the payload uses LWIR (Long-Wave Infrared) bands, not SWIR.",
+              "correct": true
+            },
+            {
+              "q": "Which European country initially opposed funding the IRIS-3 program during the civil Space Council vote?",
+              "gold": "not in context",
+              "candidate": "not in context",
+              "correct": true
+            },
+            {
+              "q": "From which space center and launch base will the program launch take place?",
+              "gold": "From the Guiana Space Centre located in Kourou.",
+              "candidate": "The launch will take place from the Guiana Space Centre, using an Arianespace Vega-C rocket.",
+              "correct": true
+            },
+            {
+              "q": "In what exact altitude range is the jet stream speed measured to validate the meteorological cancellation criterion?",
+              "gold": "In the altitude bracket between 10,000 and 15,000 meters.",
+              "candidate": "The jet stream speed is measured at an altitude range of **10,000–15,000 meters** to validate the meteorological cancellation criterion.",
+              "correct": true
+            }
+          ],
+          "correct": 16,
+          "graded": 20,
+          "accuracy": 0.8
+        }
+      }
+    },
+    {
+      "id": "EN-T23",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "short": {
+          "tokensNet": 576,
+          "qa": [
+            {
+              "q": "What is the unique EudraCT registry number assigned to this Phase III trial?",
+              "gold": "EudraCT-2026-004512-11.",
+              "candidate": "The unique EudraCT registry number assigned to this Phase III trial is **EudraCT-2026-004512-11**.",
+              "correct": true
+            },
+            {
+              "q": "What is the pharmacological class or mechanism of action of the NeuroX-72 molecule?",
+              "gold": "A next-generation enzyme inhibitor.",
+              "candidate": "NeuroX-72 is a next-generation enzyme inhibitor targeting stabilization of synaptic-degradation pathways.",
+              "correct": true
+            },
+            {
+              "q": "What are the required inclusive minimum and maximum score values in the MMSE test for a patient to be included?",
+              "gold": "A score inclusively between 18 and 24.",
+              "candidate": "A patient must have a validated MMSE score of **18** (minimum) to **24** (maximum), inclusive, at preselection.",
+              "correct": true
+            },
+            {
+              "q": "Is a patient whose primary caregiver does not live with them but visits them two hours a day eligible?",
+              "gold": "No, the protocol imposes as a mandatory inclusion criterion the availability of a permanent cohabiting caregiver full-time at the patient's home.",
+              "candidate": "No, this patient is not eligible, as the protocol requires a **permanent/contractual full-time cohabiting** caregiver who lives with them at home.",
+              "correct": true
+            },
+            {
+              "q": "Which international body possesses the exclusive right to trigger the double-blind lifting procedure in case of vital peril?",
+              "gold": "The Independent Data and Safety Monitoring Board (DSMB).",
+              "candidate": "The DSMB (Data Safety Monitoring Board) holds the exclusive right to trigger the immediate randomization-code unblinding in case of immediate life-threatening peril.",
+              "correct": true
+            },
+            {
+              "q": "What is the exact material dosage (dose, frequency, and stomach condition) prescribed for Group A, and for what global duration?",
+              "gold": "A film-coated tablet dosed at 40 mg, once a day in the morning on an empty stomach, for a duration of 48 consecutive weeks.",
+              "candidate": "Group A receives one oral film-coated NeuroX-72 40 mg tablet per day, taken in the morning on an empty stomach, for 48 consecutive uninterrupted weeks.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Standardized clinical trial protocol and medical framework.",
+              "candidate": "The document is a Phase III Clinical Trial Regulatory Compliance Protocol.",
+              "correct": true
+            },
+            {
+              "q": "For the treatment of what precise neurodegenerative pathology is this molecule developed?",
+              "gold": "Alzheimer's disease (at an early to moderate stage).",
+              "candidate": "NeuroX-72 is developed for the treatment of Alzheimer's disease in adults presenting with first symptoms at early-to-moderate stages.",
+              "correct": true
+            },
+            {
+              "q": "How much maximum time does the local investigating physician have to notify a serious adverse event to the Pharmacovigilance Centre?",
+              "gold": "A maximum and inflexible delay of 24 hours.",
+              "candidate": "The local investigator has a maximum of **24 hours** from knowledge of the serious adverse event to draft and teletransmit the regulatory alert to the Global Pharmacovigilance Centre.",
+              "correct": true
+            },
+            {
+              "q": "Can a candidate aged 82 at the time of signing consent join the clinical trial?",
+              "gold": "No, the age must be strictly included between 55 completed years and 80 years. 82 years is outside the upper bound.",
+              "candidate": "No, a candidate aged 82 at the time of signing consent cannot join the trial, as eligibility requires an age between 55 and 80 completed years on the formal informed-consent signature day.",
+              "correct": true
+            },
+            {
+              "q": "What is the statistical allocation ratio applied during the randomization process between the active group and the placebo group?",
+              "gold": "A 1:1 ratio.",
+              "candidate": "The statistical allocation ratio between the active group and the placebo group is 1:1.",
+              "correct": true
+            },
+            {
+              "q": "From what floor value of creatinine clearance does a patient enter the category of severe renal failure leading to exclusion?",
+              "gold": "A creatinine clearance value strictly less than 30 mL/min.",
+              "candidate": "A patient enters the category of severe renal failure leading to exclusion when their creatinine clearance is strictly less than 30 mL/min.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Biotech / Pharmaceutical Research / Health / Clinical Neurology.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "What exclusion criteria link neurology (cardiovascular history) and cardiology (implantable devices)?",
+              "gold": "A history of stroke (ischemic or hemorrhagic) of less than 12 months and the contraindication to MRI such as the presence of a non-compatible cardiac pacemaker.",
+              "candidate": "A history of ischemic or hemorrhagic stroke within the previous 12 months and the presence of a first-generation pacemaker incompatible with intense magnetic fields are both grounds for immediate exclusion.",
+              "correct": true
+            },
+            {
+              "q": "What is the exact physical dosage form under which the active principle NeuroX-72 is administered?",
+              "gold": "In the form of a film-coated tablet.",
+              "candidate": "NeuroX-72 is administered as an oral film-coated tablet of 40 mg, taken once daily.",
+              "correct": true
+            },
+            {
+              "q": "What physical characteristics of the Group B tablet must be strictly identical to those of Group A to preserve the blind?",
+              "gold": "The color, size, texture, and taste of the tablet.",
+              "candidate": "The Group B placebo tablet must be strictly identical to the Group A tablet in color, size, texture, and taste.",
+              "correct": true
+            },
+            {
+              "q": "Is the local investigating physician authorized to break the blind on their own initiative if a patient complains of moderate nausea?",
+              "gold": "No, it is strictly forbidden to break the double-blind secret for events of a minor or moderate nature (like passing nausea).",
+              "candidate": "No, unblinding is strictly forbidden for minor or moderate events such as passing nausea, and can only be triggered by the DSMB in cases of immediate life-threatening peril.",
+              "correct": true
+            },
+            {
+              "q": "Which biotechnology company holds the commercial patent for the NeuroX-72 molecular formula?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "To what central regulatory entity must the safety alert form be transmitted within the allowed timeframe?",
+              "gold": "To the Global Pharmacovigilance Centre.",
+              "candidate": "The safety alert form must be transmitted to the **Global Pharmacovigilance Centre** within a maximum of 24 hours from knowledge of the serious adverse event.",
+              "correct": true
+            },
+            {
+              "q": "For what precise therapeutic or physiological purpose does the molecule target the stabilization of synaptic degradation pathways?",
+              "gold": "In order to slow down in a statistically significant manner the progression of cognitive deficits in patients.",
+              "candidate": "NeuroX-72 targets the stabilization of synaptic degradation pathways for the purpose of achieving a statistically significant slowing of cognitive-deficit progression in adults with first Alzheimer's symptoms, early-to-moderate stages.",
+              "correct": true
+            }
+          ],
+          "correct": 19,
+          "graded": 20,
+          "accuracy": 0.95
+        },
+        "llml": {
+          "tokensNet": 595,
+          "qa": [
+            {
+              "q": "What is the unique EudraCT registry number assigned to this Phase III trial?",
+              "gold": "EudraCT-2026-004512-11.",
+              "candidate": "The unique EudraCT registry number assigned to this Phase III trial is **EudraCT-2026-004512-11**.",
+              "correct": true
+            },
+            {
+              "q": "What is the pharmacological class or mechanism of action of the NeuroX-72 molecule?",
+              "gold": "A next-generation enzyme inhibitor.",
+              "candidate": "NeuroX-72 is a next-generation enzyme inhibitor of synaptic degradation pathways.",
+              "correct": true
+            },
+            {
+              "q": "What are the required inclusive minimum and maximum score values in the MMSE test for a patient to be included?",
+              "gold": "A score inclusively between 18 and 24.",
+              "candidate": "Based on the context, the required MMSE score for inclusion must be between **18 and 24** — however, the minimum value appears incomplete in the document (listed only as \"between and **24**\"), so the exact minimum cannot be fully confirmed from the provided text.",
+              "correct": true
+            },
+            {
+              "q": "Is a patient whose primary caregiver does not live with them but visits them two hours a day eligible?",
+              "gold": "No, the protocol imposes as a mandatory inclusion criterion the availability of a permanent cohabiting caregiver full-time at the patient's home.",
+              "candidate": "No, the patient is not eligible, as the protocol requires a **full-time cohabiting caregiver** who lives permanently with the patient.",
+              "correct": true
+            },
+            {
+              "q": "Which international body possesses the exclusive right to trigger the double-blind lifting procedure in case of vital peril?",
+              "gold": "The Independent Data and Safety Monitoring Board (DSMB).",
+              "candidate": "The Independent Data and Safety Monitoring Board (DSMB) possesses the exclusive right to trigger the unblinding procedure in case of life-threatening peril.",
+              "correct": true
+            },
+            {
+              "q": "What is the exact material dosage (dose, frequency, and stomach condition) prescribed for Group A, and for what global duration?",
+              "gold": "A film-coated tablet dosed at 40 mg, once a day in the morning on an empty stomach, for a duration of 48 consecutive weeks.",
+              "candidate": "Group A patients take **40 mg** of NeuroX-72 **once daily** on an **empty stomach** for **48 consecutive weeks**.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Standardized clinical trial protocol and medical framework.",
+              "candidate": "The document type is a standardized clinical trial protocol medical framework.",
+              "correct": true
+            },
+            {
+              "q": "For the treatment of what precise neurodegenerative pathology is this molecule developed?",
+              "gold": "Alzheimer's disease (at an early to moderate stage).",
+              "candidate": "NeuroX-72 is developed to slow down the progression of cognitive deficits in adult subjects with **Alzheimer's disease** (early to moderate stages).",
+              "correct": true
+            },
+            {
+              "q": "How much maximum time does the local investigating physician have to notify a serious adverse event to the Pharmacovigilance Centre?",
+              "gold": "A maximum and inflexible delay of 24 hours.",
+              "candidate": "The local investigating physician must notify a Serious Adverse Event to the Global Pharmacovigilance Centre within **24 hours** from its observation or report.",
+              "correct": true
+            },
+            {
+              "q": "Can a candidate aged 82 at the time of signing consent join the clinical trial?",
+              "gold": "No, the age must be strictly included between 55 completed years and 80 years. 82 years is outside the upper bound.",
+              "candidate": "No, a candidate aged 82 cannot join the clinical trial, as the mandatory inclusion criterion requires a civil age between [unstated minimum] and **80 years**.",
+              "correct": true
+            },
+            {
+              "q": "What is the statistical allocation ratio applied during the randomization process between the active group and the placebo group?",
+              "gold": "A 1:1 ratio.",
+              "candidate": "The statistical allocation ratio applied during the randomization process between the active group and the placebo group is **1:1**.",
+              "correct": true
+            },
+            {
+              "q": "From what floor value of creatinine clearance does a patient enter the category of severe renal failure leading to exclusion?",
+              "gold": "A creatinine clearance value strictly less than 30 mL/min.",
+              "candidate": "A patient enters the category of severe renal failure leading to exclusion when their creatinine clearance is less than **30 mL/min**.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Biotech / Pharmaceutical Research / Health / Clinical Neurology.",
+              "candidate": "The sector specified for this document is **Biotech / Pharmaceutical Research Health Clinical Neurology**.",
+              "correct": true
+            },
+            {
+              "q": "What exclusion criteria link neurology (cardiovascular history) and cardiology (implantable devices)?",
+              "gold": "A history of stroke (ischemic or hemorrhagic) of less than 12 months and the contraindication to MRI such as the presence of a non-compatible cardiac pacemaker.",
+              "candidate": "Candidates are excluded if they have a proven history of stroke within the 12 months preceding selection or a contraindication to MRI due to a first-generation cardiac pacemaker incompatible with intense magnetic fields.",
+              "correct": true
+            },
+            {
+              "q": "What is the exact physical dosage form under which the active principle NeuroX-72 is administered?",
+              "gold": "In the form of a film-coated tablet.",
+              "candidate": "NeuroX-72 is administered as an oral film-coated tablet dosed at 40 mg.",
+              "correct": true
+            },
+            {
+              "q": "What physical characteristics of the Group B tablet must be strictly identical to those of Group A to preserve the blind?",
+              "gold": "The color, size, texture, and taste of the tablet.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "Is the local investigating physician authorized to break the blind on their own initiative if a patient complains of moderate nausea?",
+              "gold": "No, it is strictly forbidden to break the double-blind secret for events of a minor or moderate nature (like passing nausea).",
+              "candidate": "No, the local investigating physician is **not** authorized to break the blind on their own initiative for moderate nausea, as unblinding is forbidden for minor or moderate adverse events and can only be triggered by the Independent Data Safety Monitoring Board in life-threatening situations.",
+              "correct": true
+            },
+            {
+              "q": "Which biotechnology company holds the commercial patent for the NeuroX-72 molecular formula?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "To what central regulatory entity must the safety alert form be transmitted within the allowed timeframe?",
+              "gold": "To the Global Pharmacovigilance Centre.",
+              "candidate": "The safety alert form must be transmitted to the **Global Pharmacovigilance Centre** within 24 hours.",
+              "correct": true
+            },
+            {
+              "q": "For what precise therapeutic or physiological purpose does the molecule target the stabilization of synaptic degradation pathways?",
+              "gold": "In order to slow down in a statistically significant manner the progression of cognitive deficits in patients.",
+              "candidate": "The molecule targets the stabilization of synaptic degradation pathways to **slow down the progression of cognitive deficits** in adult subjects at the early to moderate stages of Alzheimer's disease.",
+              "correct": true
+            }
+          ],
+          "correct": 19,
+          "graded": 20,
+          "accuracy": 0.95
+        },
+        "llmlTerse": {
+          "tokensNet": 482,
+          "qa": [
+            {
+              "q": "What is the unique EudraCT registry number assigned to this Phase III trial?",
+              "gold": "EudraCT-2026-004512-11.",
+              "candidate": "The unique EudraCT registry number assigned to this Phase III trial is **EudraCT-2026-004512-11**.",
+              "correct": true
+            },
+            {
+              "q": "What is the pharmacological class or mechanism of action of the NeuroX-72 molecule?",
+              "gold": "A next-generation enzyme inhibitor.",
+              "candidate": "NeuroX-72 is a next-generation enzyme inhibitor that works by stabilizing synaptic-degradation pathways to slow cognitive progression.",
+              "correct": true
+            },
+            {
+              "q": "What are the required inclusive minimum and maximum score values in the MMSE test for a patient to be included?",
+              "gold": "A score inclusively between 18 and 24.",
+              "candidate": "A patient must have a validated MMSE score between **18** (minimum) and **24** (maximum) at preselection to be included.",
+              "correct": true
+            },
+            {
+              "q": "Is a patient whose primary caregiver does not live with them but visits them two hours a day eligible?",
+              "gold": "No, the protocol imposes as a mandatory inclusion criterion the availability of a permanent cohabiting caregiver full-time at the patient's home.",
+              "candidate": "No, the patient is not eligible, as the protocol requires a **permanent/contractual full-time cohabiting caregiver** who lives with them to guarantee and supervise daily treatment administration.",
+              "correct": true
+            },
+            {
+              "q": "Which international body possesses the exclusive right to trigger the double-blind lifting procedure in case of vital peril?",
+              "gold": "The Independent Data and Safety Monitoring Board (DSMB).",
+              "candidate": "The DSMB (Independent Data and Safety Monitoring Board) possesses the exclusive right to trigger the immediate randomization-code unblinding in case of life-threatening peril.",
+              "correct": true
+            },
+            {
+              "q": "What is the exact material dosage (dose, frequency, and stomach condition) prescribed for Group A, and for what global duration?",
+              "gold": "A film-coated tablet dosed at 40 mg, once a day in the morning on an empty stomach, for a duration of 48 consecutive weeks.",
+              "candidate": "Group A receives NeuroX-72 40 mg orally, once per day in the morning under fasting conditions, for 48 consecutive weeks.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Standardized clinical trial protocol and medical framework.",
+              "candidate": "The document is a Phase III Clinical Trial Regulatory Compliance Protocol.",
+              "correct": true
+            },
+            {
+              "q": "For the treatment of what precise neurodegenerative pathology is this molecule developed?",
+              "gold": "Alzheimer's disease (at an early to moderate stage).",
+              "candidate": "NeuroX-72 is developed for the treatment of Alzheimer's disease, specifically targeting adults experiencing early-to-moderate stages of cognitive progression.",
+              "correct": true
+            },
+            {
+              "q": "How much maximum time does the local investigating physician have to notify a serious adverse event to the Pharmacovigilance Centre?",
+              "gold": "A maximum and inflexible delay of 24 hours.",
+              "candidate": "The local investigator must transmit the alert to the Global Pharmacovigilance Centre within 24 hours of knowledge of the serious adverse event.",
+              "correct": true
+            },
+            {
+              "q": "Can a candidate aged 82 at the time of signing consent join the clinical trial?",
+              "gold": "No, the age must be strictly included between 55 completed years and 80 years. 82 years is outside the upper bound.",
+              "candidate": "No, a candidate aged 82 cannot join the trial, as the eligibility criteria require participants to be between 55 and 80 years of age.",
+              "correct": true
+            },
+            {
+              "q": "What is the statistical allocation ratio applied during the randomization process between the active group and the placebo group?",
+              "gold": "A 1:1 ratio.",
+              "candidate": "The statistical allocation ratio applied during the randomization process is 1:1 between the active group (Group A) and the placebo group (Group B).",
+              "correct": true
+            },
+            {
+              "q": "From what floor value of creatinine clearance does a patient enter the category of severe renal failure leading to exclusion?",
+              "gold": "A creatinine clearance value strictly less than 30 mL/min.",
+              "candidate": "A patient enters the category of severe renal failure leading to exclusion from a creatinine clearance below 30 mL/min.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Biotech / Pharmaceutical Research / Health / Clinical Neurology.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "What exclusion criteria link neurology (cardiovascular history) and cardiology (implantable devices)?",
+              "gold": "A history of stroke (ischemic or hemorrhagic) of less than 12 months and the contraindication to MRI such as the presence of a non-compatible cardiac pacemaker.",
+              "candidate": "Participants are excluded if they have had a proven ischemic or hemorrhagic stroke in the previous 12 months, or if they have a first-generation pacemaker incompatible with intense magnetic fields.",
+              "correct": true
+            },
+            {
+              "q": "What is the exact physical dosage form under which the active principle NeuroX-72 is administered?",
+              "gold": "In the form of a film-coated tablet.",
+              "candidate": "NeuroX-72 is administered as an oral film-coated tablet of 40 mg, taken once per day.",
+              "correct": true
+            },
+            {
+              "q": "What physical characteristics of the Group B tablet must be strictly identical to those of Group A to preserve the blind?",
+              "gold": "The color, size, texture, and taste of the tablet.",
+              "candidate": "The Group B placebo tablet must be strictly identical to the Group A tablet in **color, size, and texture**.",
+              "correct": false
+            },
+            {
+              "q": "Is the local investigating physician authorized to break the blind on their own initiative if a patient complains of moderate nausea?",
+              "gold": "No, it is strictly forbidden to break the double-blind secret for events of a minor or moderate nature (like passing nausea).",
+              "candidate": "No; unblinding is forbidden for minor or moderate events such as nausea, and can only be triggered by the DSMB in life-threatening situations.",
+              "correct": true
+            },
+            {
+              "q": "Which biotechnology company holds the commercial patent for the NeuroX-72 molecular formula?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "To what central regulatory entity must the safety alert form be transmitted within the allowed timeframe?",
+              "gold": "To the Global Pharmacovigilance Centre.",
+              "candidate": "The safety alert must be transmitted to the **Global Pharmacovigilance Centre** within 24 hours of knowledge of the serious adverse event.",
+              "correct": true
+            },
+            {
+              "q": "For what precise therapeutic or physiological purpose does the molecule target the stabilization of synaptic degradation pathways?",
+              "gold": "In order to slow down in a statistically significant manner the progression of cognitive deficits in patients.",
+              "candidate": "The molecule targets the stabilization of synaptic degradation pathways for the purpose of slowing cognitive progression in adults with early-to-moderate stage Alzheimer's symptoms.",
+              "correct": true
+            }
+          ],
+          "correct": 18,
+          "graded": 20,
+          "accuracy": 0.9
+        }
+      }
+    }
+  ]
+}

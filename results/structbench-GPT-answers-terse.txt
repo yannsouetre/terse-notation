@@ -1,0 +1,218 @@
+=== Q1 ===
+
+* Migrate ClientBase to NovaCRM before ClientBase support ends on 2027-03-31. [EN-T01] 
+* Migration scope fixed: 420 users in France, Belgium, Spain; customer data, open opportunities, three years of activity histories, standard sales dashboards. [EN-T01]
+* Old attachments, marketing campaigns, and data older than three years excluded from migration; retained in a read-only archive for two years. [EN-T01]
+* NovaCRM production launch fixed for 2027-02-15, providing a six-week safety period. [EN-T01]
+* Success criteria fixed: ≥99.5% active accounts correctly migrated; no open opportunity lost; 90% of users trained before launch; opportunity creation/update available from first business day after go-live. [EN-T01]
+* Governance fixed: Claire Renaud sponsor; Malik Ben Amar project manager; one business referent per country. [EN-T01]
+* Decisions involving >€50,000 impact or >2-week delay assigned to steering committee; other trade-offs assigned to project manager after business-referent consultation. [EN-T01]
+* Migration schedule fixed: cleansing 2026-09-30; dry runs 2026-10-20 and 2026-12-08; UAT 2027-01-05 to 2027-01-23; structural freeze from 2027-02-01; cutover after 2027-02-12 18:00; opening 2027-02-15 08:00. [EN-T01]
+* Doubtful duplicate accounts not automatically merged; country business referent decides. [EN-T01]
+* Billing-tool replacement excluded; temporary interface maintained for six months after go-live. [EN-T01]
+* No specific pre-launch functionality except essential regulatory or business-continuity needs; convenience and enhancement requests moved to post-launch backlog. [EN-T01]
+* New North-warehouse physical layout maintained; return to previous organization not retained. [EN-T02]
+* IT to recalculate picking routes, then test with 12 pickers for four hours. [EN-T02]
+* Test ≤20 minutes with no blocking anomaly: activate across warehouse next shift; test >20 minutes: postpone, temporarily restore old route logic, make no physical relocation. [EN-T02]
+* Add 15 temporary workers on Thursday and Friday evenings. [EN-T02]
+* FastRoad to add two rotations Thursday evening and three Friday. [EN-T02]
+* No exceptional Saturday work approved at this stage. [EN-T02]
+* Store communication limited to stores likely to exceed 24-hour delay; no pre-emptive all-store communication. [EN-T02]
+* Urgent opening or critical-stockout priority requests routed through regional managers to Operations before 16:00. [EN-T02]
+* Status checkpoints fixed for Thursday 17:00 and Friday 12:00; target fixed at fewer than 500 pending orders Friday 18:00. [EN-T02]
+
+=== Q2 ===
+
+* “Atlas Weekly Decisions” contains validated decisions only; discussion ideas and undecided proposals remain in meeting notes. [EN-T04]
+* Maximum five agenda topics. [EN-T04]
+* Topic age alone must never cause automatic agenda inclusion. [EN-T04]
+* Each topic must state expected decision-maker, deadline, known options, and consequence of no decision. [EN-T04]
+* Missing information must be marked “to be clarified”; it must not be invented. [EN-T04]
+* Decision valid only if Sophie explicitly confirms it or approved consensus is recorded in her presence. [EN-T04]
+* “This seems to be the best option” is not a valid decision. [EN-T04]
+* Validated decisions must be recorded with date, execution owner, and deadline. [EN-T04]
+* Deadline within 14 days requires a follow-up action. [EN-T04]
+* Old decisions must never be modified retroactively. [EN-T04]
+* Changed decision requires a new entry referencing the previous entry. [EN-T04]
+* MeetingPilot must never send an external message on its own initiative. [EN-T04]
+* Sending requires an explicit human request; drafting alone is allowed. [EN-T04]
+
+=== Q3 ===
+
+* Runbook applies only to normal monthly PayrollFlow payroll-file processing; payroll simulations and individual adjustments are excluded. [EN-T03]
+* On the scheduled day, no `/export/payroll` file at 06:30, file under 10 MB, or automatic check `FAILED` → trigger runbook. [EN-T03]
+* `WARNING` alone → do not trigger runbook; operator consults report and follows its instructions. [EN-T03]
+* Scheduler running under 90 minutes → do not restart; wait for completion. [EN-T03]
+* Scheduler running over 90 minutes → stop it and open a P2 incident. [EN-T03]
+* Scheduler reports `SUCCESS` but file is missing or too small → proceed to input verification. [EN-T03]
+* Any required input file missing → contact owner team and suspend processing. [EN-T03]
+* All required input files present → compare modification dates; previous-day or earlier date is suspicious. [EN-T03]
+* Manual rerun returns `SUCCESS` and file exceeds 10 MB → resume normal payroll. [EN-T03]
+* Manual rerun returns `FAILED` or file remains under 10 MB → open P1 with Payroll Engineering. [EN-T03]
+* P1 opened → inform payroll manager. [EN-T03]
+* No correct generation before 10:00 → payroll manager and HR decide whether to communicate employee delay risk. [EN-T03]
+
+=== Q4a ===
+
+* Old attachments, marketing campaigns, and data older than three years excluded from migration. [EN-T01]
+* Automatic merging of doubtful duplicate accounts rejected. [EN-T01]
+* Billing-tool replacement excluded from scope. [EN-T01]
+* Nonessential specific functionality before launch rejected; convenience and enhancement requests deferred. [EN-T01]
+* Warehouse-management-system breakdown dismissed as main cause; software reported normal. [EN-T02]
+* Return to previous warehouse organization rejected. [EN-T02]
+* Exceptional Saturday work rejected at this stage. [EN-T02]
+* Pre-emptive communication to all stores rejected. [EN-T02]
+* Physical relocation rejected if route test exceeds 20 minutes. [EN-T02]
+* Payroll simulations and individual adjustments excluded from runbook scope. [EN-T03]
+* `WARNING` alone rejected as a runbook trigger. [EN-T03]
+* Restarting a scheduler running under 90 minutes prohibited. [EN-T03]
+* Manual modification of production input files prohibited. [EN-T03]
+* More than one manual rerun prohibited. [EN-T03]
+* Deleting logs or outputs other than the incomplete output prohibited. [EN-T03]
+* Direct all-employee communication prohibited. [EN-T03]
+* Discussion ideas and undecided proposals excluded from “Atlas Weekly Decisions.” [EN-T04]
+* Automatic agenda inclusion based only on age rejected. [EN-T04]
+* Inventing missing information prohibited. [EN-T04]
+* “This seems to be the best option” rejected as proof of a valid decision. [EN-T04]
+* Retroactive modification of an old decision prohibited. [EN-T04]
+* Autonomous external messaging and sending without explicit human request prohibited. [EN-T04]
+
+=== Q4b ===
+
+* Immediate installation of all 42 charging stations rejected. [EN-T05]
+* ARGOS rejected as an autonomous decision system; legal, financial, HR, and security decisions remain human responsibilities. [EN-T06]
+* Personal OneDrive, mailboxes, Teams conversations, and unpublished project folders excluded from V1. [EN-T06]
+* Silent choice between contradictory documents rejected. [EN-T06]
+* Treating an expired higher-ranking document as applicable solely because of rank rejected. [EN-T06]
+* Copying access rights into an independently maintained manual database rejected. [EN-T06]
+* External-model retraining on ARGOS content without data-governance authorization prohibited. [EN-T06]
+* Filling unsupported answers with unverified general knowledge prohibited. [EN-T06]
+* Inventing procedure numbers, dates, responsible people, or internal rules prohibited. [EN-T06]
+* Pretending required human validation occurred prohibited. [EN-T06]
+* Full cleanup of the entire document estate before pilot explicitly rejected as unrealistic. [EN-T06]
+* Real data from out-of-scope personal spaces excluded from testing. [EN-T06]
+* Automatic general go-live after pilot rejected. [EN-T06]
+* V1 automatic business-system actions, source-document modification, contract validation, and HR decisions excluded. [EN-T06]
+* Production reduction rejected as a decarbonization lever. [EN-T07]
+* Immediate final investment validation for furnace heat recovery rejected. [EN-T07]
+* Claim that an S1 electrification investment decision has already been made rejected. [EN-T07]
+* Claim that a G4 replacement technology has already been selected rejected. [EN-T07]
+* Counting utilities electricity savings as direct site CO₂ reduction rejected. [EN-T07]
+* Treating the €18 million envelope as automatic spending authorization rejected. [EN-T07]
+* Recording subsidies as acquired before formal notification prohibited. [EN-T07]
+* Counting carbon certificates toward the site’s direct-reduction objective rejected. [EN-T07]
+* Simple slowness, blue screen, or isolated file corruption alone rejected as ransomware triggers. [EN-T08]
+* User or support “repair” before security evaluation prohibited. [EN-T08]
+* Default power-off, application closure, file deletion, and manual antivirus or cleanup prohibited. [EN-T08]
+* Reconnecting a workstation merely to retrieve missing information prohibited. [EN-T08]
+* Automatic site-wide network shutdown rejected. [EN-T08]
+* Automatic password reset based only on encrypted files rejected. [EN-T08]
+* Personal USB connection prohibited. [EN-T08]
+* Emailing suspicious files prohibited. [EN-T08]
+* Restoration before security authorization prohibited. [EN-T08]
+* Malware cleaning alone rejected as sufficient for production return, absent explicit exception. [EN-T08]
+* Treating the latest backup as automatically clean rejected. [EN-T08]
+* Public ransomware confirmation before security validation prohibited. [EN-T08]
+* Contacting the attacker without explicit crisis-management instruction prohibited. [EN-T08]
+* Ransom-payment decisions by support, SOC, or local administrators prohibited. [EN-T08]
+
+=== Q5 ===
+
+* Doubtful duplicate-account cases remain pending country business-referent decision. [EN-T01]
+* Exceptional Saturday opening remains undecided; Logistics Director decides by Friday 14:00 only if pending orders exceed 800 at Friday 12:00. [EN-T02]
+* Employee delay-risk communication remains a payroll-manager/HR decision if no correct generation exists before 10:00. [EN-T03]
+* Renewal scenario remains formally pending before 09-15; option C is only the recommendation. [EN-T05]
+* Installation of the remaining 13 charging stations deferred until reinforcement of constrained sites. [EN-T05]
+* Possible early replacement of the 18 hybrids deferred to a conditional study during the 2028 fourth-quarter review. [EN-T05]
+* General ARGOS rollout decision deferred to 2027-06: rollout, extend pilot, or suspend project. [EN-T06]
+* Later agent functions—workflow preparation, draft creation, reversible operations—left for a future phase and separate security scoping. [EN-T06]
+* Final furnace heat-recovery investment approval deferred until firm offers are available. [EN-T07]
+* S1-only electrification is only a validated working assumption; investment decision remains open. [EN-T07]
+* Later S2 electrification remains open through a preserved design option. [EN-T07]
+* G4 boiler-replacement technology remains undecided. [EN-T07]
+* Biomass feasibility and operational analysis remains pending. [EN-T07]
+* Biomass-availability risk classification remains pending qualification. [EN-T07]
+* At least two additional direct-CO₂ reduction levers remain to be identified. [EN-T07]
+* Single-workstation ransomware suspicion without confirmation remains P2 pending SOC qualification. [EN-T08]
+* Need for memory or disk acquisition remains for the security team to decide. [EN-T08]
+* Unresolved formal-source priority conflicts remain pending human validation. [EN-T09]
+* React suitability remains an open question. [EN-T11]
+* Hosting platform remains open: Vercel or another free/low-cost platform; user requests advice. [EN-T11]
+* Google Drive streaming versus YouTube hosting remains open; user requests advice. [EN-T12]
+* Mutual exclusion between video and song playback remains optional. [EN-T12]
+* Billing interface and associated table design remain to be defined. [EN-T13]
+* Calendar and invoice table structures remain to be designed. [EN-T13]
+* Later migration to a more robust environment remains to be defined. [EN-T13]
+* Accounting resolution of `TR-88491-X` remains pending Treasury Level 2 human processing and authentication token `AUTH_HUMAN_OVR`. [EN-T17]
+* Social management and retraining of 210 Carling employees deferred to the extraordinary CSE meeting on 2026-06-04. [EN-T19]
+* Hydrogen-export pipeline extension to Germany deferred to 2027 Q1. [EN-T19]
+* Definitive seizure or liquidation of the blocked assets remains reserved for Human Compliance Direction decision. [EN-T21]
+
+=== Q6 ===
+
+* Complete data cleansing by 2026-09-30. [EN-T01]
+* Perform dry-run migration #1 on 2026-10-20. [EN-T01]
+* Perform dry-run migration #2 on 2026-12-08. [EN-T01]
+* Conduct UAT from 2027-01-05 through 2027-01-23. [EN-T01]
+* Train 90% of users before the 2027-02-15 launch. [EN-T01]
+* Start ClientBase structural-change freeze on 2027-02-01. [EN-T01]
+* Stop ClientBase opportunity creation/modification on 2027-02-12 at 18:00. [EN-T01]
+* Perform final migration after 2027-02-12 at 18:00. [EN-T01]
+* Open NovaCRM on 2027-02-15 at 08:00. [EN-T01]
+* Complete migration before ClientBase support ends on 2027-03-31. [EN-T01]
+* Maintain temporary billing interface for six months after go-live. [EN-T01]
+* IT: recalculate routes before Thursday 14:00. [EN-T02]
+* Run route test with 12 pickers for four hours. [EN-T02]
+* If test passes, activate all warehouse routes on the next shift. [EN-T02]
+* Deploy 15 temporary workers Thursday and Friday evenings. [EN-T02]
+* FastRoad: add two rotations Thursday evening and three Friday. [EN-T02]
+* Regional managers: send urgent-opening or critical-stockout priority requests to Operations before 16:00. [EN-T02]
+* Issue status updates Thursday 17:00 and Friday 12:00. [EN-T02]
+* Reduce pending orders below 500 by Friday 18:00. [EN-T02]
+* If pending orders exceed 800 Friday 12:00, Logistics Director decides on Saturday opening by 14:00. [EN-T02]
+* Check for the scheduled payroll export at 06:30 on processing day. [EN-T03]
+* Scheduler running over 90 minutes: stop and open P2; under 90 minutes: wait. [EN-T03]
+* If no correct generation exists before 10:00, payroll manager and HR decide employee delay-risk communication. [EN-T03]
+
+=== Q7 ===
+
+* Maximum one manual rerun. [EN-T03]
+
+=== Q8 ===
+
+* Do not apply the runbook to payroll simulations or individual adjustments. [EN-T03]
+* Do not trigger the runbook on `WARNING` alone. [EN-T03]
+* Never restart the scheduler while it has been running for under 90 minutes. [EN-T03]
+* Never manually modify production input files. [EN-T03]
+* Never perform more than one manual rerun. [EN-T03]
+* Never delete anything except the incomplete output; never delete logs. [EN-T03]
+* Never send direct all-employee information from the runbook process. [EN-T03]
+* Never leave a manual action unrecorded in the incident ticket. [EN-T03]
+* Never place discussion ideas or undecided proposals in “Atlas Weekly Decisions.” [EN-T04]
+* Never include more than five agenda topics. [EN-T04]
+* Never auto-add a topic based solely on age. [EN-T04]
+* Never invent missing decision information. [EN-T04]
+* Never treat a statement such as “this seems to be the best option” as a valid decision. [EN-T04]
+* Never validate a decision without Sophie’s explicit confirmation or approved consensus in her presence. [EN-T04]
+* Never retroactively modify an old decision. [EN-T04]
+* Never send an external message on MeetingPilot’s own initiative. [EN-T04]
+* Never send a drafted message without an explicit human request. [EN-T04]
+
+=== Q9 ===
+
+* EN-T01
+* EN-T02
+* EN-T03
+* EN-T04
+* EN-T05
+* EN-T06
+* EN-T07
+* EN-T08
+* EN-T09
+* EN-T10
+
+=== Q10 ===
+
+* 2027-02-01 — ClientBase structural-change freeze begins. [EN-T01]
+* 2027-02-12 — Opportunity creation/modification ends at 18:00; final migration starts afterward. [EN-T01]
+* 2027-02-15 — NovaCRM production milestone; system opens at 08:00. [EN-T01]

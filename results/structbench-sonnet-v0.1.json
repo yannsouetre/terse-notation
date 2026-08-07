@@ -1,0 +1,329 @@
+{
+ "tool": "structbench v0.1",
+ "model": "claude-sonnet-4-6",
+ "date": "2026-08-01T13:54:57.072Z",
+ "contexts": {
+  "prose": {
+   "inputTokens": 25965
+  },
+  "short": {
+   "inputTokens": 18415
+  },
+  "terse": {
+   "inputTokens": 18809
+  }
+ },
+ "queries": [
+  {
+   "id": "Q1",
+   "q": "List every settled decision recorded in documents EN-T01 to EN-T05. A settled decision is a choice the document states as already made or validated — not a recommendation, not a pending option. Cite the document id for each.",
+   "gold": 9,
+   "formats": {
+    "prose": {
+     "outputTokens": 552,
+     "found": 8,
+     "missing": [
+      "IT recalculates picking routes before Thursday 14:00 and tests with 12 pickers for four hours",
+      "conditional activation: if test avg <=20 min with no blocking anomaly activate new routes else postpone and retain old logic"
+     ],
+     "extra": 8,
+     "answer": "Here are the settled decisions recorded in EN-T01 through EN-T05:\n\n**EN-T01**\n- Management decided to migrate to NovaCRM before the end-of-support deadline.\n- The go-live target is set for February 15, 2027.\n- Old attachments, marketing campaigns, and data older than three years will not be migrated; they will remain accessible in read-only archive for two years.\n- The structural freeze in ClientBase begins February 1, 2027.\n- No specific functionality will be developed before launch unless essential for a regulatory requirement or business continuity.\n\n**EN-T02**\n- The new physical layout of products is maintained; no return to the previous organization.\n- An additional team of fifteen temporary workers will work Thursday and Friday evenings to clear the backlog.\n- FastRoad will add two rotations Thursday evening and three on Friday.\n- Customer service will only contact stores whose delivery is likely delayed by more than 24 hours (no preemptive mass contact).\n- Logistics management will publish status updates Thursday at 5:00 PM and Friday at noon.\n\n**EN-T03**\n- Only one manual rerun is authorized (Step 3).\n- The incomplete output file must be deleted before the rerun, but logs must not be deleted.\n- The payroll manager must be informed as soon as a P1 incident is opened.\n- Employees must not be directly informed by the operator.\n\n**EN-T04**\n- A decision is only considered validated if Sophie explicitly confirms it or if the minutes record consensus in her presence.\n- Validated decisions are recorded in \"Atlas Weekly Decisions\"; undecided proposals remain in the notes.\n- Old decisions must never be retroactively modified; a new entry referencing the previous one must be added instead.\n- MeetingPilot never sends an external message on its own initiative; a human must explicitly request sending.\n\n**EN-T05**\n- Option C (mixed fleet: 42 electric + 18 plug-in hybrids) is recommended — however, the document frames this as a recommendation, not a confirmed validated decision; **no explicit validation by a decision-making body is recorded in the document**.\n- The decision deadline is set at September 15.\n- A first wave of 29 charging stations will be deployed before March 2027; the remaining 13 after site reinforcement.\n- A review must be organized in Q4 2028."
+    },
+    "short": {
+     "outputTokens": 286,
+     "found": 3,
+     "missing": [
+      "[EN-T01] migration deadline linked to 6-week safety period framing",
+      "[EN-T02] IT recalculates picking routes before Thursday 14:00 and tests with 12 pickers for four hours",
+      "[EN-T02] activate new routes if avg <=20 min with no blocking anomaly, else postpone and retain old logic",
+      "[EN-T02] deploy 15 temporary workers Thursday and Friday evenings",
+      "[EN-T02] FastRoad adds two rotations Thursday evening and three Friday",
+      "[EN-T02] customer service contacts only stores delayed >24 hours, not all stores preemptively",
+      "[EN-T02] logistics management publishes status updates Thursday 17:00 and Friday noon"
+     ],
+     "extra": 4,
+     "answer": "Here are the settled decisions recorded in EN-T01 through EN-T05:\n\n**EN-T01**\n- Migration from ClientBase to NovaCRM decided (before 2027-03-31 support end).\n- NovaCRM production go-live set for 2027-02-15.\n- Read-only archive of old data maintained for 2 years post-migration.\n- Exclusions decided: old attachments, marketing campaigns, and data older than 3 years will not be migrated.\n\n**EN-T02**\n- New physical warehouse layout maintained (return to previous organization rejected).\n\n**EN-T03**\n- No settled decisions recorded; the document is a procedural runbook specifying conditional actions and constraints, not a record of choices already made.\n\n**EN-T04**\n- No settled decisions recorded; the document defines operating rules for the MeetingPilot agent, not past choices.\n\n**EN-T05**\n- Option C (mixed fleet: 42 electric + 18 plug-in hybrids) chosen as the fleet renewal scenario.\n- Wave 1 of 29 charging stations to be installed before 2027-03 decided.\n- Hybrids assigned priority for long-distance rounds."
+    },
+    "terse": {
+     "outputTokens": 788,
+     "found": null,
+     "missing": [],
+     "extra": null,
+     "answer": "Here are the settled decisions recorded in EN-T01 through EN-T05:\n\n**EN-T01**\n- Migration from ClientBase to NovaCRM is confirmed and required before the 2027-03-31 support-end deadline.\n- NovaCRM production go-live target is set at 2027-02-15 (six-week safety margin).\n- Old attachments, marketing campaigns, and data older than three years will not be migrated (read-only archive for two years instead).\n- In case of doubt on duplicate customer accounts, no automatic merge will be performed; the decision falls to the country business referent.\n- No new specific functionality will be added before launch, except essential regulatory requirements or business-continuity needs; convenience/enhancement requests go to the post-launch backlog.\n- A ClientBase structural-change freeze is set from 2027-02-01; opportunity creation/modification allowed only until 2027-02-12 at 18:00.\n- The temporary billing-tool interface will be maintained for six months after go-live (replacement is out of scope).\n\n**EN-T02**\n- The new physical warehouse layout is maintained; return to the previous organization is ruled out.\n- IT will recalculate picking routes before Thursday 14:00.\n- A test with 12 pickers over 4 hours will be conducted; if average picking ≤20 min and no blocking anomaly, the full warehouse activates on the next shift.\n- Fifteen temporary workers will be added Thursday and Friday evenings.\n- Extra Saturday work is ruled out at this stage.\n- FastRoad will add two extra rotations Thursday evening and three on Friday.\n- Proactive contact with all stores is ruled out; only stores likely facing more than 24 hours of delay will be contacted.\n\n**EN-T03**\n- The procedure applies exclusively to monthly payroll-file failures in PayrollFlow; payroll simulations and individual adjustments are out of scope.\n- A maximum of one manual rerun is permitted.\n- Input files must never be manually modified in production.\n- Every manual action must be logged in the incident ticket.\n- Direct all-employee communication is prohibited; only the payroll manager and HR decide on any employee delay-risk communication if no correct file is generated before 10:00.\n\n**EN-T04**\n- MeetingPilot's reference document is \"Atlas Weekly Decisions,\" containing validated decisions only; discussion ideas remain in meeting notes and are not added to the reference.\n- A decision is valid only if Sophie Delmas explicitly confirms it or the minutes record consensus approved in her presence.\n- Validated decisions are recorded with date, execution owner, and deadline; undecided proposals stay as notes.\n- MeetingPilot will never send an external message on its own initiative (drafts allowed; sending requires explicit human request).\n- MeetingPilot will never retroactively modify an old decision; changes result in a new entry referencing the previous one.\n- Age of a topic alone never automatically adds it to the agenda.\n\n**EN-T05**\n- Option C (42 electric + 18 plug-in hybrids) is the chosen renewal scenario.\n- The 18 plug-in hybrids are prioritized for long rounds.\n- Charging-station installation will proceed in two waves: 29 before 2027-03, remaining 13 after electrical reinforcement of the constrained sites.\n- A review is scheduled for Q4 2028."
+    }
+   }
+  },
+  {
+   "id": "Q2",
+   "q": "List all hard constraints and prohibitions stated in document EN-T04.",
+   "gold": 12,
+   "formats": {
+    "prose": {
+     "outputTokens": 219,
+     "found": null,
+     "missing": [],
+     "extra": null,
+     "answer": "Here are all hard constraints and prohibitions stated in EN-T04:\n\n1. A topic must never be automatically added solely because it is old. [EN-T04]\n2. Missing information must never be invented — write \"to be clarified\" instead. [EN-T04]\n3. A decision is only validated if Sophie explicitly confirms it or if the minutes indicate approval by consensus in her presence; a phrase like \"this seems to be the best option\" is not sufficient. [EN-T04]\n4. Undecided proposals must never be added to the \"Atlas Weekly Decisions\" page; they must remain in the notes. [EN-T04]\n5. Old decisions must never be retroactively modified; if a decision changes, a new entry referencing the previous one must be added. [EN-T04]\n6. MeetingPilot must never send an external message to the committee on its own initiative; a human must explicitly request sending. [EN-T04]"
+    },
+    "short": {
+     "outputTokens": 227,
+     "found": null,
+     "missing": [],
+     "extra": null,
+     "answer": "Here are all hard constraints and prohibitions stated in EN-T04:\n\n1. Discussion ideas stay in meeting notes only — they are not added to the \"Atlas Weekly Decisions\" reference. (EN-T04)\n2. Age of a topic alone never auto-adds it to the agenda. (EN-T04)\n3. Missing information must be marked \"to be clarified\" — MeetingPilot must not invent any detail. (EN-T04)\n4. A decision is valid only if Sophie explicitly confirms it or the minutes record consensus approved in her presence; \"this seems to be the best option\" does not count as a valid decision. (EN-T04)\n5. Old decisions must never be retroactively modified; if a decision changes, a new entry referencing the previous one must be created. (EN-T04)\n6. MeetingPilot must never send an external message on its own initiative; drafting is allowed, but sending requires an explicit human request. (EN-T04)"
+    },
+    "terse": {
+     "outputTokens": 235,
+     "found": null,
+     "missing": [],
+     "extra": null,
+     "answer": "Here are all hard constraints and prohibitions stated in EN-T04:\n\n1. Discussion ideas from meetings stay in meeting notes only — they must not be added to the \"Atlas Weekly Decisions\" reference. (EN-T04)\n2. Age of a topic alone never automatically adds it to the agenda. (EN-T04)\n3. If information is missing, write \"to be clarified\" — do not invent it. (EN-T04)\n4. A statement like \"this seems to be the best option\" does not constitute a valid decision. (EN-T04)\n5. A decision is valid only if Sophie explicitly confirms it, or the minutes record consensus approved in her presence. (EN-T04)\n6. Old decisions must never be retroactively modified — if a decision changes, a new entry referencing the previous one must be created. (EN-T04)\n7. MeetingPilot must never send an external message on its own initiative — drafts are allowed, but sending requires an explicit human request. (EN-T04)"
+    }
+   }
+  },
+  {
+   "id": "Q3",
+   "q": "List every conditional rule (a trigger and its consequence) in document EN-T03, including the rules that define when the runbook itself applies.",
+   "gold": 17,
+   "formats": {
+    "prose": {
+     "outputTokens": 485,
+     "found": 17,
+     "missing": [],
+     "extra": 1,
+     "answer": "Here are all the conditional rules in EN-T03:\n\n**Triggering conditions (when the runbook applies):**\n- If no file is present in `/export/payroll` at 6:30 AM on the scheduled day → execute the runbook. [EN-T03]\n- If the file exists but is smaller than 10 MB → execute the runbook. [EN-T03]\n- If the automatic check shows status `FAILED` → execute the runbook. [EN-T03]\n- If the status is `WARNING` → do not trigger the incident procedure; consult the control report and follow its instructions instead. [EN-T03]\n\n**Step 1 — Verification:**\n- If the `PAY_MONTHLY_EXPORT` job has been running for less than 90 minutes → do not restart it; wait. [EN-T03]\n- If the job has been running for more than 90 minutes → stop it and open a P2 priority incident. [EN-T03]\n- If the job finished with SUCCESS but the file is missing or too small → go directly to Step 2. [EN-T03]\n\n**Step 2 — Input Control:**\n- If a source file is missing → contact the owning team and suspend processing. [EN-T03]\n- If all three files are present but one is dated from the previous day or earlier → consider it suspicious. [EN-T03]\n\n**Step 3 — Rerun:**\n- If after the rerun the status becomes SUCCESS and the file exceeds 10 MB → continue the normal payroll process. [EN-T03]\n- If after the rerun the status remains FAILED, or the file remains under 10 MB → escalate to P1 with the Payroll Engineering team. [EN-T03]\n\n**Step 4 — Communication:**\n- If a P1 incident is opened → inform the payroll manager immediately. [EN-T03]\n- If correct generation is not achieved before 10:00 AM → the payroll manager decides with HR whether to inform employees of a risk of delay. [EN-T03]"
+    },
+    "short": {
+     "outputTokens": 410,
+     "found": 16,
+     "missing": [
+      "[EN-T03] before a rerun => delete only the incomplete output file, never the logs",
+      "[EN-T03] after the rerun => wait for the automatic check",
+      "[EN-T03] any manual action performed => log it in the incident ticket",
+      "[EN-T03] processing is a simulation or an individual adjustment => this runbook does not apply"
+     ],
+     "extra": 0,
+     "answer": "Here are all the conditional rules from EN-T03:\n\n1. If no `/export/payroll` file by 06:30, or file is less than 10 MB, or auto check returns `FAILED` → trigger the runbook. (EN-T03)\n\n2. If auto check returns `WARNING` alone → do not trigger; operator consults report and follows instructions. (EN-T03)\n\n3. If scheduler `PAY_MONTHLY_EXPORT` is running and has been running less than 90 min → do not restart; wait for completion or until 90 min elapsed. (EN-T03)\n\n4. If scheduler is running more than 90 min → stop it and open a P2 incident. (EN-T03)\n\n5. If scheduler status is `SUCCESS` but file is missing or too small → proceed to step 2 (input verification). (EN-T03)\n\n6. If any input file (`employees.csv`, `variables.csv`, `absences.csv`) is missing → contact the owner team and suspend processing. (EN-T03)\n\n7. If all input files are present but modification date is from the previous day or earlier → treat as suspicious. (EN-T03)\n\n8. If rerun completes with `SUCCESS` and file is more than 10 MB → resume normal payroll processing. (EN-T03)\n\n9. If rerun results in `FAILED` or file remains less than 10 MB → escalate to P1 with Payroll Engineering. (EN-T03)\n\n10. If a P1 is opened → inform the payroll manager immediately. (EN-T03)\n\n11. If no correct file is generated before 10:00 → payroll manager and HR decide together on employee delay-risk communication. (EN-T03)"
+    },
+    "terse": {
+     "outputTokens": 481,
+     "found": 16,
+     "missing": [
+      "[EN-T03] processing is a simulation or an individual adjustment => this runbook does not apply",
+      "[EN-T03] before a rerun => delete only the incomplete output file, never the logs",
+      "[EN-T03] after the rerun => wait for the automatic check",
+      "[EN-T03] any manual action performed => log it in the incident ticket"
+     ],
+     "extra": 1,
+     "answer": "Here are all the conditional rules from EN-T03:\n\n1. No `/export/payroll` file at 06:30 on scheduled day → trigger the runbook. [EN-T03]\n\n2. File present but <10 MB at 06:30 on scheduled day → trigger the runbook. [EN-T03]\n\n3. Auto check returns `FAILED` at 06:30 on scheduled day → trigger the runbook. [EN-T03]\n\n4. Auto check returns `WARNING` alone → do NOT trigger; operator consults report and follows its instructions. [EN-T03]\n\n5. Scheduler `PAY_MONTHLY_EXPORT` is running and has been running <90 min → do not restart; wait for completion. [EN-T03]\n\n6. Scheduler `PAY_MONTHLY_EXPORT` is running and has been running >90 min → stop it and open a P2 incident. [EN-T03]\n\n7. Auto check returns `SUCCESS` but file is missing or too small → proceed to step 2 (input verification). [EN-T03]\n\n8. Any input file (`employees.csv`, `variables.csv`, `absences.csv`) is missing → contact the owner team and suspend the process. [EN-T03]\n\n9. All input files are present but modification date is from the previous day or earlier → treat as suspicious. [EN-T03]\n\n10. All input files are present → compare modification dates (step 2 complete; proceed to rerun). [EN-T03]\n\n11. After manual rerun, auto check returns `SUCCESS` and file is >10 MB → normal payroll processing. [EN-T03]\n\n12. After manual rerun, auto check returns `FAILED` or file is <10 MB → open a P1 with Payroll Engineering. [EN-T03]\n\n13. P1 is opened → inform the payroll manager. [EN-T03]\n\n14. No correct file generated before 10:00 → payroll manager and HR decide together on employee delay-risk communication. [EN-T03]"
+    }
+   }
+  },
+  {
+   "id": "Q4",
+   "q": "List everything documents EN-T01 to EN-T08 explicitly reject: options ruled out, hypotheses dismissed, items excluded from scope, actions declared unacceptable, or choices explicitly not retained. Cite the document id for each.",
+   "gold": 24,
+   "formats": {
+    "prose": {
+     "outputTokens": 1000,
+     "found": null,
+     "missing": [],
+     "extra": null,
+     "answer": "Here is everything explicitly rejected, ruled out, excluded, or declared unacceptable across documents EN-T01 through EN-T08:\n\n**EN-T01 — CRM Migration**\n- Old attachments, marketing campaigns, and data older than three years will not be migrated.\n- No specific functionality to be developed before launch unless essential for regulatory or business continuity reasons; convenience and enhancement requests are excluded from the launch scope.\n\n**EN-T02 — North Warehouse Incident**\n- Returning to the previous physical product layout is not planned.\n- No additional work is planned for Saturday at this stage.\n- Customer service must not contact all stores preemptively.\n\n**EN-T03 — Payroll Runbook**\n- A WARNING status does not by itself trigger the incident procedure.\n- Source files must never be manually modified in production.\n- If a file is missing, processing must be suspended (not continued).\n- Logs must not be deleted before a rerun.\n- Only one manual rerun is authorized (no second attempt after failure).\n- Employees must not be directly informed by the operator.\n\n**EN-T04 — MeetingPilot Agent**\n- Ideas still under discussion must not be added to the \"Atlas Weekly Decisions\" reference page.\n- A topic must never be automatically added solely because it is old.\n- Missing information must not be invented; it must be marked \"to be clarified.\"\n- A phrase like \"this seems to be the best option\" is not sufficient to record a validated decision.\n- Old decisions must never be retroactively modified.\n- External messages must never be sent on the agent's own initiative without explicit human request.\n\n**EN-T05 — Vehicle Fleet Renewal**\n- Option A (identical diesel renewal) is not retained: it fails to meet the emissions trajectory and exposes the company to urban traffic restriction risks.\n- Option B (full electric) is not retained: 18 vehicles regularly exceed 280 km in areas with insufficient fast-charging, and immediate installation of 42 charging stations would be required including at three sites lacking sufficient electrical power.\n\n**EN-T06 — ARGOS Project**\n- Personal OneDrive spaces, mailboxes, Teams conversations, and unpublished project folders are out of scope for version 1.\n- ARGOS must not silently choose between contradictory documents; it must signal the contradiction.\n- An expired group policy must not be presented as applicable simply because it ranks higher in the document hierarchy.\n- ARGOS must not fill in responses with unverified general knowledge when sources are insufficient.\n- ARGOS must never invent a procedure number, date, responsible person, or internal rule.\n- ARGOS must not pretend that human validation has taken place when it has not.\n- ARGOS V1 will not perform automatic actions in business systems, will not modify source documents, will not validate contracts, and will not make HR decisions.\n- User rights must not be copied into an independent, manually maintained database.\n- Content from ARGOS must not be used to retrain an external model without explicit authorization from the data governance committee.\n- Full text of user questions will not be retained beyond 30 days by default.\n- General rollout will not be automatic at the end of the pilot.\n- A confirmed exposure of an unauthorized document is not acceptable (zero tolerance).\n- The adoption rate will not constitute a blocking criterion for moving to general production.\n\n**EN-T07 — HORIZON Decarbonization Program**\n- Production reduction is not an acceptable lever to achieve the CO₂ reduction objective.\n- The final investment for workstream A is not yet validated (only calls for tenders are launched).\n- Full electrification of both drying lines S1 and S2 is not pursued; only S1 is retained as a working assumption.\n- No boiler technology is selected for workstream C at this stage.\n- The 6% electrical consumption reduction from workstream D must not be counted as a direct CO₂ reduction when the electricity consumed does not fall within the scope of direct emissions.\n- The 18-million-euro envelope does not constitute automatic spending authorization.\n- Potential subsidies must not be recorded as acquired until formal notification is received.\n- Purchase of carbon certificates will not be counted toward the site's direct reduction objective.\n- An unplanned global network shutdown of a site is never automatic (requires a decision from the security manager or cyber crisis director — this rule appears in EN-T08, see"
+    },
+    "short": {
+     "outputTokens": 1000,
+     "found": null,
+     "missing": [],
+     "extra": null,
+     "answer": "Here is everything explicitly rejected, excluded, dismissed, or declared unacceptable across EN-T01 to EN-T08:\n\n**EN-T01**\n- Old attachments not migrated.\n- Marketing campaigns not migrated.\n- Data more than 3 years old not migrated.\n- No automatic merge if doubt on duplicate; decision deferred to country business referent.\n- No specific new functionality before launch, except essential regulatory requirement or business continuity; convenience or enhancement requests go to post-launch backlog.\n- Billing-tool interface replacement is out of scope.\n\n**EN-T02**\n- Return to previous physical warehouse organization rejected.\n- Extra Saturday work excluded at this stage.\n- No preemptive contact to all stores.\n\n**EN-T03**\n- `WARNING` status alone does not trigger the procedure.\n- Simple slowness, blue screen, or isolated file corruption alone do not trigger the ransomware procedure *(note: this rule appears in EN-T08; EN-T03 has its own exclusions below)*.\n- Payroll simulations and individual adjustments are excluded from scope.\n- Input files must never be manually modified in production.\n- Maximum one manual rerun; a second is not permitted.\n- No direct all-employee information about the failure.\n\n**EN-T04**\n- Discussion ideas from meeting notes are not added to the \"Atlas Weekly Decisions\" reference; only validated decisions are.\n- \"This seems to be the best option\" does not constitute a valid decision.\n- Topic age alone never automatically adds a topic to the agenda.\n- MeetingPilot must never send external messages on its own initiative; sending requires explicit human request.\n- Old decisions must never be retroactively modified; a new entry is created instead.\n- Missing information must not be invented (\"to be clarified\" is used instead).\n\n**EN-T05**\n- Option A (identical diesel fleet) not retained: does not meet internal emissions-reduction trajectory and risks increasing traffic restrictions.\n- Option B (full electric fleet) not retained: 18 vehicles regularly exceed 280 km where fast charging is insufficient, and immediate installation of all 42 charging stations is not possible.\n- The remaining 13 charging stations are not all installed immediately; they follow site electrical reinforcement.\n\n**EN-T06**\n- Personal OneDrive, mailboxes, Teams conversations, and unpublished project folders are excluded from V1 scope.\n- ARGOS is not an autonomous decision system; legal, financial, HR, and security decisions remain human responsibility.\n- Contradictory documents must not be silently resolved by plausibility choice; contradiction must be signaled.\n- Expired documents must not be presented as applicable solely because of higher hierarchical rank.\n- Access rights must never be copied into an independent manually maintained database; they must be queried from source repositories.\n- ARGOS content must not be used for external model retraining without explicit data-governance-committee authorization.\n- Responses must not be filled with unverified general knowledge when documentary support is insufficient.\n- Procedure numbers, dates, responsible persons, or internal rules must never be invented.\n- Human-validation-required actions must never be presented as already validated.\n- A full document-estate cleanup before the pilot is explicitly declared unrealistic and not the objective.\n- V1 automatic actions in business systems, source-document modification, contract validation, and HR decisions are out of scope.\n- General go-live is not automatic after the pilot.\n\n**EN-T07**\n- Production reduction is excluded as a lever for CO₂ reduction.\n- Final investment validation for workstream A (heat recovery) is not made at this stage; it awaits firm offers.\n- An investment decision for workstream B (drying-line electrification) has not been made.\n- A technology has not been selected for workstream C (gas boiler replacement).\n- Carbon certificates must not be counted toward the site's direct CO₂ reduction objective.\n- Subsidies must not be recorded as acquired before formal notification.\n- Utilities electricity gains (workstream D) must not be counted as direct CO₂ reductions when electricity is outside the site's direct-emission scope.\n\n**EN-T08**\n- Simple slowness, blue screen, or isolated file corruption alone do not trigger the ransomware procedure.\n- The workstation must not be powered off, applications closed, files deleted, or manual antivirus/cleanup launched (default).\n-"
+    },
+    "terse": {
+     "outputTokens": 1000,
+     "found": null,
+     "missing": [],
+     "extra": null,
+     "answer": "Here is everything explicitly rejected across documents EN-T01 to EN-T08:\n\n**EN-T01**\n- Old attachments not migrated\n- Marketing campaigns not migrated\n- Data older than 3 years not migrated\n- Automatic merging of probable duplicate accounts (doubt => no automatic merge)\n- Billing-tool interface replacement (out of scope)\n- New specific functionalities before launch, except essential regulatory requirement or business continuity\n- Convenience/enhancement requests before launch\n\n**EN-T02**\n- Return to previous warehouse organization\n- Preemptive contact with all stores\n- Extra Saturday work at this stage\n\n**EN-T03**\n- Restarting the scheduler if it has been running less than 90 minutes\n- Manually modifying input files in production\n- More than one manual rerun\n- Directly informing all employees of the payroll issue\n\n**EN-T04**\n- Discussion ideas from meeting notes added to the reference (\"Atlas Weekly Decisions\")\n- Treating \"this seems to be the best option\" as a valid decision\n- Adding a topic to the agenda based on age alone\n- Inventing missing information (must write \"to be clarified\")\n- Retroactively modifying old decisions\n- Sending external messages on the agent's own initiative (draft allowed, sending requires explicit human request)\n\n**EN-T05**\n- Option A (identical diesel): not retained because it does not meet the internal emissions-reduction trajectory\n- Option B (full electric): not retained due to 18 vehicles regularly exceeding 280 km and insufficient electrical power at 3 sites\n- Installing all 42 charging stations immediately (wave 1 / wave 2 sequencing required)\n\n**EN-T06**\n- ARGOS acting as an autonomous decision system\n- Legal, financial, HR, and security decisions being made by ARGOS (remain human responsibility)\n- Indexing personal OneDrive, mailboxes, Teams conversations, unpublished project folders (out of scope for V1)\n- Copying access rights into an independent manually maintained database\n- Silently choosing between contradictory documents without signaling the contradiction\n- Presenting an expired group policy as applicable solely because of its higher hierarchical rank\n- Inventing procedure numbers, dates, responsible persons, or internal rules\n- Filling insufficient answers with unverified general knowledge\n- Pretending human validation has occurred when it has not\n- Using real personal-space data for testing\n- V1 automatic actions in business systems, source-document modification, contract validation, or HR decisions\n- Retraining external models on ARGOS content without explicit data-governance-committee authorization\n- Rollout being automatic after the pilot (requires explicit committee decision and defined conditions)\n\n**EN-T07**\n- Using production reduction as a lever toward the CO₂ objective\n- Final investment validation for workstream A at this stage (awaiting firm offers)\n- Full S1+S2 electrification scenario with new substation (Finance: difficult within current budget; direction is S1-only)\n- Technology selection for boiler replacement (C) at this stage\n- Counting utilities electricity savings as direct CO₂ reductions (electricity outside direct-emission scope)\n- Counting carbon certificates toward the site's direct-reduction objective\n- Treating subsidies as acquired before formal notification\n- Treating ambitious-scenario estimates clearly exceeding 18 M EUR as automatically authorized\n\n**EN-T08**\n- Attempting to \"repair\" the workstation before security-team evaluation\n- Powering off the workstation (default)\n- Closing applications (default)\n- Deleting files (default)\n- Launching manual antivirus or cleanup tools (default)\n- Asking the user to reconnect the workstation to retrieve missing information\n- Support connecting a personal USB device\n- Emailing suspicious files (must use SOC secure sampling)\n- Support publicly confirming ransomware before security validation\n- Contacting the attacker or replying to the ransom-note address without explicit crisis-management instruction\n- Ransom payment being decided by support, SOC, or local administrator\n- Site-wide network shutdown being automatic (requires security manager or cyber crisis director)\n- Resetting a user's password based solely on encrypted files without an account-compromise indicator\n- Restoring systems before security authorization\n- Relying on malware cleaning alone for production return (except with express security-manager exception)\n- Assuming the latest backup is"
+    }
+   }
+  },
+  {
+   "id": "Q5",
+   "q": "List every point the corpus records as explicitly open or pending: undecided choices, decisions deferred to later, or questions asked for advice. Cite the document id for each.",
+   "gold": 17,
+   "formats": {
+    "prose": {
+     "outputTokens": 801,
+     "found": 15,
+     "missing": [
+      "[EN-T11] whether React is appropriate or oversized for the need",
+      "[EN-T12] whether video and audio playback can be made mutually exclusive",
+      "[EN-T13] which more robust environment to use in phase two"
+     ],
+     "extra": 5,
+     "answer": "Here is every item recorded in the corpus as explicitly open, pending, undecided, or deferred:\n\n**EN-T01 (CRM Migration)**\n- Convenience and enhancement requests deferred to a post-launch backlog.\n\n**EN-T02 (Warehouse Delays)**\n- Possible exceptional Saturday opening not yet decided; the logistics director will decide before 2:00 PM on Friday if the backlog exceeds 800 orders at noon.\n\n**EN-T05 (Vehicle Fleet)**\n- A review in Q4 2028 may study early replacement of the 18 hybrid vehicles depending on whether real-world range, charging network, and site capacities have progressed sufficiently — no decision taken now.\n\n**EN-T06 (ARGOS)**\n- The rollout decision is deferred to June 2027, after the pilot; general go-live is not automatic.\n- Agent functions (preparing workflows, creating drafts, executing reversible operations) are deferred to a later phase with a distinct security scoping.\n\n**EN-T07 (HORIZON / Valmont)**\n- Final investment for workstream A (heat recovery) not yet validated; pending firm offers to be submitted to the investment committee.\n- Investment decision for workstream B (electrification of drying lines, S1 scenario) not yet made; retained only as a working assumption.\n- No technology selected for the G4 boiler replacement (workstream C); supplementary biomass analysis requested before November 20.\n- At least two additional CO₂ reduction levers must be identified before January 2027; not yet identified.\n- Finance team to identify available subsidy mechanisms by end of November; not yet done.\n- The biomass availability risk remains to be qualified before it can be classified as critical or not.\n- Current most realistic scenario projects only 31–37% CO₂ reduction, falling short of the 40% target; gap unresolved.\n\n**EN-T09 (Portfolio Sentinel)**\n- Any item where data is insufficient to evaluate a critical criterion is marked `STATUS_REVIEW_REQUIRED` rather than decided.\n- Any contradiction between formal sources that the priority rules cannot resolve is marked `CONFLICT` and flagged for human validation.\n\n**EN-T11 (Team Life App)**\n- Multiple open questions put to the user: technology stack confirmation, hosting platform choice, database solution, deployment details — user explicitly asked Claude to advise and guide.\n\n**EN-T12 (Google Drive Web Page)**\n- Open question on whether to stream video from Google Drive or use YouTube; user asked Claude to recommend the most relevant option.\n\n**EN-T13 (Mission Management App)**\n- Structure of the calendar and invoices tables not yet designed; billing interface design not yet determined; user asked Claude to propose these and ask any needed questions before proceeding.\n\n**EN-T14 (Apollo-ERP)**\n- No items explicitly flagged as open within the document itself beyond what is covered by the stated timeline.\n\n**EN-T19 (H2-Green Plan)**\n- Social management and retraining for 210 employees from old cracking units explicitly not addressed; deferred to a CSE extraordinary meeting on June 4, 2026.\n- Pipeline extension investments for hydrogen export to Germany deferred to Q1 2027.\n\n**EN-T22 (IRIS-3)**\n- No items explicitly flagged as open or pending within the document.\n\n**EN-T23 (NeuroX-72)**\n- No items explicitly flagged as open or pending within the document."
+    },
+    "short": {
+     "outputTokens": 756,
+     "found": null,
+     "missing": [],
+     "extra": null,
+     "answer": "Here is every explicitly open, pending, undecided, or advice-sought point recorded in the corpus:\n\n**EN-T01**\n- No item; all major decisions are recorded as made. *(No open items noted.)*\n\n**EN-T02**\n- Whether to open the warehouse on Saturday is deferred: exceptional Saturday opening decided by Logistics Director only if more than 800 orders pending Friday 12:00.\n\n**EN-T05**\n- Review in 2028 Q4: if sufficient progress in real-world electric-vehicle range, charging network, and site capacities, early replacement of the 18 hybrids may be studied (open future decision).\n\n**EN-T07**\n- Workstream B (drying lines): direction of S1-only validated as a working assumption only; investment decision not yet made.\n- Workstream C (gas boiler): technology not selected; supplementary biomass analysis ordered before a choice can be made.\n- CO₂ trajectory: at least 2 additional levers must be identified before 2027-01-15 — these levers are not yet determined.\n- Finance to identify available support mechanisms by end-2026-11 (open search).\n- Next committee 2026-12-03 will revisit all the above.\n\n**EN-T09**\n- Any item marked `CONFLICT` is explicitly left open pending human validation.\n- Items marked `PROVISIONAL` or `UNKNOWN` remain unresolved until formal confirmation.\n- Open decisions tracked in the portfolio are by definition pending; the agent must alert 7 days before and immediately if overdue.\n\n**EN-T11**\n- Open question: whether React is appropriate or oversized for the PWA — advice explicitly sought.\n- Open question: whether to host on Vercel or another platform — user unsure; agent asked to search and advise.\n- Overall architecture and hosting solution are pending the agent's research and recommendation.\n\n**EN-T12**\n- Open question: whether to stream video directly from Google Drive via an HTML page or upload to YouTube — advice explicitly sought.\n- Mutual exclusion of video and song playback is noted as an optional plus, not decided.\n\n**EN-T13**\n- Calendar table structure: not yet designed — agent asked to help design it.\n- Invoice table structure: not yet designed — agent asked to help design it.\n- Billing/invoice navigation concepts: missing from mockup — agent asked to help design them.\n\n**EN-T14**\n- No open choices are recorded; scope, timeline, and constraints are fixed. *(No open items noted.)*\n\n**EN-T19**\n- Social management and retraining of the 210 former Carling thermal-cracking employees: deliberately not addressed in session; deferred to an extraordinary CSE meeting (2026-06-04).\n- Hydrogen-export pipeline extension to Germany: removed from agenda; deferred to 2027 Q1.\n\n**EN-T22**\n- Launch abort decision within 30 minutes of H-hour depends on real-time meteorological conditions (high-altitude wind, electrical activity): outcome is inherently open until that moment.\n\n**EN-T23**\n- Unblinding: whether immediate life-threatening peril exists to legally trigger unblinding is an open determination made case-by-case by the DSMB."
+    },
+    "terse": {
+     "outputTokens": 1000,
+     "found": null,
+     "missing": [],
+     "extra": null,
+     "answer": "Here is every explicitly open, pending, undecided, or deferred item recorded in the corpus:\n\n**EN-T01 (CRM Migration)**\n- Replacement of billing-tool interfaces is out of scope and unresolved for the migration period (temporary interface maintained 6 months post-go-live, permanent solution pending).\n\n**EN-T05 (Vehicle Fleet)**\n- Early replacement of the 18 plug-in hybrids with electric vehicles is a future possibility to be studied, not decided, pending 2028 Q4 review progress.\n\n**EN-T07 (HORIZON Decarbonization)**\n- Workstream B (drying-line electrification): S1-only validated as working assumption only; no investment decision made; S2 deferred pending substation funding or public-network reinforcement (not guaranteed, planned from 2029).\n- Workstream C (gas boiler G4 replacement): technology not selected; supplementary biomass analysis ordered (regional fuel availability, price stability, traffic impact, non-CO₂ emissions, operational constraints).\n- At least 2 additional CO₂ reduction levers must be identified before 2027-01-15; current realistic scenario only reaches 31–37%, not the 40% objective.\n- Finance to identify available support mechanisms by end-2026-11; subsidies not recorded as acquired before formal notification.\n- Biomass availability risk not yet classified as critical or non-critical; qualification pending.\n- Final investment validation for Workstream A (heat recovery) deferred until firm offers available for investment committee.\n\n**EN-T11 (Team Life App Prototype)**\n- Whether React is appropriate is an open question (marked `?`).\n- Hosting solution is undecided; user is unsure whether Vercel or another platform is suitable; agent instructed to search for most appropriate solution.\n- Subscription ends the next day; if work is unfinished, continuation with a less powerful model is anticipated but not resolved.\n\n**EN-T12 (Web Page)**\n- Whether to stream video via Google Drive HTML or upload to YouTube is an open question asked for advice (marked `?`).\n- Whether the audio player uses MP3 or YouTube-with-image is presented as an option, not decided.\n- Mutual exclusion of video/song playback is described as an optional plus, not decided.\n- The STAFFFOR graphic charter files (`style.html`) may be inaccessible; user notes they can re-upload if needed.\n\n**EN-T13 (Web Application)**\n- Billing/invoice table structure is missing from the mockups; agent is asked to help design it.\n- Calendar table structure is missing; agent is asked to help design it.\n- Phase 2 environment (more robust platform) is \"to be defined.\"\n\n**EN-T14 (Apollo-ERP)**\n- No open decisions are explicitly listed, but the document is a scoping note with the project not yet started (start date 2026-09-01); all milestones are future and pending.\n\n**EN-T19 (H2-Green Plan)**\n- Social management and retraining of 210 former thermal-cracking employees deliberately not addressed in session; deferred to an extraordinary CSE meeting scheduled for 2026-06-04.\n- Hydrogen-export pipeline extension to Germany removed from agenda; deferred to 2027 Q1.\n\n**EN-T22 (IRIS-3)**\n- No items explicitly marked open or pending within the corpus text itself beyond the scheduled deadlines and the conditional abort rules (all forward-looking milestones are planned, not decisions pending).\n\n**EN-T23 (NeuroX-72)**\n- Unblinding is strictly deferred/conditional: it may only be triggered by the DSMB in a life-threatening situation; no decision to unblind is open or pending in the record.\n\n---\n\n**Summary of the clearest explicitly open/pending items by document:**\n\n- **EN-T01**: Permanent billing-tool interface replacement — open/deferred post-launch.\n- **EN-T05**: Possible early hybrid replacement — deferred to 2028 Q4 review.\n- **EN-T07**: G4 boiler technology — undecided; S2 electrification — deferred; 2 additional CO₂ levers — not yet identified; subsidies — not yet confirmed; biomass risk"
+    }
+   }
+  },
+  {
+   "id": "Q6",
+   "q": "List every action or obligation with an explicit deadline or scheduled time in documents EN-T01 to EN-T03 (owner if given, and the date or time).",
+   "gold": 10,
+   "formats": {
+    "prose": {
+     "outputTokens": 619,
+     "found": 9,
+     "missing": [
+      "[EN-T02] urgent prioritization requests sent to Operations before 16:00"
+     ],
+     "extra": 7,
+     "answer": "Here is every action or obligation with an explicit deadline or scheduled time found in EN-T01, EN-T02, and EN-T03:\n\n**EN-T01 — CRM Migration**\n\n- Data cleansing completed: September 30, 2026 (no single owner named; business referents responsible per country)\n- First dry run migration: October 20, 2026\n- Second dry run migration: December 8, 2026\n- Business UAT: January 5–23, 2027\n- Freeze on structural changes in ClientBase begins: February 1, 2027\n- Sales representatives may continue creating/modifying opportunities until: Friday, February 12, 2027 at 6:00 PM\n- Final migration begins: after February 12 at 6:00 PM\n- NovaCRM opens to users: Monday, February 15, 2027 at 8:00 AM\n- 90% of users must complete training before launch: before February 15, 2027 (owner: not specified)\n\n**EN-T02 — North Warehouse Incident**\n\n- IT team must recalculate picking routes: before Thursday, October 8, 2026 at 2:00 PM (owner: IT team)\n- Additional team of 15 temporary workers works: Thursday and Friday evenings (October 8–9, 2026)\n- FastRoad adds two rotations: Thursday evening (October 8)\n- FastRoad adds three rotations: Friday (October 9)\n- Prioritization requests for urgent orders sent to operations: before 4:00 PM each day (owner: regional manager)\n- Logistics management publishes status update: Thursday, October 8 at 5:00 PM, then Friday, October 9 at noon (owner: logistics management)\n- Objective: fewer than 500 pending orders by Friday, October 9 at 6:00 PM\n- If backlog remains above 800 on Friday at noon: logistics director decides by 2:00 PM on possible Saturday opening (owner: logistics director)\n\n**EN-T03 — Payroll File Failure Runbook**\n\n- If job has been running more than 90 minutes: stop it and open a P2 incident (owner: operator; trigger-based, not calendar-dated)\n- If correct generation not achieved before 10:00 AM: payroll manager decides with HR whether to inform employees of a risk of delay (owner: payroll manager)\n- Inform payroll manager: as soon as a P1 incident is opened (owner: operator)\n- Any manual action performed must be logged in the incident ticket (owner: operator; no calendar deadline, immediate obligation)"
+    },
+    "short": {
+     "outputTokens": 431,
+     "found": 9,
+     "missing": [
+      "[EN-T01] at least 90% of users trained before launch on 2027-02-15"
+     ],
+     "extra": 8,
+     "answer": "Here are all actions and obligations with explicit deadlines or scheduled times from EN-T01 to EN-T03:\n\n**EN-T01 — CRM Migration**\n- Data cleansing complete: 2026-09-30 (no specific owner named)\n- Dry run migration #1: 2026-10-20\n- Dry run migration #2: 2026-12-08\n- UAT: 2027-01-05 to 2027-01-23\n- ClientBase structural-change freeze: from 2027-02-01\n- Opportunity creation/modification allowed until: 2027-02-12 18:00\n- Final migration: after 2027-02-12 18:00\n- NovaCRM opens: 2027-02-15 08:00\n\n**EN-T02 — Delivery Delays**\n- IT recalculates routes: before Thursday 14:00 (owner: IT)\n- 15 additional temporary workers: Thursday and Friday evenings\n- FastRoad adds 2 rotations: Thursday evening; 3 rotations Friday (owner: FastRoad)\n- Status update: Thursday 17:00\n- Status update: Friday 12:00\n- Objective of fewer than 500 pending orders: by Friday 18:00\n- If more than 800 pending Friday 12:00: Logistics Director decides by 14:00 on possible exceptional Saturday opening\n\n**EN-T03 — Payroll Failure**\n- If no correct file generation before 10:00: payroll manager and HR decide on employee delay-risk communication (owner: payroll manager and HR)\n- If scheduler running more than 90 min: stop and open P2 (operator, immediate trigger)\n- Inform payroll manager when P1 is opened (owner: operator, immediate upon P1 opening)"
+    },
+    "terse": {
+     "outputTokens": 654,
+     "found": 9,
+     "missing": [
+      "[EN-T01] at least 90% of users trained before launch on 2027-02-15"
+     ],
+     "extra": 14,
+     "answer": "Here is every action or obligation with an explicit deadline or scheduled time from EN-T01 through EN-T03:\n\n**EN-T01 (CRM Migration)**\n\n- Data cleansing complete — 2026-09-30 [EN-T01]\n- Dry run migration #1 — 2026-10-20 [EN-T01]\n- Dry run migration #2 — 2026-12-08 [EN-T01]\n- UAT period — 2027-01-05 to 2027-01-23 [EN-T01]\n- ClientBase structural-change freeze begins — 2027-02-01 [EN-T01]\n- Opportunity creation/modification in ClientBase allowed until — 2027-02-12 18:00 [EN-T01]\n- Final migration begins — after 2027-02-12 18:00 [EN-T01]\n- NovaCRM opens — 2027-02-15 08:00 [EN-T01]\n- Temporary billing-tool interface maintained — 6 months after go-live [EN-T01]\n\n**EN-T02 (North Warehouse Incident)**\n\n- IT recalculate routes — before Thursday 14:00 [EN-T02]\n- Test with 12 pickers (4 h) — Thursday [EN-T02]\n- +15 temporary workers — Thursday and Friday evenings [EN-T02]\n- FastRoad +2 extra rotations — Thursday evening [EN-T02]\n- FastRoad +3 extra rotations — Friday [EN-T02]\n- Stores likely to face >24 h delay to be contacted; urgent/critical stockout requests to Operations — before 16:00 (daily) [EN-T02]\n- Status update — Thursday 17:00 [EN-T02]\n- Status update — Friday 12:00 [EN-T02]\n- Objective: <500 pending orders — Friday 18:00 [EN-T02]\n- If >800 pending at Friday 12:00 → Logistics Director decides by — Friday 14:00 [EN-T02]\n\n**EN-T03 (Payroll File Failure)**\n\n- Trigger check: no file, file <10 MB, or auto check FAILED — @06:30 on scheduled day [EN-T03]\n- Scheduler running >90 min → stop and open P2 (implicitly immediate upon detection) [EN-T03]\n- If no correct file generation before — 10:00: payroll manager + HR decide on employee delay-risk communication [EN-T03]\n- Payroll manager informed when P1 opens (implicitly immediate upon P1 opening) [EN-T03]"
+    }
+   }
+  },
+  {
+   "id": "Q7",
+   "q": "In the payroll runbook (EN-T03), how many manual reruns are allowed at most?",
+   "gold": 1,
+   "formats": {
+    "prose": {
+     "outputTokens": 23,
+     "found": 1,
+     "missing": [],
+     "extra": 0,
+     "answer": "Only **one** manual rerun is authorized. (EN-T03, Step 3)"
+    },
+    "short": {
+     "outputTokens": 17,
+     "found": 1,
+     "missing": [],
+     "extra": 0,
+     "answer": "1 manual rerun maximum. (EN-T03)"
+    },
+    "terse": {
+     "outputTokens": 21,
+     "found": 1,
+     "missing": [],
+     "extra": 0,
+     "answer": "**1 manual rerun** is allowed at most. (EN-T03)"
+    }
+   }
+  },
+  {
+   "id": "Q8",
+   "q": "List everything that must never be done according to documents EN-T03 and EN-T04, whether stated unconditionally or as a standing rule.",
+   "gold": 10,
+   "formats": {
+    "prose": {
+     "outputTokens": 320,
+     "found": 10,
+     "missing": [],
+     "extra": 1,
+     "answer": "**From EN-T03 (Payroll runbook):**\n\n- Never manually modify the source files (`employees.csv`, `variables.csv`, `absences.csv`) in production. *(EN-T03)*\n- Never perform more than one manual rerun. *(EN-T03)*\n- Never delete the logs before a rerun (only the incomplete output file may be deleted). *(EN-T03)*\n- Never directly inform all employees of an incident. *(EN-T03)*\n\n**From EN-T04 (MeetingPilot agent):**\n\n- Never automatically add a topic to the agenda solely because it is old. *(EN-T04)*\n- Never invent information (decision-maker, deadline, options, consequences) — write \"to be clarified\" if missing. *(EN-T04)*\n- Never record a decision as validated unless Sophie explicitly confirms it or the minutes indicate consensus in her presence. *(EN-T04)*\n- Never add ideas still under discussion to the \"Atlas Weekly Decisions\" reference page — they must remain in the meeting notes. *(EN-T04)*\n- Never retroactively modify the content of an old decision — a change must be added as a new entry referencing the previous one. *(EN-T04)*\n- Never send an external message to the committee on your own initiative — a human must explicitly request its sending. *(EN-T04)*"
+    },
+    "short": {
+     "outputTokens": 327,
+     "found": 10,
+     "missing": [],
+     "extra": 0,
+     "answer": "Here is everything that must never be done according to EN-T03 and EN-T04:\n\n**From EN-T03 (Payroll File Generation Failure):**\n\n- Never manually modify `employees.csv`, `variables.csv`, or `absences.csv` in production. (EN-T03)\n- Never perform more than 1 manual rerun. (EN-T03)\n- Never delete logs during the rerun process — only incomplete output may be deleted. (EN-T03)\n- Never directly inform all employees of a payroll issue. (EN-T03)\n\n**From EN-T04 (Agent \"MeetingPilot\"):**\n\n- Never auto-add a topic to the agenda based on age alone. (EN-T04)\n- Never invent information to fill gaps — missing elements must be marked \"to be clarified.\" (EN-T04)\n- Never treat a non-explicit validation (e.g., \"this seems to be the best option\") as a confirmed decision. (EN-T04)\n- Never record discussion ideas in the \"Atlas Weekly Decisions\" reference — only validated decisions go there. (EN-T04)\n- Never retroactively modify an old decision entry — changes require a new entry referencing the previous one. (EN-T04)\n- Never send an external message on the agent's own initiative — drafts are permitted, but sending requires an explicit human request. (EN-T04)"
+    },
+    "terse": {
+     "outputTokens": 375,
+     "found": null,
+     "missing": [],
+     "extra": null,
+     "answer": "Here is everything that must never be done according to EN-T03 and EN-T04:\n\n**From EN-T03 (Payroll File Generation Failure):**\n\n- Never restart the scheduler manually if it has been running for less than 90 minutes — wait for completion. (EN-T03)\n- Never manually modify input files (`employees.csv`, `variables.csv`, `absences.csv`) in production. (EN-T03)\n- Never perform more than one manual rerun of the payroll export. (EN-T03)\n- Never delete the logs when clearing incomplete output. (EN-T03)\n- Never communicate directly to all employees about a payroll issue. (EN-T03)\n- Never fail to log every manual action in the incident ticket. (EN-T03)\n\n**From EN-T04 (Agent \"MeetingPilot\"):**\n\n- Never auto-add a topic to the agenda based on age alone. (EN-T04)\n- Never invent or fill in missing information — use \"to be clarified\" instead. (EN-T04)\n- Never treat a non-explicit validation (e.g. \"this seems to be the best option\") as a valid decision. (EN-T04)\n- Never record discussion ideas in the reference document \"Atlas Weekly Decisions\" — only validated decisions go there. (EN-T04)\n- Never retroactively modify an old decision — changed decisions require a new entry referencing the previous one. (EN-T04)\n- Never send an external message on the agent's own initiative — drafts are allowed, but sending requires an explicit human request. (EN-T04)"
+    }
+   }
+  },
+  {
+   "id": "Q9",
+   "q": "Which documents among EN-T01 to EN-T10 explicitly reject at least one thing — an option ruled out, a hypothesis dismissed, a scope exclusion, or an action declared unacceptable? Give the document ids.",
+   "gold": 9,
+   "formats": {
+    "prose": {
+     "outputTokens": 406,
+     "found": 9,
+     "missing": [],
+     "extra": 1,
+     "answer": "EN-T01: Old attachments, marketing campaigns, and data older than three years will not be migrated; no specific functionality should be developed before launch unless essential.\n\nEN-T02: The new physical layout is maintained — no return to the previous organization.\n\nEN-T03: Never manually modify source files in production.\n\nEN-T04: A phrase like \"this seems to be the best option\" is not sufficient to record a decision; MeetingPilot never sends an external message on its own initiative.\n\nEN-T05: Option A (identical diesel renewal) and Option B (full electric) are both set aside in favor of Option C.\n\nEN-T06: ARGOS must not silently choose between contradictory documents; it must never invent procedure numbers, dates, or internal rules; personal OneDrive spaces, mailboxes, Teams conversations, and unpublished project folders are out of scope.\n\nEN-T07: Production reduction is not an acceptable lever; carbon certificates will not be counted toward the direct reduction objective; the utilities electrical gain must not be counted as a direct CO₂ reduction.\n\nEN-T08: Do not turn off the workstation, do not close applications, do not delete files, do not launch a manual antivirus tool; no restoration begins before security team authorization; support must never publicly confirm a ransomware before security validation.\n\nEN-T09: Portfolio Sentinel cannot modify an approved budget, change an official date, close a critical risk, confirm funding as acquired, send a binding instruction, or delete a historical decision without explicit human validation.\n\nEN-T10: A global network shutdown of a site is never automatic; substitute buses must not be triggered automatically; a full train-for-train replacement must not be promised when road capacity does not allow it; no pressure must be exerted on emergency teams to clear tracks for commercial reasons."
+    },
+    "short": {
+     "outputTokens": 53,
+     "found": 9,
+     "missing": [],
+     "extra": 1,
+     "answer": "EN-T01, EN-T02, EN-T03, EN-T04, EN-T05, EN-T06, EN-T07, EN-T08, EN-T09, EN-T10."
+    },
+    "terse": {
+     "outputTokens": 508,
+     "found": 9,
+     "missing": [],
+     "extra": 1,
+     "answer": "EN-T01, EN-T02, EN-T03, EN-T04, EN-T05, EN-T06, EN-T07, EN-T08, EN-T09, EN-T10.\n\nEvery document in the range explicitly rejects at least one thing:\n\n- **EN-T01**: excludes old attachments, marketing campaigns, and data older than 3 years from migration; forbids automatic merging of duplicate accounts.\n- **EN-T02**: rules out returning to the previous warehouse organization; rules out extra Saturday work at this stage; rules out preemptive contact with all stores.\n- **EN-T03**: excludes payroll simulations and individual adjustments from scope; forbids manually modifying input files in production; limits manual reruns to one.\n- **EN-T04**: excludes discussion ideas from the validated-decisions reference; forbids sending external messages on the agent's own initiative; rejects treating \"this seems to be the best option\" as a valid decision.\n- **EN-T05**: dismisses option A (identical diesel) for failing the emissions trajectory; dismisses option B (full electric) due to charging and power-supply constraints.\n- **EN-T06**: excludes personal OneDrive, mailboxes, Teams conversations, and unpublished project folders from scope; forbids filling gaps with unverified general knowledge; forbids inventing procedure numbers, dates, or responsible persons.\n- **EN-T07**: excludes production reduction as a decarbonization lever; forbids counting carbon certificates toward the direct-reduction objective; forbids recording subsidies as acquired before formal notification.\n- **EN-T08**: forbids powering off, closing apps, deleting files, or launching manual antivirus before security-team evaluation; forbids reconnecting a workstation to retrieve missing information; forbids restoring systems before security authorization.\n- **EN-T09**: forbids treating intentions as decisions; forbids interpolating missing values; forbids closing an open decision on the basis of a preference expressed in discussion.\n- **EN-T10**: forbids authorizing a train into an area with unknown safety status; forbids automatic track evacuation without competent rail-safety-manager authorization; forbids leaving an obsolete resumption estimate circulating without correction."
+    }
+   }
+  },
+  {
+   "id": "Q10",
+   "q": "List every date in February 2027 that appears as a deadline or milestone in documents EN-T01 to EN-T05, with what it corresponds to.",
+   "gold": 3,
+   "formats": {
+    "prose": {
+     "outputTokens": 165,
+     "found": 3,
+     "missing": [],
+     "extra": 0,
+     "answer": "From documents EN-T01 to EN-T05, the February 2027 dates are:\n\n- **February 1, 2027** (EN-T01): Freeze on structural changes in ClientBase begins.\n- **February 12, 2027 at 6:00 PM** (EN-T01): Last moment for sales representatives to create or modify opportunities in ClientBase; final migration begins after this time.\n- **February 15, 2027 at 8:00 AM** (EN-T01): NovaCRM goes live and opens to users.\n\nNo February 2027 dates appear in EN-T02, EN-T03, EN-T04, or EN-T05."
+    },
+    "short": {
+     "outputTokens": 149,
+     "found": 3,
+     "missing": [],
+     "extra": 0,
+     "answer": "From EN-T01 to EN-T05, the February 2027 dates are:\n\n- **2027-02-01** (EN-T01): ClientBase structural-change freeze begins.\n- **2027-02-12 18:00** (EN-T01): Deadline for opportunity creation/modification in ClientBase; final migration runs after this time.\n- **2027-02-15 08:00** (EN-T01): NovaCRM opens for production (go-live).\n\nNo February 2027 dates appear in EN-T02, EN-T03, EN-T04, or EN-T05."
+    },
+    "terse": {
+     "outputTokens": 153,
+     "found": 3,
+     "missing": [],
+     "extra": 0,
+     "answer": "From documents EN-T01 to EN-T05, the February 2027 dates are:\n\n- **2027-02-01** (EN-T01): ClientBase structural-change freeze begins.\n- **2027-02-12 18:00** (EN-T01): Deadline for opportunity creation/modification in ClientBase; final migration starts after this time.\n- **2027-02-15 08:00** (EN-T01): NovaCRM goes live in production (target go-live date).\n\nNo February 2027 dates appear in EN-T02, EN-T03, EN-T04, or EN-T05."
+    }
+   }
+  }
+ ]
+}

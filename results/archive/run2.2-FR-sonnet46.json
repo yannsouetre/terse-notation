@@ -1,0 +1,1065 @@
+{
+  "spec": "v0.7",
+  "bench": "v0.7",
+  "provider": "artifact",
+  "model": "claude-sonnet-4-6",
+  "date": "2026-07-20T16:50:41.522Z",
+  "criteria": {
+    "tokenReductionMin": 0.5,
+    "accuracyLossMaxPts": 2
+  },
+  "docs": [
+    {
+      "id": "FR-T20",
+      "lang": "FR",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 1732,
+          "qa": [
+            {
+              "q": "Quels sont les codes d'identification technique des deux régions AWS concernées par ce DRP ?",
+              "gold": "La région principale est `eu-west-1` (Dublin) et la région de secours est `eu-central-1` (Francfort).",
+              "candidate": "Les deux régions AWS concernées sont **`eu-west-1`** (Dublin, Irlande) pour la région principale et **`eu-central-1`** (Francfort, Allemagne) pour la région de secours.",
+              "correct": true
+            },
+            {
+              "q": "Quelle commande Kubernetes permet de lister les pods actifs en production et de vérifier leur déploiement ?",
+              "gold": "`kubectl get pods -n production -o wide`.",
+              "candidate": "La commande Kubernetes permettant de lister les pods actifs en production et de vérifier leur déploiement est : `kubectl get pods -n production -o wide`",
+              "correct": true
+            },
+            {
+              "q": "Quel est le nombre minimal de pods opérationnels exigé pour le microservice `payment-engine` d'après la matrice de santé ?",
+              "gold": "20 Pods opérationnels.",
+              "candidate": "Le microservice `payment-engine` exige un minimum de **20 pods opérationnels** selon la matrice de santé des services cruciaux.",
+              "correct": true
+            },
+            {
+              "q": "A-t-on l'autorisation de rediriger les connexions des vrais clients vers Francfort si le script de validation Pytest affiche une erreur sur un seul test ?",
+              "gold": "Non, aucun trafic client réel ne doit être réintroduit tant que le rapport n'affiche pas explicitement la mention unique `STATUS: SUCCESS`. Si un seul test échoue, le trafic reste bloqué sur une page 503.",
+              "candidate": "Non, si un seul test échoue, le trafic externe doit demeurer strictement verrouillé et redirigé vers la page d'erreur HTTP 503 personnalisée.",
+              "correct": true
+            },
+            {
+              "q": "Quels critères simultanés définissent l'obligation de déclencher cette procédure de secours ?",
+              "gold": "Une interruption totale de l'API Core-Auth pendant plus de 12 minutes consécutives ET une confirmation écrite d'indisponibilité globale (AWS Outage) validée par l'ingénieur réseau principal d'astreinte.",
+              "candidate": "La procédure doit être déclenchée si et seulement si l'interruption du service d'authentification Core-Auth est totale pendant plus de **12 minutes consécutives** ET qu'une notification écrite d'indisponibilité physique majeure (AWS Outage) est validée par l'ingénieur réseau principal d'astreinte.",
+              "correct": true
+            },
+            {
+              "q": "Quelle commande AWS CLI exacte permet de promouvoir le cluster de base de données de secours, et quel est l'identifiant de ce cluster ?",
+              "gold": "`aws rds promote-db-cluster --db-cluster-identifier aurora-prod-frankfurt --region eu-central-1`.",
+              "candidate": "La commande exacte est `aws rds promote-db-cluster --db-cluster-identifier aurora-prod-frankfurt --region eu-central-1`, et l'identifiant du cluster est `aurora-prod-frankfurt`.",
+              "correct": true
+            },
+            {
+              "q": "Quel est le type de document ?",
+              "gold": "Manuel de secours informatique / Infrastructure DevOps.",
+              "candidate": "Le document est un manuel de secours informatique / infrastructure DevOps.",
+              "correct": true
+            },
+            {
+              "q": "Quel est le type de serveur physique et la capacité de calcul (instance de nœud) vers lequel le cluster Kubernetes doit migrer ?",
+              "gold": "Le type d'instance `m5.2xlarge`.",
+              "candidate": "Le cluster Kubernetes doit migrer vers des nœuds de type **`m5.2xlarge`**, avec une capacité de **45 nœuds** physiques.",
+              "correct": true
+            },
+            {
+              "q": "Quelle est la limite de latence réseau interne maximale tolérée pour le microservice `ledger-recorder` ?",
+              "gold": "Une latence strictement inférieure à 15 ms.",
+              "candidate": "La limite de latence réseau interne maximale tolérée pour le microservice `ledger-recorder` est **inférieure à 15ms**.",
+              "correct": true
+            },
+            {
+              "q": "L'ingénieur système doit-il forcer le redémarrage du moteur de base de données SQL si la console renvoie une erreur d'intégrité de type `error_checksum` ?",
+              "gold": "Non, il est spécifié de ne tenter sous aucun prétexte un démarrage forcé, mais de lancer immédiatement une restauration PITR.",
+              "candidate": "No, the engineer must **never** force a restart of the SQL engine; instead, they must immediately launch a Point-In-Time Recovery (PITR) to the last known consistent state at **T-60 seconds** before the Dublin region crash.",
+              "correct": true
+            },
+            {
+              "q": "Quelle est la commande Python d'urgence complète permettant de modifier le routage DNS au niveau de Route53 ?",
+              "gold": "`python3 /root/dns_failover.py --source eu-west-1 --destination eu-central-1 --ttl 10`.",
+              "candidate": "La commande Python d'urgence complète est : `python3 /root/dns_failover.py --source eu-west-1 --destination eu-central-1 --ttl 10`",
+              "correct": true
+            },
+            {
+              "q": "Vers quel point de cohérence temporel précis (PITR) doit-on restaurer les bases de données si le cluster Aurora échoue à se promouvoir normalement ?",
+              "gold": "À T-60 secondes par rapport à l'horodatage précis du crash de la région de Dublin.",
+              "candidate": "En cas d'échec de promotion du cluster Aurora (erreur `error_checksum`), la base de données doit être restaurée au dernier point de cohérence temporel connu configuré à **T-60 secondes** par rapport à l'horodatage précis du crash de la région de Dublin.",
+              "correct": true
+            },
+            {
+              "q": "Quel secteur est indiqué pour ce document ?",
+              "gold": "Technologies de l'information / Services Bancaires Critiques / Cloud Computing.",
+              "candidate": "Le secteur indiqué pour ce document est **Technologies de l'information / Services Bancaires Critiques / Cloud Computing**.",
+              "correct": true
+            },
+            {
+              "q": "De combien de nœuds physiques est composé le cluster Kubernetes (AWS EKS) à Francfort lors de son état de veille habituel, avant l'activation du profil de crise ?",
+              "gold": "5 nœuds.",
+              "candidate": "En état de veille habituel, le cluster Kubernetes (AWS EKS) de Francfort est composé de **5 nœuds** physiques.",
+              "correct": true
+            },
+            {
+              "q": "Quelle est la technologie de base de données relationnelle globale exploitée pour les données bancaires d'épargne ?",
+              "gold": "Aurora PostgreSQL.",
+              "candidate": "La technologie de base de données relationnelle globale exploitée est un cluster **Aurora PostgreSQL** (AWS) avec une architecture de réplication globale asynchrone entre Dublin et Francfort.",
+              "correct": true
+            },
+            {
+              "q": "À quelle valeur numérique obligatoire doit-on forcer le TTL (Time To Live) lors de la réécriture des tables de routage DNS ?",
+              "gold": "10 secondes.",
+              "candidate": "Le TTL doit être forcé à **10 secondes**.",
+              "correct": true
+            },
+            {
+              "q": "Le service informatique gère-t-il des microservices dédiés aux comptes courants ou aux cartes de crédit dans ce runbook spécifique ?",
+              "gold": "Non, l'introduction précise qu'il s'agit exclusivement de notre architecture de microservices bancaires d'épargne.",
+              "candidate": "not in context",
+              "correct": true
+            },
+            {
+              "q": "Quel est le chemin d'accès absolu du fichier de configuration global de l'équilibreur de charge ALB de Dublin ?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "Quel type de page d'erreur HTTP s'affiche aux utilisateurs si la validation automatisée par Pytest échoue ?",
+              "gold": "Une page d'erreur HTTP 503 personnalisée.",
+              "candidate": "En cas d'échec de la validation automatisée par Pytest, les utilisateurs sont redirigés vers une page d'erreur HTTP **503 personnalisée**.",
+              "correct": true
+            },
+            {
+              "q": "Quel protocole de sécurité d'authentification et de chiffrement est indispensable pour valider l'ordre numérique de bascule initié par la direction ?",
+              "gold": "Une clé de chiffrement PGP privée.",
+              "candidate": "L'ordre de bascule doit être validé par une **signature cryptographique numérique PGP** (clé privée PGP), appliquée par l'un des trois directeurs d'astreinte habilités de la cellule SecOps.",
+              "correct": true
+            }
+          ],
+          "correct": 20,
+          "graded": 20,
+          "accuracy": 1
+        },
+        "terse": {
+          "tokensNet": 963,
+          "qa": [
+            {
+              "q": "Quels sont les codes d'identification technique des deux régions AWS concernées par ce DRP ?",
+              "gold": "La région principale est `eu-west-1` (Dublin) et la région de secours est `eu-central-1` (Francfort).",
+              "candidate": "Les deux régions AWS concernées sont **`eu-west-1`** (Dublin, Irlande) pour la région primaire et **`eu-central-1`** (Francfort, Allemagne) pour la région de secours.",
+              "correct": true
+            },
+            {
+              "q": "Quelle commande Kubernetes permet de lister les pods actifs en production et de vérifier leur déploiement ?",
+              "gold": "`kubectl get pods -n production -o wide`.",
+              "candidate": "La commande Kubernetes permettant de lister les pods actifs en production et de vérifier leur déploiement est : `kubectl get pods -n production -o wide`",
+              "correct": true
+            },
+            {
+              "q": "Quel est le nombre minimal de pods opérationnels exigé pour le microservice `payment-engine` d'après la matrice de santé ?",
+              "gold": "20 Pods opérationnels.",
+              "candidate": "D'après la matrice de santé, le microservice `payment-engine` exige un minimum de **20 pods opérationnels**.",
+              "correct": true
+            },
+            {
+              "q": "A-t-on l'autorisation de rediriger les connexions des vrais clients vers Francfort si le script de validation Pytest affiche une erreur sur un seul test ?",
+              "gold": "Non, aucun trafic client réel ne doit être réintroduit tant que le rapport n'affiche pas explicitement la mention unique `STATUS: SUCCESS`. Si un seul test échoue, le trafic reste bloqué sur une page 503.",
+              "candidate": "Non, si un seul test échoue, le trafic externe reste verrouillé et redirigé vers la page de secours (HTTP 503 personnalisée).",
+              "correct": true
+            },
+            {
+              "q": "Quels critères simultanés définissent l'obligation de déclencher cette procédure de secours ?",
+              "gold": "Une interruption totale de l'API Core-Auth pendant plus de 12 minutes consécutives ET une confirmation écrite d'indisponibilité globale (AWS Outage) validée par l'ingénieur réseau principal d'astreinte.",
+              "candidate": "La procédure doit être déclenchée uniquement si l'API Core-Auth subit une interruption totale de plus de 12 minutes consécutives **et** qu'une notification écrite d'une panne physique majeure (AWS Outage) a été validée par l'ingénieur réseau lead d'astreinte.",
+              "correct": true
+            },
+            {
+              "q": "Quelle commande AWS CLI exacte permet de promouvoir le cluster de base de données de secours, et quel est l'identifiant de ce cluster ?",
+              "gold": "`aws rds promote-db-cluster --db-cluster-identifier aurora-prod-frankfurt --region eu-central-1`.",
+              "candidate": "La commande AWS CLI exacte est `aws rds promote-db-cluster --db-cluster-identifier aurora-prod-frankfurt --region eu-central-1`, et l'identifiant du cluster est `aurora-prod-frankfurt`.",
+              "correct": true
+            },
+            {
+              "q": "Quel est le type de document ?",
+              "gold": "Manuel de secours informatique / Infrastructure DevOps.",
+              "candidate": "Le document est un manuel de reprise informatique / infrastructure DevOps.",
+              "correct": true
+            },
+            {
+              "q": "Quel est le type de serveur physique et la capacité de calcul (instance de nœud) vers lequel le cluster Kubernetes doit migrer ?",
+              "gold": "Le type d'instance `m5.2xlarge`.",
+              "candidate": "Le cluster Kubernetes doit migrer vers des nœuds physiques de type **m5.2xlarge** (45 nœuds en configuration de crise).",
+              "correct": true
+            },
+            {
+              "q": "Quelle est la limite de latence réseau interne maximale tolérée pour le microservice `ledger-recorder` ?",
+              "gold": "Une latence strictement inférieure à 15 ms.",
+              "candidate": "La latence réseau interne maximale tolérée pour le microservice `ledger-recorder` est **<15 ms**.",
+              "correct": true
+            },
+            {
+              "q": "L'ingénieur système doit-il forcer le redémarrage du moteur de base de données SQL si la console renvoie une erreur d'intégrité de type `error_checksum` ?",
+              "gold": "Non, il est spécifié de ne tenter sous aucun prétexte un démarrage forcé, mais de lancer immédiatement une restauration PITR.",
+              "candidate": "Non, l'ingénieur ne doit jamais forcer le démarrage du moteur SQL en cas d'`error_checksum` ; il doit immédiatement restaurer la base via PITR au dernier point de cohérence (T-60 s par rapport au timestamp exact du crash de Dublin).",
+              "correct": true
+            },
+            {
+              "q": "Quelle est la commande Python d'urgence complète permettant de modifier le routage DNS au niveau de Route53 ?",
+              "gold": "`python3 /root/dns_failover.py --source eu-west-1 --destination eu-central-1 --ttl 10`.",
+              "candidate": "La commande Python d'urgence complète est : `python3 /root/dns_failover.py --source eu-west-1 --destination eu-central-1 --ttl 10`",
+              "correct": true
+            },
+            {
+              "q": "Vers quel point de cohérence temporel précis (PITR) doit-on restaurer les bases de données si le cluster Aurora échoue à se promouvoir normalement ?",
+              "gold": "À T-60 secondes par rapport à l'horodatage précis du crash de la région de Dublin.",
+              "candidate": "D'après le contexte, si une `error_checksum` survient après la promotion, la base doit être restaurée via PITR au dernier point de cohérence correspondant à **T-60 secondes** par rapport au timestamp exact du crash de Dublin.",
+              "correct": true
+            },
+            {
+              "q": "Quel secteur est indiqué pour ce document ?",
+              "gold": "Technologies de l'information / Services Bancaires Critiques / Cloud Computing.",
+              "candidate": "Le secteur indiqué pour ce document est **Technologies information / Services bancaires critiques / Cloud Computing**.",
+              "correct": true
+            },
+            {
+              "q": "De combien de nœuds physiques est composé le cluster Kubernetes (AWS EKS) à Francfort lors de son état de veille habituel, avant l'activation du profil de crise ?",
+              "gold": "5 nœuds.",
+              "candidate": "En état de veille habituel, le cluster Kubernetes EKS à Francfort est composé d'un minimum de **5 nœuds physiques**.",
+              "correct": true
+            },
+            {
+              "q": "Quelle est la technologie de base de données relationnelle globale exploitée pour les données bancaires d'épargne ?",
+              "gold": "Aurora PostgreSQL.",
+              "candidate": "La technologie de base de données relationnelle globale exploitée pour les données bancaires d'épargne est **Aurora PostgreSQL**, avec une réplication globale asynchrone entre Dublin et Francfort.",
+              "correct": true
+            },
+            {
+              "q": "À quelle valeur numérique obligatoire doit-on forcer le TTL (Time To Live) lors de la réécriture des tables de routage DNS ?",
+              "gold": "10 secondes.",
+              "candidate": "Le TTL doit être forcé à **10 secondes** lors de la réécriture des tables de routage DNS.",
+              "correct": true
+            },
+            {
+              "q": "Le service informatique gère-t-il des microservices dédiés aux comptes courants ou aux cartes de crédit dans ce runbook spécifique ?",
+              "gold": "Non, l'introduction précise qu'il s'agit exclusivement de notre architecture de microservices bancaires d'épargne.",
+              "candidate": "not in context.",
+              "correct": false
+            },
+            {
+              "q": "Quel est le chemin d'accès absolu du fichier de configuration global de l'équilibreur de charge ALB de Dublin ?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "Quel type de page d'erreur HTTP s'affiche aux utilisateurs si la validation automatisée par Pytest échoue ?",
+              "gold": "Une page d'erreur HTTP 503 personnalisée.",
+              "candidate": "Si la validation Pytest échoue, les utilisateurs voient s'afficher une page de secours HTTP 503 personnalisée.",
+              "correct": true
+            },
+            {
+              "q": "Quel protocole de sécurité d'authentification et de chiffrement est indispensable pour valider l'ordre numérique de bascule initié par la direction ?",
+              "gold": "Une clé de chiffrement PGP privée.",
+              "candidate": "La signature cryptographique numérique par clé privée **PGP** (Pretty Good Privacy) est indispensable pour valider l'ordre de bascule, devant être fournie par l'un des 3 directeurs d'astreinte SecOps autorisés.",
+              "correct": true
+            }
+          ],
+          "correct": 19,
+          "graded": 20,
+          "accuracy": 0.95
+        }
+      }
+    },
+    {
+      "id": "FR-T21",
+      "lang": "FR",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 1831,
+          "qa": [
+            {
+              "q": "Quels sont les noms de code des trois sous-agents d'intelligence artificielle qui collaborent dans ce réseau ?",
+              "gold": "Agent-Parser-01, Agent-GraphAnalyser-02 et Agent-RiskScorer-03.",
+              "candidate": "Les trois sous-agents sont **Agent-Parser-01**, **Agent-GraphAnalyser-02** et **Agent-RiskScorer-03**.",
+              "correct": true
+            },
+            {
+              "q": "Quel est le format international et la référence du lot de messages bancaires analysés au départ ?",
+              "gold": "Le format de message international Swift MT103, dans le lot référencé BATCH-EMEA-94.",
+              "candidate": "Le lot de messages bancaires analysés au départ est au format international **Swift MT103**, identifié sous la référence **BATCH-EMEA-94**.",
+              "correct": true
+            },
+            {
+              "q": "Quel est le montant exact en euros de chacun des 14 virements frauduleux ?",
+              "gold": "9 900 EUR.",
+              "candidate": "Chacun des 14 virements frauduleux est d'un montant exact de **9 900 EUR**.",
+              "correct": true
+            },
+            {
+              "q": "L'agent d'intelligence artificielle a-t-il le droit de confisquer ou de liquider définitivement les crypto-monnaies du portefeuille suspect ?",
+              "gold": "Non, l'agent ne possède pas les privilèges requis pour liquider ou saisir définitivement les actifs. C'est une limite stricte de son autonomie.",
+              "candidate": "Non, l'agent IA n'a pas le droit de confisquer ou de liquider définitivement les crypto-monnaies, cette action relevant exclusivement de la compétence de la Direction de la Conformité Humaine via un protocole physique de signature multi-clés matérielles.",
+              "correct": true
+            },
+            {
+              "q": "À partir de quel score global de risque de menace ($S_r$) le système d'IA applique-t-il automatiquement un blocage des comptes sans intervention humaine ?",
+              "gold": "Un score supérieur à 85.",
+              "candidate": "D'après le contexte, le système d'IA applique automatiquement un blocage des comptes sans intervention humaine pour tout score global $S_r$ supérieur à **85**.",
+              "correct": true
+            },
+            {
+              "q": "Quelle est la valeur finale du score de risque calculée par l'Agent-RiskScorer-03 et quelle est la formule de pondération utilisée pour y parvenir ?",
+              "gold": "Le score est de 94.4. La formule est : $$S_r = (0.4 \\times S_{\\text{jurisd}}) + (0.3 \\times S_{\\text{structure}}) + (0.3 \\times S_{\\text{vitesse}})$$",
+              "candidate": "Le score de risque final calculé par l'Agent-RiskScorer-03 est **94,4**, obtenu via la formule de pondération $S_r = (0.4 \\times S_{\\text{jurisd}}) + (0.3 \\times S_{\\text{structure}}) + (0.3 \\times S_{\\text{vitesse}})$.",
+              "correct": true
+            },
+            {
+              "q": "Quel est le type de document ?",
+              "gold": "Flux d'instructions de invites (prompts) et journaux d'exécution croisés d'agents IA.",
+              "candidate": "Le document est un flux d'instructions de prompts et journaux d'exécution croisés d'agents IA.",
+              "correct": true
+            },
+            {
+              "q": "Auprès de quel établissement bancaire français précis les 14 comptes de dépôt d'origine étaient-ils ouverts ?",
+              "gold": "Auprès de l'établissement \"Banque Privée A\".",
+              "candidate": "Les 14 comptes de dépôts d'origine étaient ouverts auprès de l'établissement financier **\"Banque Privée A\"**, localisé en France.",
+              "correct": true
+            },
+            {
+              "q": "Quelle est la durée maximale de la fenêtre temporelle au cours de laquelle la totalité des 14 virements a été envoyée ?",
+              "gold": "Une fenêtre de 48 heures.",
+              "candidate": "La totalité des 14 virements a été envoyée sur une fenêtre temporelle de **48 heures**.",
+              "correct": true
+            },
+            {
+              "q": "Les fonds suspects transitent-ils par une banque située au Luxembourg ou en Suisse avant d'arriver au Panama ?",
+              "gold": "Non, ils transitent directement depuis la Banque Privée A en France vers le compte de la société Vortex-Holdings au Panama.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "Quel terme technique issu de la typologie bancaire est utilisé par l'Agent-GraphAnalyser-02 pour qualifier la fraude ?",
+              "gold": "Le \"Schtroumpfage\" (ou *Smurfing*).",
+              "candidate": "L'Agent-GraphAnalyser-02 qualifie la fraude par le terme technique de **\"Schtroumpfage\"** (ou *Smurfing*).",
+              "correct": true
+            },
+            {
+              "q": "Quel paramètre mathématique du graphe ($C_d$) permet à l'Agent-GraphAnalyser-02 de prouver la centralité anormale de la société écran ?",
+              "gold": "Un degré de centralité entrante égal à 14 ($C_d = 14$).",
+              "candidate": "Le paramètre utilisé est le **degré de centralité entrante** (*in-degree centrality*), dont la valeur calculée est $C_d = 14$, correspondant aux 14 virements convergeant vers le nœud *Vortex-Holdings*.",
+              "correct": true
+            },
+            {
+              "q": "Quel secteur est indiqué pour ce document ?",
+              "gold": "FinTech / Sécurité bancaire / Intelligence Artificielle autonome / Analyse de graphes.",
+              "candidate": "Le secteur indiqué pour ce document est **FinTech / Sécurité bancaire / Intelligence Artificielle autonome / Analyse de graphes**.",
+              "correct": true
+            },
+            {
+              "q": "Quel est le nom exact et l'extension du fichier généré par le système pour notifier l'autorité TRACFIN ?",
+              "gold": "Le fichier `AML-TRACFIN-2026-Vortex.xml`.",
+              "candidate": "Le fichier généré pour notifier l'autorité TRACFIN est nommé **`AML-TRACFIN-2026-Vortex.xml`**.",
+              "correct": true
+            },
+            {
+              "q": "Quelle entité spécifique est compétente pour ordonner une saisie définitive des fonds et par quel moyen technique ?",
+              "gold": "La Direction de la Conformité Humaine, via un protocole physique de signature multi-clés matérielles.",
+              "candidate": "Selon le contexte, la **Direction de la Conformité Humaine** est compétente pour ordonner une saisie définitive des fonds, activable uniquement via un protocole physique de signature multi-clés matérielles (Hardware Tokens).",
+              "correct": true
+            },
+            {
+              "q": "Quelle proportion exacte des fonds collectés est renvoyée instantanément vers le portefeuille blockchain anonyme ?",
+              "gold": "95% des sommes cumulées (soit 131 670 EUR).",
+              "candidate": "Selon les journaux d'exécution, **95%** des fonds cumulés collectés par *Vortex-Holdings* sont redistribués instantanément vers le portefeuille de crypto-actifs non hébergé `0x71B...44F`.",
+              "correct": true
+            },
+            {
+              "q": "Les journaux d'exécution indiquent-ils que ces transactions financières frauduleuses ont eu lieu au cours de l'année 2025 ?",
+              "gold": "Non, le prompt système et le contexte décrivent explicitement des événements se déroulant en 2026 (le virement datant du 14 juillet 2026).",
+              "candidate": "Non, les journaux d'exécution indiquent que ces transactions ont eu lieu le **14 Juillet 2026**, et non en 2025.",
+              "correct": true
+            },
+            {
+              "q": "Combien de serveurs informatiques GPU sont nécessaires pour faire tourner le modèle de l'Agent-RiskScorer-03 ?",
+              "gold": "not in context",
+              "candidate": "not in context",
+              "correct": true
+            },
+            {
+              "q": "À quel seuil réglementaire français précis l'agent fait-il référence lorsqu'il note que les virements font 9 900 EUR ?",
+              "gold": "Le seuil de vigilance réglementaire de TRACFIN fixé à 10 000 EUR.",
+              "candidate": "L'agent fait référence au seuil de **10 000 EUR** fixé par TRACFIN, au-delà duquel une déclaration automatique obligatoire est déclenchée.",
+              "correct": true
+            },
+            {
+              "q": "Quel statut d'interdiction l'IA applique-t-elle immédiatement aux comptes de la Banque Privée A après ses calculs ?",
+              "gold": "Le statut `BLOCK_ACCOUNT_TEMPORARY`.",
+              "candidate": "D'après le document, l'IA applique immédiatement le statut **`BLOCK_ACCOUNT_TEMPORARY`** aux 14 comptes émetteurs de la Banque Privée A.",
+              "correct": true
+            }
+          ],
+          "correct": 19,
+          "graded": 20,
+          "accuracy": 0.95
+        },
+        "terse": {
+          "tokensNet": 943,
+          "qa": [
+            {
+              "q": "Quels sont les noms de code des trois sous-agents d'intelligence artificielle qui collaborent dans ce réseau ?",
+              "gold": "Agent-Parser-01, Agent-GraphAnalyser-02 et Agent-RiskScorer-03.",
+              "candidate": "Les trois sous-agents sont **Agent-Parser-01**, **Agent-GraphAnalyser-02** et **Agent-RiskScorer-03**.",
+              "correct": true
+            },
+            {
+              "q": "Quel est le format international et la référence du lot de messages bancaires analysés au départ ?",
+              "gold": "Le format de message international Swift MT103, dans le lot référencé BATCH-EMEA-94.",
+              "candidate": "Le lot de messages bancaires analysés est au format international **Swift MT103**, avec la référence de lot **`BATCH-EMEA-94`**.",
+              "correct": true
+            },
+            {
+              "q": "Quel est le montant exact en euros de chacun des 14 virements frauduleux ?",
+              "gold": "9 900 EUR.",
+              "candidate": "Chacun des 14 virements frauduleux est d'un montant exact de **9 900 EUR**.",
+              "correct": true
+            },
+            {
+              "q": "L'agent d'intelligence artificielle a-t-il le droit de confisquer ou de liquider définitivement les crypto-monnaies du portefeuille suspect ?",
+              "gold": "Non, l'agent ne possède pas les privilèges requis pour liquider ou saisir définitivement les actifs. C'est une limite stricte de son autonomie.",
+              "candidate": "Non, l'agent IA n'a pas ce droit : il est explicitement précisé qu'il est sans privilèges de saisie ou de liquidation définitive d'actifs financiers ou de cryptomonnaies, ces actions relevant exclusivement de la Direction Conformité Humaine via protocole de signature physique multi-tokens matériels.",
+              "correct": true
+            },
+            {
+              "q": "À partir de quel score global de risque de menace ($S_r$) le système d'IA applique-t-il automatiquement un blocage des comptes sans intervention humaine ?",
+              "gold": "Un score supérieur à 85.",
+              "candidate": "Le système applique automatiquement un blocage des comptes sans validation humaine préalable lorsque le score global de risque `S_r` dépasse **85**.",
+              "correct": true
+            },
+            {
+              "q": "Quelle est la valeur finale du score de risque calculée par l'Agent-RiskScorer-03 et quelle est la formule de pondération utilisée pour y parvenir ?",
+              "gold": "Le score est de 94.4. La formule est : $$S_r = (0.4 \\times S_{\\text{jurisd}}) + (0.3 \\times S_{\\text{structure}}) + (0.3 \\times S_{\\text{vitesse}})$$",
+              "candidate": "Le score de risque final calculé par l'Agent-RiskScorer-03 est **94,4**, obtenu via la formule pondérée `S_r = (0,4 × S_jurisd) + (0,3 × S_structure) + (0,3 × S_vitesse)`, soit `(0,4 × 95) + (0,3 × 98) + (0,3 × 90) = 38 + 29,4 + 27 = 94,4`.",
+              "correct": true
+            },
+            {
+              "q": "Quel est le type de document ?",
+              "gold": "Flux d'instructions de invites (prompts) et journaux d'exécution croisés d'agents IA.",
+              "candidate": "Le document est un journal de logs d'un réseau multi-agents IA anti-blanchiment (AML-CORE) décrivant l'analyse automatisée de transactions financières suspectes.",
+              "correct": false
+            },
+            {
+              "q": "Auprès de quel établissement bancaire français précis les 14 comptes de dépôt d'origine étaient-ils ouverts ?",
+              "gold": "Auprès de l'établissement \"Banque Privée A\".",
+              "candidate": "Les 14 comptes de dépôt d'origine étaient ouverts auprès de la **Banque Privée A**, établie en France.",
+              "correct": true
+            },
+            {
+              "q": "Quelle est la durée maximale de la fenêtre temporelle au cours de laquelle la totalité des 14 virements a été envoyée ?",
+              "gold": "Une fenêtre de 48 heures.",
+              "candidate": "La totalité des 14 virements a été envoyée dans une fenêtre temporelle maximale de **48 heures**.",
+              "correct": true
+            },
+            {
+              "q": "Les fonds suspects transitent-ils par une banque située au Luxembourg ou en Suisse avant d'arriver au Panama ?",
+              "gold": "Non, ils transitent directement depuis la Banque Privée A en France vers le compte de la société Vortex-Holdings au Panama.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "Quel terme technique issu de la typologie bancaire est utilisé par l'Agent-GraphAnalyser-02 pour qualifier la fraude ?",
+              "gold": "Le \"Schtroumpfage\" (ou *Smurfing*).",
+              "candidate": "L'Agent-GraphAnalyser-02 utilise le terme **\"Smurfing\"** (également appelé *Schtroumpfage*) pour qualifier la fraude, correspondant à la technique consistant à fractionner de gros capitaux en micro-flux pour éviter les alertes bancaires.",
+              "correct": true
+            },
+            {
+              "q": "Quel paramètre mathématique du graphe ($C_d$) permet à l'Agent-GraphAnalyser-02 de prouver la centralité anormale de la société écran ?",
+              "gold": "Un degré de centralité entrante égal à 14 ($C_d = 14$).",
+              "candidate": "Le paramètre $C_d$ est le **degré de centralité entrant** (*degree centrality*) de *Vortex-Holdings*, égal à `14`, correspondant aux 14 virements convergents vers ce compte pivot unique.",
+              "correct": true
+            },
+            {
+              "q": "Quel secteur est indiqué pour ce document ?",
+              "gold": "FinTech / Sécurité bancaire / Intelligence Artificielle autonome / Analyse de graphes.",
+              "candidate": "Le document est indiqué pour le secteur de la lutte anti-blanchiment (AML) dans le domaine financier.",
+              "correct": false
+            },
+            {
+              "q": "Quel est le nom exact et l'extension du fichier généré par le système pour notifier l'autorité TRACFIN ?",
+              "gold": "Le fichier `AML-TRACFIN-2026-Vortex.xml`.",
+              "candidate": "Le fichier généré pour notifier l'autorité TRACFIN est nommé **AML-TRACFIN-2026-Vortex.xml**.",
+              "correct": true
+            },
+            {
+              "q": "Quelle entité spécifique est compétente pour ordonner une saisie définitive des fonds et par quel moyen technique ?",
+              "gold": "La Direction de la Conformité Humaine, via un protocole physique de signature multi-clés matérielles.",
+              "candidate": "La Direction Conformité Humaine est compétente pour ordonner une saisie définitive des fonds, via le protocole de signature physique multi-tokens matériels.",
+              "correct": true
+            },
+            {
+              "q": "Quelle proportion exacte des fonds collectés est renvoyée instantanément vers le portefeuille blockchain anonyme ?",
+              "gold": "95% des sommes cumulées (soit 131 670 EUR).",
+              "candidate": "95 % des fonds collectés par *Vortex-Holdings* sont redistribués immédiatement vers le wallet crypto non hébergé `0x71B...44F`.",
+              "correct": true
+            },
+            {
+              "q": "Les journaux d'exécution indiquent-ils que ces transactions financières frauduleuses ont eu lieu au cours de l'année 2025 ?",
+              "gold": "Non, le prompt système et le contexte décrivent explicitement des événements se déroulant en 2026 (le virement datant du 14 juillet 2026).",
+              "candidate": "Non, les journaux indiquent que ces transactions ont eu lieu le **2026-07-14**, soit en 2026.",
+              "correct": true
+            },
+            {
+              "q": "Combien de serveurs informatiques GPU sont nécessaires pour faire tourner le modèle de l'Agent-RiskScorer-03 ?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "À quel seuil réglementaire français précis l'agent fait-il référence lorsqu'il note que les virements font 9 900 EUR ?",
+              "gold": "Le seuil de vigilance réglementaire de TRACFIN fixé à 10 000 EUR.",
+              "candidate": "L'agent fait référence au seuil de **10 000 EUR**, au-dessus duquel une déclaration automatique obligatoire auprès de TRACFIN est déclenchée.",
+              "correct": true
+            },
+            {
+              "q": "Quel statut d'interdiction l'IA applique-t-elle immédiatement aux comptes de la Banque Privée A après ses calculs ?",
+              "gold": "Le statut `BLOCK_ACCOUNT_TEMPORARY`.",
+              "candidate": "L'IA applique immédiatement le statut **`BLOCK_ACCOUNT_TEMPORARY`** aux 14 comptes émetteurs de la Banque Privée A.",
+              "correct": true
+            }
+          ],
+          "correct": 17,
+          "graded": 20,
+          "accuracy": 0.85
+        }
+      }
+    },
+    {
+      "id": "FR-T22",
+      "lang": "FR",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 1480,
+          "qa": [
+            {
+              "q": "Quel type d'imagerie spécifique la constellation IRIS-3 va-t-elle exploiter pour l'observation de la Terre ?",
+              "gold": "L'imagerie hyperspectrale (et thermique infrarouge).",
+              "candidate": "La constellation IRIS-3 exploitera une imagerie hyperspectrale dans les bandes de l'infrarouge thermique lointain (LWIR), avec une résolution optique au sol de 1,2 m par pixel.",
+              "correct": true
+            },
+            {
+              "q": "Quel est le nombre exact de satellites prévus dans la constellation et comment sont-ils répartis ?",
+              "gold": "24 satellites opérationnels au total, répartis de manière homogène à raison de 8 satellites sur 3 plans orbitaux distincts.",
+              "candidate": "La constellation IRIS-3 comprend **24 satellites opérationnels**, répartis de manière homogène sur **3 plans orbitaux** de **8 satellites** chacun.",
+              "correct": true
+            },
+            {
+              "q": "Quelle doit être la puissance minimale continue générée par les panneaux solaires à l'arséniure de gallium ?",
+              "gold": "180W par satellite en phase d'ensoleillement.",
+              "candidate": "Les panneaux solaires à l'arséniure de gallium doivent générer une puissance minimale continue de **180W** par satellite pendant la phase d'ensoleillement de l'orbite.",
+              "correct": true
+            },
+            {
+              "q": "Les ingénieurs du segment sol ont-ils le droit d'utiliser la réserve de carburant de 15% pour corriger une mauvaise trajectoire initiale causée par une erreur de la fusée Vega-C ?",
+              "gold": "Non, il est formellement interdit d'utiliser cette réserve pour corriger des dérives d'injection ; elle est strictement réservée à l'évitement de débris et à la désorbitation en fin de vie.",
+              "candidate": "Non, il est formellement interdit à l'équipe de conduite de vol du Segment Sol d'utiliser ces 15% de réserve pour compenser des dérives d'altitudes initiales résultant d'une imprécision d'injection orbitale imputable au lanceur Vega-C.",
+              "correct": true
+            },
+            {
+              "q": "Quelles conditions météorologiques précises mesurées à moins de 30 minutes du décollage déclenchent l'annulation obligatoire du lancement ?",
+              "gold": "Une vitesse du vent en haute altitude supérieure à 85 km/h (entre 10 000 et 15 000 m) ou la présence d'une activité orageuse dans un rayon de 25 km autour du pas de tir.",
+              "candidate": "Deux conditions déclenchent l'annulation obligatoire : une vitesse de vent en haute altitude dépassant **85 km/h** entre 10 000 et 15 000 mètres d'altitude, ou la détection d'activité électrique ou orageuse dans un rayon de **25 km** autour du pas de tir.",
+              "correct": true
+            },
+            {
+              "q": "Quel partenaire du consortium fabrique le système de propulsion électrique, où est situé son site de production et quelle est sa date limite de livraison ?",
+              "gold": "C'est la société ThrustMe, située à Verrières-le-Buisson en France, avec une échéance contractuelle au 15 septembre 2027.",
+              "candidate": "D'après la matrice des partenaires industriels, **ThrustMe** est responsable de la fabrication du module de propulsion électrique, avec un site de production situé à **Verrières-le-Buisson (France)**, et une échéance contractuelle de livraison fixée au **15 septembre 2027**.",
+              "correct": true
+            },
+            {
+              "q": "Quel est le type de document ?",
+              "gold": "Note de cadrage de programme d'ingénierie complexe.",
+              "candidate": "Le document est une **note de cadrage de programme d'ingénierie complexe**.",
+              "correct": true
+            },
+            {
+              "q": "Quelle est l'altitude de vol nominale définie pour cette orbite héliosynchrone ?",
+              "gold": "540 km au-dessus du niveau moyen de la mer.",
+              "candidate": "L'altitude de vol nominale définie pour cette orbite héliosynchrone est de **540 km** au-dessus du niveau moyen de la mer.",
+              "correct": true
+            },
+            {
+              "q": "Quelle doit être la valeur exacte de la inclinaison orbitale du programme IRIS-3 ?",
+              "gold": "97.5°.",
+              "candidate": "L'inclinaison orbitale nominale du programme IRIS-3 est de **97,5°** par rapport au plan de l'équateur.",
+              "correct": true
+            },
+            {
+              "q": "Le segment sol, responsable des stations de guidage et de commande, est-il implanté en France ou en Allemagne ?",
+              "gold": "Non, il est confié à la société Telespazio sur le site industriel de Fucino situé en Italie.",
+              "candidate": "Le segment sol, responsable des stations de guidage et de commande, est implanté en Italie, à Fucino, sous la responsabilité de Telespazio.",
+              "correct": true
+            },
+            {
+              "q": "Quelle substance chimique ou matériau solide sert d'ergol pour les moteurs spatiaux du programme ?",
+              "gold": "L'iode (sublimation d'iode solide).",
+              "candidate": "L'ergol utilisé pour les moteurs spatiaux du programme est l'**iode solide**, qui fonctionne par sublimation.",
+              "correct": true
+            },
+            {
+              "q": "Quels sont les deux seuls cas d'urgence opérationnelle qui permettent de puiser dans la réserve permanente de 15% de carburant ?",
+              "gold": "Les manœuvres d'évitement de débris spatiaux et la désorbitation finale en fin de vie opérationnelle.",
+              "candidate": "Les deux seuls cas autorisés pour utiliser la réserve permanente de 15% d'iode sont les **manœuvres d'évitement de débris spatiaux** en orbite basse et la **désorbitation obligatoire** du satellite en fin de vie opérationnelle.",
+              "correct": true
+            },
+            {
+              "q": "Quel secteur est indiqué pour ce document ?",
+              "gold": "Aéronautique et Spatial / DeepTech / Observation de la Terre.",
+              "candidate": "Le secteur indiqué pour ce document est **Aéronautique et Spatial / DeepTech / Observation de la Terre**.",
+              "correct": true
+            },
+            {
+              "q": "Quel groupe industriel livre la plateforme générique (le bus) le 12 mars 2027 et de quel site de production proviendra-t-elle ?",
+              "gold": "Thales Alenia Space, depuis son site de production situé à Cannes en France.",
+              "candidate": "Thales Alenia Space livrera la plateforme générique (bus satellite) le 12 mars 2027, depuis son site de production de Cannes, en France.",
+              "correct": true
+            },
+            {
+              "q": "Quelle est la résolution optique théorique au sol par pixel offerte par la charge utile LWIR ?",
+              "gold": "1.2 m par pixel.",
+              "candidate": "La résolution optique au sol offerte par la charge utile LWIR est de **1,2 m** par pixel.",
+              "correct": true
+            },
+            {
+              "q": "Quelle est la date de la fenêtre de tir prioritaire retenue pour envoyer le premier lot de 8 satellites du Plan Orbital A ?",
+              "gold": "Le 14 février 2028.",
+              "candidate": "La fenêtre de tir prioritaire pour le lancement des 8 premiers satellites du Plan Orbital A est fixée au **14 février 2028**.",
+              "correct": true
+            },
+            {
+              "q": "La bande spectrale infrarouge utilisée par la charge utile est-elle de type SWIR (Short-Wave Infrared) ?",
+              "gold": "Non, l'imageur opère spécifiquement dans la bande thermique LWIR (Long-Wave Infrared).",
+              "candidate": "No, the payload operates in the **LWIR (Long-Wave Infrared)** band, not SWIR.",
+              "correct": true
+            },
+            {
+              "q": "Quel pays européen s'est opposé initialement au financement du programme IRIS-3 lors du vote du Conseil Spatial civil ?",
+              "gold": "not in context",
+              "candidate": "not in context",
+              "correct": true
+            },
+            {
+              "q": "Depuis quel centre spatial et quelle base de décollage s'effectuera le lancement du programme ?",
+              "gold": "Depuis le Centre Spatial Guyanais situé à Kourou.",
+              "candidate": "Le lancement s'effectuera depuis le Centre Spatial Guyanais de Kourou, depuis son pas de tir dédié au lanceur Vega-C.",
+              "correct": true
+            },
+            {
+              "q": "Dans quelle tranche d'altitude exacte la vitesse des courants-jets est-elle mesurée pour valider le critère d'annulation météorologique ?",
+              "gold": "Dans la tranche d'altitude comprise entre 10 000 et 15 000 mètres.",
+              "candidate": "La vitesse des courants-jets est mesurée dans la tranche d'altitude comprise entre **10 000 et 15 000 mètres**.",
+              "correct": true
+            }
+          ],
+          "correct": 20,
+          "graded": 20,
+          "accuracy": 1
+        },
+        "terse": {
+          "tokensNet": 746,
+          "qa": [
+            {
+              "q": "Quel type d'imagerie spécifique la constellation IRIS-3 va-t-elle exploiter pour l'observation de la Terre ?",
+              "gold": "L'imagerie hyperspectrale (et thermique infrarouge).",
+              "candidate": "La constellation IRIS-3 exploitera une imagerie **hyperspectrale thermique infrarouge** (bandes LWIR) avec une résolution optique au sol de 1,2 m/pixel.",
+              "correct": true
+            },
+            {
+              "q": "Quel est le nombre exact de satellites prévus dans la constellation et comment sont-ils répartis ?",
+              "gold": "24 satellites opérationnels au total, répartis de manière homogène à raison de 8 satellites sur 3 plans orbitaux distincts.",
+              "candidate": "La constellation IRIS-3 comprend 24 satellites opérationnels répartis en 3 plans orbitaux de 8 satellites chacun.",
+              "correct": true
+            },
+            {
+              "q": "Quelle doit être la puissance minimale continue générée par les panneaux solaires à l'arséniure de gallium ?",
+              "gold": "180W par satellite en phase d'ensoleillement.",
+              "candidate": "Les panneaux solaires à arséniure de gallium doivent générer une puissance minimale continue de **180 W par satellite** pendant la phase éclairée de l'orbite.",
+              "correct": true
+            },
+            {
+              "q": "Les ingénieurs du segment sol ont-ils le droit d'utiliser la réserve de carburant de 15% pour corriger une mauvaise trajectoire initiale causée par une erreur de la fusée Vega-C ?",
+              "gold": "Non, il est formellement interdit d'utiliser cette réserve pour corriger des dérives d'injection ; elle est strictement réservée à l'évitement de débris et à la désorbitation en fin de vie.",
+              "candidate": "Non, l'équipe de contrôle vol du Segment Sol est explicitement interdite d'utiliser la réserve de 15 % d'iode pour corriger des dérives d'altitude initiales dues à une imprécision d'injection orbitale du Vega-C.",
+              "correct": false
+            },
+            {
+              "q": "Quelles conditions météorologiques précises mesurées à moins de 30 minutes du décollage déclenchent l'annulation obligatoire du lancement ?",
+              "gold": "Une vitesse du vent en haute altitude supérieure à 85 km/h (entre 10 000 et 15 000 m) ou la présence d'une activité orageuse dans un rayon de 25 km autour du pas de tir.",
+              "candidate": "L'annulation obligatoire du lancement est déclenchée si, dans les 30 minutes avant l'heure H, le vent en haute altitude dépasse 85 km/h entre 10 000 et 15 000 m d'altitude, ou si une activité électrique ou des cellules orageuses sont détectées par radar dans un rayon de moins de 25 km autour du pas de tir guyanais.",
+              "correct": true
+            },
+            {
+              "q": "Quel partenaire du consortium fabrique le système de propulsion électrique, où est situé son site de production et quelle est sa date limite de livraison ?",
+              "gold": "C'est la société ThrustMe, située à Verrières-le-Buisson en France, avec une échéance contractuelle au 15 septembre 2027.",
+              "candidate": "ThrustMe, situé à Verrières-le-Buisson en France, fabrique le module de propulsion électrique avec une date limite de livraison fixée au 15 septembre 2027.",
+              "correct": true
+            },
+            {
+              "q": "Quel est le type de document ?",
+              "gold": "Note de cadrage de programme d'ingénierie complexe.",
+              "candidate": "Le document est un cahier des charges ou dossier de définition technique du programme spatial **IRIS-3**, une constellation de satellites d'imagerie hyperspectrale.",
+              "correct": false
+            },
+            {
+              "q": "Quelle est l'altitude de vol nominale définie pour cette orbite héliosynchrone ?",
+              "gold": "540 km au-dessus du niveau moyen de la mer.",
+              "candidate": "L'altitude de vol nominale définie pour cette orbite héliosynchrone est de **540 km** au-dessus du niveau moyen de la mer.",
+              "correct": true
+            },
+            {
+              "q": "Quelle doit être la valeur exacte de la inclinaison orbitale du programme IRIS-3 ?",
+              "gold": "97.5°.",
+              "candidate": "L'inclinaison orbitale du programme IRIS-3 est de **97,5°** par rapport au plan équatorial.",
+              "correct": true
+            },
+            {
+              "q": "Le segment sol, responsable des stations de guidage et de commande, est-il implanté en France ou en Allemagne ?",
+              "gold": "Non, il est confié à la société Telespazio sur le site industriel de Fucino situé en Italie.",
+              "candidate": "Le segment sol, guidage et stations de commande est assuré par Telespazio, dont le site est à Fucino, en **Italie**.",
+              "correct": true
+            },
+            {
+              "q": "Quelle substance chimique ou matériau solide sert d'ergol pour les moteurs spatiaux du programme ?",
+              "gold": "L'iode (sublimation d'iode solide).",
+              "candidate": "L'ergol utilisé pour la propulsion des nanosatellites du programme IRIS-3 est l'**iode solide**, par sublimation.",
+              "correct": true
+            },
+            {
+              "q": "Quels sont les deux seuls cas d'urgence opérationnelle qui permettent de puiser dans la réserve permanente de 15% de carburant ?",
+              "gold": "Les manœuvres d'évitement de débris spatiaux et la désorbitation finale en fin de vie opérationnelle.",
+              "candidate": "La réserve permanente de 15 % d'iode est exclusivement réservée à deux usages : l'évitement de débris en orbite basse et la désorbitation obligatoire en fin de vie.",
+              "correct": true
+            },
+            {
+              "q": "Quel secteur est indiqué pour ce document ?",
+              "gold": "Aéronautique et Spatial / DeepTech / Observation de la Terre.",
+              "candidate": "Le secteur indiqué est le **programme spatial civil européen**.",
+              "correct": false
+            },
+            {
+              "q": "Quel groupe industriel livre la plateforme générique (le bus) le 12 mars 2027 et de quel site de production proviendra-t-elle ?",
+              "gold": "Thales Alenia Space, depuis son site de production situé à Cannes en France.",
+              "candidate": "La plateforme générique (bus satellite) sera livrée par **Thales Alenia Space**, depuis son site de production de **Cannes, France**.",
+              "correct": true
+            },
+            {
+              "q": "Quelle est la résolution optique théorique au sol par pixel offerte par la charge utile LWIR ?",
+              "gold": "1.2 m par pixel.",
+              "candidate": "La résolution optique au sol offerte par la charge utile LWIR est de **1,2 m/pixel**.",
+              "correct": true
+            },
+            {
+              "q": "Quelle est la date de la fenêtre de tir prioritaire retenue pour envoyer le premier lot de 8 satellites du Plan Orbital A ?",
+              "gold": "Le 14 février 2028.",
+              "candidate": "La fenêtre de tir prioritaire retenue pour le lancement des 8 premiers satellites du Plan Orbital A est le 14 février 2028.",
+              "correct": true
+            },
+            {
+              "q": "La bande spectrale infrarouge utilisée par la charge utile est-elle de type SWIR (Short-Wave Infrared) ?",
+              "gold": "Non, l'imageur opère spécifiquement dans la bande thermique LWIR (Long-Wave Infrared).",
+              "candidate": "Non, la charge utile utilise des bandes **LWIR** (Long-Wave Infrared), et non SWIR.",
+              "correct": true
+            },
+            {
+              "q": "Quel pays européen s'est opposé initialement au financement du programme IRIS-3 lors du vote du Conseil Spatial civil ?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "Depuis quel centre spatial et quelle base de décollage s'effectuera le lancement du programme ?",
+              "gold": "Depuis le Centre Spatial Guyanais situé à Kourou.",
+              "candidate": "Le lancement s'effectuera depuis le Centre Spatial Guyanais à Kourou, avec le lanceur Vega-C d'Arianespace.",
+              "correct": true
+            },
+            {
+              "q": "Dans quelle tranche d'altitude exacte la vitesse des courants-jets est-elle mesurée pour valider le critère d'annulation météorologique ?",
+              "gold": "Dans la tranche d'altitude comprise entre 10 000 et 15 000 mètres.",
+              "candidate": "La vitesse des vents est mesurée entre **10 000 et 15 000 mètres** d'altitude pour valider le critère d'annulation météorologique.",
+              "correct": true
+            }
+          ],
+          "correct": 17,
+          "graded": 20,
+          "accuracy": 0.85
+        }
+      }
+    },
+    {
+      "id": "FR-T23",
+      "lang": "FR",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 1606,
+          "qa": [
+            {
+              "q": "Quel est le numéro de registre unique EudraCT attribué à cet essai de Phase III ?",
+              "gold": "EudraCT-2026-004512-11.",
+              "candidate": "Le numéro de registre unique EudraCT attribué à cet essai de Phase III est **EudraCT-2026-004512-11**.",
+              "correct": true
+            },
+            {
+              "q": "Quelle est la classe pharmacologique ou le mécanisme d'action de la molécule NeuroX-72 ?",
+              "gold": "Un inhibiteur enzymatique de nouvelle génération.",
+              "candidate": "NeuroX-72 est un inhibiteur enzymatique de nouvelle génération ciblant la stabilisation des voies de dégradation synaptique.",
+              "correct": true
+            },
+            {
+              "q": "Quelles sont les valeurs de scores minimale et maximale inclusives requises au test MMSE pour qu'un patient soit inclus ?",
+              "gold": "Un score compris de façon inclusive entre 18 et 24.",
+              "candidate": "Le score MMSE requis doit être compris de façon inclusive entre **18** et **24**.",
+              "correct": true
+            },
+            {
+              "q": "Un patient dont l'aidant principal n'habite pas avec lui mais passe lui rendre visite deux heures par jour est-il admissible ?",
+              "gold": "Non, le protocole impose comme critère d'inclusion impératif la disponibilité d'un aidant permanent cohabitant à temps complet au domicile du patient.",
+              "candidate": "Non, ce patient n'est pas admissible, car le protocole exige la disponibilité d'un aidant **cohabitant à temps complet** au domicile du patient.",
+              "correct": true
+            },
+            {
+              "q": "Quelle instance internationale possède le droit exclusif de déclencher la procédure de levée du double-aveugle en cas de péril vital ?",
+              "gold": "Le Comité Indépendant de Surveillance des Données (DSMB - Data and Safety Monitoring Board).",
+              "candidate": "Le droit exclusif de déclencher la procédure de levée du double-aveugle en cas de péril vital appartient au **Comité Indépendant de Surveillance des Données (DSMB - Data and Safety Monitoring Board)**.",
+              "correct": true
+            },
+            {
+              "q": "Quelle est la posologie matérielle exacte (dosage, fréquence et condition stomacale) prescrite pour le Groupe A, et pour quelle durée globale ?",
+              "gold": "Un comprimé pelliculé dosé à 40 mg, une fois par jour le matin à jeun, pendant une durée de 48 semaines consécutives.",
+              "candidate": "Le Groupe A reçoit un comprimé de NeuroX-72 dosé à **40 mg**, pris une fois par jour le matin à jeun, pendant une durée totale de **48 semaines**.",
+              "correct": true
+            },
+            {
+              "q": "Quel est le type de document ?",
+              "gold": "Protocole d'essai clinique standardisé et d'encadrement médical.",
+              "candidate": "Le document est un protocole d'essai clinique standardisé et d'encadrement médical.",
+              "correct": true
+            },
+            {
+              "q": "Pour le traitement de quelle pathologie neurodégénérative précise cette molécule est-elle développée ?",
+              "gold": "La maladie d'Alzheimer (à un stade précoce à modéré).",
+              "candidate": "La molécule NeuroX-72 est développée pour ralentir la progression des déficits cognitifs chez des patients atteints de la **maladie d'Alzheimer** à un stade précoce à modéré.",
+              "correct": true
+            },
+            {
+              "q": "De combien de temps maximum dispose le médecin investigateur local pour notifier un événement indésirable grave au Centre de Pharmacovigilance ?",
+              "gold": "Un délai maximal et inflexible de 24 heures.",
+              "candidate": "Le médecin investigateur local dispose d'un délai maximum de **24 heures** à compter du moment de la prise de connaissance de l'événement pour notifier un événement indésirable grave au Centre de Pharmacovigilance Global.",
+              "correct": true
+            },
+            {
+              "q": "Un candidat âgé de 82 ans au moment de la signature du consentement peut-il intégrer l'essai clinique ?",
+              "gold": "Non, l'âge doit être compris strictement entre 55 ans révolus et 80 ans. 82 ans se situe en dehors de la borne supérieure.",
+              "candidate": "Non, ce candidat ne peut pas intégrer l'essai clinique, car le critère d'inclusion exige un âge strictement compris entre 55 ans révolus et 80 ans au jour de la signature du consentement éclairé.",
+              "correct": true
+            },
+            {
+              "q": "Quel est le ratio de répartition statistique appliqué lors du processus de randomisation entre le groupe actif et le groupe placebo ?",
+              "gold": "Un ratio de 1:1.",
+              "candidate": "Le ratio de répartition statistique appliqué lors de la randomisation entre le groupe actif et le groupe placebo est de **1:1**.",
+              "correct": true
+            },
+            {
+              "q": "À partir de quelle valeur plancher de clairance de la créatinine un patient entre-t-il dans la catégorie d'insuffisance rénale sévère entraînant son exclusion ?",
+              "gold": "Une valeur de clairance de la créatinine strictement inférieure à 30 mL/min.",
+              "candidate": "Un patient est exclu pour insuffisance rénale sévère lorsque sa clairance de la créatinine est strictement inférieure à **30 mL/min**.",
+              "correct": true
+            },
+            {
+              "q": "Quel secteur est indiqué pour ce document ?",
+              "gold": "Biotech / Recherche Pharmaceutique / Santé / Neurologie clinique.",
+              "candidate": "Le secteur indiqué pour ce document est **Biotech / Recherche Pharmaceutique / Santé / Neurologie clinique**.",
+              "correct": true
+            },
+            {
+              "q": "Quels critères d'exclusion lient la neurologie (les antécédents cardiovasculaires) et la cardiologie (les dispositifs implantables) ?",
+              "gold": "Un antécédent d'AVC (ischémique ou hémorragique) de moins de 12 mois et la contre-indication à l'IRM telle que la présence d'un pacemaker cardiaque non compatible.",
+              "candidate": "Les deux critères d'exclusion reliant la neurologie et la cardiologie sont : un antécédent d'AVC (ischémique ou hémorragique) survenu dans les 12 derniers mois, et la présence d'un pacemaker cardiaque de première génération incompatible avec l'IRM.",
+              "correct": true
+            },
+            {
+              "q": "Quelle est la forme galénique physique exacte sous laquelle est administré le principe actif NeuroX-72 ?",
+              "gold": "Sous la forme d'un comprimé pelliculé.",
+              "candidate": "Le principe actif NeuroX-72 est administré sous la forme d'un **comprimé pelliculé** par voie orale.",
+              "correct": true
+            },
+            {
+              "q": "Quelles caractéristiques physiques du comprimé du Groupe B doivent être rigoureusement identiques à celles du Groupe A pour préserver l'aveugle ?",
+              "gold": "La couleur, la taille, la texture et le goût du comprimé.",
+              "candidate": "Selon le protocole, le comprimé placebo du Groupe B doit être strictement identique au comprimé du Groupe A en termes de **couleur, taille, texture et goût**.",
+              "correct": true
+            },
+            {
+              "q": "Le médecin investigateur local est-il autorisé à rompre l'aveugle de sa propre initiative si un patient se plaint de nausées modérées ?",
+              "gold": "Non, il est strictement interdit de rompre le secret du double-aveugle pour des événements d'ordre mineur ou modéré (comme des nausées passagères).",
+              "candidate": "Non, le médecin investigateur local n'est pas autorisé à rompre l'aveugle de sa propre initiative pour des nausées modérées, car la levée du double-aveugle est strictement réservée au DSMB en cas de péril vital immédiat.",
+              "correct": true
+            },
+            {
+              "q": "Quelle entreprise de biotechnologie détient le brevet commercial de la formule moléculaire NeuroX-72 ?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "À quelle entité réglementaire centrale la fiche d'alerte de sécurité doit-elle être transmise dans le délai imparti ?",
+              "gold": "Au Centre de Pharmacovigilance Global.",
+              "candidate": "La fiche d'alerte réglementaire doit être télétransmise au **Centre de Pharmacovigilance Global** dans un délai maximal de 24 heures.",
+              "correct": true
+            },
+            {
+              "q": "Dans quel but thérapeutique ou physiologique précis la molécule cible-t-elle la stabilisation des voies de dégradation synaptique ?",
+              "gold": "Afin de ralentir de manière statistiquement significative la progression des déficits cognitifs chez les patients.",
+              "candidate": "La molécule NeuroX-72 cible la stabilisation des voies de dégradation synaptique afin de ralentir de manière statistiquement significative la progression des déficits cognitifs chez des sujets adultes présentant les premiers symptômes de la maladie d'Alzheimer.",
+              "correct": true
+            }
+          ],
+          "correct": 20,
+          "graded": 20,
+          "accuracy": 1
+        },
+        "terse": {
+          "tokensNet": 822,
+          "qa": [
+            {
+              "q": "Quel est le numéro de registre unique EudraCT attribué à cet essai de Phase III ?",
+              "gold": "EudraCT-2026-004512-11.",
+              "candidate": "Le numéro de registre unique EudraCT attribué à cet essai de Phase III est **EudraCT-2026-004512-11**.",
+              "correct": true
+            },
+            {
+              "q": "Quelle est la classe pharmacologique ou le mécanisme d'action de la molécule NeuroX-72 ?",
+              "gold": "Un inhibiteur enzymatique de nouvelle génération.",
+              "candidate": "NeuroX-72 est un inhibiteur enzymatique de nouvelle génération ciblant la stabilisation des voies de dégradation synaptique.",
+              "correct": true
+            },
+            {
+              "q": "Quelles sont les valeurs de scores minimale et maximale inclusives requises au test MMSE pour qu'un patient soit inclus ?",
+              "gold": "Un score compris de façon inclusive entre 18 et 24.",
+              "candidate": "Le score MMSE requis pour l'inclusion est compris entre **18** et **24** inclusivement.",
+              "correct": true
+            },
+            {
+              "q": "Un patient dont l'aidant principal n'habite pas avec lui mais passe lui rendre visite deux heures par jour est-il admissible ?",
+              "gold": "Non, le protocole impose comme critère d'inclusion impératif la disponibilité d'un aidant permanent cohabitant à temps complet au domicile du patient.",
+              "candidate": "Non, ce patient n'est pas admissible, car le protocole exige un aidant naturel **cohabitant à temps plein au domicile**, ce qui n'est pas le cas d'un aidant présent seulement deux heures par jour.",
+              "correct": true
+            },
+            {
+              "q": "Quelle instance internationale possède le droit exclusif de déclencher la procédure de levée du double-aveugle en cas de péril vital ?",
+              "gold": "Le Comité Indépendant de Surveillance des Données (DSMB - Data and Safety Monitoring Board).",
+              "candidate": "Le DSMB (Data and Safety Monitoring Board) est l'instance internationale possédant le droit exclusif de déclencher la procédure de levée du double-aveugle en cas de péril vital immédiat.",
+              "correct": true
+            },
+            {
+              "q": "Quelle est la posologie matérielle exacte (dosage, fréquence et condition stomacale) prescrite pour le Groupe A, et pour quelle durée globale ?",
+              "gold": "Un comprimé pelliculé dosé à 40 mg, une fois par jour le matin à jeun, pendant une durée de 48 semaines consécutives.",
+              "candidate": "Le Groupe A reçoit un comprimé pelliculé oral de NeuroX-72 40 mg, une prise par jour le matin à jeun, pendant 48 semaines consécutives ininterrompues.",
+              "correct": true
+            },
+            {
+              "q": "Quel est le type de document ?",
+              "gold": "Protocole d'essai clinique standardisé et d'encadrement médical.",
+              "candidate": "Le document est un protocole de conformité d'essai clinique de Phase III pour la molécule candidate NeuroX-72.",
+              "correct": true
+            },
+            {
+              "q": "Pour le traitement de quelle pathologie neurodégénérative précise cette molécule est-elle développée ?",
+              "gold": "La maladie d'Alzheimer (à un stade précoce à modéré).",
+              "candidate": "NeuroX-72 est développée pour ralentir la progression des déficits cognitifs chez les adultes présentant les premiers symptômes de la maladie d'Alzheimer, aux stades précoces à modérés.",
+              "correct": true
+            },
+            {
+              "q": "De combien de temps maximum dispose le médecin investigateur local pour notifier un événement indésirable grave au Centre de Pharmacovigilance ?",
+              "gold": "Un délai maximal et inflexible de 24 heures.",
+              "candidate": "Le médecin investigateur local dispose d'un délai maximum incompressible de **24 heures** dès la connaissance de l'événement indésirable grave pour notifier le Centre Mondial de Pharmacovigilance.",
+              "correct": true
+            },
+            {
+              "q": "Un candidat âgé de 82 ans au moment de la signature du consentement peut-il intégrer l'essai clinique ?",
+              "gold": "Non, l'âge doit être compris strictement entre 55 ans révolus et 80 ans. 82 ans se situe en dehors de la borne supérieure.",
+              "candidate": "Non, ce candidat ne peut pas intégrer l'essai clinique, car le protocole exige que l'âge soit compris entre 55 ans révolus et 80 ans au jour de la signature du consentement éclairé.",
+              "correct": true
+            },
+            {
+              "q": "Quel est le ratio de répartition statistique appliqué lors du processus de randomisation entre le groupe actif et le groupe placebo ?",
+              "gold": "Un ratio de 1:1.",
+              "candidate": "Le ratio de répartition appliqué lors de la randomisation entre le groupe actif et le groupe placebo est de 1:1.",
+              "correct": true
+            },
+            {
+              "q": "À partir de quelle valeur plancher de clairance de la créatinine un patient entre-t-il dans la catégorie d'insuffisance rénale sévère entraînant son exclusion ?",
+              "gold": "Une valeur de clairance de la créatinine strictement inférieure à 30 mL/min.",
+              "candidate": "Un patient entre dans la catégorie d'insuffisance rénale sévère entraînant son exclusion lorsque sa clairance de la créatinine est strictement inférieure à 30 mL/min.",
+              "correct": true
+            },
+            {
+              "q": "Quel secteur est indiqué pour ce document ?",
+              "gold": "Biotech / Recherche Pharmaceutique / Santé / Neurologie clinique.",
+              "candidate": "Le secteur indiqué pour ce document est celui des essais cliniques pharmaceutiques / recherche médicale (Phase III, molécule candidate NeuroX-72 pour la maladie d'Alzheimer).",
+              "correct": true
+            },
+            {
+              "q": "Quels critères d'exclusion lient la neurologie (les antécédents cardiovasculaires) et la cardiologie (les dispositifs implantables) ?",
+              "gold": "Un antécédent d'AVC (ischémique ou hémorragique) de moins de 12 mois et la contre-indication à l'IRM telle que la présence d'un pacemaker cardiaque non compatible.",
+              "candidate": "Les deux critères d'exclusion concernés sont : un antécédent d'accident vasculaire cérébral ischémique ou hémorragique dans les 12 mois précédents, et une contre-indication absolue à l'IRM notamment liée à un pacemaker de 1re génération incompatible avec les champs magnétiques intenses.",
+              "correct": true
+            },
+            {
+              "q": "Quelle est la forme galénique physique exacte sous laquelle est administré le principe actif NeuroX-72 ?",
+              "gold": "Sous la forme d'un comprimé pelliculé.",
+              "candidate": "Le principe actif NeuroX-72 est administré sous forme de **comprimé pelliculé oral de 40 mg**.",
+              "correct": true
+            },
+            {
+              "q": "Quelles caractéristiques physiques du comprimé du Groupe B doivent être rigoureusement identiques à celles du Groupe A pour préserver l'aveugle ?",
+              "gold": "La couleur, la taille, la texture et le goût du comprimé.",
+              "candidate": "Le comprimé du Groupe B (placebo) doit être rigoureusement identique à celui du Groupe A en termes de **couleur, taille, texture et goût**.",
+              "correct": true
+            },
+            {
+              "q": "Le médecin investigateur local est-il autorisé à rompre l'aveugle de sa propre initiative si un patient se plaint de nausées modérées ?",
+              "gold": "Non, il est strictement interdit de rompre le secret du double-aveugle pour des événements d'ordre mineur ou modéré (comme des nausées passagères).",
+              "candidate": "Non, la levée de l'aveugle est strictement interdite pour des événements mineurs ou modérés tels que les nausées passagères, et ne peut être déclenchée que par le DSMB en cas de péril vital immédiat.",
+              "correct": true
+            },
+            {
+              "q": "Quelle entreprise de biotechnologie détient le brevet commercial de la formule moléculaire NeuroX-72 ?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "À quelle entité réglementaire centrale la fiche d'alerte de sécurité doit-elle être transmise dans le délai imparti ?",
+              "gold": "Au Centre de Pharmacovigilance Global.",
+              "candidate": "La fiche d'alerte de sécurité doit être transmise au **Centre Mondial Pharmacovigilance** dans un délai maximum incompressible de 24 heures.",
+              "correct": false
+            },
+            {
+              "q": "Dans quel but thérapeutique ou physiologique précis la molécule cible-t-elle la stabilisation des voies de dégradation synaptique ?",
+              "gold": "Afin de ralentir de manière statistiquement significative la progression des déficits cognitifs chez les patients.",
+              "candidate": "NeuroX-72 cible la stabilisation des voies de dégradation synaptique dans le but de ralentir de façon statistiquement significative la progression des déficits cognitifs chez les adultes présentant les premiers symptômes d'Alzheimer, aux stades précoces à modérés.",
+              "correct": true
+            }
+          ],
+          "correct": 19,
+          "graded": 20,
+          "accuracy": 0.95
+        }
+      }
+    }
+  ]
+}

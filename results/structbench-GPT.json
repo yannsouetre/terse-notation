@@ -1,0 +1,21 @@
+{
+ "tool": "structbench v0.3 — manual cross-family protocol (three isolated ChatGPT conversations)",
+ "reader": "ChatGPT (GPT-5.6 Sol, high)",
+ "grading": "central mechanical keyword matching against independently audited golds, contested items verified by hand; Q9 gold inconsistency (EN-T05) neutralized uniformly (all formats answered it; scored 9/9)",
+ "inputTokens": {
+  "prose": 25965,
+  "short": 18415,
+  "terse": 18809
+ },
+ "outputTokensApprox": {
+  "prose": 3212,
+  "short": 2846,
+  "terse": 2950
+ },
+ "completeness": {
+  "prose": "110/112 (98.2%)",
+  "short": "104/112 (92.9%)",
+  "terse": "108/112 (96.4%)"
+ },
+ "keyResult": "Q1 (list all settled decisions): short 3/9 vs terse 9/9 vs prose 9/9 — replicates the Sonnet run's failure signature on a second model family; unmarked telegraphic prose loses the EN-T02 operational decisions, `!` lines keep them retrievable."
+}

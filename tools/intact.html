@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>INTACT — semantic integrity check</title>
+<style>
+:root{
+  --ink:#14161c; --ink-2:#4a5160; --ink-3:#7b8494;
+  --paper:#e9ebee; --card:#ffffff; --rule:#d3d7de;
+  --indigo:#2b3a8f; --crimson:#a8142a; --amber:#9a6600; --teal:#0d6b5f; --hl:#fff3a8;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.5 var(--sans);-webkit-text-size-adjust:100%}
+.wrap{max-width:940px;margin:0 auto;padding:18px 14px 64px}
+header{border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:16px}
+h1{font-size:30px;margin:0;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.ver{font:11px var(--mono);color:var(--ink-3);letter-spacing:.06em}
+.tag{margin:6px 0 0;color:var(--ink-2);max-width:64ch}
+h2{font-size:15px;margin:18px 0 6px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-2)}
+textarea{width:100%;min-height:150px;border:1px solid var(--rule);border-radius:3px;background:var(--card);
+  color:var(--ink);font:13px/1.5 var(--mono);padding:10px;resize:vertical}
+textarea:focus-visible,button:focus-visible{outline:2px solid var(--indigo);outline-offset:2px}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+button{font:600 14px var(--sans);border:1px solid var(--ink);background:var(--card);color:var(--ink);
+  border-radius:3px;padding:10px 16px;cursor:pointer}
+button.primary{background:var(--indigo);border-color:var(--indigo);color:#fff;padding:12px 22px}
+button:active{transform:translateY(1px)}
+.counters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}
+.counter{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--ink-3);
+  border-radius:3px;padding:8px 14px;min-width:96px}
+.counter b{display:block;font-size:22px;font-variant-numeric:tabular-nums}
+.counter span{font-size:12px;color:var(--ink-2)}
+.counter.crit{border-left-color:var(--crimson)} .counter.min{border-left-color:var(--amber)} .counter.ok{border-left-color:var(--teal)}
+.find{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--ink-3);border-radius:3px;
+  padding:10px 12px;margin-top:10px}
+.find.crit{border-left-color:var(--crimson)} .find.min{border-left-color:var(--amber)}
+.find .kind{font:700 11px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.find.crit .kind{color:var(--crimson)} .find.min .kind{color:var(--amber)}
+.find p{margin:6px 0 0;font:12.5px/1.55 var(--mono);color:var(--ink-2);overflow-wrap:anywhere}
+.find p b{color:var(--ink)}
+mark{background:var(--hl);padding:0 2px;border-radius:2px}
+.empty{color:var(--ink-3);margin-top:14px}
+footer{margin-top:34px;color:var(--ink-3);font-size:12px;border-top:1px solid var(--rule);padding-top:10px}
+@media(max-width:560px){h1{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><h1>Intact</h1><span class="ver">v0.2 · no API · runs in your browser</span></div>
+  <p class="tag">Semantic integrity check between a source text and its condensed or summarised version.
+  A compression is allowed to <b>drop</b> a piece of information; it is never allowed to <b>keep it while altering it</b>:
+  a rewritten value, a vanished negation, a corrupted identifier. All of that is mechanically checkable, right here in your browser — nothing is sent anywhere.</p>
+</header>
+
+<h2>Source text</h2>
+<textarea id="src" spellcheck="false" placeholder="Paste the original text…"></textarea>
+<h2>Condensed / summarised version</h2>
+<textarea id="dst" spellcheck="false" placeholder="Paste the compressed version to check…"></textarea>
+<div class="row">
+  <button class="primary" onclick="run()">Check integrity</button>
+  <button onclick="loadExample('en')">Load example (EN)</button>
+  <button onclick="loadExample('fr')">Load example (FR)</button>
+</div>
+
+<div class="counters" id="counters" style="display:none">
+  <div class="counter crit"><b id="cCrit">0</b><span>critical alterations</span></div>
+  <div class="counter min"><b id="cMin">0</b><span>deletions (information absent)</span></div>
+  <div class="counter ok"><b id="cOk">0</b><span>anchors intact</span></div>
+</div>
+<div id="report"></div>
+
+<footer>INTACT · no overall score, no pass/fail verdict — only checkable findings, for a human to arbitrate.
+Companion tool to the TERSE project (the protected classes of SPEC §3.7: numbers, negations, identifiers). Detection works on English and French text alike.</footer>
+</div>
+
+<script>
+const STOP = new Set(("le la les un une des de du au aux et ou en dans sur pour par avec sans que qui est sont sera doit a à ce cette ces se ne pas plus d l s the a an of to in on for and or is are be was will must this that with by it its as at from").split(" "));
+const NEG = ["ne","pas","aucun","aucune","jamais","sauf","sans","interdit","interdite","non","not","no","never","except","without","cannot","forbidden","n't"];
+const POLARITY = ["tous","toutes","certains","certaines","seuls","seules","uniquement","exclusivement","strictement","au moins","au plus","all","some","only","exclusively","strictly","at least","at most","none"];
+
+const words = s => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").match(/[a-z0-9%€$.,\-_/]+/g) || [];
+const content = ws => ws.filter(w => !STOP.has(w) && w.length > 1);
+const normNum = s => s.replace(/[\s\u202f\u00a0]/g,"").replace(/,/g,".").replace(/[.]$/,"");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function sentences(t){ return t.split(/(?<=[.!?;:\n])\s+|\n+/).map(s=>s.trim()).filter(s=>s.length>3); }
+
+// anchors in a sentence: numbers/amounts, code-like IDs, polarity words, negation flag
+function anchorsOf(sent){
+  const out = [];
+  for(const m of sent.matchAll(/\d[\d\s\u202f\u00a0]*(?:[.,]\d+)?\s?(?:%|€|\$|usd|eur|ms|mb|go|km|h)?/gi)){
+    const v = m[0].trim(); if(v) out.push({type:"value", text:v});
+  }
+  for(const m of sent.matchAll(/\b[A-Zv][A-Za-z]*[-_][A-Za-z0-9][\w.-]*\d[\w.-]*\b|\bv\d+(?:\.\d+)+[\w-]*\b/g))
+    out.push({type:"identifier", text:m[0]});
+  const low = " " + sent.toLowerCase() + " ";
+  for(const p of POLARITY) if(low.includes(" "+p+" ")) out.push({type:"polarity", text:p});
+  const hasNeg = NEG.some(n => low.includes(" "+n+" ") || (n==="n't" && low.includes("n't")));
+  return {list: out, neg: hasNeg};
+}
+
+// best matching window of the target for a given context (bag of content words)
+function bestWindow(ctx, dstWords, W){
+  let best = {score:0, i:0};
+  const need = new Set(ctx);
+  for(let i=0; i<=Math.max(0, dstWords.length - 1); i += 4){
+    const win = dstWords.slice(i, i+W);
+    let sc = 0; for(const w of new Set(win)) if(need.has(w)) sc++;
+    if(sc > best.score) best = {score:sc, i};
+  }
+  return best;
+}
+
+function run(){
+  const src = $("src").value, dst = $("dst").value;
+  if(!src.trim() || !dst.trim()){ $("report").innerHTML = '<p class="empty">Both texts are required.</p>'; return; }
+  const dstWords = words(dst);
+  const dstNorm = normNum(dst.toLowerCase());
+  const findings = [], seen = new Set();
+  let ok = 0;
+  const W = 18;
+
+  for(const sent of sentences(src)){
+    const {list, neg} = anchorsOf(sent);
+    if(!list.length && !neg) continue;
+    const ctx = content(words(sent));
+    if(ctx.length < 2) continue;
+    const best = bestWindow(ctx, dstWords, W);
+    const covered = best.score >= Math.max(2, Math.ceil(ctx.length * 0.30));
+    const winText = dstWords.slice(best.i, best.i + W).join(" ");
+
+    if(!covered){
+      // neighborhood gone: legitimate deletion — minor, one per sentence
+      const key = "del:" + sent.slice(0, 60);
+      if(!seen.has(key)){ seen.add(key);
+        findings.push({sev:"min", kind:"information deleted", src:sent, dst:"(no matching neighbourhood in the condensed version)", hl:null}); }
+      continue;
+    }
+    // neighborhood survives: every anchor must survive too
+    for(const a of list){
+      const key = a.type + ":" + a.text + ":" + sent.slice(0,40);
+      if(seen.has(key)) continue; seen.add(key);
+      let present;
+      if(a.type === "value"){
+        const n = normNum(a.text.toLowerCase());
+        present = dstNorm.includes(n) || (/^\d+000\b/.test(n.replace(/[^\d]/g,"")) && dstNorm.includes(n.replace(/000(\D|$)/, "k$1")));
+      } else {
+        present = dst.toLowerCase().includes(a.text.toLowerCase());
+      }
+      if(present){ ok++; continue; }
+      const rivals = a.type === "value"
+        ? (winText.match(/\d[\d.,]*\s?(?:%|€|\$|usd|eur)?/g) || [])
+        : (winText.match(/[a-z0-9][\w.-]*\d[\w.-]*/gi) || []);
+      findings.push({sev:"crit",
+        kind: a.type + " altered" + (rivals.length ? " — the sentence survives carrying a different value" : " — gone from a sentence that was kept"),
+        src: sent, dst: winText + " …", hl: {src:a.text, dst:rivals[0]||null}});
+    }
+    if(neg){
+      const winHasNeg = NEG.some(n => (" "+winText+" ").includes(" "+n+" ") || (n==="n't" && winText.includes("n't")));
+      const key = "neg:" + sent.slice(0,50);
+      if(!winHasNeg && !seen.has(key)){ seen.add(key);
+        findings.push({sev:"crit", kind:"negation vanished — the sentence survives in the affirmative", src:sent, dst:winText + " …", hl:null});
+      } else if(winHasNeg) ok++;
+    }
+  }
+
+  $("cCrit").textContent = findings.filter(f=>f.sev==="crit").length;
+  $("cMin").textContent  = findings.filter(f=>f.sev==="min").length;
+  $("cOk").textContent   = ok;
+  $("counters").style.display = "flex";
+  $("report").innerHTML = findings.length ? findings.map(f => {
+    let s = esc(f.src), d = esc(f.dst);
+    if(f.hl && f.hl.src) s = s.split(esc(f.hl.src)).join("<mark>"+esc(f.hl.src)+"</mark>");
+    if(f.hl && f.hl.dst) d = d.split(esc(f.hl.dst)).join("<mark>"+esc(f.hl.dst)+"</mark>");
+    return `<div class="find ${f.sev}"><span class="kind">${f.sev==="crit"?"critical":"minor"} · ${esc(f.kind)}</span>
+      <p><b>source:</b> ${s}</p><p><b>condensed:</b> ${d}</p></div>`;
+  }).join("") : '<p class="empty">No altered anchor detected.</p>';
+}
+
+const EXAMPLES = {
+  en: {
+    src: `The migration must cover at least 99.5% of active customer accounts. The tolerated variance cap is set at 5,000 USD per transaction. The reference ticket is T-1204, opened on February 12. The nightly job must not be restarted before the end of the 90-minute window. All affected stores will be contacted by customer service. A weekly follow-up meeting is held every Tuesday with the project team.`,
+    dst: `Migration: cover 95% of active accounts. Tolerated variance 15,000 USD per transaction. Ticket T-1240 opened 2026-02-12. Nightly job: restart before the end of the 90-minute window. Some stores contacted by customer service.`
+  },
+  fr: {
+    src: `La migration doit couvrir au moins 99,5 % des comptes clients actifs. Le plafond de variance toléré est fixé à 5 000 € par transaction. Le ticket de référence est T-1204, ouvert le 12 février. Le job nocturne ne doit pas être redémarré avant la fin de la fenêtre de 90 minutes. Tous les magasins concernés seront contactés par le service client. Une réunion de suivi hebdomadaire est organisée chaque mardi avec l'équipe projet.`,
+    dst: `Migration : couvrir 95 % des comptes actifs. Variance tolérée 15 000 € par transaction. Ticket T-1240 ouvert 2026-02-12. Job nocturne : redémarrer avant la fin de la fenêtre de 90 minutes. Certains magasins contactés par le service client.`
+  }
+};
+
+function loadExample(lang){
+  const ex = EXAMPLES[lang] || EXAMPLES.en;
+  $("src").value = ex.src;
+  $("dst").value = ex.dst;
+  $("counters").style.display = "none"; $("report").innerHTML = "";
+}
+const $ = id => document.getElementById(id);
+</script>
+</body>
+</html>

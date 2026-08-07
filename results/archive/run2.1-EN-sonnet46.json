@@ -1,0 +1,3302 @@
+{
+  "spec": "v0.7",
+  "bench": "v0.7",
+  "provider": "artifact",
+  "model": "claude-sonnet-4-6",
+  "date": "2026-07-20T05:11:29.504Z",
+  "criteria": {
+    "tokenReductionMin": 0.5,
+    "accuracyLossMaxPts": 2
+  },
+  "docs": [
+    {
+      "id": "EN-T01",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 673,
+          "qa": [
+            {
+              "q": "How long will the temporary billing interface be maintained after go-live?",
+              "gold": "Six months.",
+              "candidate": "The temporary billing interface will be maintained for six months after go-live.",
+              "correct": true
+            },
+            {
+              "q": "What is the support end date for the current version?",
+              "gold": "March 31, 2027.",
+              "candidate": "The current version of ClientBase will stop being supported on March 31, 2027.",
+              "correct": true
+            },
+            {
+              "q": "What percentage of users must have completed the training module before launch?",
+              "gold": "90%.",
+              "candidate": "90% of users must have completed the training module before launch.",
+              "correct": true
+            },
+            {
+              "q": "What automatically triggers a referral to the steering committee?",
+              "gold": "A decision with an impact greater than 50,000 euros or causing a delay of more than two weeks.",
+              "candidate": "Any decision with a financial impact exceeding 50,000 euros or causing a delay of more than two weeks must be submitted to the steering committee.",
+              "correct": true
+            },
+            {
+              "q": "Who can arbitrate a decision without going through the steering committee if it remains below the expected thresholds?",
+              "gold": "The project manager, after consulting the relevant business referent.",
+              "candidate": "The project manager can arbitrate such decisions, after consultation with the relevant business referent.",
+              "correct": true
+            },
+            {
+              "q": "What minimum rate of active customer accounts must be correctly migrated?",
+              "gold": "99.5%.",
+              "candidate": "At least 99.5% of active customer accounts must be correctly migrated.",
+              "correct": true
+            },
+            {
+              "q": "Will the interface with the billing tool be replaced as part of the project?",
+              "gold": "No.",
+              "candidate": "No, replacing the interface with the billing tool is not part of the project; a temporary interface will be maintained for six months after go-live.",
+              "correct": true
+            },
+            {
+              "q": "How many users are affected?",
+              "gold": "420 users.",
+              "candidate": "The project affects 420 users distributed across France, Belgium, and Spain.",
+              "correct": true
+            },
+            {
+              "q": "In which case can a specific functionality be developed before launch?",
+              "gold": "If it is essential for a regulatory requirement or business continuity.",
+              "candidate": "A specific functionality can be developed before launch only if it is essential for a regulatory requirement or business continuity.",
+              "correct": true
+            },
+            {
+              "q": "Which publisher markets NovaCRM?",
+              "gold": "not in context ---",
+              "candidate": "Not in context.",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        },
+        "terse": {
+          "tokensNet": 552,
+          "qa": [
+            {
+              "q": "How long will the temporary billing interface be maintained after go-live?",
+              "gold": "Six months.",
+              "candidate": "The temporary billing interface will be maintained for 6 months after go-live.",
+              "correct": true
+            },
+            {
+              "q": "What is the support end date for the current version?",
+              "gold": "March 31, 2027.",
+              "candidate": "The support end date for the current version of ClientBase is 2027-03-31.",
+              "correct": true
+            },
+            {
+              "q": "What percentage of users must have completed the training module before launch?",
+              "gold": "90%.",
+              "candidate": "90% of users must have completed training before launch.",
+              "correct": true
+            },
+            {
+              "q": "What automatically triggers a referral to the steering committee?",
+              "gold": "A decision with an impact greater than 50,000 euros or causing a delay of more than two weeks.",
+              "candidate": "Any decision involving a financial impact greater than 50,000 EUR or a delay greater than 2 weeks automatically triggers a referral to the steering committee.",
+              "correct": true
+            },
+            {
+              "q": "Who can arbitrate a decision without going through the steering committee if it remains below the expected thresholds?",
+              "gold": "The project manager, after consulting the relevant business referent.",
+              "candidate": "The project manager, after consultation with the relevant business referent, can arbitrate decisions that remain below the thresholds.",
+              "correct": true
+            },
+            {
+              "q": "What minimum rate of active customer accounts must be correctly migrated?",
+              "gold": "99.5%.",
+              "candidate": "At least 99.5% of active customer accounts must be correctly migrated.",
+              "correct": true
+            },
+            {
+              "q": "Will the interface with the billing tool be replaced as part of the project?",
+              "gold": "No.",
+              "candidate": "No, the billing tool interface replacement is out of scope; a temporary interface will be maintained for 6 months after go-live.",
+              "correct": true
+            },
+            {
+              "q": "How many users are affected?",
+              "gold": "420 users.",
+              "candidate": "420 users are affected, across France, Belgium, and Spain.",
+              "correct": true
+            },
+            {
+              "q": "In which case can a specific functionality be developed before launch?",
+              "gold": "If it is essential for a regulatory requirement or business continuity.",
+              "candidate": "A specific functionality can be developed before launch only if it is an essential regulatory requirement or a business continuity need.",
+              "correct": true
+            },
+            {
+              "q": "Which publisher markets NovaCRM?",
+              "gold": "not in context ---",
+              "candidate": "not in context",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        }
+      }
+    },
+    {
+      "id": "EN-T02",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 602,
+          "qa": [
+            {
+              "q": "If the old logic is reused, will the products be put back in their old location?",
+              "gold": "No.",
+              "candidate": "No; if the old route calculation logic is reused, the physical location of the products will remain unchanged.",
+              "correct": true
+            },
+            {
+              "q": "What volume is considered normal?",
+              "gold": "Approximately 300 orders.",
+              "candidate": "Approximately 300 pending orders is considered normal.",
+              "correct": true
+            },
+            {
+              "q": "How many orders were pending on Wednesday morning?",
+              "gold": "1,840.",
+              "candidate": "not in context",
+              "correct": false
+            },
+            {
+              "q": "What deadline is given to IT to recalculate the routes?",
+              "gold": "Thursday at 2:00 PM.",
+              "candidate": "The IT team must recalculate the picking routes before Thursday at 2:00 PM.",
+              "correct": true
+            },
+            {
+              "q": "What happens if the test results in an average time of 21 minutes?",
+              "gold": "The general activation is postponed and the old route calculation logic remains temporarily in use.",
+              "candidate": "If the average picking time during the test exceeds 20 minutes, the general activation of the new routes will be postponed and the old route calculation logic will temporarily remain in use, without changing the physical location of the products.",
+              "correct": true
+            },
+            {
+              "q": "How many additional rotations will FastRoad add in total on Thursday and Friday?",
+              "gold": "Five.",
+              "candidate": "FastRoad will add a total of five additional rotations: two on Thursday evening and three on Friday.",
+              "correct": true
+            },
+            {
+              "q": "Is the main cause a breakdown of the warehouse management IT system?",
+              "gold": "No.",
+              "candidate": "No, the software is functioning normally; the main cause is the new picking organization implemented on Monday, which increased average picking time from 18 to 27 minutes.",
+              "correct": true
+            },
+            {
+              "q": "How long will the test last?",
+              "gold": "Four hours.",
+              "candidate": "The test will last four hours.",
+              "correct": true
+            },
+            {
+              "q": "What is the hourly cost of the temporary workers?",
+              "gold": "not in context ---",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "Which stores must be contacted by customer service?",
+              "gold": "Only those whose delivery risks being delayed by more than 24 hours.",
+              "candidate": "Customer service must only contact stores whose delivery is likely to be delayed by more than 24 hours.",
+              "correct": true
+            }
+          ],
+          "correct": 9,
+          "graded": 10,
+          "accuracy": 0.9
+        },
+        "terse": {
+          "tokensNet": 413,
+          "qa": [
+            {
+              "q": "If the old logic is reused, will the products be put back in their old location?",
+              "gold": "No.",
+              "candidate": "No — if the old route logic is temporarily reused, there will be no physical relocation of products.",
+              "correct": true
+            },
+            {
+              "q": "What volume is considered normal?",
+              "gold": "Approximately 300 orders.",
+              "candidate": "Normal volume is approximately 300 pending orders.",
+              "correct": true
+            },
+            {
+              "q": "How many orders were pending on Wednesday morning?",
+              "gold": "1,840.",
+              "candidate": "not in context",
+              "correct": false
+            },
+            {
+              "q": "What deadline is given to IT to recalculate the routes?",
+              "gold": "Thursday at 2:00 PM.",
+              "candidate": "IT must recalculate the routes before Thursday 14:00.",
+              "correct": true
+            },
+            {
+              "q": "What happens if the test results in an average time of 21 minutes?",
+              "gold": "The general activation is postponed and the old route calculation logic remains temporarily in use.",
+              "candidate": "If the test results in an average time of 21 minutes, the full warehouse activation is postponed and the old route logic is temporarily reinstated (with no physical relocation).",
+              "correct": true
+            },
+            {
+              "q": "How many additional rotations will FastRoad add in total on Thursday and Friday?",
+              "gold": "Five.",
+              "candidate": "FastRoad will add a total of 5 extra rotations: 2 on Thursday evening and 3 on Friday.",
+              "correct": true
+            },
+            {
+              "q": "Is the main cause a breakdown of the warehouse management IT system?",
+              "gold": "No.",
+              "candidate": "No; the software was normal — the main cause was Monday's picking reorganization, which moved high-turnover products without recalculating routes.",
+              "correct": true
+            },
+            {
+              "q": "How long will the test last?",
+              "gold": "Four hours.",
+              "candidate": "The test will last 4 hours, with 12 pickers.",
+              "correct": false
+            },
+            {
+              "q": "What is the hourly cost of the temporary workers?",
+              "gold": "not in context ---",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "Which stores must be contacted by customer service?",
+              "gold": "Only those whose delivery risks being delayed by more than 24 hours.",
+              "candidate": "Customer Service must contact only the stores likely to experience more than 24 hours of delay.",
+              "correct": true
+            }
+          ],
+          "correct": 8,
+          "graded": 10,
+          "accuracy": 0.8
+        }
+      }
+    },
+    {
+      "id": "EN-T03",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 577,
+          "qa": [
+            {
+              "q": "What should be done if the job has been running for 60 minutes?",
+              "gold": "Do not restart it; wait for its completion or for the 90-minute limit to be exceeded.",
+              "candidate": "Wait for completion or for the 90-minute limit to be exceeded, as the job has been running for less than 90 minutes.",
+              "correct": true
+            },
+            {
+              "q": "Who must be informed as soon as a P1 is opened?",
+              "gold": "The payroll manager.",
+              "candidate": "The payroll manager must be informed as soon as a P1 incident is opened.",
+              "correct": true
+            },
+            {
+              "q": "Does a WARNING status automatically trigger an incident?",
+              "gold": "No.",
+              "candidate": "No, a `WARNING` status does not by itself trigger the incident procedure; the operator must consult the control report and follow the instructions listed there.",
+              "correct": true
+            },
+            {
+              "q": "Is a source file dated from the previous day automatically deleted?",
+              "gold": "No. It must be considered suspicious.",
+              "candidate": "No, a source file dated from the previous day is not deleted — it must be considered suspicious, and processing is suspended while the owning team is contacted.",
+              "correct": true
+            },
+            {
+              "q": "To which system does this runbook apply?",
+              "gold": "PayrollFlow.",
+              "candidate": "This runbook applies to the PayrollFlow system.",
+              "correct": true
+            },
+            {
+              "q": "What triggers the escalation to P1?",
+              "gold": "A new FAILED status or a file remaining under 10 MB after the rerun.",
+              "candidate": "Escalation to P1 is triggered if, after the manual rerun, the status remains FAILED or the file remains under 10 MB.",
+              "correct": true
+            },
+            {
+              "q": "What minimum size is expected for the file?",
+              "gold": "10 MB.",
+              "candidate": "The minimum expected file size is 10 MB.",
+              "correct": true
+            },
+            {
+              "q": "What time constitutes the first threshold for checking the file's presence?",
+              "gold": "6:30 AM.",
+              "candidate": "The first threshold for checking the file's presence is **6:30 AM** on the scheduled day.",
+              "correct": true
+            },
+            {
+              "q": "Are payroll simulations covered?",
+              "gold": "No.",
+              "candidate": "No, payroll simulations are not covered by this runbook.",
+              "correct": true
+            },
+            {
+              "q": "What triggers a P2 incident related to the job duration?",
+              "gold": "A job still in progress for more than 90 minutes.",
+              "candidate": "A P2 incident is opened if the `PAY_MONTHLY_EXPORT` job has been running for more than 90 minutes.",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        },
+        "terse": {
+          "tokensNet": 387,
+          "qa": [
+            {
+              "q": "What should be done if the job has been running for 60 minutes?",
+              "gold": "Do not restart it; wait for its completion or for the 90-minute limit to be exceeded.",
+              "candidate": "If the job has been running for 60 minutes (less than 90 minutes), do not restart it — wait for it to complete.",
+              "correct": true
+            },
+            {
+              "q": "Who must be informed as soon as a P1 is opened?",
+              "gold": "The payroll manager.",
+              "candidate": "The payroll manager must be informed as soon as a P1 is opened.",
+              "correct": true
+            },
+            {
+              "q": "Does a WARNING status automatically trigger an incident?",
+              "gold": "No.",
+              "candidate": "No, a WARNING status alone does not trigger an incident — the operator must consult the report and follow its instructions.",
+              "correct": true
+            },
+            {
+              "q": "Is a source file dated from the previous day automatically deleted?",
+              "gold": "No. It must be considered suspicious.",
+              "candidate": "No; a source file dated from the previous day is considered suspicious, but the procedure only says to contact the owner team and suspend — not to delete it.",
+              "correct": true
+            },
+            {
+              "q": "To which system does this runbook apply?",
+              "gold": "PayrollFlow.",
+              "candidate": "This runbook applies to **PayrollFlow**, specifically for monthly payroll file generation.",
+              "correct": true
+            },
+            {
+              "q": "What triggers the escalation to P1?",
+              "gold": "A new FAILED status or a file remaining under 10 MB after the rerun.",
+              "candidate": "Escalation to P1 is triggered when, after a manual rerun, the auto check returns `FAILED` or the output file is less than 10 MB.",
+              "correct": true
+            },
+            {
+              "q": "What minimum size is expected for the file?",
+              "gold": "10 MB.",
+              "candidate": "The minimum expected file size is 10 MB.",
+              "correct": true
+            },
+            {
+              "q": "What time constitutes the first threshold for checking the file's presence?",
+              "gold": "6:30 AM.",
+              "candidate": "The first threshold for checking the file's presence is **06:30** on the scheduled day.",
+              "correct": true
+            },
+            {
+              "q": "Are payroll simulations covered?",
+              "gold": "No.",
+              "candidate": "Payroll simulations are explicitly excluded from the scope of this procedure.",
+              "correct": true
+            },
+            {
+              "q": "What triggers a P2 incident related to the job duration?",
+              "gold": "A job still in progress for more than 90 minutes.",
+              "candidate": "A P2 incident is opened when the scheduler `PAY_MONTHLY_EXPORT` has been running for more than 90 minutes.",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        }
+      }
+    },
+    {
+      "id": "EN-T04",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 503,
+          "qa": [
+            {
+              "q": "Who arbitrates product priority conflicts?",
+              "gold": "Sophie Delmas.",
+              "candidate": "Sophie Delmas arbitrates product priority conflicts.",
+              "correct": true
+            },
+            {
+              "q": "What must the agent write when necessary information is missing?",
+              "gold": "\"to be clarified\".",
+              "candidate": "When necessary information is missing, the agent must write \"to be clarified.\"",
+              "correct": true
+            },
+            {
+              "q": "Can the agent send a message to a supplier on its own?",
+              "gold": "No.",
+              "candidate": "No, the agent cannot send any external message on its own initiative — it can only prepare a draft, which a human must explicitly request to send.",
+              "correct": true
+            },
+            {
+              "q": "What is the name of the agent?",
+              "gold": "MeetingPilot.",
+              "candidate": "The agent's name is **MeetingPilot**.",
+              "correct": true
+            },
+            {
+              "q": "What is the purpose of \"Atlas Weekly Decisions\"?",
+              "gold": "To keep only validated decisions.",
+              "candidate": "\"Atlas Weekly Decisions\" is a reference document that contains only validated decisions from the Atlas product committee meetings.",
+              "correct": true
+            },
+            {
+              "q": "How many previous meeting minutes must the agent examine before a meeting?",
+              "gold": "The last two.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "What makes a decision valid?",
+              "gold": "An explicit confirmation from Sophie or an approval by consensus indicated in her presence.",
+              "candidate": "A decision is only valid if Sophie explicitly confirms it or if the minutes indicate it was approved by consensus in her presence.",
+              "correct": true
+            },
+            {
+              "q": "Should ideas under discussion be added to this page?",
+              "gold": "No.",
+              "candidate": "No, ideas still under discussion must not be added to the \"Atlas Weekly Decisions\" page; they must remain in the meeting notes.",
+              "correct": true
+            },
+            {
+              "q": "What triggers the creation of a follow-up action?",
+              "gold": "A deadline less than or equal to 14 days.",
+              "candidate": "A follow-up action is created when the deadline of a validated decision is less than or equal to 14 days.",
+              "correct": true
+            },
+            {
+              "q": "What is the maximum number of topics it can prepare?",
+              "gold": "Five.",
+              "candidate": "MeetingPilot can prepare a maximum of five topics.",
+              "correct": true
+            }
+          ],
+          "correct": 9,
+          "graded": 10,
+          "accuracy": 0.9
+        },
+        "terse": {
+          "tokensNet": 351,
+          "qa": [
+            {
+              "q": "Who arbitrates product priority conflicts?",
+              "gold": "Sophie Delmas.",
+              "candidate": "Sophie Delmas arbitrates product priority conflicts.",
+              "correct": true
+            },
+            {
+              "q": "What must the agent write when necessary information is missing?",
+              "gold": "\"to be clarified\".",
+              "candidate": "When necessary information is missing, the agent must write \"to be clarified.\"",
+              "correct": true
+            },
+            {
+              "q": "Can the agent send a message to a supplier on its own?",
+              "gold": "No.",
+              "candidate": "No, the agent can never send an external message on its own initiative; sending requires an explicit human request.",
+              "correct": true
+            },
+            {
+              "q": "What is the name of the agent?",
+              "gold": "MeetingPilot.",
+              "candidate": "The agent's name is **MeetingPilot**.",
+              "correct": true
+            },
+            {
+              "q": "What is the purpose of \"Atlas Weekly Decisions\"?",
+              "gold": "To keep only validated decisions.",
+              "candidate": "\"Atlas Weekly Decisions\" serves as the reference document for validated decisions only, excluding discussion ideas which remain in meeting notes.",
+              "correct": true
+            },
+            {
+              "q": "How many previous meeting minutes must the agent examine before a meeting?",
+              "gold": "The last two.",
+              "candidate": "not in context",
+              "correct": false
+            },
+            {
+              "q": "What makes a decision valid?",
+              "gold": "An explicit confirmation from Sophie or an approval by consensus indicated in her presence.",
+              "candidate": "A decision is valid only if Sophie explicitly confirms it, or if the minutes state that consensus was approved in her presence.",
+              "correct": true
+            },
+            {
+              "q": "Should ideas under discussion be added to this page?",
+              "gold": "No.",
+              "candidate": "No, discussion ideas stay in the meeting notes and should not be added to the \"Atlas Weekly Decisions\" reference page.",
+              "correct": true
+            },
+            {
+              "q": "What triggers the creation of a follow-up action?",
+              "gold": "A deadline less than or equal to 14 days.",
+              "candidate": "A follow-up action is created when a validated decision has a deadline of 14 days or fewer.",
+              "correct": true
+            },
+            {
+              "q": "What is the maximum number of topics it can prepare?",
+              "gold": "Five.",
+              "candidate": "The maximum number of topics MeetingPilot can prepare is 5.",
+              "correct": true
+            }
+          ],
+          "correct": 9,
+          "graded": 10,
+          "accuracy": 0.9
+        }
+      }
+    },
+    {
+      "id": "EN-T05",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 414,
+          "qa": [
+            {
+              "q": "What composition does Option C provide for?",
+              "gold": "42 electric vehicles and 18 plug-in hybrids.",
+              "candidate": "Option C provides for a fleet of 42 electric vehicles and 18 plug-in hybrids.",
+              "correct": true
+            },
+            {
+              "q": "Before what date must the decision be made?",
+              "gold": "Before September 15.",
+              "candidate": "The decision must be made before September 15.",
+              "correct": true
+            },
+            {
+              "q": "Is Option C more expensive than Option B?",
+              "gold": "No. It is estimated to be 6% less expensive.",
+              "candidate": "No, Option C is 6% less expensive than Option B over four years.",
+              "correct": true
+            },
+            {
+              "q": "Over what period do they come to the end of their contract?",
+              "gold": "Between January and June 2027.",
+              "candidate": "The 60 intervention vehicles come to the end of their contracts between January and June 2027.",
+              "correct": true
+            },
+            {
+              "q": "What is the cost variance between Option C and Option A?",
+              "gold": "Option C is estimated to be 8% more expensive over four years.",
+              "candidate": "Option C's estimated total cost over four years is 8% higher than Option A.",
+              "correct": true
+            },
+            {
+              "q": "Which option is recommended?",
+              "gold": "Option C.",
+              "candidate": "Option C (Mixed Fleet) is the recommended option.",
+              "correct": true
+            },
+            {
+              "q": "What conditions the installation of the thirteen other charging stations?",
+              "gold": "The reinforcement of the concerned sites.",
+              "candidate": "The installation of the thirteen remaining charging stations is conditioned on the completion of the electrical reinforcement of the three constrained sites.",
+              "correct": true
+            },
+            {
+              "q": "To what uses should the hybrids be allocated as a priority?",
+              "gold": "To long rounds.",
+              "candidate": "The hybrid vehicles should be allocated as a priority to long rounds.",
+              "correct": true
+            },
+            {
+              "q": "How many vehicles regularly perform long rounds?",
+              "gold": "18.",
+              "candidate": "18 of the 60 vehicles regularly perform rounds of more than 280 kilometers in areas where fast-charging possibilities are insufficient.",
+              "correct": true
+            },
+            {
+              "q": "Will all 42 charging stations be installed before March 2027?",
+              "gold": "No.",
+              "candidate": "No, only 29 of the 42 charging stations will be installed before March 2027; the remaining 13 will be installed after the electrical reinforcement of the constrained sites.",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        },
+        "terse": {
+          "tokensNet": 333,
+          "qa": [
+            {
+              "q": "What composition does Option C provide for?",
+              "gold": "42 electric vehicles and 18 plug-in hybrids.",
+              "candidate": "Option C provides for a mixed fleet of 42 electric vehicles and 18 plug-in hybrids.",
+              "correct": true
+            },
+            {
+              "q": "Before what date must the decision be made?",
+              "gold": "Before September 15.",
+              "candidate": "The decision must be made before September 15.",
+              "correct": true
+            },
+            {
+              "q": "Is Option C more expensive than Option B?",
+              "gold": "No. It is estimated to be 6% less expensive.",
+              "candidate": "Yes, Option C is approximately 6% less expensive than Option B over a 4-year total cost.",
+              "correct": false
+            },
+            {
+              "q": "Over what period do they come to the end of their contract?",
+              "gold": "Between January and June 2027.",
+              "candidate": "The contracts end over a period running from January 2027 to June 2027.",
+              "correct": true
+            },
+            {
+              "q": "What is the cost variance between Option C and Option A?",
+              "gold": "Option C is estimated to be 8% more expensive over four years.",
+              "candidate": "Option C costs approximately 8% more than Option A over a 4-year total cost.",
+              "correct": true
+            },
+            {
+              "q": "Which option is recommended?",
+              "gold": "Option C.",
+              "candidate": "Option C (mixed fleet: 42 electric + 18 plug-in hybrids) is the recommended option.",
+              "correct": true
+            },
+            {
+              "q": "What conditions the installation of the thirteen other charging stations?",
+              "gold": "The reinforcement of the concerned sites.",
+              "candidate": "The installation of the remaining 13 charging stations is conditioned on the electrical power reinforcement of the 3 constrained sites.",
+              "correct": true
+            },
+            {
+              "q": "To what uses should the hybrids be allocated as a priority?",
+              "gold": "To long rounds.",
+              "candidate": "The hybrids should be allocated as a priority to long rounds (regularly exceeding 280 km).",
+              "correct": true
+            },
+            {
+              "q": "How many vehicles regularly perform long rounds?",
+              "gold": "18.",
+              "candidate": "18 vehicles regularly perform rounds exceeding 280 km where fast charging is insufficient.",
+              "correct": true
+            },
+            {
+              "q": "Will all 42 charging stations be installed before March 2027?",
+              "gold": "No.",
+              "candidate": "No, only 29 of the 42 charging stations will be installed before March 2027; the remaining 13 will be installed after electrical reinforcement of the constrained sites.",
+              "correct": true
+            }
+          ],
+          "correct": 9,
+          "graded": 10,
+          "accuracy": 0.9
+        }
+      }
+    },
+    {
+      "id": "EN-T06",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 1554,
+          "qa": [
+            {
+              "q": "What number of confirmed exposures of unauthorized documents is acceptable?",
+              "gold": "None.",
+              "candidate": "Zero — no confirmed case of exposure of an unauthorized document is acceptable.",
+              "correct": true
+            },
+            {
+              "q": "Is the complete cleanup of the document estate required before the pilot?",
+              "gold": "No.",
+              "candidate": "No, complete cleanup of the document estate is not required before the pilot — the objective is only to inventory sources, identify owners, and delete or mark the most critical obsolete content.",
+              "correct": true
+            },
+            {
+              "q": "Which decisions must notably go through the governance committee?",
+              "gold": "Modifications to the document scope, retention rules, user data uses, or decisions creating a risk of information exposure.",
+              "candidate": "Based on the document, decisions must go through the governance committee when they modify the scope of document sources, change a data retention rule, authorize a new use of user data, or create an identified risk of information exposure.",
+              "correct": true
+            },
+            {
+              "q": "Is ARGOS designed as an autonomous decision-making system?",
+              "gold": "No.",
+              "candidate": "No — ARGOS is explicitly designed not to be an autonomous decision-making system; its function is to help users access and understand information, while decisions with legal, financial, HR, or security implications remain the responsibility of an identified human.",
+              "correct": true
+            },
+            {
+              "q": "Are access rights evaluated for each request?",
+              "gold": "Yes.",
+              "candidate": "Yes, ARGOS applies the user's access rights at the time of each request.",
+              "correct": true
+            },
+            {
+              "q": "In which languages must ARGOS respond?",
+              "gold": "In French and English.",
+              "candidate": "ARGOS must respond in French and English.",
+              "correct": true
+            },
+            {
+              "q": "Must an expired group policy automatically prevail over a valid local procedure?",
+              "gold": "No.",
+              "candidate": "No — an expired group policy must not be presented as applicable simply because it ranks higher in the hierarchy; an explicit expiration date overrides the document hierarchy.",
+              "correct": true
+            },
+            {
+              "q": "What is the traceability objective?",
+              "gold": "At least 98% of responses using document information must contain an actionable reference.",
+              "candidate": "At least 98% of responses using document information must contain an actionable reference.",
+              "correct": true
+            },
+            {
+              "q": "Can it invent a probable procedure number to make its response more useful?",
+              "gold": "No.",
+              "candidate": "No — ARGOS must never invent a procedure number, date, responsible person, or internal rule.",
+              "correct": true
+            },
+            {
+              "q": "For how long are reports of incorrect responses retained?",
+              "gold": "Twelve months.",
+              "candidate": "Reports of incorrect responses are retained for twelve months to allow for error analysis.",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        },
+        "terse": {
+          "tokensNet": 1065,
+          "qa": [
+            {
+              "q": "What number of confirmed exposures of unauthorized documents is acceptable?",
+              "gold": "None.",
+              "candidate": "Zero — the pilot target is **0** confirmed unauthorized-document exposures, and any confirmed exposure triggers an immediate security analysis that may suspend the pilot.",
+              "correct": true
+            },
+            {
+              "q": "Is the complete cleanup of the document estate required before the pilot?",
+              "gold": "No.",
+              "candidate": "No, a complete cleanup of the document estate before the pilot is explicitly acknowledged as unrealistic; the objective of Phase 1 is only to inventory sources, identify owners, and delete or mark the most critical obsolete content.",
+              "correct": true
+            },
+            {
+              "q": "Which decisions must notably go through the governance committee?",
+              "gold": "Modifications to the document scope, retention rules, user data uses, or decisions creating a risk of information exposure.",
+              "candidate": "Based on the context, decisions that must go through the governance committee include modifying the source scope, changing retention rules, introducing new uses of user data, and managing identified information-exposure risks.",
+              "correct": true
+            },
+            {
+              "q": "Is ARGOS designed as an autonomous decision-making system?",
+              "gold": "No.",
+              "candidate": "No, ARGOS is explicitly not an autonomous decision-making system; its function is to access and help users understand information, while legal, financial, HR, and security decisions remain the responsibility of identified humans.",
+              "correct": true
+            },
+            {
+              "q": "Are access rights evaluated for each request?",
+              "gold": "Yes.",
+              "candidate": "Yes, user access rights are applied at each request.",
+              "correct": true
+            },
+            {
+              "q": "In which languages must ARGOS respond?",
+              "gold": "In French and English.",
+              "candidate": "ARGOS must respond in French and English.",
+              "correct": true
+            },
+            {
+              "q": "Must an expired group policy automatically prevail over a valid local procedure?",
+              "gold": "No.",
+              "candidate": "No — an explicit expiration overrides hierarchy, so an expired group policy is not presented as applicable solely due to its higher rank.",
+              "correct": true
+            },
+            {
+              "q": "What is the traceability objective?",
+              "gold": "At least 98% of responses using document information must contain an actionable reference.",
+              "candidate": "At least 98% of document-information responses must include an actionable reference.",
+              "correct": true
+            },
+            {
+              "q": "Can it invent a probable procedure number to make its response more useful?",
+              "gold": "No.",
+              "candidate": "No, ARGOS must never invent a procedure number, date, responsible person, or internal rule.",
+              "correct": true
+            },
+            {
+              "q": "For how long are reports of incorrect responses retained?",
+              "gold": "Twelve months.",
+              "candidate": "Incorrect-response reports are retained for 12 months for error analysis.",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        }
+      }
+    },
+    {
+      "id": "EN-T07",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 1562,
+          "qa": [
+            {
+              "q": "Can a production decrease be used to achieve the objective?",
+              "gold": "No.",
+              "candidate": "No, production reduction is explicitly not considered an acceptable lever to achieve the 40% CO₂ reduction objective.",
+              "correct": true
+            },
+            {
+              "q": "Why is the simultaneous electrification of S1 and S2 a problem?",
+              "gold": "The power available on the internal network is insufficient.",
+              "candidate": "The simultaneous electrification of S1 and S2 is a problem because the power available on the internal network is not sufficient to operate both lines simultaneously at full capacity, and adding the required new electrical substation (approximately 6.5 million euros) makes the full scenario financially difficult to accept within the current budget.",
+              "correct": true
+            },
+            {
+              "q": "Is biomass availability already classified as a critical risk?",
+              "gold": "No, it remains to be qualified.",
+              "candidate": "No, biomass availability remains to be qualified before it can be classified as critical or not.",
+              "correct": true
+            },
+            {
+              "q": "Must this 6% gain necessarily be counted as a direct CO₂ reduction?",
+              "gold": "No.",
+              "candidate": "No, the committee explicitly requests that this 6% gain not be counted as a direct CO₂ reduction, since the electricity consumed does not fall within the scope of the site's direct emissions.",
+              "correct": true
+            },
+            {
+              "q": "How many workstreams currently structure the program?",
+              "gold": "Four.",
+              "candidate": "The program currently comprises four workstreams.",
+              "correct": true
+            },
+            {
+              "q": "What is its deadline?",
+              "gold": "November 20.",
+              "candidate": "The question refers to \"its deadline\" without a clear antecedent, but based on the most recent action item listed, the Program team must propose two additional CO₂ levers before January 15, 2027.",
+              "correct": false
+            },
+            {
+              "q": "What is the minimum objective for direct emissions reduction?",
+              "gold": "40% between the 2024 reference and the end of 2030.",
+              "candidate": "The minimum objective for direct emissions reduction is **40%** compared to the 2024 reference, to be achieved by end of 2030.",
+              "correct": true
+            },
+            {
+              "q": "Before which year must the G4 boiler be replaced?",
+              "gold": "Before 2029.",
+              "candidate": "The G4 boiler must be replaced before 2029.",
+              "correct": true
+            },
+            {
+              "q": "Does this direction constitute a final investment decision?",
+              "gold": "No.",
+              "candidate": "No, this direction is validated only as a working assumption, and the investment decision has not yet been made.",
+              "correct": true
+            },
+            {
+              "q": "What is the budget envelope reserved for the program?",
+              "gold": "18 million euros over 2027-2030.",
+              "candidate": "The budget envelope reserved for the HORIZON program is 18 million euros for the 2027-2030 period.",
+              "correct": true
+            }
+          ],
+          "correct": 9,
+          "graded": 10,
+          "accuracy": 0.9
+        },
+        "terse": {
+          "tokensNet": 1086,
+          "qa": [
+            {
+              "q": "Can a production decrease be used to achieve the objective?",
+              "gold": "No.",
+              "candidate": "No, production reduction is explicitly excluded as a lever for achieving the CO₂ reduction objective.",
+              "correct": true
+            },
+            {
+              "q": "Why is the simultaneous electrification of S1 and S2 a problem?",
+              "gold": "The power available on the internal network is insufficient.",
+              "candidate": "The internal electrical network has insufficient capacity to power both S1 and S2 simultaneously at full capacity.",
+              "correct": true
+            },
+            {
+              "q": "Is biomass availability already classified as a critical risk?",
+              "gold": "No, it remains to be qualified.",
+              "candidate": "No, biomass availability is not yet classified as critical or non-critical — it still needs to be qualified before such a classification can be made.",
+              "correct": true
+            },
+            {
+              "q": "Must this 6% gain necessarily be counted as a direct CO₂ reduction?",
+              "gold": "No.",
+              "candidate": "No, the 6% utilities electricity gain must not be counted as direct CO₂ reduction, since electricity falls outside the site's direct-emission scope, and it should instead be tracked as an energy gain and indirect-emission contribution.",
+              "correct": true
+            },
+            {
+              "q": "How many workstreams currently structure the program?",
+              "gold": "Four.",
+              "candidate": "The program currently has four workstreams: A (furnace heat recovery), B (drying-line electrification), C (gas boiler replacement), and D (utilities optimization/loss reduction).",
+              "correct": true
+            },
+            {
+              "q": "What is its deadline?",
+              "gold": "November 20.",
+              "candidate": "The question is ambiguous without a clear referent, but based on the most recent action item mentioned: the Program team must propose 2 additional CO₂ levers before **2027-01-15**.",
+              "correct": false
+            },
+            {
+              "q": "What is the minimum objective for direct emissions reduction?",
+              "gold": "40% between the 2024 reference and the end of 2030.",
+              "candidate": "The minimum objective for direct CO₂ reduction is **40%** between the 2024 reference and end-2030.",
+              "correct": true
+            },
+            {
+              "q": "Before which year must the G4 boiler be replaced?",
+              "gold": "Before 2029.",
+              "candidate": "The G4 boiler must be replaced before 2029.",
+              "correct": true
+            },
+            {
+              "q": "Does this direction constitute a final investment decision?",
+              "gold": "No.",
+              "candidate": "No, the S1-only direction is explicitly validated only as a **working assumption**, and the investment decision has not been made.",
+              "correct": true
+            },
+            {
+              "q": "What is the budget envelope reserved for the program?",
+              "gold": "18 million euros over 2027-2030.",
+              "candidate": "The budget envelope reserved for the program is 18M EUR for the period 2027–2030.",
+              "correct": true
+            }
+          ],
+          "correct": 9,
+          "graded": 10,
+          "accuracy": 0.9
+        }
+      }
+    },
+    {
+      "id": "EN-T08",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 1362,
+          "qa": [
+            {
+              "q": "Is the global network shutdown of the site automatic in case of propagation?",
+              "gold": "No.",
+              "candidate": "No, a global network shutdown of a site is never automatic and requires a decision from the security manager or the cyber crisis director.",
+              "correct": true
+            },
+            {
+              "q": "Is the last available backup automatically considered clean?",
+              "gold": "No.",
+              "candidate": "No, the last available backup is not automatically considered clean — its date must be compared to the probable period of compromise.",
+              "correct": true
+            },
+            {
+              "q": "Is simple slowness of the workstation enough to trigger this runbook?",
+              "gold": "No.",
+              "candidate": "No, simple slowness is not enough to trigger this runbook in the absence of another indicator.",
+              "correct": true
+            },
+            {
+              "q": "Who can decide a global network shutdown of a site?",
+              "gold": "The security manager or the cyber crisis director.",
+              "candidate": "A global network shutdown of a site requires a decision from the security manager or the cyber crisis director.",
+              "correct": true
+            },
+            {
+              "q": "Can the SOC decide alone to pay a ransom?",
+              "gold": "No.",
+              "candidate": "No, ransom payment is never decided by the SOC (nor by support or the local administrator).",
+              "correct": true
+            },
+            {
+              "q": "What timeline is planned for the post-incident review of a confirmed P1?",
+              "gold": "Within ten business days following the return to a stabilized situation.",
+              "candidate": "A post-incident review must be organized within ten business days following the return to a stabilized situation.",
+              "correct": true
+            },
+            {
+              "q": "Does the presence of encrypted files always require an immediate password reset?",
+              "gold": "No.",
+              "candidate": "No, the mere presence of encrypted files on the workstation does not automatically require an immediate password reset if no indication of account compromise exists.",
+              "correct": true
+            },
+            {
+              "q": "Can an unconfirmed suspicious signal on a single workstation be opened as P2?",
+              "gold": "Yes.",
+              "candidate": "Yes, a suspicious signal limited to a single workstation without confirmation can be opened as P2 pending SOC qualification.",
+              "correct": true
+            },
+            {
+              "q": "Does a message demanding a ransom constitute a triggering signal?",
+              "gold": "Yes.",
+              "candidate": "Yes, a message demanding a ransom is explicitly listed as one of the triggering signals for this procedure.",
+              "correct": true
+            },
+            {
+              "q": "Does this necessarily prove that the common origin is confirmed?",
+              "gold": "No.",
+              "candidate": "No, two workstations displaying signs consistent with the same ransomware within a 30-minute period must be treated as potentially propagated **even if the common origin is not yet confirmed**.",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        },
+        "terse": {
+          "tokensNet": 902,
+          "qa": [
+            {
+              "q": "Is the global network shutdown of the site automatic in case of propagation?",
+              "gold": "No.",
+              "candidate": "No, a site-wide network shutdown is never automatic and requires authorization from the security manager or cyber crisis director.",
+              "correct": true
+            },
+            {
+              "q": "Is the last available backup automatically considered clean?",
+              "gold": "No.",
+              "candidate": "No, the latest backup is not automatically considered clean; its date must be compared with the probable compromise period.",
+              "correct": true
+            },
+            {
+              "q": "Is simple slowness of the workstation enough to trigger this runbook?",
+              "gold": "No.",
+              "candidate": "No, simple slowness alone is not enough to trigger this runbook.",
+              "correct": true
+            },
+            {
+              "q": "Who can decide a global network shutdown of a site?",
+              "gold": "The security manager or the cyber crisis director.",
+              "candidate": "A site-wide network shutdown requires the security manager or cyber crisis director.",
+              "correct": true
+            },
+            {
+              "q": "Can the SOC decide alone to pay a ransom?",
+              "gold": "No.",
+              "candidate": "No, ransom payment is never decided by support, SOC, or local administrator.",
+              "correct": true
+            },
+            {
+              "q": "What timeline is planned for the post-incident review of a confirmed P1?",
+              "gold": "Within ten business days following the return to a stabilized situation.",
+              "candidate": "A confirmed P1 requires a post-incident review within 10 business days after the situation has been stabilized and restored.",
+              "correct": true
+            },
+            {
+              "q": "Does the presence of encrypted files always require an immediate password reset?",
+              "gold": "No.",
+              "candidate": "No, encrypted files alone do not automatically require an immediate password reset absent an indicator of account compromise.",
+              "correct": true
+            },
+            {
+              "q": "Can an unconfirmed suspicious signal on a single workstation be opened as P2?",
+              "gold": "Yes.",
+              "candidate": "Yes, a single-workstation suspicious signal without confirmation is opened as P2 pending SOC qualification.",
+              "correct": true
+            },
+            {
+              "q": "Does a message demanding a ransom constitute a triggering signal?",
+              "gold": "Yes.",
+              "candidate": "Yes, a ransom-demand message is listed as one of the triggering signals for a suspected ransomware incident.",
+              "correct": true
+            },
+            {
+              "q": "Does this necessarily prove that the common origin is confirmed?",
+              "gold": "No.",
+              "candidate": "No, a common origin does not need to be confirmed — the procedure states to treat the situation as potentially propagated even if a common origin is unconfirmed.",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        }
+      }
+    },
+    {
+      "id": "EN-T09",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 1627,
+          "qa": [
+            {
+              "q": "What is the difference between a risk and an issue?",
+              "gold": "A risk concerns an uncertain event; an issue has already occurred.",
+              "candidate": "A risk concerns an uncertain event, whereas an issue is an event that has already occurred.",
+              "correct": true
+            },
+            {
+              "q": "What must the agent do if two formal sources remain impossible to separate?",
+              "gold": "Mark `CONFLICT` and request human validation.",
+              "candidate": "If the priority order does not allow a decision, the agent must mark the `CONFLICT` field and request human validation.",
+              "correct": true
+            },
+            {
+              "q": "Which four minimum elements must a risk contain?",
+              "gold": "Description, probability or qualitative assessment, impact, and owner.",
+              "candidate": "A risk must contain at minimum a description, a probability or qualitative assessment, an impact, and an owner.",
+              "correct": true
+            },
+            {
+              "q": "With an approved budget of €10M and a forecast of €11.2M, what is the overrun?",
+              "gold": "12%, corresponding to the AMBER criterion on the budget.",
+              "candidate": "The forecast overrun is 12%, which triggers an AMBER criterion on the budget.",
+              "correct": true
+            },
+            {
+              "q": "What budget overrun threshold mandates RED without validated funding?",
+              "gold": "More than 15%.",
+              "candidate": "A forecast budget overrun greater than 15% without validated funding mandates RED status.",
+              "correct": true
+            },
+            {
+              "q": "Which source is normally the reference for the official schedule?",
+              "gold": "ORBIT, unless a more recent formal decision explicitly modifies the schedule.",
+              "candidate": "ORBIT is the reference source for the official schedule as long as a more recent formal decision does not modify it.",
+              "correct": true
+            },
+            {
+              "q": "Can it interpolate a missing value?",
+              "gold": "No.",
+              "candidate": "No, Portfolio Sentinel must never reconstruct a missing value by simple interpolation.",
+              "correct": true
+            },
+            {
+              "q": "Can an unallocated central reserve be included in the project budget?",
+              "gold": "No.",
+              "candidate": "No, an unallocated central reserve must not be added to the project budget until a formal allocation has been decided.",
+              "correct": true
+            },
+            {
+              "q": "Which source is authoritative for actually recorded expenditures?",
+              "gold": "FINTRACK.",
+              "candidate": "FINTRACK is the authoritative source for actually recorded expenditures.",
+              "correct": true
+            },
+            {
+              "q": "Does \"It would be useful for Léa to look at the costing\" create a commitment?",
+              "gold": "No.",
+              "candidate": "No, \"It would be useful for Léa to look at the costing\" does not create a commitment, as it is not an explicit commitment to provide a result by a specific date.",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        },
+        "terse": {
+          "tokensNet": 1004,
+          "qa": [
+            {
+              "q": "What is the difference between a risk and an issue?",
+              "gold": "A risk concerns an uncertain event; an issue has already occurred.",
+              "candidate": "A risk is an uncertain event, while an issue is an event that has already occurred.",
+              "correct": true
+            },
+            {
+              "q": "What must the agent do if two formal sources remain impossible to separate?",
+              "gold": "Mark `CONFLICT` and request human validation.",
+              "candidate": "If two formal sources remain impossible to separate, the agent must preserve the contradiction and flag it as `CONFLICT` requiring human validation.",
+              "correct": true
+            },
+            {
+              "q": "Which four minimum elements must a risk contain?",
+              "gold": "Description, probability or qualitative assessment, impact, and owner.",
+              "candidate": "A risk must contain at minimum a description, a probability/qualitative assessment, an impact, and an owner.",
+              "correct": true
+            },
+            {
+              "q": "With an approved budget of €10M and a forecast of €11.2M, what is the overrun?",
+              "gold": "12%, corresponding to the AMBER criterion on the budget.",
+              "candidate": "The overrun is €1.2M, representing +12% above the approved budget, which triggers an AMBER budget status.",
+              "correct": true
+            },
+            {
+              "q": "What budget overrun threshold mandates RED without validated funding?",
+              "gold": "More than 15%.",
+              "candidate": "A forecast overrun greater than 15% of the approved budget without validated funding mandates RED status.",
+              "correct": true
+            },
+            {
+              "q": "Which source is normally the reference for the official schedule?",
+              "gold": "ORBIT, unless a more recent formal decision explicitly modifies the schedule.",
+              "candidate": "ORBIT is the official schedule reference, unless a newer formal decision explicitly modifies it.",
+              "correct": true
+            },
+            {
+              "q": "Can it interpolate a missing value?",
+              "gold": "No.",
+              "candidate": "No, Portfolio Sentinel must never interpolate missing values.",
+              "correct": true
+            },
+            {
+              "q": "Can an unallocated central reserve be included in the project budget?",
+              "gold": "No.",
+              "candidate": "No, an unallocated central reserve is excluded from the project budget until it has been formally allocated.",
+              "correct": true
+            },
+            {
+              "q": "Which source is authoritative for actually recorded expenditures?",
+              "gold": "FINTRACK.",
+              "candidate": "**FINTRACK** is the authoritative source for recorded expenditures.",
+              "correct": true
+            },
+            {
+              "q": "Does \"It would be useful for Léa to look at the costing\" create a commitment?",
+              "gold": "No.",
+              "candidate": "No, \"It would be useful for Léa to look at the costing\" does not create a commitment, as it lacks an explicit person-deliverable-date assignment.",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        }
+      }
+    },
+    {
+      "id": "EN-T10",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 2106,
+          "qa": [
+            {
+              "q": "Must he give a precise resumption time if he does not have enough information?",
+              "gold": "No.",
+              "candidate": "No, the Technical Manager must not communicate a precise resumption time solely to respond to operational pressure.",
+              "correct": true
+            },
+            {
+              "q": "What must the Technical Manager provide if possible within the first fifteen minutes?",
+              "gold": "Probable nature of the event, affected area, plausible minimum duration, reasonably possible high duration, and major uncertainties.",
+              "candidate": "Within the first fifteen minutes, the Technical Manager must provide an initial estimate covering the probable nature of the breakdown, the affected area, the plausible minimum and maximum duration, and the major uncertainties.",
+              "correct": true
+            },
+            {
+              "q": "What maximum timeline then separates two estimates?",
+              "gold": "30 minutes.",
+              "candidate": "Two estimates must be separated by at most **30 minutes**.",
+              "correct": true
+            },
+            {
+              "q": "What is a level 2 disruption?",
+              "gold": "A disruption probably between 60 minutes and 3 hours.",
+              "candidate": "A level 2 disruption is one where the disruption is probably between 60 minutes and 3 hours.",
+              "correct": true
+            },
+            {
+              "q": "Must a partial service always be maintained if it is technically possible?",
+              "gold": "No.",
+              "candidate": "No, a partial service must not be maintained if it consumes resources necessary for managing the critical area or creates a risk of uncontrollable congestion.",
+              "correct": true
+            },
+            {
+              "q": "What normal conditions are required for an evacuation onto the tracks?",
+              "gold": "Authorization from the competent rail safety manager and confirmation of the protection of the traffic concerned.",
+              "candidate": "An evacuation onto the tracks requires authorization from the competent rail safety manager and confirmation that the traffic concerned is protected.",
+              "correct": true
+            },
+            {
+              "q": "Why prioritize holding trains in stations?",
+              "gold": "To avoid stranding them in areas where they can neither advance nor allow a simple exit for passengers.",
+              "candidate": "To avoid the accumulation of trains in areas where they can neither advance nor allow a simple exit for passengers.",
+              "correct": true
+            },
+            {
+              "q": "How long after the event must the initial collection of facts for the post-incident review begin?",
+              "gold": "Within 48 hours.",
+              "candidate": "The initial collection of facts must be carried out within 48 hours of the event.",
+              "correct": true
+            },
+            {
+              "q": "What exception allows acting without waiting for the normal evacuation authorization?",
+              "gold": "Immediate danger on board, such as a fire or smoke putting people directly in danger.",
+              "candidate": "In the event of immediate danger on board, notably fire or smoke putting people directly in danger, staff can initiate necessary emergency measures without waiting for the normal authorization procedure.",
+              "correct": true
+            },
+            {
+              "q": "What are the four objectives of the procedure, in order?",
+              "gold": "Protect people; stabilize the rail situation; organize a realistic transport solution; restore normal service.",
+              "candidate": "The four objectives, in order, are: protect passengers, staff, and responders; stabilize the rail situation; organize a realistic transport solution; and restore normal service.",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        },
+        "terse": {
+          "tokensNet": 1384,
+          "qa": [
+            {
+              "q": "Must he give a precise resumption time if he does not have enough information?",
+              "gold": "No.",
+              "candidate": "No, the DCO must not give a precise resumption time solely under operational pressure; if the duration is unknown, the official wording is \"indeterminate duration, next estimate at [time].\"",
+              "correct": true
+            },
+            {
+              "q": "What must the Technical Manager provide if possible within the first fifteen minutes?",
+              "gold": "Probable nature of the event, affected area, plausible minimum duration, reasonably possible high duration, and major uncertainties.",
+              "candidate": "Within the first 15 minutes, the Technical Manager must provide if possible: the probable breakdown/event nature, the affected area, a plausible minimum duration, a reasonably possible high duration, and the major uncertainties.",
+              "correct": true
+            },
+            {
+              "q": "What maximum timeline then separates two estimates?",
+              "gold": "30 minutes.",
+              "candidate": "A new estimate must be provided at most **30 minutes** after the previous one, even if there has been no significant change.",
+              "correct": true
+            },
+            {
+              "q": "What is a level 2 disruption?",
+              "gold": "A disruption probably between 60 minutes and 3 hours.",
+              "candidate": "A Level 2 disruption is one where the probable disruption duration is between 60 minutes and 3 hours.",
+              "correct": true
+            },
+            {
+              "q": "Must a partial service always be maintained if it is technically possible?",
+              "gold": "No.",
+              "candidate": "No — partial service must not be implemented if it consumes critical-area resources or creates an uncontrollable congestion risk.",
+              "correct": true
+            },
+            {
+              "q": "What normal conditions are required for an evacuation onto the tracks?",
+              "gold": "Authorization from the competent rail safety manager and confirmation of the protection of the traffic concerned.",
+              "candidate": "A track evacuation requires authorization from a competent rail-safety manager and confirmation that the relevant traffic is protected.",
+              "correct": true
+            },
+            {
+              "q": "Why prioritize holding trains in stations?",
+              "gold": "To avoid stranding them in areas where they can neither advance nor allow a simple exit for passengers.",
+              "candidate": "Holding trains in stations is preferred to avoid train accumulation where passengers can neither advance nor easily exit.",
+              "correct": true
+            },
+            {
+              "q": "How long after the event must the initial collection of facts for the post-incident review begin?",
+              "gold": "Within 48 hours.",
+              "candidate": "The initial collection of facts must begin within 48 hours after the event.",
+              "correct": true
+            },
+            {
+              "q": "What exception allows acting without waiting for the normal evacuation authorization?",
+              "gold": "Immediate danger on board, such as a fire or smoke putting people directly in danger.",
+              "candidate": "When there is immediate onboard danger, especially fire or smoke directly endangering people, staff may initiate emergency measures without normal authorization.",
+              "correct": true
+            },
+            {
+              "q": "What are the four objectives of the procedure, in order?",
+              "gold": "Protect people; stabilize the rail situation; organize a realistic transport solution; restore normal service.",
+              "candidate": "The four objectives in order are: protect passengers, staff, and responders; stabilize the rail situation; provide a realistic transport solution; and restore normal service.",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        }
+      }
+    },
+    {
+      "id": "EN-T11",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 556,
+          "qa": [
+            {
+              "q": "What hosting evolution is envisioned if the prototype is successful?",
+              "gold": "Secure hosting, or even publication in the Apple or Android stores.",
+              "candidate": "If the prototype is successful, the envisioned evolution is setting up secure hosting or even hosting the app in the Apple or Android stores.",
+              "correct": true
+            },
+            {
+              "q": "Where are the user's recent exchanges about their web applications accessible?",
+              "gold": "In their chat history.",
+              "candidate": "The user's recent exchanges about their web applications are accessible in their chat history with Claude.",
+              "correct": true
+            },
+            {
+              "q": "Approximately how many people are expected to test the prototype?",
+              "gold": "About ten or fifteen people.",
+              "candidate": "About ten or fifteen people are expected to test the prototype.",
+              "correct": true
+            },
+            {
+              "q": "What type of application does the user want to develop?",
+              "gold": "A team life management application prototype for their consulting firm.",
+              "candidate": "The user wants to develop a **team life management application** prototype for their consulting firm, working on Android and iOS smartphones based on the PWA (Progressive Web App) principle.",
+              "correct": true
+            },
+            {
+              "q": "What graphic preferences are explicitly mentioned?",
+              "gold": "A beautiful design, elegant animations, and serif fonts.",
+              "candidate": "The graphic preferences explicitly mentioned are a beautiful design with elegant animations and serif fonts.",
+              "correct": true
+            },
+            {
+              "q": "Why does the user also request a technical specifications document?",
+              "gold": "To be able to pass the project to another model capable of writing or modifying the code if the work is not finished.",
+              "candidate": "The user requests a technical specifications document because their subscription ends tomorrow, so if the work is not finished, they can continue with another less powerful model like Opus 4.8.",
+              "correct": false
+            },
+            {
+              "q": "How can the mentioned background images be identified?",
+              "gold": "Their names start with the letter \"i\".",
+              "candidate": "The background images can be identified by the fact that their names start with the letter \"i\".",
+              "correct": true
+            },
+            {
+              "q": "Does the user ask the AI to help them solely with writing the code?",
+              "gold": "No. They also ask for advice on architecture, hosting, platform choice, and deployment.",
+              "candidate": "No, the user asks for help with much more than just writing code — they also want guidance on architecture, hosting, deployment, database setup, and generating a technical specification document.",
+              "correct": true
+            },
+            {
+              "q": "What technological principle is envisioned to allow the installation of the application on smartphones?",
+              "gold": "A PWA.",
+              "candidate": "The application is envisioned to work based on the **PWA (Progressive Web App)** principle, allowing it to be installable from a link and displayed as an icon on the phone like a real application.",
+              "correct": true
+            },
+            {
+              "q": "What development technology is mentioned as a possibility by the user?",
+              "gold": "React.",
+              "candidate": "The user mentions React technology as a possibility, unless it is oversized for the project.",
+              "correct": true
+            }
+          ],
+          "correct": 9,
+          "graded": 10,
+          "accuracy": 0.9
+        },
+        "terse": {
+          "tokensNet": 386,
+          "qa": [
+            {
+              "q": "What hosting evolution is envisioned if the prototype is successful?",
+              "gold": "Secure hosting, or even publication in the Apple or Android stores.",
+              "candidate": "If the prototype is successful, the vision is to secure further development and hosting on the Apple/Android stores.",
+              "correct": true
+            },
+            {
+              "q": "Where are the user's recent exchanges about their web applications accessible?",
+              "gold": "In their chat history.",
+              "candidate": "The user's recent exchanges about their web applications are accessible in their chat history.",
+              "correct": true
+            },
+            {
+              "q": "Approximately how many people are expected to test the prototype?",
+              "gold": "About ten or fifteen people.",
+              "candidate": "Approximately 10–15 people are expected to test the prototype.",
+              "correct": true
+            },
+            {
+              "q": "What type of application does the user want to develop?",
+              "gold": "A team life management application prototype for their consulting firm.",
+              "candidate": "The user wants to develop a team-life management prototype PWA (Progressive Web App) for a consulting firm, accessible on Android and iOS smartphones.",
+              "correct": true
+            },
+            {
+              "q": "What graphic preferences are explicitly mentioned?",
+              "gold": "A beautiful design, elegant animations, and serif fonts.",
+              "candidate": "The explicitly mentioned graphic preferences are beautiful design, elegant animations, and serif fonts.",
+              "correct": true
+            },
+            {
+              "q": "Why does the user also request a technical specifications document?",
+              "gold": "To be able to pass the project to another model capable of writing or modifying the code if the work is not finished.",
+              "candidate": "The user requests a technical specifications document so that if the work is unfinished when their subscription ends tomorrow, they can continue with a less powerful model like Opus 4.8.",
+              "correct": false
+            },
+            {
+              "q": "How can the mentioned background images be identified?",
+              "gold": "Their names start with the letter \"i\".",
+              "candidate": "Background images can be identified by their filenames starting with the letter \"i\".",
+              "correct": true
+            },
+            {
+              "q": "Does the user ask the AI to help them solely with writing the code?",
+              "gold": "No. They also ask for advice on architecture, hosting, platform choice, and deployment.",
+              "candidate": "No, the user asks for guidance, advice, hosting recommendations, web searching, deployment help, and generation of a technical specifications document, in addition to (implicitly) code-related assistance.",
+              "correct": true
+            },
+            {
+              "q": "What technological principle is envisioned to allow the installation of the application on smartphones?",
+              "gold": "A PWA.",
+              "candidate": "The application is envisioned to be installed on smartphones through the use of a **Progressive Web App (PWA)**, which allows it to be installable from a link with an icon on the phone while behaving like a real app.",
+              "correct": true
+            },
+            {
+              "q": "What development technology is mentioned as a possibility by the user?",
+              "gold": "React.",
+              "candidate": "The user mentions React as a possible development technology, with the caveat that it may be oversized for the project.",
+              "correct": true
+            }
+          ],
+          "correct": 9,
+          "graded": 10,
+          "accuracy": 0.9
+        }
+      }
+    },
+    {
+      "id": "EN-T12",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 444,
+          "qa": [
+            {
+              "q": "What information is given regarding the accessibility of the Google directory containing the documents?",
+              "gold": "It is accessible online to people who have the link.",
+              "candidate": "The Google directory is accessible online to people who have the link.",
+              "correct": true
+            },
+            {
+              "q": "How many image thumbnails must be displayed under the players?",
+              "gold": "Six.",
+              "candidate": "Six image thumbnails must be displayed under the players.",
+              "correct": true
+            },
+            {
+              "q": "What technical possibility does the user want to check regarding Google Drive?",
+              "gold": "The possibility of streaming a video from Google Drive via an HTML page hosted on the same account.",
+              "candidate": "The user wants to check whether it is possible to stream a video from Google Drive via an HTML page hosted on that same account.",
+              "correct": true
+            },
+            {
+              "q": "What visual elements are requested for the audio player?",
+              "gold": "A frequency display bar and a progress bar.",
+              "candidate": "The audio player should have a nice frequency display bar and a progress bar.",
+              "correct": true
+            },
+            {
+              "q": "What is the general objective of the requested web page?",
+              "gold": "To display in a custom and well-designed manner documents hosted on the user's Google account.",
+              "candidate": "The general objective is to create a custom, well-designed web page to display documents (video, audio, and images) hosted on a Google account.",
+              "correct": true
+            },
+            {
+              "q": "Is the video available solely on Google Drive?",
+              "gold": "No. It has also been uploaded to YouTube.",
+              "candidate": "No, the video is also available on YouTube.",
+              "correct": true
+            },
+            {
+              "q": "From which existing application should the new page adopt its graphic inspiration?",
+              "gold": "From the STAFFFOR application.",
+              "candidate": "The new page should adopt its graphic inspiration from the **STAFFFOR application**.",
+              "correct": true
+            },
+            {
+              "q": "What video playback controls are explicitly requested?",
+              "gold": "Play, pause, stop, loop playback, volume up or mute, fullscreen, as well as the controls necessary for complete playback.",
+              "candidate": "The explicitly requested video playback controls are: play, pause, stop, loop playback, volume up or mute, and fullscreen.",
+              "correct": false
+            },
+            {
+              "q": "What content must constitute the main center of interest of the page?",
+              "gold": "A video.",
+              "candidate": "The main center of interest of the page must be a video.",
+              "correct": true
+            },
+            {
+              "q": "What should happen when a user clicks on a thumbnail?",
+              "gold": "The image must display in full, at its maximum available size on the screen.",
+              "candidate": "When a user clicks on a thumbnail, it displays the image in full at its maximum size on the screen.",
+              "correct": true
+            }
+          ],
+          "correct": 9,
+          "graded": 10,
+          "accuracy": 0.9
+        },
+        "terse": {
+          "tokensNet": 277,
+          "qa": [
+            {
+              "q": "What information is given regarding the accessibility of the Google directory containing the documents?",
+              "gold": "It is accessible online to people who have the link.",
+              "candidate": "not in context",
+              "correct": false
+            },
+            {
+              "q": "How many image thumbnails must be displayed under the players?",
+              "gold": "Six.",
+              "candidate": "Six image thumbnails must be displayed under the players, with the last one showing a question mark on a black background.",
+              "correct": true
+            },
+            {
+              "q": "What technical possibility does the user want to check regarding Google Drive?",
+              "gold": "The possibility of streaming a video from Google Drive via an HTML page hosted on the same account.",
+              "candidate": "The user wants to check whether streaming video via Google Drive through an HTML page on the same account is better than uploading it to YouTube.",
+              "correct": false
+            },
+            {
+              "q": "What visual elements are requested for the audio player?",
+              "gold": "A frequency display bar and a progress bar.",
+              "candidate": "The audio player should include a frequency display and progress bars.",
+              "correct": true
+            },
+            {
+              "q": "What is the general objective of the requested web page?",
+              "gold": "To display in a custom and well-designed manner documents hosted on the user's Google account.",
+              "candidate": "The general objective is to create a custom web page hosted on the user's Google account to display and link to documents, videos, audio, and images from their Google Drive.",
+              "correct": true
+            },
+            {
+              "q": "Is the video available solely on Google Drive?",
+              "gold": "No. It has also been uploaded to YouTube.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "From which existing application should the new page adopt its graphic inspiration?",
+              "gold": "From the STAFFFOR application.",
+              "candidate": "The new page should adopt its graphic inspiration from the existing **STAFFFOR** graphic charter.",
+              "correct": true
+            },
+            {
+              "q": "What video playback controls are explicitly requested?",
+              "gold": "Play, pause, stop, loop playback, volume up or mute, fullscreen, as well as the controls necessary for complete playback.",
+              "candidate": "The explicitly requested video playback controls are: play, pause, stop, loop, volume/mute, and fullscreen, plus \"all necessary\" controls.",
+              "correct": true
+            },
+            {
+              "q": "What content must constitute the main center of interest of the page?",
+              "gold": "A video.",
+              "candidate": "The main center of interest of the page must be the video.",
+              "correct": true
+            },
+            {
+              "q": "What should happen when a user clicks on a thumbnail?",
+              "gold": "The image must display in full, at its maximum available size on the screen.",
+              "candidate": "When a user clicks on a thumbnail, the image should open at full screen size, with a corner cross to close it.",
+              "correct": true
+            }
+          ],
+          "correct": 7,
+          "graded": 10,
+          "accuracy": 0.7
+        }
+      }
+    },
+    {
+      "id": "EN-T13",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 383,
+          "qa": [
+            {
+              "q": "Does the user expect the AI to design the structure of the calendar and invoices tables alone without any need for guidance?",
+              "gold": "They explicitly request the AI's help for their design.",
+              "candidate": "No, the user expects the AI to ask clarifying questions before proceeding, while also relying on its expertise and insight.",
+              "correct": true
+            },
+            {
+              "q": "What maturity level of the product does the user wish to develop initially?",
+              "gold": "A prototype or POC.",
+              "candidate": "The user wishes to develop a prototype (POC) initially.",
+              "correct": true
+            },
+            {
+              "q": "Before proceeding with the development, what does the user ask the AI to do?",
+              "gold": "To analyze the request and the attachments, and then to ask the necessary questions.",
+              "candidate": "The user asks the AI to analyze the request and attachments, then ask any questions needed before proceeding with development.",
+              "correct": true
+            },
+            {
+              "q": "What function allows linking consultants to missions?",
+              "gold": "The assignment of consultants to missions.",
+              "candidate": "The application allows **assigning consultants to missions**.",
+              "correct": true
+            },
+            {
+              "q": "What should happen after the prototype is finalized and reviewed by colleagues?",
+              "gold": "A transposition into a more robust environment must be carried out in a second phase.",
+              "candidate": "After the prototype is finalized and reviewed by colleagues, it will proceed to a second phase involving transposition into a more robust environment to be defined later.",
+              "correct": true
+            },
+            {
+              "q": "What technical deliverables are explicitly expected at the end?",
+              "gold": "The codes for the different scripts to be created in Google Script and the necessary explanations to implement them.",
+              "candidate": "The expected technical deliverables are: the structure of the calendar and invoices tables with dummy data, the codes for the different Google Script scripts, and the necessary implementation explanations.",
+              "correct": true
+            },
+            {
+              "q": "What data-related deliverables are explicitly expected at the end?",
+              "gold": "The structure of the calendar and invoices tables, with dummy data to populate the database.",
+              "candidate": "The expected data-related deliverables are the structure of the calendar and invoices tables, along with dummy data to populate the database.",
+              "correct": true
+            },
+            {
+              "q": "What financial function must also be integrated?",
+              "gold": "The creation of invoices.",
+              "candidate": "not in context",
+              "correct": false
+            },
+            {
+              "q": "Which functional part is missing from the mockups?",
+              "gold": "The billing part.",
+              "candidate": "The billing part is missing from the mockups.",
+              "correct": true
+            },
+            {
+              "q": "Must the AI reproduce all the texts visible in the mockups?",
+              "gold": "No. Explanatory texts in black Arial must not be integrated into the application.",
+              "candidate": "Yes, except for texts in black Arial font, which are explanations that must not be kept in the app.",
+              "correct": false
+            }
+          ],
+          "correct": 8,
+          "graded": 10,
+          "accuracy": 0.8
+        },
+        "terse": {
+          "tokensNet": 257,
+          "qa": [
+            {
+              "q": "Does the user expect the AI to design the structure of the calendar and invoices tables alone without any need for guidance?",
+              "gold": "They explicitly request the AI's help for their design.",
+              "candidate": "No, the user expects the AI to help design the calendar and invoice table structures, implying collaboration rather than fully independent design.",
+              "correct": true
+            },
+            {
+              "q": "What maturity level of the product does the user wish to develop initially?",
+              "gold": "A prototype or POC.",
+              "candidate": "The user wishes to develop a prototype/Proof of Concept (POC) initially.",
+              "correct": true
+            },
+            {
+              "q": "Before proceeding with the development, what does the user ask the AI to do?",
+              "gold": "To analyze the request and the attachments, and then to ask the necessary questions.",
+              "candidate": "The user asks the AI to analyze the request and attachments, ask necessary questions, provide calendar and invoice table structures with dummy data, and deliver Google Script codes with implementation explanations.",
+              "correct": false
+            },
+            {
+              "q": "What function allows linking consultants to missions?",
+              "gold": "The assignment of consultants to missions.",
+              "candidate": "The function that allows linking consultants to missions is **assigning consultants to missions**.",
+              "correct": true
+            },
+            {
+              "q": "What should happen after the prototype is finalized and reviewed by colleagues?",
+              "gold": "A transposition into a more robust environment must be carried out in a second phase.",
+              "candidate": "After the prototype is finalized and reviewed by colleagues, it will be transposed to a more robust environment, to be defined.",
+              "correct": true
+            },
+            {
+              "q": "What technical deliverables are explicitly expected at the end?",
+              "gold": "The codes for the different scripts to be created in Google Script and the necessary explanations to implement them.",
+              "candidate": "The expected technical deliverables are: the calendar and invoice table structures with dummy data, Google Script codes, and implementation explanations.",
+              "correct": true
+            },
+            {
+              "q": "What data-related deliverables are explicitly expected at the end?",
+              "gold": "The structure of the calendar and invoices tables, with dummy data to populate the database.",
+              "candidate": "The expected data-related deliverables are the calendar and invoice table structures with dummy database data.",
+              "correct": true
+            },
+            {
+              "q": "What financial function must also be integrated?",
+              "gold": "The creation of invoices.",
+              "candidate": "Invoices must be integrated, generated as Google Docs and ideally exported as PDFs.",
+              "correct": true
+            },
+            {
+              "q": "Which functional part is missing from the mockups?",
+              "gold": "The billing part.",
+              "candidate": "The billing/invoicing part is missing from the mockups.",
+              "correct": true
+            },
+            {
+              "q": "Must the AI reproduce all the texts visible in the mockups?",
+              "gold": "No. Explanatory texts in black Arial must not be integrated into the application.",
+              "candidate": "Not in context.",
+              "correct": false
+            }
+          ],
+          "correct": 8,
+          "graded": 10,
+          "accuracy": 0.8
+        }
+      }
+    },
+    {
+      "id": "EN-T14",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 647,
+          "qa": [
+            {
+              "q": "Who are the two people co-chairing the Steering Committee?",
+              "gold": "Claire Masson (Operations Director) and Marc Renard (CIO).",
+              "candidate": "The Steering Committee is co-chaired by Claire Masson (Operations Director) and Marc Renard (CIO).",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Project scoping note.",
+              "candidate": "The document type is a project scoping note.",
+              "correct": true
+            },
+            {
+              "q": "How many logistics operators and forklift drivers must mandatory complete the training?",
+              "gold": "140 logistics operators and forklift drivers.",
+              "candidate": "The mandatory operational training must be completed by **140** logistics operators and forklift drivers at the Amiens site.",
+              "correct": true
+            },
+            {
+              "q": "At which milestone and on what precise date must the technical acceptance phase in the pre-production environment be completed?",
+              "gold": "At Milestone 2, set for December 1, 2026.",
+              "candidate": "The technical acceptance phase in the pre-production environment must be completed at **Milestone 2**, on **December 1, 2026**.",
+              "correct": true
+            },
+            {
+              "q": "Must accounting data prior to January 1, 2018, be migrated to the new system?",
+              "gold": "No, the scope only includes the historical data since January 1, 2018.",
+              "candidate": "No, only financial, accounting, and tax data from January 1, 2018 onward is included in the migration scope.",
+              "correct": true
+            },
+            {
+              "q": "Can the final system cutover (Go-Live) be carried out on a Tuesday afternoon?",
+              "gold": "No, it is scheduled exclusively during the technical weekend (and set for January 15, 2027, according to Milestone 3).",
+              "candidate": "No, the final system cutover (Go-Live) must be scheduled exclusively during the technical weekend window (Saturday at 10:00 PM to Sunday at 4:00 AM), making a Tuesday afternoon cutover impossible.",
+              "correct": true
+            },
+            {
+              "q": "Which project will take charge of the Asia-Pacific region subsidiaries, and in what year is this project scheduled to start?",
+              "gold": "The Lotus project, planned for 2028.",
+              "candidate": "The *Lotus* project will take charge of the Asia-Pacific region subsidiaries, and it is scheduled to start in 2028.",
+              "correct": true
+            },
+            {
+              "q": "What specific custom module is coupled with SAP S/4HANA Cloud in this project?",
+              "gold": "A custom module intended for warehouse management (WMS).",
+              "candidate": "The specific custom module coupled with SAP S/4HANA Cloud in this project is a custom application module for warehouse management (WMS).",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Industry / IT Modernization & Supply Chain.",
+              "candidate": "The sector specified for this document is **Industry / IT Modernization & Supply Chain**.",
+              "correct": true
+            },
+            {
+              "q": "Does the Apollo-ERP project incorporate a structural change to the CRM tool's database?",
+              "gold": "No, the CRM tool is out of scope (Out) and will simply be connected via an existing gateway without structural changes.",
+              "candidate": "No, the Apollo-ERP project does not incorporate any structural change to the CRM tool's database; the CRM will simply be connected to the new ERP via an existing gateway without modification to its database structure.",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        },
+        "terse": {
+          "tokensNet": 500,
+          "qa": [
+            {
+              "q": "Who are the two people co-chairing the Steering Committee?",
+              "gold": "Claire Masson (Operations Director) and Marc Renard (CIO).",
+              "candidate": "The Steering Committee is co-chaired by Claire Masson (Operations Director) and Marc Renard (CIO).",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Project scoping note.",
+              "candidate": "The document is a project scoping note.",
+              "correct": true
+            },
+            {
+              "q": "How many logistics operators and forklift drivers must mandatory complete the training?",
+              "gold": "140 logistics operators and forklift drivers.",
+              "candidate": "140 site logistics operators and forklift drivers must mandatory complete the operational training.",
+              "correct": true
+            },
+            {
+              "q": "At which milestone and on what precise date must the technical acceptance phase in the pre-production environment be completed?",
+              "gold": "At Milestone 2, set for December 1, 2026.",
+              "candidate": "The technical and functional acceptance in the pre-production environment must be completed at **Milestone 2**, by **December 1, 2026**.",
+              "correct": true
+            },
+            {
+              "q": "Must accounting data prior to January 1, 2018, be migrated to the new system?",
+              "gold": "No, the scope only includes the historical data since January 1, 2018.",
+              "candidate": "No, only financial/accounting/tax data from January 1, 2018 onward is in scope for migration.",
+              "correct": true
+            },
+            {
+              "q": "Can the final system cutover (Go-Live) be carried out on a Tuesday afternoon?",
+              "gold": "No, it is scheduled exclusively during the technical weekend (and set for January 15, 2027, according to Milestone 3).",
+              "candidate": "No, the final cutover/Go-Live must take place exclusively during the technical weekend window (Saturday 22:00 to Sunday 04:00), and a Tuesday afternoon would violate both the Go-Live scheduling constraint and the rule against system unavailability exceeding 4 consecutive hours on weekdays at Amiens.",
+              "correct": true
+            },
+            {
+              "q": "Which project will take charge of the Asia-Pacific region subsidiaries, and in what year is this project scheduled to start?",
+              "gold": "The Lotus project, planned for 2028.",
+              "candidate": "The Asia-Pacific subsidiaries' IT-system migration will be handled by the *Lotus* project, planned to start in 2028.",
+              "correct": true
+            },
+            {
+              "q": "What specific custom module is coupled with SAP S/4HANA Cloud in this project?",
+              "gold": "A custom module intended for warehouse management (WMS).",
+              "candidate": "The custom module coupled with SAP S/4HANA Cloud in this project is a custom WMS (Warehouse Management System) module.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Industry / IT Modernization & Supply Chain.",
+              "candidate": "The sector specified for this document is **Industry / IT Modernization & Supply Chain**.",
+              "correct": true
+            },
+            {
+              "q": "Does the Apollo-ERP project incorporate a structural change to the CRM tool's database?",
+              "gold": "No, the CRM tool is out of scope (Out) and will simply be connected via an existing gateway without structural changes.",
+              "candidate": "No, the Apollo-ERP project explicitly excludes any modification to the CRM database structure, connecting only the existing gateway to the new ERP.",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        }
+      }
+    },
+    {
+      "id": "EN-T15",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 629,
+          "qa": [
+            {
+              "q": "What is the official reason invoked in the message intended for the group's employees?",
+              "gold": "An \"exceptional technical maintenance operation\".",
+              "candidate": "The official reason invoked in the message intended for employees is an \"exceptional technical maintenance operation.\"",
+              "correct": true
+            },
+            {
+              "q": "What is the internal date and time limit set by the company to notify the CNIL?",
+              "gold": "Before October 13, 2026, at 1:15 AM.",
+              "candidate": "The internal deadline set by the company to notify the CNIL is **October 13, 2026, at 1:15 AM**.",
+              "correct": true
+            },
+            {
+              "q": "Who assumes the role of Incident Commander during this crisis unit meeting?",
+              "gold": "Yassine Merabet.",
+              "candidate": "Yassine Merabet (SecOps Lead) assumes the role of Incident Commander during this crisis unit meeting.",
+              "correct": true
+            },
+            {
+              "q": "Does the technical incident concern a testing or development environment?",
+              "gold": "No, it concerns a production application server (`Prod-DB-04`).",
+              "candidate": "No, the technical incident concerns a production environment, as the affected server is named `Prod-DB-04`.",
+              "correct": true
+            },
+            {
+              "q": "What precise types of information do the stolen files contain?",
+              "gold": "Nominative employee pay slips and bank account details (RIB) of strategic suppliers.",
+              "candidate": "The stolen files exclusively contain nominative employee pay slips and bank account details (RIB) of strategic suppliers.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Operational meeting minutes.",
+              "candidate": "The document type is operational meeting minutes.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Cybersecurity / Threat Management.",
+              "candidate": "The sector specified for this document is **Cybersecurity / Threat Management**.",
+              "correct": true
+            },
+            {
+              "q": "Has the company received a ransom demand from the cybercriminals at the time of the meeting?",
+              "gold": "No, Thomas Wright confirms that no ransom demand has been received or left.",
+              "candidate": "No, no ransom demand had been received or left at the time of the meeting.",
+              "correct": true
+            },
+            {
+              "q": "What is the amount of financial loss estimated by the company following this crisis at 3:30 AM?",
+              "gold": "not in context",
+              "candidate": "Not in context.",
+              "correct": true
+            },
+            {
+              "q": "What security action was executed and validated at 2:45 AM?",
+              "gold": "The revocation/cut of all VPN connections and access rights granted to the company TechConsult on an international scale.",
+              "candidate": "At 2:45 AM, all VPN connections and access rights granted to *TechConsult* were revoked on an international scale.",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        },
+        "terse": {
+          "tokensNet": 493,
+          "qa": [
+            {
+              "q": "What is the official reason invoked in the message intended for the group's employees?",
+              "gold": "An \"exceptional technical maintenance operation\".",
+              "candidate": "The official reason invoked in the message intended for employees is an \"exceptional technical maintenance operation.\"",
+              "correct": true
+            },
+            {
+              "q": "What is the internal date and time limit set by the company to notify the CNIL?",
+              "gold": "Before October 13, 2026, at 1:15 AM.",
+              "candidate": "The internal deadline set by the company to notify the CNIL is **2026-10-13 at 01:15** (24 hours after detection).",
+              "correct": true
+            },
+            {
+              "q": "Who assumes the role of Incident Commander during this crisis unit meeting?",
+              "gold": "Yassine Merabet.",
+              "candidate": "Yassine Merabet (SecOps Lead) assumes the role of Incident Commander during this crisis unit meeting.",
+              "correct": true
+            },
+            {
+              "q": "Does the technical incident concern a testing or development environment?",
+              "gold": "No, it concerns a production application server (`Prod-DB-04`).",
+              "candidate": "No, the technical incident concerns a production environment (`Prod-DB-04`).",
+              "correct": true
+            },
+            {
+              "q": "What precise types of information do the stolen files contain?",
+              "gold": "Nominative employee pay slips and bank account details (RIB) of strategic suppliers.",
+              "candidate": "The stolen files contain exclusively nominative employee payslips and strategic-supplier bank account details (RIB).",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Operational meeting minutes.",
+              "candidate": "The document is operational cybersecurity/threat-management minutes.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Cybersecurity / Threat Management.",
+              "candidate": "The document is specified as **operational cybersecurity/threat-management minutes**.",
+              "correct": true
+            },
+            {
+              "q": "Has the company received a ransom demand from the cybercriminals at the time of the meeting?",
+              "gold": "No, Thomas Wright confirms that no ransom demand has been received or left.",
+              "candidate": "No, no ransom demand had been received or left at the time of the meeting.",
+              "correct": true
+            },
+            {
+              "q": "What is the amount of financial loss estimated by the company following this crisis at 3:30 AM?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "What security action was executed and validated at 2:45 AM?",
+              "gold": "The revocation/cut of all VPN connections and access rights granted to the company TechConsult on an international scale.",
+              "candidate": "All TechConsult VPN and access credentials were revoked worldwide at 2:45 AM.",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        }
+      }
+    },
+    {
+      "id": "EN-T16",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 643,
+          "qa": [
+            {
+              "q": "What connection tool or protocol is required to execute the initial diagnostic command?",
+              "gold": "A secure SSH bastion.",
+              "candidate": "A secure SSH bastion connection is required to execute the initial diagnostic command.",
+              "correct": true
+            },
+            {
+              "q": "What is the internal phone number of the Core Engineering on-call engineer?",
+              "gold": "Internal extension 8402.",
+              "candidate": "The internal phone number of the Core Engineering on-call engineer is extension **8402**.",
+              "correct": true
+            },
+            {
+              "q": "What must the operator do immediately after launching a rollback following an invalid return code from the validation script?",
+              "gold": "They must mandatory call the Core Engineering on-call engineer at extension 8402 (and not attempt a new application).",
+              "candidate": "After launching the rollback command, the operator must immediately contact the on-call engineer of the \"Core Engineering\" team by phone at internal extension **8402**.",
+              "correct": true
+            },
+            {
+              "q": "Should this procedure be applied if the error rate of the payment gateway settles at 6%?",
+              "gold": "No, it applies exclusively if the rate crosses the threshold of 8%. If it is lower, execution must be interrupted.",
+              "candidate": "No, this procedure must not be applied at a 6% error rate, as it requires the failure rate to strictly exceed **8%** over a 5-minute rolling window; you should instead follow the standard diagnostic protocol (RUN-B2B-GEN-01).",
+              "correct": true
+            },
+            {
+              "q": "How many financial transactions were rejected because of this bug before the procedure was triggered?",
+              "gold": "not in context",
+              "candidate": "not in context",
+              "correct": true
+            },
+            {
+              "q": "Is the technical operator authorized to manually execute the patch script a second time if the first attempt failed?",
+              "gold": "No, once the rollback is launched, it is formally forbidden to attempt a second manual application.",
+              "candidate": "No, the operator is strictly forbidden from attempting a second manual application of the patch after a rollback has been launched.",
+              "correct": true
+            },
+            {
+              "q": "What is the maximum latency threshold tolerated during the application network ping after the patch is applied?",
+              "gold": "120 ms.",
+              "candidate": "The maximum tolerated latency threshold for the average application response time (end-to-end network ping) after the patch is applied is **120 ms**.",
+              "correct": true
+            },
+            {
+              "q": "What complete command allows injecting the patch version `2.4.1-hotfix3`?",
+              "gold": "`/opt/scripts/patch_injector.sh --version 2.4.1-hotfix3`.",
+              "candidate": "The command to inject patch version `2.4.1-hotfix3` is `/opt/scripts/patch_injector.sh --version 2.4.1-hotfix3`.",
+              "correct": true
+            },
+            {
+              "q": "Does the preliminary diagnostic script use the `wget` command to query the metrics server?",
+              "gold": "No, it explicitly uses the `curl -s` command.",
+              "candidate": "No, the preliminary diagnostic script uses the `curl` command (not `wget`) to query the metrics server.",
+              "correct": true
+            },
+            {
+              "q": "Which infrastructure node is the target of the `switch-traffic` command in step 2, and what is the name of the origin node that must be monitored?",
+              "gold": "The target node is `node-secondary-02` and the origin node to monitor is `node-primary-01`.",
+              "candidate": "The `switch-traffic` command targets **node-secondary-02**, and the origin node to be monitored is **node-primary-01**.",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        },
+        "terse": {
+          "tokensNet": 465,
+          "qa": [
+            {
+              "q": "What connection tool or protocol is required to execute the initial diagnostic command?",
+              "gold": "A secure SSH bastion.",
+              "candidate": "SSH (Secure Shell) is required to securely connect to the bastion host before executing the initial diagnostic command.",
+              "correct": true
+            },
+            {
+              "q": "What is the internal phone number of the Core Engineering on-call engineer?",
+              "gold": "Internal extension 8402.",
+              "candidate": "The internal extension for the on-call \"Core Engineering\" engineer is **8402**.",
+              "correct": true
+            },
+            {
+              "q": "What must the operator do immediately after launching a rollback following an invalid return code from the validation script?",
+              "gold": "They must mandatory call the Core Engineering on-call engineer at extension 8402 (and not attempt a new application).",
+              "candidate": "After launching the rollback, the operator must immediately phone the on-call \"Core Engineering\" engineer at internal extension 8402.",
+              "correct": true
+            },
+            {
+              "q": "Should this procedure be applied if the error rate of the payment gateway settles at 6%?",
+              "gold": "No, it applies exclusively if the rate crosses the threshold of 8%. If it is lower, execution must be interrupted.",
+              "candidate": "No, this procedure should not be applied: a 6% error rate is below the 8% threshold that triggers the emergency procedure, and the operator must stop immediately and revert to standard diagnostic RUN-B2B-GEN-01.",
+              "correct": true
+            },
+            {
+              "q": "How many financial transactions were rejected because of this bug before the procedure was triggered?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "Is the technical operator authorized to manually execute the patch script a second time if the first attempt failed?",
+              "gold": "No, once the rollback is launched, it is formally forbidden to attempt a second manual application.",
+              "candidate": "No, the operator is explicitly prohibited from making a second manual patch attempt after a rollback has been launched.",
+              "correct": true
+            },
+            {
+              "q": "What is the maximum latency threshold tolerated during the application network ping after the patch is applied?",
+              "gold": "120 ms.",
+              "candidate": "not in context",
+              "correct": false
+            },
+            {
+              "q": "What complete command allows injecting the patch version `2.4.1-hotfix3`?",
+              "gold": "`/opt/scripts/patch_injector.sh --version 2.4.1-hotfix3`.",
+              "candidate": "The complete command to inject patch version `2.4.1-hotfix3` is: `/opt/scripts/patch_injector.sh --version 2.4.1-hotfix3`.",
+              "correct": true
+            },
+            {
+              "q": "Does the preliminary diagnostic script use the `wget` command to query the metrics server?",
+              "gold": "No, it explicitly uses the `curl -s` command.",
+              "candidate": "No, the preliminary diagnostic script uses the `curl` command (not `wget`) to query the metrics server.",
+              "correct": true
+            },
+            {
+              "q": "Which infrastructure node is the target of the `switch-traffic` command in step 2, and what is the name of the origin node that must be monitored?",
+              "gold": "The target node is `node-secondary-02` and the origin node to monitor is `node-primary-01`.",
+              "candidate": "The `switch-traffic` command targets **node-secondary-02**, and the origin node that must be monitored is **node-primary-01**.",
+              "correct": true
+            }
+          ],
+          "correct": 9,
+          "graded": 10,
+          "accuracy": 0.9
+        }
+      }
+    },
+    {
+      "id": "EN-T17",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 622,
+          "qa": [
+            {
+              "q": "What system status tag does the agent apply to the disputed transaction?",
+              "gold": "`SUSPENDED_DISCREPANCY`.",
+              "candidate": "The agent applies the system status tag `SUSPENDED_DISCREPANCY` to the disputed transaction `TR-88491-X`.",
+              "correct": true
+            },
+            {
+              "q": "How many anomalies of this type has the agent KRONOS-V4 processed over the last 30 days?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "Which version of the accounting compliance ruleset file was loaded into memory?",
+              "gold": "Version v9.1.",
+              "candidate": "The accounting compliance ruleset file loaded into memory was version 9.1.",
+              "correct": true
+            },
+            {
+              "q": "What are the respective amounts recorded by Miro-EU (in euros) and by Miro-US (in dollars) for transaction `TR-88491-X`?",
+              "gold": "Miro-EU recorded a debit of 1,200,000 EUR and Miro-US recorded a credit of 1,280,000 USD.",
+              "candidate": "For transaction `TR-88491-X`, Miro-EU recorded a net debit of **1,200,000 EUR** and Miro-US recorded a credit of **1,280,000 USD**.",
+              "correct": true
+            },
+            {
+              "q": "In what precise case is the agent KRONOS-V4 authorized to perform autonomous self-balancing of entries?",
+              "gold": "Only if the observed absolute value discrepancy is strictly less than 15,000 USD.",
+              "candidate": "KRONOS-V4 is authorized to perform autonomous self-balancing only if the observed discrepancy is strictly less than **15,000 USD**.",
+              "correct": true
+            },
+            {
+              "q": "What was the exact ECB exchange rate for the day of July 18, 2026?",
+              "gold": "1.09 USD = 1.00 EUR.",
+              "candidate": "The exact ECB exchange rate for July 18, 2026, was **1.09 USD = 1.00 EUR**.",
+              "correct": true
+            },
+            {
+              "q": "What is the maximum financial variance threshold normally tolerated before a transaction is judged abnormal?",
+              "gold": "5,000 USD.",
+              "candidate": "The maximum financial variance threshold normally tolerated before a transaction is judged abnormal is **5,000 USD**.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "AI agent memory message / Cognitive scratchpad.",
+              "candidate": "The document type is an AI agent memory message / Cognitive scratchpad.",
+              "correct": true
+            },
+            {
+              "q": "What arithmetic calculation allowed the agent to determine the theoretical value expected in the United States?",
+              "gold": "Multiplying the amount debited in euros by the ECB exchange rate (1,200,000 EUR × 1.09 = 1,308,000 USD).",
+              "candidate": "The agent multiplied the EUR debit amount by the ECB reference exchange rate: 1,200,000 × 1.09 = 1,308,000 USD.",
+              "correct": true
+            },
+            {
+              "q": "To which team of human specialists is the alert routed after the transaction is isolated?",
+              "gold": "To the Treasury Level 2 human team.",
+              "candidate": "The alert is routed to the Treasury Level 2 human team.",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        },
+        "terse": {
+          "tokensNet": 461,
+          "qa": [
+            {
+              "q": "What system status tag does the agent apply to the disputed transaction?",
+              "gold": "`SUSPENDED_DISCREPANCY`.",
+              "candidate": "The agent applies the status tag `SUSPENDED_DISCREPANCY` to the disputed transaction `TR-88491-X`.",
+              "correct": true
+            },
+            {
+              "q": "How many anomalies of this type has the agent KRONOS-V4 processed over the last 30 days?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "Which version of the accounting compliance ruleset file was loaded into memory?",
+              "gold": "Version v9.1.",
+              "candidate": "The accounting compliance ruleset loaded into memory was version 9.1.",
+              "correct": true
+            },
+            {
+              "q": "What are the respective amounts recorded by Miro-EU (in euros) and by Miro-US (in dollars) for transaction `TR-88491-X`?",
+              "gold": "Miro-EU recorded a debit of 1,200,000 EUR and Miro-US recorded a credit of 1,280,000 USD.",
+              "candidate": "For transaction `TR-88491-X`, Miro-EU recorded a net debit of 1,200,000 EUR and Miro-US recorded a simultaneous credit of 1,280,000 USD.",
+              "correct": true
+            },
+            {
+              "q": "In what precise case is the agent KRONOS-V4 authorized to perform autonomous self-balancing of entries?",
+              "gold": "Only if the observed absolute value discrepancy is strictly less than 15,000 USD.",
+              "candidate": "KRONOS-V4 is authorized to perform autonomous self-balancing only if the discrepancy is less than 15,000 USD.",
+              "correct": false
+            },
+            {
+              "q": "What was the exact ECB exchange rate for the day of July 18, 2026?",
+              "gold": "1.09 USD = 1.00 EUR.",
+              "candidate": "The ECB fixed reference rate on July 18, 2026 was 1.09 USD per 1.00 EUR.",
+              "correct": true
+            },
+            {
+              "q": "What is the maximum financial variance threshold normally tolerated before a transaction is judged abnormal?",
+              "gold": "5,000 USD.",
+              "candidate": "The maximum acceptable anomaly threshold is **5,000 USD**.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "AI agent memory message / Cognitive scratchpad.",
+              "candidate": "The document type is an AI Agent reflection log and flash memory.",
+              "correct": true
+            },
+            {
+              "q": "What arithmetic calculation allowed the agent to determine the theoretical value expected in the United States?",
+              "gold": "Multiplying the amount debited in euros by the ECB exchange rate (1,200,000 EUR × 1.09 = 1,308,000 USD).",
+              "candidate": "The agent multiplied the Miro-EU net debit of 1,200,000 EUR by the ECB fixed reference rate of 1.09 USD per EUR to obtain the theoretical Miro-US credit of 1,308,000 USD.",
+              "correct": true
+            },
+            {
+              "q": "To which team of human specialists is the alert routed after the transaction is isolated?",
+              "gold": "To the Treasury Level 2 human team.",
+              "candidate": "The alert is routed to the **Treasury Level 2 human emergency-processing queue**.",
+              "correct": true
+            }
+          ],
+          "correct": 9,
+          "graded": 10,
+          "accuracy": 0.9
+        }
+      }
+    },
+    {
+      "id": "EN-T18",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 545,
+          "qa": [
+            {
+              "q": "How many total square meters do zones A and G combine?",
+              "gold": "not in context",
+              "candidate": "not in context",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Industrial project scoping note.",
+              "candidate": "The document type is an industrial project scoping note.",
+              "correct": true
+            },
+            {
+              "q": "Which two warehouse zones are connected by the autonomous transport flows of the AGVs?",
+              "gold": "Zone A (unloading docks) and Zone G (high-density storage).",
+              "candidate": "The AGVs autonomously transport packages from the unloading docks (Zone A) to the high-density storage racks (Zone G).",
+              "correct": true
+            },
+            {
+              "q": "How many automated guided vehicle units will the warehouse fleet consist of?",
+              "gold": "12 automated guided vehicles (AGVs).",
+              "candidate": "The warehouse fleet will consist of **12 automated guided vehicles** (AGVs).",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Logistics / Supply Chain / Warehouse Robotics.",
+              "candidate": "The sector specified for this document is **Logistics / Supply Chain / Warehouse Robotics**.",
+              "correct": true
+            },
+            {
+              "q": "What type of safety technology equips the AGVs to ensure fine pedestrian detection?",
+              "gold": "Class 3 safety LiDAR sensors.",
+              "candidate": "Each AGV is equipped with **Class 3 safety LiDAR sensors** to ensure fine pedestrian detection.",
+              "correct": true
+            },
+            {
+              "q": "What is the exact geographical location of the \"Delta\" logistics warehouse?",
+              "gold": "In Lyon.",
+              "candidate": "The \"Delta\" logistics distribution center is located in Lyon.",
+              "correct": true
+            },
+            {
+              "q": "Why does changing natural light prevent the deployment of AGVs outdoors?",
+              "gold": "Because it alters/disrupts the detection capabilities of their first-generation optical sensors.",
+              "candidate": "Strong variations in outdoor natural light alter the detection capabilities of the first-generation optical sensors integrated into the selected AGV fleet.",
+              "correct": true
+            },
+            {
+              "q": "Do human forklift drivers use electric lifting equipment to load trucks outdoors?",
+              "gold": "No, they use conventional thermal forklifts.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "How much money is allocated solely for the material acquisition of the machines?",
+              "gold": "600,000 EUR.",
+              "candidate": "The budget allocated solely for the material acquisition of the 12 AGVs is **600,000 EUR**.",
+              "correct": true
+            }
+          ],
+          "correct": 9,
+          "graded": 10,
+          "accuracy": 0.9
+        },
+        "terse": {
+          "tokensNet": 382,
+          "qa": [
+            {
+              "q": "How many total square meters do zones A and G combine?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Industrial project scoping note.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "Which two warehouse zones are connected by the autonomous transport flows of the AGVs?",
+              "gold": "Zone A (unloading docks) and Zone G (high-density storage).",
+              "candidate": "The AGVs autonomously transfer packages from the unloading docks in **Zone A** to the high-density racks in **Zone G**.",
+              "correct": true
+            },
+            {
+              "q": "How many automated guided vehicle units will the warehouse fleet consist of?",
+              "gold": "12 automated guided vehicles (AGVs).",
+              "candidate": "The warehouse fleet will consist of 12 automated guided vehicles (AGVs).",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Logistics / Supply Chain / Warehouse Robotics.",
+              "candidate": "The sector specified is logistics, specifically at the Delta logistics distribution center in Lyon.",
+              "correct": true
+            },
+            {
+              "q": "What type of safety technology equips the AGVs to ensure fine pedestrian detection?",
+              "gold": "Class 3 safety LiDAR sensors.",
+              "candidate": "Each AGV is equipped with Class 3 safety LiDAR, which triggers an immediate automatic emergency stop when a human is detected within 1.5 m of the chassis.",
+              "correct": true
+            },
+            {
+              "q": "What is the exact geographical location of the \"Delta\" logistics warehouse?",
+              "gold": "In Lyon.",
+              "candidate": "The Delta logistics distribution center is located in Lyon.",
+              "correct": true
+            },
+            {
+              "q": "Why does changing natural light prevent the deployment of AGVs outdoors?",
+              "gold": "Because it alters/disrupts the detection capabilities of their first-generation optical sensors.",
+              "candidate": "Strong outdoor natural-light variation alters the first-generation optical sensors in the selected AGV fleet, making them unreliable for outdoor use.",
+              "correct": true
+            },
+            {
+              "q": "Do human forklift drivers use electric lifting equipment to load trucks outdoors?",
+              "gold": "No, they use conventional thermal forklifts.",
+              "candidate": "Human forklift drivers use conventional thermal forklifts (not electric) to load trucks outdoors.",
+              "correct": true
+            },
+            {
+              "q": "How much money is allocated solely for the material acquisition of the machines?",
+              "gold": "600,000 EUR.",
+              "candidate": "The budget allocated solely for the material acquisition of the 12 AGVs is **600,000 EUR**.",
+              "correct": true
+            }
+          ],
+          "correct": 9,
+          "graded": 10,
+          "accuracy": 0.9
+        }
+      }
+    },
+    {
+      "id": "EN-T19",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 1489,
+          "qa": [
+            {
+              "q": "What precise event automatically triggers the creation of a local mediation unit and suspends the works schedule by 45 days?",
+              "gold": "If the public inquiry collects more than 150 formal written and motivated objections from residents or local authorities.",
+              "candidate": "The creation of a local mediation unit is automatically triggered when the public inquiry raises more than **150 formal written objections** from residents' associations or local authorities.",
+              "correct": true
+            },
+            {
+              "q": "Who leads Action 1 of the nominal plan, and what is the maximum deadline given to submit the file to the prefecture?",
+              "gold": "Amélie Moreau, with a strict deadline set for June 15, 2026.",
+              "candidate": "Amélie Moreau leads Action 1 and must submit the ICPE file to the Moselle prefecture by June 15, 2026.",
+              "correct": true
+            },
+            {
+              "q": "From what nominal capacity does a water electrolysis installation fall under the ICPE authorization regime subject to public inquiry?",
+              "gold": "A capacity greater than 20 MW.",
+              "candidate": "According to the document, a water electrolysis installation falls under the ICPE authorization regime subject to public inquiry from a nominal industrial capacity greater than **20 MW**.",
+              "correct": true
+            },
+            {
+              "q": "What is the identity of the majority union with which the HR department will negotiate on June 4 during the CSE meeting?",
+              "gold": "not in context",
+              "candidate": "Not in context.",
+              "correct": true
+            },
+            {
+              "q": "Who holds the position of Chief Executive Officer of the company during this committee meeting?",
+              "gold": "Hélène de Rostand.",
+              "candidate": "Hélène de Rostand holds the position of Chief Executive Officer during this committee meeting.",
+              "correct": true
+            },
+            {
+              "q": "By what precise date must the bank credit lines associated with the chosen Alpha Scenario be opened?",
+              "gold": "Before September 1, 2026.",
+              "candidate": "The bank credit lines associated with the Alpha Scenario must be opened before **September 1, 2026**.",
+              "correct": true
+            },
+            {
+              "q": "Does the procurement team have the right to sign a civil engineering works contract if the public inquiry is finished but the prefectural permit is not yet published in the collection of administrative acts?",
+              "gold": "No, the legal rule prohibits any engagement of funds or signing of civil engineering works contracts before the official publication of the permit.",
+              "candidate": "No, the procurement team cannot legally sign any civil engineering works contract until the prefectural operating permit has been officially published in the region's collection of administrative acts, regardless of whether the public inquiry itself is finished.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Energy / Ecological Transition / Heavy Investments.",
+              "candidate": "The sector specified for this document is **Energy / Ecological Transition / Heavy Investments**.",
+              "correct": true
+            },
+            {
+              "q": "Why was the Beta Scenario unanimously rejected despite its large volume of subsidies? Cross-reference the data from the table and Section II.",
+              "gold": "The Beta Scenario requires a 14-month review timeframe, which would push the project beyond January 1, 2027, the date the progressive carbon tax enters into force. The tax fines would cancel out the benefit of the subsidies.",
+              "candidate": "The Beta Scenario was unanimously rejected because, despite its 65 million euros in subsidies, its 14-month approval timeframe would push contract signatures past the January 1, 2027 carbon tax deadline, while also imposing binding clauses requiring the company to share its engineering patents with European competitors.",
+              "correct": false
+            },
+            {
+              "q": "What is the maximum authorized price per MWh for the green electricity PPA contract?",
+              "gold": "The price must not exceed 62 EUR per MWh.",
+              "candidate": "The maximum authorized price per MWh for the green electricity PPA contract is **62 EUR**.",
+              "correct": true
+            }
+          ],
+          "correct": 9,
+          "graded": 10,
+          "accuracy": 0.9
+        },
+        "terse": {
+          "tokensNet": 849,
+          "qa": [
+            {
+              "q": "What precise event automatically triggers the creation of a local mediation unit and suspends the works schedule by 45 days?",
+              "gold": "If the public inquiry collects more than 150 formal written and motivated objections from residents or local authorities.",
+              "candidate": "If the public inquiry receives more than 150 formal written objections from resident associations or local authorities, a local joint mediation unit co-led by the Carling mayor is automatically created and the works timeline is legally suspended for a fixed, non-negotiable 45 calendar days.",
+              "correct": false
+            },
+            {
+              "q": "Who leads Action 1 of the nominal plan, and what is the maximum deadline given to submit the file to the prefecture?",
+              "gold": "Amélie Moreau, with a strict deadline set for June 15, 2026.",
+              "candidate": "Amélie Moreau leads Action 1, with a maximum deadline of 2026-06-15 to submit the technical ICPE file to the Moselle prefecture.",
+              "correct": true
+            },
+            {
+              "q": "From what nominal capacity does a water electrolysis installation fall under the ICPE authorization regime subject to public inquiry?",
+              "gold": "A capacity greater than 20 MW.",
+              "candidate": "An electrolysis installation falls under the ICPE authorization regime subject to public inquiry from a nominal capacity exceeding 20 MW.",
+              "correct": true
+            },
+            {
+              "q": "What is the identity of the majority union with which the HR department will negotiate on June 4 during the CSE meeting?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "Who holds the position of Chief Executive Officer of the company during this committee meeting?",
+              "gold": "Hélène de Rostand.",
+              "candidate": "Hélène de Rostand holds the position of Chief Executive Officer during this committee meeting.",
+              "correct": true
+            },
+            {
+              "q": "By what precise date must the bank credit lines associated with the chosen Alpha Scenario be opened?",
+              "gold": "Before September 1, 2026.",
+              "candidate": "The bank credit lines associated with the Alpha Scenario must be effectively open before **2026-09-01**.",
+              "correct": true
+            },
+            {
+              "q": "Does the procurement team have the right to sign a civil engineering works contract if the public inquiry is finished but the prefectural permit is not yet published in the collection of administrative acts?",
+              "gold": "No, the legal rule prohibits any engagement of funds or signing of civil engineering works contracts before the official publication of the permit.",
+              "candidate": "No — the contract cannot be legally signed or engaged until the prefectural operating permit is officially published in the regional collection of administrative acts, regardless of whether the public inquiry is finished.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Energy / Ecological Transition / Heavy Investments.",
+              "candidate": "This document pertains to the **petrochemical and industrial energy transition sector**, specifically focused on the conversion of a petrochemical hub to low-carbon hydrogen production.",
+              "correct": true
+            },
+            {
+              "q": "Why was the Beta Scenario unanimously rejected despite its large volume of subsidies? Cross-reference the data from the table and Section II.",
+              "gold": "The Beta Scenario requires a 14-month review timeframe, which would push the project beyond January 1, 2027, the date the progressive carbon tax enters into force. The tax fines would cancel out the benefit of the subsidies.",
+              "candidate": "Beta was unanimously rejected because its 14-month approval timeline would push contract signatures past the 2027-01-01 carbon-tax deadline, meaning the resulting fines would erase the benefit of the 65M EUR subsidies.",
+              "correct": true
+            },
+            {
+              "q": "What is the maximum authorized price per MWh for the green electricity PPA contract?",
+              "gold": "The price must not exceed 62 EUR per MWh.",
+              "candidate": "The maximum authorized price per MWh for the green electricity PPA contract is 62 EUR/MWh.",
+              "correct": true
+            }
+          ],
+          "correct": 9,
+          "graded": 10,
+          "accuracy": 0.9
+        }
+      }
+    },
+    {
+      "id": "EN-T20",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 1179,
+          "qa": [
+            {
+              "q": "What is the absolute access path of the global configuration file for Dublin's ALB load balancer?",
+              "gold": "not in context",
+              "candidate": "Not in context.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Information Technology / Critical Banking Services / Cloud Computing.",
+              "candidate": "The sector specified for this document is **Information Technology / Critical Banking Services / Cloud Computing**.",
+              "correct": true
+            },
+            {
+              "q": "Does the IT department manage microservices dedicated to checking accounts or credit cards in this specific runbook?",
+              "gold": "No, the introduction specifies that it concerns exclusively our savings banking microservices architecture.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "What is the maximum internal network latency limit tolerated for the `ledger-recorder` microservice?",
+              "gold": "A latency strictly less than 15 ms.",
+              "candidate": "The maximum internal network latency tolerated for the `ledger-recorder` microservice is **15ms**.",
+              "correct": false
+            },
+            {
+              "q": "What are the technical identification codes of the two AWS regions concerned by this DRP?",
+              "gold": "The primary region is `eu-west-1` (Dublin) and the recovery region is `eu-central-1` (Frankfurt).",
+              "candidate": "The two AWS regions are **`eu-west-1`** (Dublin, Ireland) for the primary region and **`eu-central-1`** (Frankfurt, Germany) for the contingency region.",
+              "correct": true
+            },
+            {
+              "q": "How many physical nodes make up the Kubernetes cluster (AWS EKS) in Frankfurt during its usual idle state, before the activation of the crisis profile?",
+              "gold": "5 nodes.",
+              "candidate": "During its usual idle state, the Frankfurt Kubernetes cluster (AWS EKS) consists of **5 physical nodes**.",
+              "correct": true
+            },
+            {
+              "q": "Which Kubernetes command allows listing active pods in production and verifying their deployment?",
+              "gold": "`kubectl get pods -n production -o wide`.",
+              "candidate": "The Kubernetes command to list active pods in production and verify their deployment is `kubectl get pods -n production -o wide`.",
+              "correct": true
+            },
+            {
+              "q": "What is the complete emergency Python command allowing to modify the DNS routing at the Route53 level?",
+              "gold": "`python3 /root/dns_failover.py --source eu-west-1 --destination eu-central-1 --ttl 10`.",
+              "candidate": "The complete emergency Python command to modify the DNS routing at the Route53 level is:\n\n`python3 /root/dns_failover.py --source eu-west-1 --destination eu-central-1 --ttl 10`",
+              "correct": true
+            },
+            {
+              "q": "To what mandatory numerical value must the TTL (Time To Live) be forced when rewriting DNS routing tables?",
+              "gold": "10 seconds.",
+              "candidate": "The TTL (Time To Live) must be forced to **10 seconds**.",
+              "correct": true
+            },
+            {
+              "q": "What simultaneous criteria define the obligation to trigger this recovery procedure?",
+              "gold": "A total interruption of the Core-Auth API for more than 12 consecutive minutes AND a written confirmation of a global unavailability (AWS Outage) validated by the lead network engineer on call.",
+              "candidate": "The recovery procedure must be triggered if and only if the Core-Auth authentication service has been totally interrupted for more than **12 consecutive minutes**, **AND** a major physical AWS outage has been formally validated in writing by the lead network engineer on call.",
+              "correct": true
+            }
+          ],
+          "correct": 8,
+          "graded": 10,
+          "accuracy": 0.8
+        },
+        "terse": {
+          "tokensNet": 799,
+          "qa": [
+            {
+              "q": "What is the absolute access path of the global configuration file for Dublin's ALB load balancer?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Information Technology / Critical Banking Services / Cloud Computing.",
+              "candidate": "The document is specified for the **Information Technology / Critical Banking Services / Cloud Computing** sector.",
+              "correct": true
+            },
+            {
+              "q": "Does the IT department manage microservices dedicated to checking accounts or credit cards in this specific runbook?",
+              "gold": "No, the introduction specifies that it concerns exclusively our savings banking microservices architecture.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "What is the maximum internal network latency limit tolerated for the `ledger-recorder` microservice?",
+              "gold": "A latency strictly less than 15 ms.",
+              "candidate": "The maximum internal network latency tolerated for the `ledger-recorder` microservice is **15 ms**.",
+              "correct": false
+            },
+            {
+              "q": "What are the technical identification codes of the two AWS regions concerned by this DRP?",
+              "gold": "The primary region is `eu-west-1` (Dublin) and the recovery region is `eu-central-1` (Frankfurt).",
+              "candidate": "The two AWS regions are **`eu-west-1`** (Dublin, Ireland) as the primary region and **`eu-central-1`** (Frankfurt, Germany) as the backup region.",
+              "correct": true
+            },
+            {
+              "q": "How many physical nodes make up the Kubernetes cluster (AWS EKS) in Frankfurt during its usual idle state, before the activation of the crisis profile?",
+              "gold": "5 nodes.",
+              "candidate": "During its usual idle state, the Frankfurt AWS EKS cluster maintains a minimum of **5 idle nodes** before the crisis profile scales it up to 45.",
+              "correct": true
+            },
+            {
+              "q": "Which Kubernetes command allows listing active pods in production and verifying their deployment?",
+              "gold": "`kubectl get pods -n production -o wide`.",
+              "candidate": "The command `kubectl get pods -n production -o wide` lists active pods in the production namespace and allows verification of their deployment.",
+              "correct": true
+            },
+            {
+              "q": "What is the complete emergency Python command allowing to modify the DNS routing at the Route53 level?",
+              "gold": "`python3 /root/dns_failover.py --source eu-west-1 --destination eu-central-1 --ttl 10`.",
+              "candidate": "The complete emergency Python command to modify DNS routing at the Route53 level is: `python3 /root/dns_failover.py --source eu-west-1 --destination eu-central-1 --ttl 10`",
+              "correct": true
+            },
+            {
+              "q": "To what mandatory numerical value must the TTL (Time To Live) be forced when rewriting DNS routing tables?",
+              "gold": "10 seconds.",
+              "candidate": "The TTL must be forced to **10 seconds** when rewriting DNS routing tables.",
+              "correct": true
+            },
+            {
+              "q": "What simultaneous criteria define the obligation to trigger this recovery procedure?",
+              "gold": "A total interruption of the Core-Auth API for more than 12 consecutive minutes AND a written confirmation of a global unavailability (AWS Outage) validated by the lead network engineer on call.",
+              "candidate": "The recovery procedure must be triggered only when both the API Core-Auth service has been totally interrupted for more than 12 consecutive minutes **and** a written major physical outage notification (AWS Outage) has been validated by the on-call lead network engineer.",
+              "correct": true
+            }
+          ],
+          "correct": 8,
+          "graded": 10,
+          "accuracy": 0.8
+        }
+      }
+    },
+    {
+      "id": "EN-T21",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 1359,
+          "qa": [
+            {
+              "q": "From what global threat risk score ($S_r$) does the AI system automatically apply an account block without human intervention?",
+              "gold": "A score greater than 85.",
+              "candidate": "Based on the context, the AI system automatically applies an account block without human intervention for any overall score **S_r** greater than **85**.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "AI agent prompt instructions flow and cross-execution logs.",
+              "candidate": "The document type is AI agent prompt instructions flow and cross-execution logs.",
+              "correct": true
+            },
+            {
+              "q": "Does the artificial intelligence agent have the right to confiscate or definitively liquidate the cryptocurrencies from the suspect wallet?",
+              "gold": "No, the agent does not possess the required privileges to liquidate or definitively seize the assets. This is a strict limit of its autonomy.",
+              "candidate": "No, the AI agent does not have the right to confiscate or definitively liquidate cryptocurrencies, as this action falls exclusively within the competence of the Human Compliance Direction, activable only via a physical multi-hardware tokens signature protocol.",
+              "correct": true
+            },
+            {
+              "q": "Do the suspect funds transit through a bank located in Luxembourg or Switzerland before arriving in Panama?",
+              "gold": "No, they transit directly from Banque Privée A in France to the account of the company Vortex-Holdings in Panama.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "What is the exact amount in euros of each of the 14 fraudulent transfers?",
+              "gold": "9,900 EUR.",
+              "candidate": "Each of the 14 transfers amounts to exactly **9,900 EUR**.",
+              "correct": true
+            },
+            {
+              "q": "What prohibition status does the AI immediately apply to the accounts of Banque Privée A after its calculations?",
+              "gold": "The status `BLOCK_ACCOUNT_TEMPORARY`.",
+              "candidate": "Based on the context, the AI immediately applies the status **`BLOCK_ACCOUNT_TEMPORARY`** to the 14 identified emitting accounts within the system of Banque Privée A.",
+              "correct": true
+            },
+            {
+              "q": "How many GPU computer servers are required to run the model of Agent-RiskScorer-03?",
+              "gold": "not in context",
+              "candidate": "Not in context.",
+              "correct": true
+            },
+            {
+              "q": "What is the exact name and extension of the file generated by the system to notify the TRACFIN authority?",
+              "gold": "The file `AML-TRACFIN-2026-Vortex.xml`.",
+              "candidate": "The file generated by the system to notify the TRACFIN authority is named **`AML-TRACFIN-2026-Vortex.xml`**.",
+              "correct": true
+            },
+            {
+              "q": "What is the international format and reference of the batch of banking messages analyzed at the beginning?",
+              "gold": "The international Swift MT103 message format, in the batch referenced BATCH-EMEA-94.",
+              "candidate": "The batch of banking messages analyzed at the beginning is in the international Swift MT103 format, identified under reference `BATCH-EMEA-94`.",
+              "correct": true
+            },
+            {
+              "q": "To what precise French regulatory threshold does the agent refer when it notes that the transfers are 9,900 EUR?",
+              "gold": "The TRACFIN regulatory vigilance threshold set at 10,000 EUR.",
+              "candidate": "The agent refers to the **10,000 EUR** threshold set by TRACFIN, above which an automatic mandatory declaration is triggered.",
+              "correct": true
+            }
+          ],
+          "correct": 9,
+          "graded": 10,
+          "accuracy": 0.9
+        },
+        "terse": {
+          "tokensNet": 811,
+          "qa": [
+            {
+              "q": "From what global threat risk score ($S_r$) does the AI system automatically apply an account block without human intervention?",
+              "gold": "A score greater than 85.",
+              "candidate": "From a global threat risk score ($S_r$) greater than 85, the AI system automatically applies a conservative account block without prior human validation.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "AI agent prompt instructions flow and cross-execution logs.",
+              "candidate": "The document is a multi-AI agent system log from the AML-CORE Anti-Money Laundering network, recording real-time detection of a suspected money laundering operation.",
+              "correct": false
+            },
+            {
+              "q": "Does the artificial intelligence agent have the right to confiscate or definitively liquidate the cryptocurrencies from the suspect wallet?",
+              "gold": "No, the agent does not possess the required privileges to liquidate or definitively seize the assets. This is a strict limit of its autonomy.",
+              "candidate": "No, the AI agent does not have the right to confiscate or definitively liquidate the cryptocurrencies; such action is exclusively reserved for the Human Compliance Direction via physical multi-hardware-token signature protocol.",
+              "correct": true
+            },
+            {
+              "q": "Do the suspect funds transit through a bank located in Luxembourg or Switzerland before arriving in Panama?",
+              "gold": "No, they transit directly from Banque Privée A in France to the account of the company Vortex-Holdings in Panama.",
+              "candidate": "Not in context.",
+              "correct": false
+            },
+            {
+              "q": "What is the exact amount in euros of each of the 14 fraudulent transfers?",
+              "gold": "9,900 EUR.",
+              "candidate": "Each of the 14 transfers is exactly **9,900 EUR**.",
+              "correct": true
+            },
+            {
+              "q": "What prohibition status does the AI immediately apply to the accounts of Banque Privée A after its calculations?",
+              "gold": "The status `BLOCK_ACCOUNT_TEMPORARY`.",
+              "candidate": "Based on the context, the AI immediately applies a **temporary block** (`BLOCK_ACCOUNT_TEMPORARY`) to the 14 emitting accounts of Banque Privée A.",
+              "correct": true
+            },
+            {
+              "q": "How many GPU computer servers are required to run the model of Agent-RiskScorer-03?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "What is the exact name and extension of the file generated by the system to notify the TRACFIN authority?",
+              "gold": "The file `AML-TRACFIN-2026-Vortex.xml`.",
+              "candidate": "The file generated by the system to notify the TRACFIN authority is **AML-TRACFIN-2026-Vortex.xml**.",
+              "correct": true
+            },
+            {
+              "q": "What is the international format and reference of the batch of banking messages analyzed at the beginning?",
+              "gold": "The international Swift MT103 message format, in the batch referenced BATCH-EMEA-94.",
+              "candidate": "The batch of banking messages analyzed is in Swift MT103 interbank format, with the reference `BATCH-EMEA-94`.",
+              "correct": true
+            },
+            {
+              "q": "To what precise French regulatory threshold does the agent refer when it notes that the transfers are 9,900 EUR?",
+              "gold": "The TRACFIN regulatory vigilance threshold set at 10,000 EUR.",
+              "candidate": "The agent refers to the French TRACFIN vigilance threshold of 10,000 EUR, which triggers an automatic mandatory declaration.",
+              "correct": true
+            }
+          ],
+          "correct": 8,
+          "graded": 10,
+          "accuracy": 0.8
+        }
+      }
+    },
+    {
+      "id": "EN-T22",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 1022,
+          "qa": [
+            {
+              "q": "What chemical substance or solid material serves as propellant for the program's space engines?",
+              "gold": "Iodine (solid iodine sublimation).",
+              "candidate": "The propellant used for the IRIS-3 program's space engines is **solid iodine**, which is sublimated by the miniaturized propulsion system incorporated in each nanosatellite.",
+              "correct": true
+            },
+            {
+              "q": "What are the only two cases of operational emergency that allow drawing from the permanent 15% fuel reserve?",
+              "gold": "Space debris avoidance maneuvers and final deorbiting at the end of operational life.",
+              "candidate": "The two cases that allow drawing from the permanent 15% iodine reserve are space debris avoidance maneuvers in low orbit and the mandatory deorbiting of the satellite at the end of operational life.",
+              "correct": true
+            },
+            {
+              "q": "What precise weather conditions measured less than 30 minutes from liftoff trigger the mandatory cancellation of the launch?",
+              "gold": "A high-altitude wind speed greater than 85 km/h (between 10,000 and 15,000 m) or the presence of storm activity within a 25 km radius around the launch pad.",
+              "candidate": "The launch must be aborted if wind speed exceeds **85 km/h** between 10,000 and 15,000 meters altitude, or if electrical activity or storm cells are detected within **25 km** of the launch pad.",
+              "correct": true
+            },
+            {
+              "q": "Which consortium partner manufactures the electric propulsion system, where is its production site located, and what is its delivery deadline?",
+              "gold": "It is the company ThrustMe, located in Verrières-le-Buisson in France, with a contractual deadline of September 15, 2027.",
+              "candidate": "ThrustMe manufactures the electric propulsion module at its production site in Verrières-le-Buisson, France, with a contractual delivery deadline of September 15, 2027.",
+              "correct": true
+            },
+            {
+              "q": "Which industrial group delivers the generic platform (the bus) on March 12, 2027, and from which production site will it come?",
+              "gold": "Thales Alenia Space, from its production site located in Cannes, France.",
+              "candidate": "Thales Alenia Space will deliver the generic satellite bus on March 12, 2027, from its production site in Cannes, France.",
+              "correct": true
+            },
+            {
+              "q": "What is the date of the priority launch window chosen to send the first batch of 8 satellites of Orbital Plane A?",
+              "gold": "February 14, 2028.",
+              "candidate": "The priority launch window for the first batch of 8 satellites of Orbital Plane A is set for **February 14, 2028**.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Complex engineering program scoping note.",
+              "candidate": "The document type is a complex engineering program scoping note.",
+              "correct": true
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Aeronautics and Space / DeepTech / Earth Observation.",
+              "candidate": "The sector specified for this document is **Aeronautics and Space / DeepTech / Earth Observation**.",
+              "correct": true
+            },
+            {
+              "q": "What is the exact number of satellites planned in the constellation and how are they distributed?",
+              "gold": "24 operational satellites in total, distributed homogeneously at a rate of 8 satellites across 3 distinct orbital planes.",
+              "candidate": "The constellation comprises **24 operational satellites**, distributed homogeneously across **3 orbital planes** with **8 satellites per plane**.",
+              "correct": true
+            },
+            {
+              "q": "From which space center and launch base will the program launch take place?",
+              "gold": "From the Guiana Space Centre located in Kourou.",
+              "candidate": "The launch will take place from the Guiana Space Centre in Kourou.",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        },
+        "terse": {
+          "tokensNet": 616,
+          "qa": [
+            {
+              "q": "What chemical substance or solid material serves as propellant for the program's space engines?",
+              "gold": "Iodine (solid iodine sublimation).",
+              "candidate": "The propellant used in the IRIS-3 nanosatellites' miniaturized engines is solid iodine, which undergoes sublimation.",
+              "correct": true
+            },
+            {
+              "q": "What are the only two cases of operational emergency that allow drawing from the permanent 15% fuel reserve?",
+              "gold": "Space debris avoidance maneuvers and final deorbiting at the end of operational life.",
+              "candidate": "Based on the context, the permanent 15% iodine reserve is designated exclusively for **low-orbit debris avoidance** and **mandatory end-of-life deorbit**.",
+              "correct": true
+            },
+            {
+              "q": "What precise weather conditions measured less than 30 minutes from liftoff trigger the mandatory cancellation of the launch?",
+              "gold": "A high-altitude wind speed greater than 85 km/h (between 10,000 and 15,000 m) or the presence of storm activity within a 25 km radius around the launch pad.",
+              "candidate": "The Flight Operations Director must immediately abort the countdown if, within less than 30 minutes before liftoff, high-altitude winds exceed 85 km/h between 10,000–15,000 m altitude, or if electrical activity or storm cells are detected by radar within a 25 km radius around the Guianese launch pad.",
+              "correct": true
+            },
+            {
+              "q": "Which consortium partner manufactures the electric propulsion system, where is its production site located, and what is its delivery deadline?",
+              "gold": "It is the company ThrustMe, located in Verrières-le-Buisson in France, with a contractual deadline of September 15, 2027.",
+              "candidate": "ThrustMe, located in Verrières-le-Buisson, France, manufactures the Electric Propulsion Module with a delivery deadline of 2027-09-15.",
+              "correct": true
+            },
+            {
+              "q": "Which industrial group delivers the generic platform (the bus) on March 12, 2027, and from which production site will it come?",
+              "gold": "Thales Alenia Space, from its production site located in Cannes, France.",
+              "candidate": "Thales Alenia Space, based in Cannes, France, delivers the generic platform/satellite bus by March 12, 2027.",
+              "correct": true
+            },
+            {
+              "q": "What is the date of the priority launch window chosen to send the first batch of 8 satellites of Orbital Plane A?",
+              "gold": "February 14, 2028.",
+              "candidate": "The priority launch window for the first batch of 8 satellites of Orbital Plane A is **February 14, 2028**.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Complex engineering program scoping note.",
+              "candidate": "The document is a programme specification or technical requirements document for the IRIS-3 Hyperspectral Imaging Satellite Constellation.",
+              "correct": false
+            },
+            {
+              "q": "Which sector is specified for this document?",
+              "gold": "Aeronautics and Space / DeepTech / Earth Observation.",
+              "candidate": "The specified sector is European Civil Space.",
+              "correct": false
+            },
+            {
+              "q": "What is the exact number of satellites planned in the constellation and how are they distributed?",
+              "gold": "24 operational satellites in total, distributed homogeneously at a rate of 8 satellites across 3 distinct orbital planes.",
+              "candidate": "The IRIS-3 constellation consists of 24 identical satellites distributed across 3 orbital planes of 8 satellites each.",
+              "correct": true
+            },
+            {
+              "q": "From which space center and launch base will the program launch take place?",
+              "gold": "From the Guiana Space Centre located in Kourou.",
+              "candidate": "The IRIS-3 program launches will take place from the Guiana Space Centre in Kourou.",
+              "correct": true
+            }
+          ],
+          "correct": 8,
+          "graded": 10,
+          "accuracy": 0.8
+        }
+      }
+    },
+    {
+      "id": "EN-T23",
+      "lang": "EN",
+      "overhead": 4128,
+      "arms": {
+        "prose": {
+          "tokensNet": 1050,
+          "qa": [
+            {
+              "q": "What physical characteristics of the Group B tablet must be strictly identical to those of Group A to preserve the blind?",
+              "gold": "The color, size, texture, and taste of the tablet.",
+              "candidate": "The Group B placebo tablet must be strictly identical to the Group A tablet in **color, size, texture, and taste**.",
+              "correct": true
+            },
+            {
+              "q": "Is the local investigating physician authorized to break the blind on their own initiative if a patient complains of moderate nausea?",
+              "gold": "No, it is strictly forbidden to break the double-blind secret for events of a minor or moderate nature (like passing nausea).",
+              "candidate": "No, the local investigating physician is not authorized to break the blind on their own initiative for moderate nausea, as unblinding can only be triggered by the Independent DSMB in cases of immediate life-threatening peril.",
+              "correct": true
+            },
+            {
+              "q": "Which international body possesses the exclusive right to trigger the double-blind lifting procedure in case of vital peril?",
+              "gold": "The Independent Data and Safety Monitoring Board (DSMB).",
+              "candidate": "The Independent Data and Safety Monitoring Board (DSMB) possesses the exclusive right to trigger the double-blind lifting procedure in case of immediate life-threatening peril.",
+              "correct": true
+            },
+            {
+              "q": "For the treatment of what precise neurodegenerative pathology is this molecule developed?",
+              "gold": "Alzheimer's disease (at an early to moderate stage).",
+              "candidate": "NeuroX-72 is developed to slow the progression of cognitive deficits in adult subjects presenting early to moderate stages of **Alzheimer's disease**.",
+              "correct": true
+            },
+            {
+              "q": "From what floor value of creatinine clearance does a patient enter the category of severe renal failure leading to exclusion?",
+              "gold": "A creatinine clearance value strictly less than 30 mL/min.",
+              "candidate": "A patient enters the category of severe renal failure leading to exclusion when their creatinine clearance value is strictly less than **30 mL/min**.",
+              "correct": true
+            },
+            {
+              "q": "What exclusion criteria link neurology (cardiovascular history) and cardiology (implantable devices)?",
+              "gold": "A history of stroke (ischemic or hemorrhagic) of less than 12 months and the contraindication to MRI such as the presence of a non-compatible cardiac pacemaker.",
+              "candidate": "The exclusion criterion linking both fields is the presence of a first-generation cardiac pacemaker incompatible with intense magnetic fields, which constitutes an absolute contraindication to performing the MRI examinations required by the trial.",
+              "correct": false
+            },
+            {
+              "q": "Which biotechnology company holds the commercial patent for the NeuroX-72 molecular formula?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "What are the required inclusive minimum and maximum score values in the MMSE test for a patient to be included?",
+              "gold": "A score inclusively between 18 and 24.",
+              "candidate": "The required MMSE score must be inclusively between **18** (minimum) and **24** (maximum) during the pre-selection phase.",
+              "correct": true
+            },
+            {
+              "q": "To what central regulatory entity must the safety alert form be transmitted within the allowed timeframe?",
+              "gold": "To the Global Pharmacovigilance Centre.",
+              "candidate": "The safety alert form must be transmitted to the **Global Pharmacovigilance Centre** within 24 hours of gaining knowledge of the event.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Standardized clinical trial protocol and medical framework.",
+              "candidate": "The document type is a standardized clinical trial protocol and medical framework.",
+              "correct": true
+            }
+          ],
+          "correct": 9,
+          "graded": 10,
+          "accuracy": 0.9
+        },
+        "terse": {
+          "tokensNet": 619,
+          "qa": [
+            {
+              "q": "What physical characteristics of the Group B tablet must be strictly identical to those of Group A to preserve the blind?",
+              "gold": "The color, size, texture, and taste of the tablet.",
+              "candidate": "The Group B placebo tablet must be strictly identical to the Group A tablet in color, size, texture, and taste.",
+              "correct": true
+            },
+            {
+              "q": "Is the local investigating physician authorized to break the blind on their own initiative if a patient complains of moderate nausea?",
+              "gold": "No, it is strictly forbidden to break the double-blind secret for events of a minor or moderate nature (like passing nausea).",
+              "candidate": "No — unblinding is strictly forbidden for minor or moderate events such as nausea, and can only be triggered by the DSMB in cases of immediate life-threatening peril.",
+              "correct": true
+            },
+            {
+              "q": "Which international body possesses the exclusive right to trigger the double-blind lifting procedure in case of vital peril?",
+              "gold": "The Independent Data and Safety Monitoring Board (DSMB).",
+              "candidate": "The DSMB (Independent Data and Safety Monitoring Board) possesses the exclusive right to trigger the immediate randomization-code unblinding in case of immediate life-threatening peril.",
+              "correct": true
+            },
+            {
+              "q": "For the treatment of what precise neurodegenerative pathology is this molecule developed?",
+              "gold": "Alzheimer's disease (at an early to moderate stage).",
+              "candidate": "NeuroX-72 is developed for the treatment of Alzheimer's disease, specifically targeting adults with first symptoms in early-to-moderate stages.",
+              "correct": true
+            },
+            {
+              "q": "From what floor value of creatinine clearance does a patient enter the category of severe renal failure leading to exclusion?",
+              "gold": "A creatinine clearance value strictly less than 30 mL/min.",
+              "candidate": "A patient enters the category of severe renal failure leading to exclusion when their creatinine clearance is strictly below 30 mL/min.",
+              "correct": true
+            },
+            {
+              "q": "What exclusion criteria link neurology (cardiovascular history) and cardiology (implantable devices)?",
+              "gold": "A history of stroke (ischemic or hemorrhagic) of less than 12 months and the contraindication to MRI such as the presence of a non-compatible cardiac pacemaker.",
+              "candidate": "Patients are excluded if they have suffered a proven ischemic or hemorrhagic stroke within the previous 12 months, or if they have an absolute MRI contraindication, notably a first-generation pacemaker incompatible with intense magnetic fields.",
+              "correct": true
+            },
+            {
+              "q": "Which biotechnology company holds the commercial patent for the NeuroX-72 molecular formula?",
+              "gold": "not in context",
+              "candidate": "not in context.",
+              "correct": true
+            },
+            {
+              "q": "What are the required inclusive minimum and maximum score values in the MMSE test for a patient to be included?",
+              "gold": "A score inclusively between 18 and 24.",
+              "candidate": "A patient must have a validated MMSE score of **18 to 24** (inclusive) at preselection to be eligible for inclusion.",
+              "correct": true
+            },
+            {
+              "q": "To what central regulatory entity must the safety alert form be transmitted within the allowed timeframe?",
+              "gold": "To the Global Pharmacovigilance Centre.",
+              "candidate": "The safety alert form must be transmitted to the **Global Pharmacovigilance Centre** within a maximum of 24 hours from knowledge of the serious adverse event.",
+              "correct": true
+            },
+            {
+              "q": "What is the document type?",
+              "gold": "Standardized clinical trial protocol and medical framework.",
+              "candidate": "The document is a Phase III Clinical Trial Regulatory Compliance Protocol.",
+              "correct": true
+            }
+          ],
+          "correct": 10,
+          "graded": 10,
+          "accuracy": 1
+        }
+      }
+    }
+  ]
+}

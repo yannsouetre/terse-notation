@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TERSE Bench — v0.11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFF2F1; --panel:#FAFBFA; --ink:#18242E; --muted:#5C6B75;
+    --accent:#2743C9; --pass:#177245; --fail:#B3261E; --line:#C7CED2;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+  body{background:var(--paper); color:var(--ink); font:16px/1.55 "IBM Plex Sans",sans-serif; padding:0 16px 80px;}
+  .wrap{max-width:960px; margin:0 auto;}
+  header{padding:44px 0 26px; border-bottom:2px solid var(--ink);}
+  .kicker{font:600 12px/1 "IBM Plex Mono",monospace; letter-spacing:.18em; color:var(--accent); text-transform:uppercase;}
+  h1{font:700 clamp(34px,6vw,54px)/1.04 "Space Grotesk",sans-serif; letter-spacing:-.01em; margin-top:10px;}
+  h1 .thin{color:var(--muted); font-weight:500;}
+  .sub{margin-top:10px; color:var(--muted); max-width:62ch;}
+  .sub code{font:600 14px "IBM Plex Mono",monospace; color:var(--ink);}
+  section{margin-top:34px; background:var(--panel); border:1px solid var(--line); border-radius:2px; padding:22px 24px 26px;}
+  .sec-head{display:flex; align-items:baseline; gap:14px; border-bottom:1px solid var(--line); padding-bottom:12px; margin-bottom:16px;}
+  .sec-num{font:600 13px "IBM Plex Mono",monospace; color:var(--accent);}
+  h2{font:700 21px "Space Grotesk",sans-serif;}
+  .hint{color:var(--muted); font-size:14px; margin-bottom:12px; max-width:70ch;}
+  textarea{width:100%; min-height:180px; font:13px/1.5 "IBM Plex Mono",monospace; border:1px solid var(--line); border-radius:2px; background:#fff; color:var(--ink); padding:12px; resize:vertical;}
+  textarea:focus-visible, button:focus-visible, select:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+  .row{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:12px;}
+  button{font:600 14px "IBM Plex Sans",sans-serif; border:1px solid var(--ink); background:#fff; color:var(--ink); border-radius:2px; padding:9px 16px; cursor:pointer;}
+  button:hover{background:var(--ink); color:#fff;}
+  button.primary{background:var(--accent); border-color:var(--accent); color:#fff; padding:12px 26px; font-size:15px;}
+  button.primary:hover{background:#1B2F96;}
+  button:disabled{opacity:.45; cursor:not-allowed;}
+  label.opt{display:flex; gap:8px; align-items:center; font-size:14px; border:1px solid var(--line); background:#fff; border-radius:2px; padding:8px 12px; cursor:pointer;}
+  select{font:14px "IBM Plex Sans",sans-serif; padding:8px 10px; border:1px solid var(--line); border-radius:2px; background:#fff;}
+  .status{font:13px "IBM Plex Mono",monospace; color:var(--muted); margin-top:10px; min-height:18px;}
+  /* signature: telegraph tape */
+  .tape{margin-top:14px; background:var(--ink); border-radius:2px; padding:12px 14px; min-height:46px;
+        font:600 15px/1.9 "IBM Plex Mono",monospace; color:#E8EDF2; letter-spacing:.35em; word-break:break-all;}
+  .tape .ok{color:#7FD6A4;} .tape .ko{color:#F0918A;} .tape .tk{color:#8FA2F5;} .tape .na{color:#C9B458;}
+  table{width:100%; border-collapse:collapse; margin-top:14px; font-size:14px;}
+  th{font:600 12px "IBM Plex Mono",monospace; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); text-align:left; border-bottom:1px solid var(--ink); padding:8px 10px;}
+  td{border-bottom:1px solid var(--line); padding:8px 10px; font-variant-numeric:tabular-nums;}
+  td.num{font-family:"IBM Plex Mono",monospace;}
+  .delta-good{color:var(--pass); font-weight:600;} .delta-bad{color:var(--fail); font-weight:600;}
+  .verdict{margin-top:22px; border:2px solid var(--ink); border-radius:2px; padding:18px 20px; display:none;}
+  .verdict .big{font:700 30px "Space Grotesk",sans-serif; letter-spacing:-.01em;}
+  .stamp{display:inline-block; font:700 13px "IBM Plex Mono",monospace; letter-spacing:.14em; text-transform:uppercase;
+         border:2px solid currentColor; border-radius:2px; padding:5px 10px; transform:rotate(-2deg); margin-left:12px;}
+  .stamp.pass{color:var(--pass);} .stamp.fail{color:var(--fail);}
+  details{margin-top:12px; font-size:13px;} summary{cursor:pointer; font:600 13px "IBM Plex Mono",monospace; color:var(--muted);}
+  .qa{border-left:2px solid var(--line); margin:8px 0 8px 4px; padding:2px 10px; font-family:"IBM Plex Mono",monospace; font-size:12.5px; color:var(--muted);}
+  .qa b{color:var(--ink);}
+  table.matrix{margin-top:6px; font-size:13px; width:auto;}
+  table.matrix th{background:var(--panel);}
+  table.matrix td{padding:5px 12px; text-align:center;}
+  table.matrix td.rowhead{font:12px "IBM Plex Mono",monospace; text-align:left; padding-right:16px;}
+  table.matrix td.na{color:var(--line);}
+  table.matrix th label{display:flex; gap:6px; align-items:center; justify-content:center; cursor:pointer;}
+  footer{margin-top:36px; color:var(--muted); font-size:13px;}
+  @media (max-width:640px){ section{padding:16px;} .sec-head{flex-direction:column; gap:2px;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Measurement instrument · spec v0.3.1 · pre-registered</div>
+  <h1>TERSE <span class="thin">Bench</span></h1>
+  <p class="sub">Does the notation keep its promise? This instrument measures <code>tokens saved</code> against
+  <code>comprehension kept</code>, prose vs TERSE, on the same documents and the same questions.
+  Success criterion, fixed in advance: <code>&ge; 50% fewer tokens</code> with <code>&le; 2 pts QA accuracy loss</code>.</p>
+</header>
+
+<section>
+  <div class="sec-head"><span class="sec-num">00</span><h2>Endpoint</h2></div>
+  <p class="hint">Inside a claude.ai artifact, keep "Claude artifact" — no key needed, usage counts against your Claude plan.
+  Anywhere else (this file opened locally in a browser), pick a provider and paste an API key: the key lives in this page's
+  memory only, is never stored, and is sent only to the provider you selected. Local models: choose "OpenAI-compatible"
+  with base URL <code style="font:12px 'IBM Plex Mono'">http://localhost:11434/v1</code> (Ollama) and any non-empty key — runs are then free.</p>
+  <div class="row">
+    <label class="opt">Provider
+      <select id="provSel" onchange="provChanged()">
+        <option value="artifact" selected>Claude artifact (no key)</option>
+        <option value="anthropic">Anthropic API (key)</option>
+        <option value="openai">OpenAI-compatible (key)</option>
+      </select>
+    </label>
+    <label class="opt">Base URL <input type="text" id="baseUrl" value="https://api.anthropic.com" size="26" style="font:13px 'IBM Plex Mono',monospace;border:none;background:transparent"></label>
+    <label class="opt">API key <input type="password" id="apiKey" placeholder="API providers only" size="18" style="font:13px 'IBM Plex Mono',monospace;border:none;background:transparent"></label>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">01</span><h2>Corpus builder</h2></div>
+  <p class="hint">Paste a prose document; the builder converts it to TERSE (with a mandatory self-check pass), audits the two versions for information equivalence, then writes QA pairs <em>from the prose only</em> — including one trap question whose gold answer is "not in context". Review and edit the JSON before adding: you are the editor, the model is the typist. Uses the endpoint above (~3 requests per document). In artifact mode the output is capped — for documents longer than ~600 words, use an API or local endpoint.</p>
+  <div class="row">
+    <label class="opt">Doc id <input type="text" id="bldId" value="doc-1" size="14" style="font:13px 'IBM Plex Mono',monospace;border:none;background:transparent"></label>
+    <label class="opt">Lang
+      <select id="bldLang"><option value="EN" selected>EN</option><option value="FR">FR</option></select>
+    </label>
+    <label class="opt">Questions
+      <select id="bldQ"><option value="8" selected>8</option><option value="12">12</option><option value="20">20</option></select>
+    </label>
+  </div>
+  <textarea id="bldProse" spellcheck="false" placeholder="Paste the prose document here…" aria-label="Prose document" style="margin-top:12px"></textarea>
+  <div class="row">
+    <button class="primary" onclick="buildDoc()">Generate TERSE + questions</button>
+    <button id="bldAddBtn" onclick="addBuiltDoc()" disabled>Add to corpus</button>
+  </div>
+  <div class="status" id="bldStatus"></div>
+  <textarea id="bldOut" spellcheck="false" style="display:none; margin-top:12px" aria-label="Generated document JSON"></textarea>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">02</span><h2>Corpus</h2></div>
+  <p class="hint">Each document exists in two versions (prose and TERSE) with gold-answer questions written <em>before</em> any run.
+  Edit the JSON directly, or export it, work outside, and load it back. The sample corpus ships with 3 documents (EN + FR).</p>
+  <textarea id="corpusBox" spellcheck="false" aria-label="Corpus JSON"></textarea>
+  <div class="row">
+    <button onclick="loadCorpus()">Load corpus from JSON</button>
+    <button onclick="$('fileIn').click()">Import JSON file(s) — merge</button>
+    <input type="file" id="fileIn" accept=".json,application/json" multiple style="display:none" onchange="importFiles(this.files)">
+    <button onclick="exportCorpus()">Show corpus JSON (copy)</button>
+    <button onclick="resetCorpus()">Reset sample corpus</button>
+  </div>
+  <div class="status" id="corpusStatus"></div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">03</span><h2>Protocol</h2></div>
+  <p class="hint">Arms of the run. Token counts come from the API's own <code>usage</code> field with an identical wrapper
+  for every version — absolute counts include a small fixed overhead, so the <em>deltas</em> are exact.
+  When the question count is below a document's available questions, that many are drawn at random without replacement;
+  the same draw serves every arm of that document, so arms stay comparable within a run (different runs draw differently —
+  use "all" for fully reproducible runs).</p>
+  <div class="row">
+    <label class="opt">Questions per doc
+      <select id="qLimit"><option value="5">5 (quick)</option><option value="10" selected>10</option><option value="15">15</option><option value="20">20</option><option value="all">all</option></select>
+    </label>
+    <label class="opt">Reader model
+      <input type="text" id="modelSel" value="claude-sonnet-4-6" list="modelList" size="22" style="font:13px 'IBM Plex Mono',monospace;border:none;background:transparent">
+      <datalist id="modelList">
+        <option value="claude-sonnet-4-6"></option>
+        <option value="claude-haiku-4-5-20251001"></option>
+        <option value="gpt-4o-mini"></option>
+        <option value="gpt-4.1-mini"></option>
+      </datalist>
+    </label>
+  </div>
+  <p class="hint" style="margin-top:12px">Run matrix — one row per document, one column per version. Tick the cells to measure; a header checkbox toggles its whole column, the corner box toggles everything. The same question draw serves every ticked version of a row, so versions stay comparable.</p>
+  <div id="docPicker" style="overflow-x:auto; margin-top:6px"></div>
+  <p class="hint" style="margin-top:12px">In artifact mode, every request counts against your Claude plan; in API modes it bills the provider key; on a local model it is free. To scale a run down: quick mode (4 questions), fewer documents, one arm at a time, or a small reader. The reader model is a benchmark variable in its own right — a notation that only works with large readers would be a weak notation.</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">04</span><h2>Run &amp; results</h2></div>
+  <div class="row">
+    <button class="primary" id="runBtn" onclick="runBench()">Run benchmark</button>
+    <button id="abortBtn" onclick="aborted=true" disabled>Abort</button>
+    <button id="resumeBtn" onclick="runBench(true)" disabled>Resume</button>
+    <button onclick="$('resumeIn').click()">Load results JSON (file) &rarr; resume</button>
+    <input type="file" id="resumeIn" accept=".json,application/json,.txt" style="display:none" onchange="loadResumeFile(this.files)">
+    <button id="exportResBtn" onclick="exportResults()" disabled>Show results JSON (copy)</button>
+  </div>
+  <div class="status" id="runStatus">Idle. Budget ≈ ticked cells × (questions × 2 + 1) requests — scale with the matrix, quick mode, or a small reader.</div>
+  <div class="tape" id="tape" aria-live="polite" title="▎ token count · dot answered · ✓ correct · ✗ wrong · ? ungraded"></div>
+  <div id="results"></div>
+  <div class="verdict" id="verdict"></div>
+  <div id="jsonPanel" style="display:none; margin-top:16px">
+    <div class="row"><span class="kicker" id="jsonTitle"></span><button onclick="copyJson()">Copy to clipboard</button></div>
+    <textarea id="jsonOut" readonly style="min-height:140px; margin-top:8px" aria-label="JSON output"></textarea>
+  </div>
+</section>
+
+<footer>TERSE Bench v0.11 · flat corpus schema (one entry per document: prose/short/terse/llml/llmlx) with legacy formats still accepted · resume after any interruption (in-page or from an exported results file) · results exportable mid-run · run matrix (documents × versions), column and global toggles · automatic API retries with backoff; a failed cell is marked and the run continues · builder → corpus → run in one file · runs as a claude.ai artifact (keyless) or locally with an Anthropic / OpenAI-compatible / local (Ollama) endpoint · arms C/D require the long-document corpus · file downloads are blocked inside artifacts, use the copy panels.</footer>
+</div>
+
+<script>
+const LEGEND = `Notation legend — each line is one claim; a marker counts only as the FIRST character of a line.
+No prefix = fact.  "!"=decision  "!!"=hard constraint  ">"=action  "?"=open question
+"~"=estimate  "x"=ruled out.  Indented under a "?" or "!" line: "+"=pro, "-"=con.
+Inline: "->"=leads to  "=>"=if-then rule  "<-"=because  "|"=alternative  "vs"=trade-off
+"@"=person/date/place  text in quotes = verbatim.  "&id" defines an anchor, "*id" references it.
+Indentation = detail of parent line.  L0/L1/L2 = increasing detail levels.
+MODE strict = every line exhaustively marked, absence is informative; MODE open = unmarked lines are unclassified.
+Grammar words omitted; negation always explicit.`;
+
+const SAMPLE_CORPUS = { docs: [
+{ id:"migration-EN", lang:"EN",
+  prose:"Following our meeting on July 10th, the team decided to migrate the customer database to PostgreSQL rather than staying on MySQL, mainly because of better JSON support and the fact that our lead developer Sarah already has deep experience with it. MongoDB was also considered but was ruled out due to the lack of relational joins. The migration is estimated to take about three weeks, although this remains uncertain. Sarah will prepare a detailed migration plan by August 1st. One question is still open: should we host in the EU region or in the US, given GDPR constraints?",
+  terse:"CTX: customer DB migration\nAS-OF: 2026-07-10\n\n! migrate customer DB -> PostgreSQL (was MySQL)\n  <- better JSON support; @sarah deep experience\nx MongoDB (no relational joins)\n~ migration \u2248 3 weeks\n> @sarah migration plan, due 2026-08-01\n? hosting EU | US <- GDPR",
+  questions:[
+   {q:"Which database was chosen for the migration?", a:"PostgreSQL"},
+   {q:"Which database was used before?", a:"MySQL"},
+   {q:"Give one reason for choosing PostgreSQL.", a:"Better JSON support (or: Sarah's deep experience with it)"},
+   {q:"Which option was ruled out, and why?", a:"MongoDB, because it lacks relational joins"},
+   {q:"How long is the migration expected to take?", a:"About three weeks"},
+   {q:"Is the migration duration certain?", a:"No, it is an uncertain estimate"},
+   {q:"Who must prepare the migration plan, and by when?", a:"Sarah, by August 1st"},
+   {q:"What question is still open?", a:"Whether to host in the EU or the US, given GDPR"}]},
+{ id:"migration-FR", lang:"FR",
+  prose:"\u00C0 la suite de notre r\u00E9union du 10 juillet, l'\u00E9quipe a d\u00E9cid\u00E9 de migrer la base de donn\u00E9es clients vers PostgreSQL plut\u00F4t que de rester sur MySQL, principalement en raison d'un meilleur support JSON et du fait que notre d\u00E9veloppeuse principale Sarah poss\u00E8de d\u00E9j\u00E0 une solide exp\u00E9rience de cet outil. MongoDB a \u00E9galement \u00E9t\u00E9 envisag\u00E9 mais a \u00E9t\u00E9 \u00E9cart\u00E9 en raison de l'absence de jointures relationnelles. La migration est estim\u00E9e \u00E0 environ trois semaines, bien que cela reste incertain. Sarah pr\u00E9parera un plan de migration d\u00E9taill\u00E9 pour le 1er ao\u00FBt. Une question reste ouverte : faut-il h\u00E9berger dans la r\u00E9gion UE ou aux \u00C9tats-Unis, compte tenu des contraintes RGPD ?",
+  terse:"CTX: migration BDD clients\nAS-OF: 2026-07-10\n\n! migration BDD clients -> PostgreSQL (avant MySQL)\n  <- meilleur support JSON; @sarah solide exp\u00E9rience\nx MongoDB (pas de jointures relationnelles)\n~ migration \u2248 3 semaines\n> @sarah plan de migration, \u00E9ch\u00E9ance 2026-08-01\n? h\u00E9bergement UE | US <- RGPD",
+  questions:[
+   {q:"Quelle base de donn\u00E9es a \u00E9t\u00E9 choisie pour la migration ?", a:"PostgreSQL"},
+   {q:"Quelle base \u00E9tait utilis\u00E9e avant ?", a:"MySQL"},
+   {q:"Donnez une raison du choix de PostgreSQL.", a:"Meilleur support JSON (ou : la solide exp\u00E9rience de Sarah)"},
+   {q:"Quelle option a \u00E9t\u00E9 \u00E9cart\u00E9e, et pourquoi ?", a:"MongoDB, faute de jointures relationnelles"},
+   {q:"Combien de temps la migration doit-elle durer ?", a:"Environ trois semaines"},
+   {q:"La dur\u00E9e de la migration est-elle certaine ?", a:"Non, c'est une estimation incertaine"},
+   {q:"Qui doit pr\u00E9parer le plan de migration, et pour quand ?", a:"Sarah, pour le 1er ao\u00FBt"},
+   {q:"Quelle question reste ouverte ?", a:"H\u00E9berger en UE ou aux \u00C9tats-Unis, compte tenu du RGPD"}]},
+{ id:"crm-EN", lang:"EN",
+  prose:"Here is the current state of the CRM revamp project as of July 18, 2026. A non-negotiable constraint governs the whole project: customer data must stay in the EU, due to GDPR. We decided to move to HubSpot, replacing Salesforce, mainly because of cost and because the customer success team is already familiar with it. Salesforce was rejected because its licensing costs three times more and creates admin overhead; a self-hosted CRM was also rejected, since it would satisfy the EU constraint but its maintenance cost is too high. Hosting will be in Frankfurt, in line with the EU constraint. Go-live is planned for around September 15, though this date is still uncertain. Marco, our data lead since March, must deliver a data-cleanup plan by August 1st; the legacy database from 2019 contains about 40% duplicate contacts, which defines the cleanup scope. The budget is 60k EUR, and the cleanup may add 8 to 10k. One question is open: should the marketing website integrate via the native form, which needs zero code but has weak analytics, or via an API bridge, which gives full tracking but requires about two weeks of development? If churn exceeds 5% after launch, the rollback plan applies: freeze the sync, revert DNS, and restore the September 14 snapshot.",
+  terse:"CTX: CRM revamp \u2014 project state\nAS-OF: 2026-07-18\nMODE: strict\nLEX: CS=customer success; MW=marketing website\n\nL0: CRM revamp on track for Sept go-live; EU-data constraint drives all infra choices; budget risk on data cleanup.\n\nL1:\n!! &eu customer data stays in EU (GDPR)\n! CRM = HubSpot (was Salesforce) <- cost; CS familiarity\n! hosting -> Frankfurt <- *eu\n~ go-live @2026-09-15\n> @marco data-cleanup plan, due 2026-08-01\n? MW integration: native form | API bridge\n  + native: zero code\n  - native: weak analytics\n  + API bridge: full tracking\n  - API bridge: ~2 wks dev\nbudget = 60k EUR\n  ~ cleanup may add 8-10k\nchurn > 5% post-launch => rollback plan *rb\n\nL2:\nx Salesforce (licensing 3x; admin overhead)\nx self-hosted CRM (*eu satisfied, but maintenance cost)\nlegacy DB @2019: 40% duplicate contacts -> cleanup scope\n&rb rollback = freeze sync, revert DNS, restore @2026-09-14 snapshot\n@marco = data lead since 2026-03",
+  questions:[
+   {q:"What is the non-negotiable constraint of the project?", a:"Customer data must stay in the EU (GDPR)"},
+   {q:"Which CRM was chosen and which one does it replace?", a:"HubSpot, replacing Salesforce"},
+   {q:"Why was Salesforce rejected?", a:"Licensing costs about three times more and admin overhead"},
+   {q:"Where will the CRM be hosted?", a:"Frankfurt"},
+   {q:"Is the go-live date certain?", a:"No, around September 15 but uncertain"},
+   {q:"Who owns the data-cleanup plan and what is the deadline?", a:"Marco, by August 1st"},
+   {q:"What triggers the rollback plan?", a:"Churn above 5% after launch"},
+   {q:"What are the two options for the marketing website integration?", a:"The native form or an API bridge"}]}
+]};
+
+let corpus = JSON.parse(JSON.stringify(SAMPLE_CORPUS));
+let aborted = false;
+let lastResults = null;
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+const COLS = [["prose","Prose"],["short","Short"],["terse","TERSE"],["legend","TERSE+legend"],["llml","LLML"],["llmlTerse","LLML+TERSE"]];
+const DEFAULT_ON = { prose:true, terse:true };
+const COL_LABELS = Object.fromEntries(COLS);
+
+function corpusModel(){
+  const map = new Map(); const order = [];
+  const suff = {"-llmlTerse":"llmlTerse","-llmlx":"llmlTerse","-llml":"llml","-short":"short"};
+  for(const d of corpus.docs){
+    let base = d.id, variant = null;
+    for(const s in suff){ if(d.id.endsWith(s)){ base = d.id.slice(0, -s.length); variant = suff[s]; break; } }
+    if(d.variant) variant = d.variant === "llmlx" ? "llmlTerse" : d.variant;
+    if(!map.has(base)){ map.set(base, {base, lang:d.lang, title:d.title||"", texts:{}, questions:d.questions||[]}); order.push(base); }
+    const m = map.get(base);
+    if(variant){ if(d.terse) m.texts[variant] = d.terse; if(d.prose && !m.texts.prose) m.texts.prose = d.prose; }
+    else { if(d.prose) m.texts.prose = d.prose; if(d.terse) m.texts.terse = d.terse; }
+    for(const [fk, ck] of [["short","short"],["llml","llml"],["llmlx","llmlTerse"],["llmlTerse","llmlTerse"]]){
+      if(d[fk]) m.texts[ck] = d[fk];
+    }
+    if((d.questions||[]).length > m.questions.length) m.questions = d.questions;
+  }
+  return order.map(b => map.get(b));
+}
+function colText(m, k){
+  if(k === "legend") return m.texts.terse ? LEGEND + "\n\n" + m.texts.terse : null;
+  return m.texts[k] || null;
+}
+function renderMatrix(){
+  const model = corpusModel();
+  let h = '<table class="matrix"><tr><th><input type="checkbox" onchange="toggleAll(this.checked)" title="select all"></th>';
+  for(const [k, label] of COLS)
+    h += `<th><label><input type="checkbox" class="colSel" data-col="${k}" ${DEFAULT_ON[k]?"checked":""} onchange="toggleCol('${k}', this.checked)"> ${label}</label></th>`;
+  h += "</tr>";
+  for(const m of model){
+    h += `<tr><td class="rowhead"><label style="display:flex;gap:8px;align-items:center;cursor:pointer"><input type="checkbox" class="rowSel" data-base="${esc(m.base)}" onchange="toggleRow('${esc(m.base)}', this.checked)"> ${esc(m.base)}</label></td>`;
+    for(const [k] of COLS){
+      const avail = k === "legend" ? !!m.texts.terse : !!m.texts[k];
+      h += avail
+        ? `<td><input type="checkbox" class="cell" data-base="${esc(m.base)}" data-col="${k}" ${DEFAULT_ON[k]?"checked":""}></td>`
+        : `<td class="na">\u2014</td>`;
+    }
+    h += "</tr>";
+  }
+  $("docPicker").innerHTML = h + "</table>";
+}
+function toggleAll(v){
+  document.querySelectorAll(".cell").forEach(c => c.checked = v);
+  document.querySelectorAll(".colSel").forEach(c => c.checked = v);
+  document.querySelectorAll(".rowSel").forEach(c => c.checked = v);
+}
+function toggleRow(b, v){
+  document.querySelectorAll('.cell[data-base="' + b + '"]').forEach(c => c.checked = v);
+}
+function toggleCol(k, v){
+  document.querySelectorAll('.cell[data-col="' + k + '"]').forEach(c => c.checked = v);
+}
+function refreshBox(){
+  $("corpusBox").value = JSON.stringify(corpus, null, 2);
+  renderMatrix();
+}
+function loadCorpus(){
+  try{
+    const c = JSON.parse($("corpusBox").value);
+    if(!c.docs || !c.docs.length) throw new Error("no docs[] array");
+    corpus = c; refreshBox();
+    $("corpusStatus").textContent = "Corpus loaded: " + c.docs.length + " document(s).";
+  }catch(e){ $("corpusStatus").textContent = "Invalid JSON — corpus unchanged. " + e.message; }
+}
+function exportCorpus(){ showJson("Corpus JSON \u2014 copy from here", JSON.stringify(corpus, null, 2)); }
+function resetCorpus(){ corpus = JSON.parse(JSON.stringify(SAMPLE_CORPUS)); refreshBox(); $("corpusStatus").textContent = "Sample corpus restored."; }
+function showJson(title, text){
+  $("jsonPanel").style.display = "block";
+  $("jsonTitle").textContent = title;
+  $("jsonOut").value = text;
+  $("jsonOut").focus(); $("jsonOut").select();
+}
+async function copyJson(){
+  const t = $("jsonOut");
+  try{ await navigator.clipboard.writeText(t.value); setStatus("Copied to clipboard."); }
+  catch(e){
+    t.focus(); t.select();
+    try{ document.execCommand("copy"); setStatus("Copied to clipboard."); }
+    catch(e2){ setStatus("Clipboard blocked \u2014 select the text and copy manually (Ctrl/Cmd+C)."); }
+  }
+}
+
+function provChanged(){
+  const p = $("provSel").value;
+  if(p==="openai"){ $("baseUrl").value = "https://api.openai.com/v1"; if($("modelSel").value.indexOf("claude")===0) $("modelSel").value = "gpt-4o-mini"; }
+  else { $("baseUrl").value = "https://api.anthropic.com"; if($("modelSel").value.indexOf("claude")!==0) $("modelSel").value = "claude-sonnet-4-6"; }
+}
+
+async function apiCall(userText){
+  const prov = $("provSel").value, model = $("modelSel").value.trim(), key = $("apiKey").value.trim();
+  const base = $("baseUrl").value.replace(/\/+$/,"");
+  const mt = prov==="artifact" ? 1000 : 4000;
+  if(prov==="openai"){
+    const r = await fetch(base + "/chat/completions", {
+      method:"POST",
+      headers:{ "Content-Type":"application/json", "Authorization":"Bearer " + key },
+      body: JSON.stringify({ model, max_tokens: mt, messages:[{role:"user", content:userText}] })
+    });
+    if(!r.ok) throw new Error("API " + r.status);
+    const d = await r.json();
+    const txt = (d.choices && d.choices[0] && d.choices[0].message && d.choices[0].message.content) || "";
+    return { content:[{type:"text", text:txt}], usage:{ input_tokens: d.usage ? d.usage.prompt_tokens : NaN } };
+  }
+  const headers = {"Content-Type":"application/json"};
+  if(prov==="anthropic"){
+    headers["x-api-key"] = key;
+    headers["anthropic-version"] = "2023-06-01";
+    headers["anthropic-dangerous-direct-browser-access"] = "true";
+  }
+  const r = await fetch(base + "/v1/messages", {
+    method:"POST", headers,
+    body: JSON.stringify({ model, max_tokens: mt, messages:[{role:"user", content:userText}] })
+  });
+  if(!r.ok) throw new Error("API " + r.status);
+  return r.json();
+}
+async function api(userText){
+  for(let a = 0; a < 4; a++){
+    try{ return await apiCall(userText); }
+    catch(e){ if(a === 3) throw e; await sleep([2000, 5000, 12000][a]); }
+  }
+}
+const textOf = d => (d.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("\n").trim();
+const sleep = ms => new Promise(res=>setTimeout(res, ms));
+
+const WRAP_A = "DOCUMENT:\n<<<\n", WRAP_B = "\n>>>\nReply with the single word OK.";
+async function countInput(text){
+  const d = await api(WRAP_A + text + WRAP_B);
+  return d.usage ? d.usage.input_tokens : NaN;
+}
+
+function tape(ch, cls){ const t=$("tape"); t.innerHTML += cls? `<span class="${cls}">${ch}</span>` : ch; t.scrollTop=t.scrollHeight; }
+function setStatus(s){ $("runStatus").textContent = s; }
+
+async function answer(context, q){
+  const p = "You answer strictly from the provided context.\n\nCONTEXT:\n" + context +
+            "\n\nQUESTION: " + q + "\nAnswer in one short sentence, using only the context. If the context does not contain the answer, reply exactly: not in context.";
+  return textOf(await api(p));
+}
+async function judge(q, gold, cand){
+  const p = "You are grading a quiz answer.\nQUESTION: " + q + "\nEXPECTED (gold): " + gold + "\nCANDIDATE: " + cand +
+            "\n\nIs the candidate factually consistent with the expected answer? An answer that contains the expected answer plus additional correct detail counts as correct. Respond ONLY with JSON: {\"correct\": true} or {\"correct\": false}. No preamble, no markdown.";
+  const raw = textOf(await api(p)).replace(/```json|```/g,"").trim();
+  try{ return JSON.parse(raw).correct === true; }catch(e){ return null; }
+}
+
+async function runBench(resume){
+  const model = corpusModel();
+  const sel = {};
+  document.querySelectorAll(".cell").forEach(c => { if(c.checked){ (sel[c.dataset.base] = sel[c.dataset.base] || []).push(c.dataset.col); } });
+  const bases = model.filter(m => sel[m.base] && sel[m.base].length);
+  if(!bases.length){ setStatus("Tick at least one cell in the run matrix."); return; }
+  const qSel = $("qLimit").value;
+
+  aborted = false;
+  $("runBtn").disabled = true; $("resumeBtn").disabled = true; $("abortBtn").disabled = false;
+  $("tape").innerHTML = ""; $("verdict").style.display = "none";
+
+  let out;
+  if(resume && lastResults && lastResults.docs){
+    out = lastResults;
+    out.resumedAt = new Date().toISOString();
+  } else {
+    out = { spec:"v0.12", bench:"v0.11", provider:$("provSel").value, model:$("modelSel").value, date:new Date().toISOString(),
+            criteria:{tokenReductionMin:0.50, accuracyLossMaxPts:2}, docs:[] };
+    $("results").innerHTML = "";
+  }
+  lastResults = out;
+
+  try{
+    setStatus("Calibrating wrapper overhead\u2026");
+    const overhead = await countInput("");
+    tape("\u258E","tk");
+
+    for(const m of bases){
+      if(aborted) throw new Error("aborted");
+      let rec = out.docs.find(r => r.id === m.base);
+      if(!rec){ rec = { id:m.base, lang:m.lang, overhead, arms:{} }; out.docs.push(rec); }
+
+      // reuse the original question draw when resuming, so versions stay paired
+      let qs = null;
+      for(const k in rec.arms){ if(rec.arms[k].qa && rec.arms[k].qa.length){ qs = rec.arms[k].qa.map(x => ({q:x.q, a:x.gold})); break; } }
+      if(!qs) qs = sampleQuestions(m.questions, qSel);
+
+      for(const [col] of COLS){
+        if(!sel[m.base].includes(col)) continue;
+        if(rec.arms[col] && !rec.arms[col].error) continue;   // already measured
+        if(aborted) throw new Error("aborted");
+        const ctx = colText(m, col);
+        if(!ctx) continue;
+        const a = { tokensNet:null, qa:[], correct:0, graded:0 };
+        try{
+          setStatus(m.base + " \u2014 " + col + " \u2014 counting tokens\u2026");
+          const gross = await countInput(ctx); tape("\u258E","tk"); await sleep(250);
+          a.tokensNet = gross - overhead;
+          for(let i=0;i<qs.length;i++){
+            if(aborted) throw new Error("aborted");
+            setStatus(m.base + " \u2014 " + col + " \u2014 question " + (i+1) + "/" + qs.length);
+            let cand="", ok=null;
+            try{
+              cand = await answer(ctx, qs[i].q); tape("\u00B7");
+              await sleep(250);
+              ok = await judge(qs[i].q, qs[i].a, cand);
+            }catch(e){ ok = null; }
+            if(ok===true){ a.correct++; a.graded++; tape("\u2713","ok"); }
+            else if(ok===false){ a.graded++; tape("\u2717","ko"); }
+            else tape("?","na");
+            a.qa.push({q:qs[i].q, gold:qs[i].a, candidate:cand, correct:ok});
+            await sleep(250);
+          }
+        }catch(e){
+          if(e.message === "aborted") throw e;
+          a.error = e.message; tape("!","ko");
+        }
+        a.accuracy = a.graded ? a.correct/a.graded : null;
+        rec.arms[col] = a;
+        tape(" ");
+        $("exportResBtn").disabled = false;   // exportable at any time, even mid-run
+      }
+      renderResults(out);
+    }
+    renderVerdict(out);
+    setStatus("Done. " + out.docs.length + " document(s) in the result set.");
+  }catch(e){
+    setStatus(e.message === "aborted"
+      ? "Run aborted \u2014 results kept; Resume will pick up at the first unmeasured cell."
+      : "Run stopped: " + e.message + " \u2014 results kept; Resume will pick up at the first unmeasured cell.");
+    if(out.docs.length){ renderVerdict(out); }
+  }finally{
+    $("runBtn").disabled = false; $("abortBtn").disabled = true;
+    $("resumeBtn").disabled = !(lastResults && lastResults.docs && lastResults.docs.length);
+    $("exportResBtn").disabled = !(lastResults && lastResults.docs && lastResults.docs.length);
+  }
+}
+
+function loadResumeFile(files){
+  if(!files || !files.length) return;
+  const r = new FileReader();
+  r.onload = () => {
+    try{
+      const j = JSON.parse(r.result);
+      if(!j.docs || !j.docs.length) throw new Error("no docs[] in this file");
+      lastResults = j;
+      renderResults(j);
+      $("resumeBtn").disabled = false; $("exportResBtn").disabled = false;
+      setStatus("Loaded " + j.docs.length + " measured document(s). Keep your matrix ticks and press Resume \u2014 completed cells are skipped, question draws are reused.");
+    }catch(e){ setStatus("Could not load results file: " + e.message); }
+    $("resumeIn").value = "";
+  };
+  r.readAsText(files[0]);
+}
+
+const pct = x => (x>=0?"\u2212":"+") + Math.abs(Math.round(x*100)) + "%";
+function renderResults(out){
+  let h = "";
+  for(const rec of out.docs){
+    const keys = COLS.map(c=>c[0]).filter(k => rec.arms[k]);
+    const base = rec.arms.prose && rec.arms.prose.tokensNet != null ? rec.arms.prose.tokensNet : null;
+    h += `<table><caption style="text-align:left;font:600 14px 'Space Grotesk';padding:14px 0 4px">${esc(rec.id)} (${esc(rec.lang)})</caption>
+          <tr><th>Version</th><th>Input tokens (net)</th><th>&Delta; vs prose</th><th>QA</th><th>Accuracy</th></tr>`;
+    for(const k of keys){
+      const a = rec.arms[k];
+      if(a.error){
+        h += `<tr><td>${COL_LABELS[k]}</td><td class="num" colspan="4">failed: ${esc(a.error)} \u2014 rerun this cell</td></tr>`;
+        continue;
+      }
+      const d = (base && k !== "prose" && a.tokensNet != null) ? pct((base - a.tokensNet)/base) : "\u2014";
+      const cls = (base && k !== "prose" && a.tokensNet != null) ? ((base - a.tokensNet)/base >= 0 ? "delta-good" : "delta-bad") : "";
+      h += `<tr><td>${COL_LABELS[k]}</td><td class="num">${a.tokensNet}</td><td class="num ${cls}">${d}</td>
+            <td class="num">${a.correct}/${a.graded}</td><td class="num">${a.accuracy===null ? "\u2014" : Math.round(a.accuracy*100)+"%"}</td></tr>`;
+    }
+    h += "</table>";
+    h += "<details><summary>answers detail \u2014 " + esc(rec.id) + "</summary>";
+    for(const k of keys){
+      const a = rec.arms[k]; if(!a.qa) continue;
+      for(const x of a.qa){
+        const mark = x.correct===true ? "\u2713" : (x.correct===false ? "\u2717" : "?");
+        h += `<div class="qa"><b>[${COL_LABELS[k]} ${mark}]</b> ${esc(x.q)}<br>gold: ${esc(x.gold)}<br>model: ${esc(x.candidate)}</div>`;
+      }
+    }
+    h += "</details>";
+  }
+  $("results").innerHTML = h;
+}
+
+function renderVerdict(out){
+  const withBoth = out.docs.filter(r=>r.arms.prose && r.arms.terse);
+  if(!withBoth.length) return;
+  const red = withBoth.reduce((s,r)=>s+(r.arms.prose.tokensNet-r.arms.terse.tokensNet)/r.arms.prose.tokensNet,0)/withBoth.length;
+  const accP = pool(withBoth,"prose"), accT = pool(withBoth,"terse");
+  const lossPts = (accP-accT)*100;
+  const met = red>=0.50 && lossPts<=2;
+  const v = $("verdict");
+  v.style.display = "block";
+  v.innerHTML = `<div class="kicker">Result \u00B7 arm B vs arm A</div>
+    <div class="big">${Math.round(red*100)}% fewer tokens \u00B7 ${lossPts<=0? "no accuracy loss ("+Math.abs(lossPts).toFixed(1)+" pts gained)" : lossPts.toFixed(1)+" pts accuracy lost"}</div>
+    <p class="hint" style="margin-top:8px">The trade-off above is the result \u2014 each user sets their own tolerance for degradation.
+    Mean token reduction over ${withBoth.length} doc(s); accuracy pooled over all graded questions.
+    Pre-registered reference, unchanged since v0.1: \u2265 50% reduction with \u2264 2 pts loss \u2014 ${met? "met":"not met"} on this run. Kept for publication honesty, not as a verdict on your use case.</p>`;
+}
+function pool(recs, key){
+  let c=0,g=0; for(const r of recs){ c+=r.arms[key].correct; g+=r.arms[key].graded; }
+  return g? c/g : 0;
+}
+function exportResults(){ if(lastResults) showJson("Results JSON \u2014 copy from here", JSON.stringify(lastResults, null, 2)); }
+
+const CONVERT_PROMPT = (prose) => `You are a converter into TERSE (Token-Efficient Representation of Semantic Elements), a compact, human-readable notation for discursive context. TERSE keeps every fact of a prose document while removing grammatical filler, so that LLMs can read the same information in far fewer tokens. Your job: rewrite the source document below in valid TERSE, losing nothing, adding nothing.
+
+=== TERSE SYNTAX REFERENCE ===
+
+A TERSE document = an optional header + one claim per line.
+
+HEADER (only include fields that apply):
+CTX: <short title>              - always include
+AS-OF: <date>                   - if the document states its date
+MODE: strict                    - include it only if you mark every line exhaustively (recommended for conversions)
+LEX: <abbr>=<expansion>; ...    - declare every abbreviation you use; no undeclared abbreviations
+
+LINE MARKERS - the FIRST character(s) of a line define its type:
+(no marker)  plain fact             team = 12 people, 3 remote
+!            settled decision       ! CRM = HubSpot (was Salesforce)
+!!           hard constraint (non-negotiable obligation or prohibition)   !! customer data stays in EU (GDPR)
+>            action / next step     > @sarah migration plan, due 2026-08-01
+?            open question          ? hosting EU | US
+~            estimate / uncertain   ~ go-live @2026-09-15
+x            rejected / ruled out   x MongoDB (no relational joins)
++  and  -    pro and con, ONLY when indented under a "?" or "!" line:
+             ? ORM: Prisma | raw SQL
+               + Prisma: faster onboarding
+               - Prisma: weak on complex queries
+
+INLINE OPERATORS (inside a line):
+->   leads to / causes / then       launch -> press release
+=>   if-then rule (only if)         churn > 5% => rollback
+<-   because / derived from         ! hosting -> Frankfurt <- GDPR
+=    is / equals / defined as       budget = 60k EUR
+|    alternative (inclusive or)     ? hosting EU | US
+vs   trade-off under arbitration    Prisma vs raw SQL
+@    person, date or place anchor   @sarah, @2026-07, @Paris
+"..."  verbatim - text in quotes must be copied exactly, never condensed
+Note: ">" inline is the ordinary comparison operator (churn > 5%); only line-initial ">" means action. "&" is reserved for anchors and never means "and": write "and" with ";" between clauses or "," inside lists.
+
+STRUCTURE:
+- Indentation (2 spaces) = the line elaborates its parent line.
+- A short unmarked line ending with ":" (e.g. "planning:") labels a group; its lines are indented under it.
+- &id defines an anchor on a line; *id references it from anywhere (avoids repeating a fact):
+  !! &eu customer data stays in EU (GDPR)
+  ! hosting -> Frankfurt <- *eu
+- Detail levels, for LONG documents only: "L0:" = one-line gist of the whole document, then "L1:" = main content, then "L2:" = fine detail and history. A reader may load only L0+L1, so L0 must stay a faithful summary.
+
+=== WORKED EXAMPLE ===
+
+SOURCE (prose): Following our meeting on July 10th, the team decided to migrate the customer database to PostgreSQL rather than staying on MySQL, mainly because of better JSON support and the fact that our lead developer Sarah already has deep experience with it. MongoDB was also considered but was ruled out due to the lack of relational joins. The migration is estimated to take about three weeks, although this remains uncertain. Sarah will prepare a detailed migration plan by August 1st. One question is still open: should we host in the EU region or in the US, given GDPR constraints?
+
+CONVERSION (TERSE):
+CTX: customer DB migration
+AS-OF: 2026-07-10
+MODE: strict
+
+! migrate customer DB -> PostgreSQL (was MySQL)
+  <- better JSON support; @sarah deep experience
+x MongoDB (no relational joins)
+~ migration = about 3 weeks
+> @sarah migration plan, due 2026-08-01
+? hosting EU | US <- GDPR
+
+=== CONDENSATION TECHNIQUE (the heart of the job) ===
+Write like a telegram: every character costs. A marker NEVER excuses keeping the sentence - the marker REPLACES the words that carried its meaning.
+
+ANTI-PATTERN (the most common failure: markup without condensation):
+BAD:  ! The team decided to migrate the customer database to PostgreSQL before the deadline.
+GOOD: ! migrate customer DB -> PostgreSQL before 2027-03-31
+BAD:  ! La direction a decide de migrer vers NovaCRM avant cette echeance.
+GOOD: ! migration -> NovaCRM avant 2027-03-31
+If a line still reads as a grammatical sentence, it is not TERSE yet.
+
+Condensation rules, applied to EVERY line:
+C1. Delete articles, possessives, demonstratives (the/a/an/this; le/la/les/un/une/ce/cette...).
+C2. Delete copulas and light verbs; use "=", ":", "->" instead. "The project sponsor is Claire Renaud" -> "sponsor = Claire Renaud".
+C3. The marker replaces its own words: "decided to" -> "!" ; "must / must not / mandatory" -> "!!" ; "is estimated at / roughly / remains uncertain" -> "~" ; "was ruled out / will not be done" -> "x" ; "the question remains whether" -> "?". Never keep both the marker and the phrase.
+C4. Nominalize verbs: "The vendor will end support on March 31, 2027" -> "vendor support ends = 2027-03-31".
+C5. Dates in ISO (2027-03-31; "Feb 12 at 6 pm" -> 2027-02-12 18:00). Numbers and units compact (50 000 euros -> 50k EUR; nine years -> 9 years).
+C6. State the document's subject once (CTX); never re-open lines with it. Indentation attaches details to their parent line.
+C7. A short unmarked line ending with ":" (e.g. "planning:") labels a group; indent its lines under it. Use it instead of section sentences.
+C8. Merge trivially related micro-facts on one line with ";" or ","; split any line carrying two unrelated claims.
+C9. One claim per line; prefer a new indented line over a long compound line.
+C10. Size target: the TERSE body should land around 50-65% of the source's characters. Above 75% means you only added markers to sentences - restart the condensation pass.
+
+NEVER compressed away: numbers, units, names, dates, text inside quotation marks (copied verbatim) - and negations ("not", "no", "never", "except", "aucun", "sauf"): keep them explicit, always. If condensing creates any ambiguity, keep the full wording. Use L0/L1/L2 and anchors only if the conversion exceeds ~40 lines. Add no information absent from the source; lose none present in it; do not resolve open questions or uncertainties - mark them "?" or "~".
+
+=== SELF-CHECK (mandatory before answering) ===
+Re-read your draft against the source and verify:
+(1) every fact, number, name and date of the source is present;
+(2) every negation and uncertainty is preserved;
+(3) every line starts with a valid marker or none;
+(4) "+"/"-" appear only indented under a "?" or "!" line;
+(5) every abbreviation you used is declared in LEX;
+(6) the TERSE body is at or under ~65% of the source's characters - above 75%, your lines are still sentences: redo the condensation pass.
+Fix violations, then output.
+
+OUTPUT: only the final TERSE document. No commentary, no code fences.
+
+=== SOURCE DOCUMENT ===
+${prose}`;
+
+const AUDIT_PROMPT = (prose, terse) => `You audit a conversion for information equivalence. Compare SOURCE (prose) and CONVERSION (TERSE notation). Ignore style; check facts, numbers, names, dates, negations, uncertainty, decisions, open questions.
+Output ONLY JSON, no code fences: {"ok": true|false, "missing": ["fact in source but absent from conversion"], "added": ["fact in conversion but absent from source"]}
+
+<source>
+${prose}
+</source>
+<conversion>
+${terse}
+</conversion>`;
+
+const QUESTIONS_PROMPT = (prose, n) => `You write a QA set for a reading-comprehension benchmark, from the document below, in the document's language.
+Write ${n} question/answer pairs:
+- mostly factual lookups (names, numbers, dates, decisions, reasons);
+- at least one about a negation, constraint, or rejected option;
+- at least one about a conditional rule or trigger, if the document has any;
+- exactly one trap question that sounds plausible but is NOT answered in the document; its gold answer must be exactly: "not in context".
+All other questions must be answerable from the document alone. Answers must be short and factual.
+Output ONLY a JSON array, no code fences: [{"q":"...","a":"..."}]
+
+<document>
+${prose}
+</document>`;
+
+function parseLoose(s){ return JSON.parse(s.replace(/```json|```/g,"").trim()); }
+function sampleQuestions(list, sel){
+  if(sel === "all") return list.slice();
+  const n = parseInt(sel, 10);
+  if(!(n > 0) || n >= list.length) return list.slice();
+  const a = list.slice();
+  for(let i = a.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a.slice(0, n);
+}
+function uniqueId(id){ let x=id, n=2; while(corpus.docs.some(d=>d.id===x)){ x=id+"-"+n; n++; } return x; }
+
+let builtDoc = null;
+async function buildDoc(){
+  const prose = $("bldProse").value.trim();
+  if(!prose){ $("bldStatus").textContent = "Paste a prose document first."; return; }
+  builtDoc = null; $("bldAddBtn").disabled = true; $("bldOut").style.display = "none";
+  try{
+    $("bldStatus").textContent = "1/3 \u2014 converting to TERSE\u2026";
+    const terse = textOf(await api(CONVERT_PROMPT(prose)));
+    $("bldStatus").textContent = "2/3 \u2014 auditing information equivalence\u2026";
+    let auditNote = "";
+    try{
+      const a = parseLoose(textOf(await api(AUDIT_PROMPT(prose, terse))));
+      auditNote = a.ok ? "audit: ok" : ("audit: " + (a.missing||[]).length + " missing / " + (a.added||[]).length + " added \u2014 fix in the JSON below");
+    }catch(e){ auditNote = "audit: ungraded"; }
+    $("bldStatus").textContent = "3/3 \u2014 writing questions from the prose\u2026";
+    const qs = parseLoose(textOf(await api(QUESTIONS_PROMPT(prose, parseInt($("bldQ").value,10)))));
+    builtDoc = { id: $("bldId").value.trim() || "doc", lang: $("bldLang").value, prose, terse, questions: qs };
+    $("bldOut").value = JSON.stringify(builtDoc, null, 2);
+    $("bldOut").style.display = "block";
+    $("bldAddBtn").disabled = false;
+    $("bldStatus").textContent = "Ready \u2014 " + auditNote + ". Review, edit if needed, then add to corpus.";
+  }catch(e){ $("bldStatus").textContent = "Builder failed: " + e.message; }
+}
+function addBuiltDoc(){
+  try{
+    const d = JSON.parse($("bldOut").value);
+    d.id = uniqueId(d.id || "doc");
+    corpus.docs.push(d); refreshBox();
+    $("bldStatus").textContent = "Added \u201C" + d.id + "\u201D \u2014 corpus now has " + corpus.docs.length + " document(s).";
+    $("bldAddBtn").disabled = true;
+  }catch(e){ $("bldStatus").textContent = "Invalid JSON in the panel: " + e.message; }
+}
+function importFiles(files){
+  let added = 0, pending = files.length;
+  if(!pending) return;
+  [...files].forEach(f=>{
+    const r = new FileReader();
+    r.onload = ()=>{
+      try{
+        const j = JSON.parse(r.result);
+        const list = j.docs ? j.docs : (j.id && j.prose ? [j] : []);
+        for(const d of list){ d.id = uniqueId(d.id || "doc"); corpus.docs.push(d); added++; }
+      }catch(e){}
+      if(--pending===0){
+        refreshBox();
+        $("corpusStatus").textContent = "Merged " + added + " document(s) from file(s). Corpus: " + corpus.docs.length + " doc(s).";
+        $("fileIn").value = "";
+      }
+    };
+    r.readAsText(f);
+  });
+}
+
+refreshBox();
+</script>
+</body>
+</html>

@@ -1,0 +1,940 @@
+{
+ "tool": "budgetbench v0.1",
+ "provider": "artifact",
+ "model": "claude-sonnet-4-6",
+ "date": "2026-08-04T12:17:24.918Z",
+ "budgetChars": 57491,
+ "contexts": {
+  "proseTrunc": {
+   "inputTokens": 16821
+  },
+  "short": {
+   "inputTokens": 18415
+  },
+  "terse": {
+   "inputTokens": 18809
+  }
+ },
+ "questions": [
+  {
+   "doc": "EN-T01",
+   "q": "Which tool is currently used by the sales department?",
+   "gold": "ClientBase.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "According to the document, the sales department has been using **ClientBase** for nine years to track opportunities, contacts, and sales forecasts.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "Based on the document, the sales department currently uses **ClientBase**, a CRM that has been in use for 9 years, managing opportunities, contacts, and sales forecasts.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "Based on the document, the sales department currently uses **ClientBase**, a CRM system they have been using for 9 years, which manages opportunities, contacts, and sales forecasts.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T01",
+   "q": "What is the support end date for the current version?",
+   "gold": "March 31, 2027.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "According to document EN-T01, the publisher will stop supporting the current version of ClientBase on **March 31, 2027**.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "According to the document, the publisher support for the current version of ClientBase ends on **2027-03-31**.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "According to the document, publisher support for the current version of ClientBase ends on **2027-03-31**. This is why the migration to NovaCRM must be completed before that date, with a target go-live of 2027-02-15 to allow a six-week safety period.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T02",
+   "q": "How many orders were pending on Wednesday morning?",
+   "gold": "1,840.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "According to the document, on Wednesday morning (October 6, 2026, the date of the incident committee), there were **1,840 pending orders** at 8:00 AM, compared to approximately 300 in a normal situation.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "According to the document (EN-T02), on Tuesday morning (2026-10-06, which was a Tuesday), there were **1,840 pending orders** compared to the normal level of about 300. The document does not specify a figure specifically for Wednesday morning.",
+     "correct": false
+    },
+    "terse": {
+     "candidate": "According to the document (EN-T02), at 08:00 there were **1,840 pending orders**, compared to a normal level of approximately 300.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T02",
+   "q": "What volume is considered normal?",
+   "gold": "Approximately 300 orders.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "In the context of the North Warehouse incident (EN-T02), approximately 300 pending orders is considered a normal volume, compared to the 1,840 orders that were pending at the time of the incident.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "In the context of the North Warehouse incident, approximately 300 pending orders is considered normal, compared to the 1,840 pending orders observed at 08:00 on the day of the meeting.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "Based on the document, the normal volume refers to the North Warehouse's pending store orders, where approximately **300 pending orders** is considered the normal level, compared to the 1,840 pending orders observed at 08:00 during the incident.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T03",
+   "q": "To which system does this runbook apply?",
+   "gold": "PayrollFlow.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Based on document EN-T03, this runbook applies to the PayrollFlow system, specifically to the monthly payroll file generation process. It covers only normal monthly processing, and explicitly excludes payroll simulations and individual adjustments.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "Based on document EN-T16, this runbook (coded RUN-B2B-HOTFIX-09) applies to the B2B payment gateway API, specifically addressing emergency hotfix deployment when the API failure rate exceeds 8% over a rolling 5-minute window.",
+     "correct": false
+    },
+    "terse": {
+     "candidate": "Based on document EN-T16, this runbook (code RUN-B2B-HOTFIX-09) applies to the B2B payment-gateway API. It is triggered specifically when the failure rate on that gateway exceeds 8% over a rolling 5-minute window.",
+     "correct": false
+    }
+   }
+  },
+  {
+   "doc": "EN-T03",
+   "q": "Are payroll simulations covered?",
+   "gold": "No.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "No, payroll simulations are not covered. The runbook explicitly states that it \"applies only to normal monthly processing\" and \"covers neither payroll simulations nor individual adjustments.\"",
+     "correct": true
+    },
+    "short": {
+     "candidate": "No, payroll simulations are explicitly excluded from the scope of the payroll file generation failure procedure (EN-T03), which covers normal monthly processing only.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "No, payroll simulations are explicitly out of scope. The document states that the procedure covers \"normal monthly processing only\" and excludes payroll simulations and individual adjustments.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T04",
+   "q": "What is the name of the agent?",
+   "gold": "MeetingPilot.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Based on the documents provided, two agent names are mentioned. In document EN-T04, the agent is named **MeetingPilot**, responsible for preparing and following up on Atlas product committee meetings. In document EN-T09, the agent is named **Portfolio Sentinel**, serving as an assistant to the Group PMO.",
+     "correct": false
+    },
+    "short": {
+     "candidate": "Based on the document, there are several agents mentioned. In EN-T04, the agent is named **\"MeetingPilot\"**; in EN-T09, it is **\"Portfolio Sentinel\"**; and in EN-T17, it is **\"KRONOS-V4\"**; and in EN-T21, the system involves agents named **Agent-Parser-01**, **Agent-GraphAnalyser-02**, and **Agent-RiskScorer-03**.",
+     "correct": false
+    },
+    "terse": {
+     "candidate": "Based on the documents, there are several agents mentioned. The document EN-T04 refers to an agent called **MeetingPilot**, designed to prepare and follow up on the Atlas product committee. EN-T09 refers to an agent called **Portfolio Sentinel**, which serves as a Group PMO assistant.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T04",
+   "q": "Which committee does it follow up on?",
+   "gold": "The Atlas product committee.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "The question is ambiguous without specifying which agent or document is being referenced, but based on document EN-T04, MeetingPilot follows up on the **Atlas product committee** meetings, which normally take place every Tuesday at 9:30 AM and are chaired by Sophie Delmas.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "The question is ambiguous across multiple documents, but based on the context most likely referring to **MeetingPilot (EN-T04)**: it follows up on the **Atlas product committee**, which meets every Tuesday at 09:30 for 45 minutes and is headed by Sophie Delmas.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "The question is ambiguous as multiple documents mention committees. Based on the documents, here are the relevant references:\n\nIn **EN-T04 (MeetingPilot)**, the agent follows up on the **Atlas product committee**, which meets every Tuesday at 09:30 for 45 minutes, chaired by Sophie Delmas.\n\nIn **EN-T09 (Portfolio Sentinel)**, the agent follows up on **project steering committees** within the Group PMO, monitoring decisions from approved steering minutes.\n\nPlease clarify which context you are referring to for a more precise answer.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T05",
+   "q": "How many vehicles are affected?",
+   "gold": "60.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "According to the document, **60 intervention vehicles** are coming to the end of their contracts between January and June 2027.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "According to the document, **60 intervention vehicles** are affected, as their contracts are ending between January and June 2027.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "According to the document, **60 intervention vehicles** are affected, as their contracts are ending between January and June 2027.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T05",
+   "q": "Over what period do they come to the end of their contract?",
+   "gold": "Between January and June 2027.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Based on document EN-T05, the 60 intervention vehicles come to the end of their contracts between **January and June 2027**.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "Based on document EN-T05, the intervention vehicle fleet contracts end between **2027-01 and 2027-06**.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "Based on document EN-T05, the 60 intervention vehicles have contracts ending between January 2027 and June 2027.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T06",
+   "q": "How many employees should ARGOS potentially serve?",
+   "gold": "3,200.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "According to the document, ARGOS is intended to serve the group's **3,200 employees**.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "According to the document, ARGOS is intended to serve 3,200 group employees.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "According to the document, ARGOS is intended to serve 3,200 group employees as a conversational assistant for searching, summarizing, and comparing internal documentation.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T06",
+   "q": "Is ARGOS designed as an autonomous decision-making system?",
+   "gold": "No.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "No, ARGOS is explicitly not designed as an autonomous decision-making system. Its function is to help users access and understand information, while decisions with legal, financial, HR, or security implications remain the responsibility of an identified human.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "No. The document explicitly states that ARGOS is not an autonomous decision system; its function is to access and understand information, while legal, financial, HR, and security decisions remain the responsibility of identified humans.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "No, ARGOS is explicitly not an autonomous decision-making system. Its function is strictly limited to accessing and understanding information, while legal, financial, HR, and security decisions remain the responsibility of identified humans.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T07",
+   "q": "What is the minimum objective for direct emissions reduction?",
+   "gold": "40% between the 2024 reference and the end of 2030.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "According to document EN-T07, the HORIZON program must reduce the direct CO₂ emissions of the Valmont site by at least **40%** between the 2024 reference and the end of 2030, and this objective must be achieved without recourse to carbon certificates for the direct reduction calculation.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "Based on EN-T07 (HORIZON Program — Decarbonization of the Valmont Industrial Site), the minimum objective for direct CO₂ reduction is at least 40% between the 2024 reference year and end-2030. Carbon certificates are explicitly excluded from the calculation of this direct-reduction objective.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "Based on document EN-T07 (HORIZON Program — Decarbonization of the Valmont Industrial Site), the minimum objective for direct CO₂ reduction is **≥40%** between the 2024 reference and end-2030. Carbon certificates are explicitly excluded from this direct-reduction objective calculation.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T07",
+   "q": "Can a production decrease be used to achieve the objective?",
+   "gold": "No.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "No, production reduction is not considered an acceptable lever to achieve the 40% CO₂ reduction objective. The gains must come from efficiency improvements, technological changes, or energy substitution.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "No. The HORIZON Program document (EN-T07) explicitly excludes production reduction as a lever, stating that CO₂ gains must come from efficiency improvements, technological changes, or energy substitution.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "No. According to document EN-T07, the 40% direct CO₂ reduction objective must be achieved without using production reduction as a lever; gains must come exclusively from efficiency improvements, technological changes, or energy substitution.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T08",
+   "q": "What is the priority objective of the runbook?",
+   "gold": "Limit propagation and preserve elements useful for investigation.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Based on document EN-T08 (Response to a Suspicion of Ransomware on a Workstation), the priority objective of the runbook is to limit propagation and preserve elements useful for investigation. Rapid recovery of the workstation is explicitly stated as secondary to containment.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "The priority objective of the runbook (RUN-B2B-HOTFIX-09) is to limit the impact of a Level 1 Critical B2B payment gateway failure by switching traffic to a secondary node and injecting a hotfix patch. The procedure is triggered only when the API failure rate exceeds 8% over a rolling 5-minute window.",
+     "correct": false
+    },
+    "terse": {
+     "candidate": "Based on document EN-T16, the priority objective of the runbook is to limit the impact of a Level 1 Critical B2B payment-gateway API failure by rapidly restoring service. The procedure prioritizes swift traffic rerouting and patch deployment to bring the API failure rate back below the 8% threshold.",
+     "correct": false
+    }
+   }
+  },
+  {
+   "doc": "EN-T08",
+   "q": "Is rapid return to service of the workstation a priority over containment?",
+   "gold": "No.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "No. According to document EN-T08, rapid recovery of the workstation is explicitly secondary to containment — the priority objective is to limit propagation and preserve elements useful for investigation, and the user or support must not attempt to \"repair\" the workstation before the security team has evaluated the situation.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "No. According to EN-T08, the priority is to limit propagation and preserve evidence; rapid recovery is explicitly secondary. Additionally, no restoration may begin before security team authorization, and full reinstallation from a trusted image is the preferred approach rather than a quick repair.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "No. The document explicitly states that the priority is to limit propagation and preserve evidence, with rapid recovery being secondary. Support and users must not attempt to \"repair\" the workstation before the security team has evaluated it.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T09",
+   "q": "What is the primary role of Portfolio Sentinel?",
+   "gold": "Detect situations requiring human attention, prepare reliable summaries, and maintain a structured memory.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "According to the document, Portfolio Sentinel's primary role is not to directly manage projects, but to detect situations requiring human attention, prepare reliable summaries, and maintain a structured memory of commitments, decisions, and risks.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "Based on the document, Portfolio Sentinel is a Group PMO assistant whose role is to detect cases requiring human attention, provide reliable summaries, and maintain structured memory of commitments, decisions, and risks. It is explicitly not a direct project manager.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "Portfolio Sentinel is the Group PMO assistant, whose role is to detect cases requiring human attention, provide reliable summaries, and maintain structured memory of commitments, decisions, and risks. It is explicitly not a direct project manager.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T09",
+   "q": "Which are the three main sources used?",
+   "gold": "ORBIT, steering committee minutes, and FINTRACK.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Based on document EN-T09 (Portfolio Sentinel), the three main sources used are the **ORBIT portfolio tool**, the **minutes of the steering committees**, and the **FINTRACK monthly financial register**.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "The three formal sources used by Portfolio Sentinel (EN-T09) are **ORBIT** (the official schedule system), **FINTRACK** (the monthly financial register), and **approved steering minutes**.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "The three main formal sources used by Portfolio Sentinel (EN-T09) are **ORBIT** (the official schedule), **approved steering minutes**, and **FINTRACK** (the monthly financial register).",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T10",
+   "q": "What are the four objectives of the procedure, in order?",
+   "gold": "Protect people; stabilize the rail situation; organize a realistic transport solution; restore normal service.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "According to document EN-T10, the four objectives of the major disruption procedure, in order, are: (1) protect passengers, staff, and responders; (2) stabilize the rail situation; (3) organize a realistic transport solution; and (4) restore normal service.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "The four objectives of the procedure, in order, are: 1) protect passengers/staff/responders; 2) stabilize the rail situation; 3) provide a realistic transport solution; 4) restore normal service. Commercial punctuality and performance come after safety.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "Not in context.\n\nThe documents contain various objectives, success criteria, and goals across different procedures, but none of them explicitly list \"four objectives of the procedure\" as a unified ordered set.",
+     "correct": false
+    }
+   }
+  },
+  {
+   "doc": "EN-T10",
+   "q": "Is commercial punctuality a priority over security?",
+   "gold": "No.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Not in context — though document EN-T10 directly addresses this: it states that commercial punctuality and performance indicators come **after** security, meaning security takes priority over commercial punctuality.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "No. The document explicitly states that commercial punctuality and performance come after safety, not before it.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "No. According to document EN-T10, the priority order explicitly places protecting passengers, staff, and responders first, with the document stating that \"commercial punctuality/performance\" comes after safety.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T11",
+   "q": "What type of application does the user want to develop?",
+   "gold": "A team life management application prototype for their consulting firm.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "The user wants to develop a team life management application prototype for their consulting firm, designed to work on Android and iOS smartphones based on the PWA (Progressive Web App) principle, with an elegant design featuring serif fonts and smooth animations.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "Based on document EN-T11, the user wants to develop a team-life management prototype for a consulting firm, accessible on Android and iOS smartphones via a Progressive Web App (PWA) with a beautiful design, elegant animations, and serif fonts.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "Based on document EN-T11, the user wants to develop a team-life management prototype for a consulting firm, accessible on Android and iOS smartphones via a Progressive Web App (PWA). The desired result should feature a beautiful design with elegant animations and serif fonts, and be installable from a link with an icon on the phone that behaves like a real app.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T11",
+   "q": "On what types of smartphones must the application work?",
+   "gold": "On Android and iOS.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "According to the document, the application must work on Android and iOS smartphones, based on the PWA (Progressive Web App) principle.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "According to the document, the application must work on Android and iOS smartphones, delivered via a PWA (Progressive Web App).",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "According to the document, the application must work on Android and iOS smartphones, delivered via a PWA (Progressive Web App).",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T12",
+   "q": "What is the general objective of the requested web page?",
+   "gold": "To display in a custom and well-designed manner documents hosted on the user's Google account.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "The general objective of the requested web page is to display documents hosted on a Google account, centered around a video as the main point of interest, complemented by an audio player, an image mosaic with clickable thumbnails, and a link to the STAFFFOR application.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "The goal of the web page (EN-T12) is to create a custom-designed page hosted on the user's Google account that presents documents — centered on a main video player, a small audio player, and an image mosaic — accessible to anyone with the link.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "Based on the document (EN-T12), the objective is to create a custom-designed web page to host and display documents stored on the user's Google account, intended to be shared online with link holders. The page centers on a main video player, accompanied by an audio player, an image mosaic, and a link to the STAFFFOR site.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T12",
+   "q": "What information is given regarding the accessibility of the Google directory containing the documents?",
+   "gold": "It is accessible online to people who have the link.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "According to the document, the Google directory is accessible online to people who have the link.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "The directory is on the user's Google account and the page containing the documents will be online, accessible to link holders.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "The documents are hosted on the user's Google account and the page will be made available online via a link shared with holders (link holders), implying access is restricted to those who have the link rather than being publicly open.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T13",
+   "q": "In which field of expertise is the AI invited to position itself?",
+   "gold": "Web application design for corporate support functions.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Based on EN-T13, the AI is invited to position itself as **an expert in web application design for corporate support functions**, specifically in the context of developing a mission management prototype on the Google ecosystem (Google Apps Script platform).",
+     "correct": true
+    },
+    "short": {
+     "candidate": "In document EN-T13, the AI assistant is invited to position itself as a **corporate-support web application expert**, specifically with knowledge of Google ecosystem development using Google Apps Script.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "Not in context.",
+     "correct": false
+    }
+   }
+  },
+  {
+   "doc": "EN-T13",
+   "q": "What professional role does the user indicate they hold?",
+   "gold": "Head of an internal consulting firm.",
+   "inProseWindow": true,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "The user in document EN-T13 indicates they are the head of an internal consulting firm. The user in document EN-T11 also mentions working at a consulting firm, referring to developing an application for team life management within that context.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "Not in context.",
+     "correct": false
+    },
+    "terse": {
+     "candidate": "Not in context.",
+     "correct": false
+    }
+   }
+  },
+  {
+   "doc": "EN-T14",
+   "q": "What is the exact version of the ERP software that will be replaced as part of the Apollo-ERP project?",
+   "gold": "The obsolete SAP ECC6 version.",
+   "inProseWindow": false,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "According to the document, the ERP software being replaced is **SAP ECC6**, described as an obsolete on-premise version, which will be migrated to the hybrid SAP S/4HANA Cloud solution.",
+     "correct": true
+    },
+    "short": {
+     "candidate": "Based on the document, the Apollo-ERP project involves migrating from **SAP ECC6**, an obsolete on-premise ERP system, to a hybrid **SAP S/4HANA Cloud** and custom WMS module solution.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "Based on the document, the Apollo-ERP project involves migrating from **SAP ECC6**, an on-premise obsolete ERP system, to a hybrid **SAP S/4HANA Cloud** combined with a custom WMS module.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T14",
+   "q": "Who are the two people co-chairing the Steering Committee?",
+   "gold": "Claire Masson (Operations Director) and Marc Renard (CIO).",
+   "inProseWindow": false,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Not in context.\n\nThe documents do not identify two people co-chairing any Steering Committee. Various steering committees are mentioned across the documents, but none describes a co-chair structure.",
+     "correct": false
+    },
+    "short": {
+     "candidate": "Based on document EN-T14, the Steering Committee is co-chaired by **Claire Masson** (Operations Director) and **Marc Renard** (CIO), with meetings held biweekly on Thursdays at 14:00.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "Based on document EN-T14, the Steering Committee (SteerCo) for the Apollo-ERP project is co-chaired by **Claire Masson** (Operations Director) and **Marc Renard** (CIO).",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T15",
+   "q": "What exact quantity of data was exfiltrated by the attackers before the server was isolated?",
+   "gold": "45 GB.",
+   "inProseWindow": false,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Not in context.",
+     "correct": false
+    },
+    "short": {
+     "candidate": "According to the document (EN-T15), Thomas Wright (Forensics Expert) determined that **45 GB of sensitive data** was copied, consisting exclusively of nominative employee payslips and strategic-supplier RIB (bank account details).",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "According to the document, Thomas Wright (Forensics Expert) determined that **45 GB of sensitive data** was copied, consisting exclusively of nominative employee payslips and strategic-supplier bank account details (RIB).",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T15",
+   "q": "Who assumes the role of Incident Commander during this crisis unit meeting?",
+   "gold": "Yassine Merabet.",
+   "inProseWindow": false,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Not in context.",
+     "correct": false
+    },
+    "short": {
+     "candidate": "Based on the document, the Incident Commander (referred to as the meeting commander) during the SecOps Crisis Unit meeting for Incident \"SecOps-2026-A\" is **Yassine Merabet**, who holds the title of SecOps Lead.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "Based on the document, the Incident Commander role during the crisis unit meeting is assumed by **Yassine Merabet**, who is identified as the SecOps Lead (EN-T15).",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T16",
+   "q": "What is the unique identification code of this DevOps runbook?",
+   "gold": "RUN-B2B-HOTFIX-09.",
+   "inProseWindow": false,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Not in context.",
+     "correct": false
+    },
+    "short": {
+     "candidate": "The unique identification code of this DevOps runbook is **RUN-B2B-HOTFIX-09**, as specified in document EN-T16 (Emergency Hotfix Deployment on B2B Gateway).",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "The unique identification code of this DevOps runbook is **RUN-B2B-HOTFIX-09**, as specified in document EN-T16 (Emergency Hotfix Deployment on B2B Gateway).",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T16",
+   "q": "Who is the designated author of this operational procedure?",
+   "gold": "Arnaud Moreau (Lead DevOps Infrastructure).",
+   "inProseWindow": false,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Not in context.",
+     "correct": false
+    },
+    "short": {
+     "candidate": "The designated author of the emergency hotfix deployment procedure (RUN-B2B-HOTFIX-09) is **Arnaud Moreau**, who holds the title of Lead DevOps Infrastructure.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "The designated author of the emergency hotfix deployment procedure (RUN-B2B-HOTFIX-09) is **Arnaud Moreau**, identified as Lead DevOps Infrastructure.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T17",
+   "q": "What is the session ID of the agent KRONOS-V4?",
+   "gold": "TX-AUDIT-2026-8942.",
+   "inProseWindow": false,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Not in context.",
+     "correct": false
+    },
+    "short": {
+     "candidate": "The session ID of the agent KRONOS-V4 is **TX-AUDIT-2026-8942**.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "The session ID of the agent KRONOS-V4 is **TX-AUDIT-2026-8942**.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T17",
+   "q": "Which version of the accounting compliance ruleset file was loaded into memory?",
+   "gold": "Version v9.1.",
+   "inProseWindow": false,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Not in context.",
+     "correct": false
+    },
+    "short": {
+     "candidate": "According to the document, KRONOS-V4 was loaded with **accounting compliance ruleset v9.1**.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "Based on the document, the accounting compliance ruleset loaded into KRONOS-V4's memory is **Accounting compliance ruleset v9.1**.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T18",
+   "q": "What is the exact geographical location of the \"Delta\" logistics warehouse?",
+   "gold": "In Lyon.",
+   "inProseWindow": false,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Not in context.",
+     "correct": false
+    },
+    "short": {
+     "candidate": "The Delta logistics distribution center is located in **Lyon**, France.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "The Delta logistics distribution center is located in Lyon, France.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T18",
+   "q": "What is the overall investment budget allocated to the IntraBot-2026 project?",
+   "gold": "850,000 EUR.",
+   "inProseWindow": false,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Not in context.",
+     "correct": false
+    },
+    "short": {
+     "candidate": "According to the document, the Supervisory Board unanimously approved a total budget of **850,000 EUR** for the IntraBot-2026 project, broken down as 600,000 EUR for the 12 factory AGVs, 150,000 EUR for laser mapping and physical adjustments to Zones A and G, and 100,000 EUR for change management, social support, and forklift-driver retraining.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "Based on the document, the Supervisory Board unanimously approved a total budget of **850,000 EUR** for the IntraBot-2026 project, broken down as follows: 600,000 EUR for 12 factory AGVs, 150,000 EUR for laser mapping and physical adjustment of Zones A and G, and 100,000 EUR for change management, social support, and forklift-driver retraining.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T19",
+   "q": "What is the exact name of the strategic industrial plan validated by the Executive Committee?",
+   "gold": "The H2-Green Plan.",
+   "inProseWindow": false,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Not in context.",
+     "correct": false
+    },
+    "short": {
+     "candidate": "The strategic industrial plan validated by the Executive Committee is called the **H2-Green Plan**, described as an industrial pivot and energy transition project focused on the progressive shutdown of polymer-cracking units at the Carling petrochemical site and the launch of massive low-carbon hydrogen production via water electrolysis.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "Based on the document, the strategic industrial plan validated by the Executive Committee is called the **H2-Green Plan**, which concerns the industrial pivot and energy transition of a petrochemical hub, specifically the progressive shutdown of polymer-cracking units and the development of low-carbon hydrogen production via water electrolysis at the Carling site.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T19",
+   "q": "In which commune and department of France is the pilot petrochemical site located?",
+   "gold": "In the commune of Carling, in the Moselle department.",
+   "inProseWindow": false,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Not in context.",
+     "correct": false
+    },
+    "short": {
+     "candidate": "The pilot petrochemical site is the historical Carling petrochemical site, located in Carling, in the Moselle department (Grand Est region) of France.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "Based on document EN-T19, the pilot petrochemical site is the historical **Carling** site, located in the **Moselle** department, in the Grand Est region of France.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T20",
+   "q": "What are the technical identification codes of the two AWS regions concerned by this DRP?",
+   "gold": "The primary region is `eu-west-1` (Dublin) and the recovery region is `eu-central-1` (Frankfurt).",
+   "inProseWindow": false,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Not in context.",
+     "correct": false
+    },
+    "short": {
+     "candidate": "Based on document EN-T20, the two AWS regions are **`eu-west-1`** (Dublin, Ireland), which serves as the primary region, and **`eu-central-1`** (Frankfurt, Germany), which serves as the backup region.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "Based on the document, the two AWS regions are **`eu-west-1`** (Dublin, Ireland), which serves as the primary region, and **`eu-central-1`** (Frankfurt, Germany), which serves as the backup region.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T20",
+   "q": "Which Kubernetes command allows listing active pods in production and verifying their deployment?",
+   "gold": "`kubectl get pods -n production -o wide`.",
+   "inProseWindow": false,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Not in context.",
+     "correct": false
+    },
+    "short": {
+     "candidate": "According to the document, the command to list active pods in production is:\n\n`kubectl get pods -n production -o wide`\n\nThis command is used in the DRP-CLOUD-V2 disaster recovery plan to verify that essential financial-service pods are operational in the Frankfurt environment during a failover.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "Based on the document, the command is:\n\n`kubectl get pods -n production -o wide`\n\nIt is used during the disaster recovery procedure to verify that essential financial-service pods are operational in the Frankfurt environment after activating AWS EKS autoscaling.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T21",
+   "q": "What are the code names of the three artificial intelligence sub-agents that collaborate in this network?",
+   "gold": "Agent-Parser-01, Agent-GraphAnalyser-02, and Agent-RiskScorer-03.",
+   "inProseWindow": false,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Not in context.",
+     "correct": false
+    },
+    "short": {
+     "candidate": "Based on document EN-T21, the three AI sub-agents are **Agent-Parser-01** (semantic ingestion), **Agent-GraphAnalyser-02** (relational structure analysis), and **Agent-RiskScorer-03** (probabilistic danger evaluation).",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "Based on the document, the three AI sub-agents are **Agent-Parser-01** (semantic ingestion), **Agent-GraphAnalyser-02** (relational structure analysis), and **Agent-RiskScorer-03** (probabilistic danger evaluation), operating within the AML-CORE Anti-Money Laundering network.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T21",
+   "q": "What is the international format and reference of the batch of banking messages analyzed at the beginning?",
+   "gold": "The international Swift MT103 message format, in the batch referenced BATCH-EMEA-94.",
+   "inProseWindow": false,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Not in context.",
+     "correct": false
+    },
+    "short": {
+     "candidate": "The batch of banking messages analyzed is in **Swift MT103** format, and its reference is **`BATCH-EMEA-94`** (as described in Log 01 of the AML-CORE document, EN-T21).",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "The batch of banking messages analyzed is in **Swift MT103** format, and its reference is **`BATCH-EMEA-94`**.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T22",
+   "q": "What specific type of imaging will the IRIS-3 constellation exploit for Earth observation?",
+   "gold": "Hyperspectral (and thermal infrared) imaging.",
+   "inProseWindow": false,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Not in context.",
+     "correct": false
+    },
+    "short": {
+     "candidate": "The IRIS-3 constellation will use hyperspectral imaging for Earth observation, specifically with a high-performance infrared thermal imager operating in LWIR (Long-Wave Infrared) bands, achieving a ground optical resolution of 1.2 m/pixel.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "Based on the document, the IRIS-3 constellation will use high-performance infrared thermal imaging, specifically in the Long-Wave Infrared (LWIR) bands, with a ground optical resolution of 1.2 metres per pixel.",
+     "correct": false
+    }
+   }
+  },
+  {
+   "doc": "EN-T22",
+   "q": "What is the exact number of satellites planned in the constellation and how are they distributed?",
+   "gold": "24 operational satellites in total, distributed homogeneously at a rate of 8 satellites across 3 distinct orbital planes.",
+   "inProseWindow": false,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Not in context.",
+     "correct": false
+    },
+    "short": {
+     "candidate": "The nominal constellation consists of 24 identical operational satellites, distributed across 3 distinct orbital planes with 8 satellites per plane.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "The IRIS-3 constellation consists of 24 identical operational satellites, distributed across 3 distinct orbital planes with 8 satellites per plane in homogeneous distribution.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T23",
+   "q": "What is the unique EudraCT registry number assigned to this Phase III trial?",
+   "gold": "EudraCT-2026-004512-11.",
+   "inProseWindow": false,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Not in context.",
+     "correct": false
+    },
+    "short": {
+     "candidate": "The unique EudraCT registry number assigned to this Phase III trial is **EudraCT-2026-004512-11**, as specified in document EN-T23 under the regulatory identifier for the NeuroX-72 international multicenter Phase III clinical trial.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "The unique EudraCT registry number assigned to this Phase III trial is **EudraCT-2026-004512-11**, as specified in document EN-T23 under the regulatory identifier field.",
+     "correct": true
+    }
+   }
+  },
+  {
+   "doc": "EN-T23",
+   "q": "What is the pharmacological class or mechanism of action of the NeuroX-72 molecule?",
+   "gold": "A next-generation enzyme inhibitor.",
+   "inProseWindow": false,
+   "answers": {
+    "proseTrunc": {
+     "candidate": "Not in context.",
+     "correct": false
+    },
+    "short": {
+     "candidate": "NeuroX-72 is described as a next-generation enzyme inhibitor targeting the stabilization of synaptic-degradation pathways, with the goal of statistically significantly slowing cognitive-deficit progression in adults with early-to-moderate Alzheimer's symptoms. No further pharmacological class detail is provided in the document.",
+     "correct": true
+    },
+    "terse": {
+     "candidate": "NeuroX-72 is a next-generation enzyme inhibitor targeting stabilization of synaptic-degradation pathways, with the aim of achieving a statistically significant slowing of cognitive-deficit progression in adults with early-to-moderate Alzheimer's symptoms.",
+     "correct": true
+    }
+   }
+  }
+ ]
+}
