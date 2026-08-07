@@ -172,7 +172,7 @@ In rough order of value: a **replication on another model family** (the bench fi
 | [`bench/`](bench/) | Three single-file HTML benchmarks, no build step: `terse-bench` (QA, v0.11), `terse-structbench` (structural retrieval, v0.3), `terse-budgetbench` (equal window, v0.1). |
 | [`corpus/`](corpus/) | 23 documents × 2 languages × 5 versions (`prose`, `short`, `terse`, `llml`, `llmlx`) + 542 questions per language with gold answers. Schema in [`corpus/README.md`](corpus/README.md). |
 | [`prompts/`](prompts/) | The authoring pipeline as standalone prompts: `CONVERT`, `AUDIT`, `QUESTIONS`, `SHORT`. |
-| [`tools/`](tools/) | `intact.html` — the INTACT semantic-integrity linter (no API, in-browser; **interface in French**). `llmlingua_colab.py` — the compressor baseline, for Google Colab. |
+| [`tools/`](tools/) | `intact.html` — the INTACT semantic-integrity linter (no API, in-browser; detects on English and French text alike). `llmlingua_colab.py` — the compressor baseline, for Google Colab. |
 | [`results/`](results/) | Every run, with an [`INDEX.md`](results/INDEX.md) saying what each one is and what supersedes it — including the superseded ones, in `archive/`. |
 
 ## Licence
