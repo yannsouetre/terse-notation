@@ -160,6 +160,8 @@ Everything here is checkable against the raw JSON in [`results/`](results/).
 - Earlier runs used **question sub-sampling**, which injected enough variance to move prose itself by 3.5 points between draws. That is why the canonical run uses all questions, and why the earlier runs are archived rather than headlined.
 - An earlier field finding — third-party converters applying markers correctly but keeping full sentences, producing TERSE *larger* than its source — is what forced the spec's central lesson: **all compression comes from condensation, none from markers.**
 
+- An exploratory annex on notation as a reasoning medium lives in [`experiments/reasoning/`](experiments/reasoning/) — including the post-audit instrument postmortem.
+
 ## 7. What would help most
 
 In rough order of value: a **replication on another model family** (the bench file is all you need); a **third-party corpus**, ideally real documents rather than synthetic ones; a **run with a judge from a different family than the reader**; the missing **B0 arm**; and the untested structural properties — selective L0/L1 loading, strict-mode exhaustiveness, anchor reuse on long documents. Open an issue.
@@ -174,6 +176,7 @@ In rough order of value: a **replication on another model family** (the bench fi
 | [`prompts/`](prompts/) | The authoring pipeline as standalone prompts: `CONVERT`, `AUDIT`, `QUESTIONS`, `SHORT`. |
 | [`tools/`](tools/) | `intact.html` — the INTACT semantic-integrity linter (no API, in-browser; detects on English and French text alike). `llmlingua_colab.py` — the compressor baseline, for Google Colab. |
 | [`results/`](results/) | Every run, with an [`INDEX.md`](results/INDEX.md) saying what each one is and what supersedes it — including the superseded ones, in `archive/`. |
+| [`experiments/`](experiments/) | Exploratory annexes. Currently: [reasoning in a condensed medium](experiments/reasoning/) — pre-registered hypothesis, two model families, two languages, instrument postmortem. |
 
 ## Licence
 
