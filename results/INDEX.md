@@ -4,6 +4,8 @@ Every run of the project, including the ones that were superseded and the ones t
 
 Narrative and caveats for each run: [`SPEC.md`](../SPEC.md) §6. Headline figures: [`README.md`](../README.md).
 
+This folder holds the results of the TERSE v1 benchmarks only. The exploratory reasoning annex keeps its own raw exports next to its report, under [`experiments/reasoning/results/`](../experiments/reasoning/results/).
+
 ---
 
 ## Current results
