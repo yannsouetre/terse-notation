@@ -161,6 +161,7 @@ Everything here is checkable against the raw JSON in [`results/`](results/).
 - An earlier field finding — third-party converters applying markers correctly but keeping full sentences, producing TERSE *larger* than its source — is what forced the spec's central lesson: **all compression comes from condensation, none from markers.**
 
 - An exploratory annex on notation as a reasoning medium lives in [`experiments/reasoning/`](experiments/reasoning/) — including the post-audit instrument postmortem.
+- A second annex measures addressed, level-of-detail context (MAP + FOCUS): [`experiments/spatial-lod/`](experiments/spatial-lod/) — where the map converts unknown-unknowns into known-unknowns, and where a second instrument postmortem is recorded.
 
 ## 7. What would help most
 
@@ -176,7 +177,7 @@ In rough order of value: a **replication on another model family** (the bench fi
 | [`prompts/`](prompts/) | The authoring pipeline as standalone prompts: `CONVERT`, `AUDIT`, `QUESTIONS`, `SHORT`. |
 | [`tools/`](tools/) | `intact.html` — the INTACT semantic-integrity linter (no API, in-browser; detects on English and French text alike). `llmlingua_colab.py` — the compressor baseline, for Google Colab. |
 | [`results/`](results/) | Every run, with an [`INDEX.md`](results/INDEX.md) saying what each one is and what supersedes it — including the superseded ones, in `archive/`. |
-| [`experiments/`](experiments/) | Exploratory annexes. Currently: [reasoning in a condensed medium](experiments/reasoning/) — pre-registered hypothesis, two model families, two languages, instrument postmortem. |
+| [`experiments/`](experiments/) | Exploratory annexes. Currently: [reasoning in a condensed medium](experiments/reasoning/) — pre-registered hypothesis, two model families, two languages, instrument postmortem; and [spatial context & semantic LOD](experiments/spatial-lod/) — addressed MAP + FOCUS context, a three-map ablation, pre-registered P1–P3, second instrument postmortem. |
 
 ## Licence
 
