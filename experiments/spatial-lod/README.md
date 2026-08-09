@@ -1,7 +1,10 @@
 # Spatial context & semantic LOD — exploratory annex
 
-*Second companion experiment to TERSE. Status: exploratory prototype — doc-level addresses,
-6 tasks, one run per model family. It does not modify TERSE v1 claims.*
+*Second companion experiment to TERSE. Status: exploratory prototype in two waves — wave 1:
+doc-level addresses, a three-map ablation over 6 tasks; wave 2: sub-document addressing
+(148 regions), the fetch loop measured end to end at three granularities over 24 questions,
+and a cross-document linking pass. One run per (family × configuration). It does not modify
+TERSE v1 claims.*
 
 ## Question
 
@@ -93,23 +96,87 @@ hallucination in both families — disclosed rather than repaired post-hoc; the 
 it correctly. Sub-document addressing (`CONVERT-LOD-PROMPT.md`, linter-ready) is the designed
 next step for (a) and (b).
 
+## Wave 2 — executing the contract (sub-addressing, the fetch loop, the graph)
+
+The first wave *gave* models a focus; this wave has them **earn** it. All artifacts below are
+in this folder; raw results in `results/`.
+
+**Sub-addressed corpus.** `CONVERT-LOD-PROMPT.md` applied to all 23 documents by Sonnet
+(`terse-convert-runner.html`, one isolated call per document) yields 148 regions (mean 6.4/doc,
+102 carrying hard constraints), a 171-line region map (16.4k chars — 3.6× the doc-level map,
+5.0× under the full L1 corpus, 82,397 chars), 284 intra-document references with **zero dangling** and a
+perfect map↔block bijection. Converter compliance is itself a finding: 43/102 hard regions
+arrived un-elevated despite a mandatory prompt rule — `lod-lint.py` repaired them mechanically
+(elevation is derivable), repairs counted in the corpus file. The R1 value check flagged 40
+quoted values: 25 benign reformattings and 15 format conversions (mostly 24h↔AM/PM) —
+semantically right, contractually non-verbatim; the prompt gains "copy formats exactly as
+printed" in its next revision. Corpus: `LOD-CORPUS-SUB-EN.json` (normalization and R1
+classification embedded).
+
+**FetchBench — the loop, end to end** (`terse-fetchbench.html`; 24 questions; call 1 sees only
+a map and replies with fetch addresses, the harness loads them, call 2 answers; routing hit is
+deterministic, answers are judged; per-question input tokens recorded):
+
+| Condition | Routing | Correct | Hard cohort routed | Avg input tk/Q |
+|---|---|---|---|---|
+| B · doc-fetch — Sonnet / GPT-5.5 | 20/24 · 22/24 | 19 · 22 | 10/12 · 12/12 | 3,997 · 3,168 |
+| C · region-fetch — Sonnet / GPT-5.5 | 22/24 · 22/24 | 21 · 21 | **12/12 · 12/12** | 10,228 · 8,431 |
+| D · two-stage — Sonnet / GPT-5.5 | 19/24 · 22/24 | 17 · 21 | 10/12 · 12/12 | 2,811 · **2,228** |
+
+Three findings. (1) **Fine gists route what coarse gists cannot**: the two questions that
+resisted every doc-level map (F3/F4) resolve at region granularity in both families — the hard
+cohort routes 12/12. (2) **Granularity buys reliability, not economy, at this corpus scale**:
+the region map rides every call (16.4k chars ×2), while whole documents (~2.5k) are already
+cheap to fetch — region-fetch costs 2.6× more. (3) **Two-stage fetch (doc map → elected
+document's region map) is only as strong as its weakest stage**: with a reliable stage-1
+router it is the best configuration measured (GPT-5.5: region-grade routing at the lowest cost,
+2,228 tk/Q, and the region-only miss F2-t03 repaired exactly as predicted — region lines
+scored outside their document's context can mislead, stage 1 restores that context); with a
+weaker stage-1 router the errors compound (Sonnet degrades to 19/24; its best configuration
+remains flat region-fetch). Routing is the bottleneck throughout: a routing hit almost always
+becomes a correct answer. Named residuals: one question that presupposes its document (a v1 QA
+item reused in a routing setting — question design, not map design), the twin-runbook
+generic-title attractor (t16/t20), and right-doc-wrong-region misses that a single-shot loop
+cannot recover — an iterative fetch (the model may ask again) is the designed next step.
+
+**The graph's missing dimension, honestly.** A linking pass (`terse-linkpass.html`, one call
+over the global region map, strict lintable edge format) proposed 33 edges: 31 intra-document
+(off-contract; that structure already existed) and **2 cross-document** — both between the two
+security incidents (t15↔t08), both resolving, merged into the corpus with provenance and
+visibly analogical rather than operational ("mirrors", "aligns with"). The honest reading: this
+corpus is an **archipelago** — 23 independent fictional organizations with almost no real
+cross-document dependencies to find, so the model rightly found almost none. Graph-radius FOCUS
+across documents therefore remains structurally untestable here; it awaits a corpus from a
+single organization, where escalation paths and shared systems actually cross documents.
+
 ## Caveats
 
-n=12 per cell per map version, one run per (family × map), doc-level addresses only,
-mechanically generated L0 gists, judge-based grading on out-of-focus classes; the map
-ablation was reactive (v2 and v3 designed after seeing failures — stated plainly). A prototype's evidence,
+n=12 per cell per map version and n=24 per FetchBench cell, one run per (family ×
+configuration); mechanically generated doc-level gists, model-generated region structure
+(one converter, one run); judge-based answer grading; the map ablation and the two-stage
+design were reactive (built after seeing failures — stated plainly). A prototype's evidence,
 claimed as such.
 
 ## Replicate
 
-The shipped `terse-focusbench.html` embeds map v3; results for all three map versions are in
-`results/` with the map version in the filename. Open it locally (file://), pick a provider and key, "Test the endpoint",
-Run (~144 calls). The LOD corpus (`LOD-CORPUS-EN.json`), tasks, budgets, judge prompts and
-the linter (`lod-lint.py`, self-test included) are all in this folder.
+Every measurement in this annex reruns from this folder, locally (file://), with your own
+key: `terse-focusbench.html` (embeds map v3; the mapv1/v2/v3 results in `results/` carry the
+map version in the filename; ~144 calls), `terse-fetchbench.html` (conditions B/C/D — doc,
+region, two-stage; 3-4 calls per question), `terse-convert-runner.html` (rebuilds the
+sub-addressed corpus from the prompt in `CONVERT-LOD-PROMPT.md`, 23 calls),
+`terse-linkpass.html` (1 call), and `python3 lod-lint.py --self-test` (deterministic, free).
+The corpora (`LOD-CORPUS-EN.json` doc-level, `LOD-CORPUS-SUB-EN.json` sub-addressed with
+normalization and provenance), tasks, budgets and judge prompts are all embedded or in this
+folder.
 
 ## Roadmap
 
-Sub-document addressing via `CONVERT-LOD-PROMPT.md` (regions `&t03/rerun`, cross-references
-that build the topology); FOCUS by graph radius over those references; gist/title quality as
-a measured variable; more tasks and repeated runs; LOD over reasoning traces (bridge to the
-reasoning annex: reload only the `!` skeleton).
+Iterative fetch (let the model ask again on a right-doc-wrong-region miss); a single-organization
+corpus where cross-document dependencies actually exist, unlocking graph-radius FOCUS;
+gist/title quality as a measured variable; questions authored for routing (not reused QA);
+repeated runs; LOD over reasoning traces (bridge to the reasoning annex: reload only the `!`
+skeleton). One outward-facing note: the stateless MCP spec (2026-07-28) makes `tools/list`
+results cacheable and deterministically ordered — a tool catalog is a MAP problem (one L0 line
+per tool, `!!` on destructive/approval-gated, selection = routing), and the finding "routing
+is the bottleneck" should transfer; a ToolBench measuring tool-selection accuracy under
+condensed vs raw catalogs at matched budgets is a natural follow-up.

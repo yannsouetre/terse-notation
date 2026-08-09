@@ -1,0 +1,681 @@
+{
+ "tool": "fetchbench v0.1",
+ "provider": "anthropic",
+ "model": "claude-sonnet-4-6",
+ "env": "file://local-file",
+ "date": "2026-08-08T23:05:11.147Z",
+ "questions": [
+  {
+   "task": "F1",
+   "type": "in",
+   "doc": "EN-T05",
+   "addr": "t05",
+   "q": "How many vehicles are affected?",
+   "gold": "60.",
+   "conds": {
+    "doc": {
+     "route": "&t05",
+     "routingHit": true,
+     "fetchedChars": 1309,
+     "answer": "Based on the fetched content of **&t05**, the renewal concerns a total of **60 intervention vehicles**, whose contracts are ending between January and June 2027. Under the recommended Option C, these are split into **42 electric vehicles** and **18 plug-in hybrids** (the hybrids being prioritized for long-distance rounds exceeding 280 km).",
+     "correct": true,
+     "inTk": 3467,
+     "error": null
+    },
+    "reg": {
+     "route": "&t05/scope",
+     "routingHit": true,
+     "fetchedChars": 1434,
+     "answer": "Based on the fetched content, **60 intervention vehicles** are affected. These are vehicles reaching the end of their contracts, with the contract end window spanning **January to June 2027**.",
+     "correct": true,
+     "inTk": 10039,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F1",
+   "type": "in",
+   "doc": "EN-T14",
+   "addr": "t14",
+   "q": "What is the exact version of the ERP software that will be replaced as part of the Apollo-ERP project?",
+   "gold": "The obsolete SAP ECC6 version.",
+   "conds": {
+    "doc": {
+     "route": "&t14",
+     "routingHit": true,
+     "fetchedChars": 1828,
+     "answer": "Based on the fetched content of **&t14**, the ERP software being replaced is **SAP ECC6**, which is described as an on-premise obsolete system. It will be migrated to a hybrid **SAP S/4HANA Cloud** combined with a custom WMS module as part of the Apollo-ERP project.",
+     "correct": true,
+     "inTk": 3670,
+     "error": null
+    },
+    "reg": {
+     "route": "&t14/scope",
+     "routingHit": true,
+     "fetchedChars": 963,
+     "answer": "Based on the fetched content, the ERP software being replaced is **SAP ECC6** (on-premise), which will be migrated to a hybrid **SAP S/4HANA Cloud** combined with a custom WMS module. This is explicitly stated in `&t14/context`: *\"migration: on-premise SAP ECC6 -> hybrid SAP S/4HANA Cloud + custom WMS module.\"*",
+     "correct": true,
+     "inTk": 9956,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F1",
+   "type": "out",
+   "doc": "EN-T08",
+   "addr": "t08",
+   "q": "What is the priority objective of the runbook?",
+   "gold": "Limit propagation and preserve elements useful for investigation.",
+   "conds": {
+    "doc": {
+     "route": "&t03, &t08, &t16",
+     "routingHit": true,
+     "fetchedChars": 7236,
+     "answer": "Based on the fetched content from **&t08** (Response to a Suspicion of Ransomware on a Workstation), the priority objective of that runbook is explicitly stated as:\n\n> **\"priority = limit propagation + preserve evidence; rapid recovery secondary\"**\n\nIn other words, the primary goal is to contain the spread of the ransomware and keep the system state intact for forensic analysis, while restoring normal operations is treated as a secondary concern.",
+     "correct": true,
+     "inTk": 4908,
+     "error": null
+    },
+    "reg": {
+     "route": "&t08/purpose",
+     "routingHit": true,
+     "fetchedChars": 1703,
+     "answer": "Based on the fetched content from **&t08/purpose**, the priority objective of the runbook is to **limit propagation and preserve investigation elements**. Rapid workstation recovery is explicitly secondary to containment, and neither the user nor support staff must attempt to \"repair\" the workstation before the security team has evaluated it.",
+     "correct": true,
+     "inTk": 10039,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F1",
+   "type": "out",
+   "doc": "EN-T17",
+   "addr": "t17",
+   "q": "What is the session ID of the agent KRONOS-V4?",
+   "gold": "TX-AUDIT-2026-8942.",
+   "conds": {
+    "doc": {
+     "route": "&t17",
+     "routingHit": true,
+     "fetchedChars": 1387,
+     "answer": "Based on the fetched content of document **&t17**, the session ID of the agent KRONOS-V4 is **TX-AUDIT-2026-8942**, as listed under the \"context state\" section of its Reflection Log and Flash Memory.",
+     "correct": true,
+     "inTk": 3613,
+     "error": null
+    },
+    "reg": {
+     "route": "&t17/context",
+     "routingHit": true,
+     "fetchedChars": 775,
+     "answer": "Based on the fetched content from **&t17/context**, the session ID of the agent KRONOS-V4 is **TX-AUDIT-2026-8942**.",
+     "correct": true,
+     "inTk": 9977,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F2",
+   "type": "in",
+   "doc": "EN-T03",
+   "addr": "t03",
+   "q": "To which system does this runbook apply?",
+   "gold": "PayrollFlow.",
+   "conds": {
+    "doc": {
+     "route": "&t08, &t03, &t16",
+     "routingHit": true,
+     "fetchedChars": 7236,
+     "answer": "Based on the fetched content of **&t16**, this runbook applies to the **B2B payment-gateway API** (referred to as the \"B2B Gateway\"). Specifically, it covers the emergency hotfix deployment procedure for that gateway when its API failure rate exceeds 8% over a rolling 5-minute window. The document is coded **RUN-B2B-HOTFIX-09** and was authored by Arnaud Moreau, Lead DevOps Infrastructure.",
+     "correct": false,
+     "inTk": 4906,
+     "error": null
+    },
+    "reg": {
+     "route": "&t16/scope",
+     "routingHit": false,
+     "fetchedChars": 871,
+     "answer": "Based on the fetched content, this runbook (RUN-B2B-HOTFIX-09) applies exclusively to the **B2B payment gateway**. It is triggered when the observed failure rate of API requests on that gateway exceeds 8% over a 5-minute rolling time window. The diagnostic step specifically checks the `api_drop_rate` metric via an internal monitoring endpoint (`monitor.b2b.internal`).",
+     "correct": false,
+     "inTk": 9920,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F2",
+   "type": "in",
+   "doc": "EN-T12",
+   "addr": "t12",
+   "q": "What is the general objective of the requested web page?",
+   "gold": "To display in a custom and well-designed manner documents hosted on the user's Google account.",
+   "conds": {
+    "doc": {
+     "route": "&t12",
+     "routingHit": true,
+     "fetchedChars": 1018,
+     "answer": "Based on the fetched content of **&t12**, the general objective of the requested web page is to create a **custom-designed page** that hosts and provides access to documents stored on the user's Google account, intended for link holders (i.e., people who have received the link). The page is built around a **video as its main focus**, complemented by an audio player and an image mosaic, all styled according to the STAFFFOR graphic charter.",
+     "correct": true,
+     "inTk": 3421,
+     "error": null
+    },
+    "reg": {
+     "route": "&t12/scope",
+     "routingHit": true,
+     "fetchedChars": 1486,
+     "answer": "Based on the fetched content (&t12/scope), the objective is to create a **single custom web page**, hosted on a Google account, that displays media assets also hosted on that same Google account. Those assets consist of **one video, one MP3 audio file, and six images**. The page serves as a media showcase interface with a video player as the central element, an audio player below it, and an image gallery in mosaic format.",
+     "correct": true,
+     "inTk": 10051,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F2",
+   "type": "out",
+   "doc": "EN-T06",
+   "addr": "t06",
+   "q": "How many employees should ARGOS potentially serve?",
+   "gold": "3,200.",
+   "conds": {
+    "doc": {
+     "route": "&t06",
+     "routingHit": true,
+     "fetchedChars": 4829,
+     "answer": "Based on the fetched content for **&t06**, ARGOS is designed to serve **3,200 group employees** as a conversational assistant for searching, summarizing, and comparing internal documentation.",
+     "correct": true,
+     "inTk": 4207,
+     "error": null
+    },
+    "reg": {
+     "route": "&t06/purpose",
+     "routingHit": true,
+     "fetchedChars": 2327,
+     "answer": "Based on the fetched content (&t06/purpose), ARGOS is designed to serve **3,200 employees** across intranet, SharePoint, and business document spaces.",
+     "correct": true,
+     "inTk": 10190,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F2",
+   "type": "out",
+   "doc": "EN-T22",
+   "addr": "t22",
+   "q": "What specific type of imaging will the IRIS-3 constellation exploit for Earth observation?",
+   "gold": "Hyperspectral (and thermal infrared) imaging.",
+   "conds": {
+    "doc": {
+     "route": "&t22",
+     "routingHit": true,
+     "fetchedChars": 2182,
+     "answer": "Based on the fetched content for **&t22**, the IRIS-3 constellation will exploit **hyperspectral imaging** for Earth observation, specifically using a **high-performance infrared thermal imager operating in LWIR (Long-Wave Infrared) bands**, with a ground optical resolution of **1.2 m/pixel**. The mission is designed to map continental agriculture water stress and instantly detect forest-fire outbreaks across Europe in real time.",
+     "correct": true,
+     "inTk": 3774,
+     "error": null
+    },
+    "reg": {
+     "route": "&t22/vision",
+     "routingHit": true,
+     "fetchedChars": 957,
+     "answer": "Based on the fetched content, the IRIS-3 constellation will exploit **high-performance infrared thermal imaging**, specifically using **Long-Wave Infrared (LWIR) bands**, as its main payload. The satellites are equipped with this hyperspectral imaging capability to support real-time mapping of continental agriculture water stress and detection of forest fires across the entire European territory.",
+     "correct": true,
+     "inTk": 9942,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F3",
+   "type": "in",
+   "doc": "EN-T07",
+   "addr": "t07",
+   "q": "What is the minimum objective for direct emissions reduction?",
+   "gold": "40% between the 2024 reference and the end of 2030.",
+   "conds": {
+    "doc": {
+     "route": "&t07",
+     "routingHit": true,
+     "fetchedChars": 4361,
+     "answer": "Based on the fetched content for **&t07**, the minimum objective for direct CO₂ reduction is **≥40%** compared to the 2024 reference level, to be achieved by end-2030. This target must be met through efficiency improvements, technological changes, and energy substitution — explicitly **excluding** production reduction as a lever and **excluding** carbon certificates from the direct-reduction calculation.",
+     "correct": true,
+     "inTk": 4228,
+     "error": null
+    },
+    "reg": {
+     "route": "&t07/scope",
+     "routingHit": true,
+     "fetchedChars": 3722,
+     "answer": "Based on the fetched content from **&t07/scope**, the minimum objective for direct CO₂ emissions reduction is **40%** compared to the 2024 reference year, to be achieved by the end of 2030. This target applies exclusively to the Valmont site under the HORIZON program, and production reduction is explicitly excluded as an acceptable lever — gains must come from efficiency, technology change, or energy substitution.",
+     "correct": true,
+     "inTk": 10597,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F3",
+   "type": "in",
+   "doc": "EN-T11",
+   "addr": "t11",
+   "q": "What type of application does the user want to develop?",
+   "gold": "A team life management application prototype for their consulting firm.",
+   "conds": {
+    "doc": {
+     "route": "&t11, &t13, &t12",
+     "routingHit": true,
+     "fetchedChars": 3813,
+     "answer": "Based on the fetched content from **&t11**, the user wants to develop a **team-life management prototype** for a consulting firm, accessible on Android and iOS smartphones via a **Progressive Web App (PWA)**. The app should feature a beautiful design with elegant animations and serif fonts, and will require an online central database to handle updates, avatars, announcements, and photos across users' devices. The goal is for the prototype to be convincing enough to impress superiors, potentially leading to further development and publication on the Apple/Android stores.",
+     "correct": true,
+     "inTk": 4076,
+     "error": null
+    },
+    "reg": {
+     "route": "&t11/scope, &t13/scope, &t12/scope",
+     "routingHit": true,
+     "fetchedChars": 3378,
+     "answer": "Based on the fetched content, the user wants to develop **two distinct applications**:\n\n1. **A PWA (Progressive Web App)** for team-life management at a consulting firm, targeting about 10–15 testers, installable on Android and iOS, with a beautiful design — it is a prototype intended to impress superiors and potentially lead to a published store app (`&t11/scope`).\n\n2. **A Google Apps Script POC app** for internal consulting firm management, covering mission assignment, time logging, client management, and invoice generation, running entirely within the Google ecosystem (`&t13/scope`, `&t13/platform`).",
+     "correct": true,
+     "inTk": 10551,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F3",
+   "type": "out",
+   "doc": "EN-T02",
+   "addr": "t02",
+   "q": "How many orders were pending on Wednesday morning?",
+   "gold": "1,840.",
+   "conds": {
+    "doc": {
+     "route": "NONE",
+     "routingHit": false,
+     "fetchedChars": 0,
+     "answer": "The fetched content contains nothing, so I cannot answer the question.\n\nNo document in the map appears directly relevant to \"pending orders on a Wednesday morning\" — none of the indexed documents describe an order tracking report or similar record. You may want to verify the correct document address, as this information does not appear to be covered by any of the mapped sources (&t01–&t23).",
+     "correct": false,
+     "inTk": 3140,
+     "error": null
+    },
+    "reg": {
+     "route": "&t02/situation",
+     "routingHit": true,
+     "fetchedChars": 1355,
+     "answer": "Based on the fetched content, at **08:00 on October 6, 2026** (which is Wednesday, the day of the meeting), there were **1,840 orders pending**, compared to a normal level of approximately **300 orders**.",
+     "correct": true,
+     "inTk": 9987,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F3",
+   "type": "out",
+   "doc": "EN-T15",
+   "addr": "t15",
+   "q": "What exact quantity of data was exfiltrated by the attackers before the server was isolated?",
+   "gold": "45 GB.",
+   "conds": {
+    "doc": {
+     "route": "&t15",
+     "routingHit": true,
+     "fetchedChars": 1717,
+     "answer": "Based on the fetched content of document **&t15**, Thomas Wright (Forensics Expert) determined that **45 GB of sensitive data** was copied by the attackers. The exfiltrated data consisted exclusively of nominative employee payslips and strategic-supplier bank account details (RIB). The exfiltration occurred via secure SFTP to an unlisted external IP address in Eastern Europe, through a compromised admin account belonging to external provider *TechConsult*.",
+     "correct": true,
+     "inTk": 3655,
+     "error": null
+    },
+    "reg": {
+     "route": "&t15/timeline",
+     "routingHit": true,
+     "fetchedChars": 2171,
+     "answer": "Based on the fetched content, exactly **\"45 GB\"** of sensitive data was exfiltrated before containment, as confirmed by Thomas Wright. The exfiltrated data consisted exclusively of nominative employee pay slips and bank account details (RIB) of strategic suppliers, transferred via SFTP to an unlisted external IP address geolocated in Eastern Europe.",
+     "correct": true,
+     "inTk": 10270,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F4",
+   "type": "in",
+   "doc": "EN-T02",
+   "addr": "t02",
+   "q": "How many orders were pending on Wednesday morning?",
+   "gold": "1,840.",
+   "conds": {
+    "doc": {
+     "route": "NONE",
+     "routingHit": false,
+     "fetchedChars": 0,
+     "answer": "The fetched content contains no information to answer this question. No document in the map appears to address pending orders on a Wednesday morning either — none of the document summaries relate to order tracking or scheduling of that nature. To investigate further, you would need to fetch whichever source document might contain that data, but no clear candidate exists in the current map.",
+     "correct": false,
+     "inTk": 3140,
+     "error": null
+    },
+    "reg": {
+     "route": "&t02/situation",
+     "routingHit": true,
+     "fetchedChars": 1355,
+     "answer": "Based on the fetched content, at **08:00 on October 6, 2026** (which was a Wednesday, the day of the meeting), there were **1,840 orders pending**, compared to the normal situation of approximately **300 orders**.",
+     "correct": true,
+     "inTk": 9987,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F4",
+   "type": "in",
+   "doc": "EN-T16",
+   "addr": "t16",
+   "q": "What is the unique identification code of this DevOps runbook?",
+   "gold": "RUN-B2B-HOTFIX-09.",
+   "conds": {
+    "doc": {
+     "route": "&t16",
+     "routingHit": true,
+     "fetchedChars": 1570,
+     "answer": "Based on the fetched content of document **&t16**, the unique identification code of this DevOps runbook is **RUN-B2B-HOTFIX-09**, as specified in the `code` field of the document metadata, authored by Arnaud Moreau (Lead DevOps Infrastructure).",
+     "correct": true,
+     "inTk": 3615,
+     "error": null
+    },
+    "reg": {
+     "route": "&t16/scope",
+     "routingHit": true,
+     "fetchedChars": 871,
+     "answer": "Based on the fetched content from **&t16/scope**, the unique identification code of this DevOps runbook is **RUN-B2B-HOTFIX-09**. It was authored by Arnaud Moreau (Lead DevOps Infrastructure) and pertains to an emergency patch procedure for the B2B payment gateway.",
+     "correct": true,
+     "inTk": 9930,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F4",
+   "type": "out",
+   "doc": "EN-T10",
+   "addr": "t10",
+   "q": "What are the four objectives of the procedure, in order?",
+   "gold": "Protect people; stabilize the rail situation; organize a realistic transport solution; restore normal service.",
+   "conds": {
+    "doc": {
+     "route": "&t03",
+     "routingHit": false,
+     "fetchedChars": 1331,
+     "answer": "The fetched content for **&t03** does not list or enumerate four objectives of the procedure. The document is structured around operational **steps** (trigger, verification, inputs, rerun, communication) rather than explicitly stating numbered or named objectives.\n\nTo find a formal list of objectives, a different document would need to be fetched — but based on the map, no other document appears to match this context. The answer is simply **not present** in the fetched content.",
+     "correct": false,
+     "inTk": 3533,
+     "error": null
+    },
+    "reg": {
+     "route": "&t10/purpose",
+     "routingHit": true,
+     "fetchedChars": 1010,
+     "answer": "Based on the fetched content (&t10/purpose), the four objectives in strict priority order are: **(1)** protect passengers, staff, and responders; **(2)** stabilize the rail situation; **(3)** organize a realistic transport solution; and **(4)** restore normal service. Commercial punctuality and performance indicators explicitly come after security and are not among the four core objectives.",
+     "correct": true,
+     "inTk": 9911,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F4",
+   "type": "out",
+   "doc": "EN-T21",
+   "addr": "t21",
+   "q": "What are the code names of the three artificial intelligence sub-agents that collaborate in this network?",
+   "gold": "Agent-Parser-01, Agent-GraphAnalyser-02, and Agent-RiskScorer-03.",
+   "conds": {
+    "doc": {
+     "route": "&t21",
+     "routingHit": true,
+     "fetchedChars": 2640,
+     "answer": "Based on the fetched content of **&t21**, the three AI sub-agents collaborating in the AML-CORE network are **Agent-Parser-01** (responsible for semantic ingestion), **Agent-GraphAnalyser-02** (responsible for relational structure analysis), and **Agent-RiskScorer-03** (responsible for probabilistic danger evaluation).",
+     "correct": true,
+     "inTk": 3971,
+     "error": null
+    },
+    "reg": {
+     "route": "&t21/graph-log, &t21/parser-log, &t21/scorer-log",
+     "routingHit": true,
+     "fetchedChars": 3777,
+     "answer": "Based on the fetched content from **&t21/system-context**, the three AI sub-agents operating in this distributed execution environment are:\n\n- **Agent-Parser-01** (semantic ingestion)\n- **Agent-GraphAnalyser-02** (relational structure analysis)\n- **Agent-RiskScorer-03** (probabilistic danger evaluation)",
+     "correct": true,
+     "inTk": 10846,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F5",
+   "type": "in",
+   "doc": "EN-T06",
+   "addr": "t06",
+   "q": "How many employees should ARGOS potentially serve?",
+   "gold": "3,200.",
+   "conds": {
+    "doc": {
+     "route": "&t06",
+     "routingHit": true,
+     "fetchedChars": 4829,
+     "answer": "Based on the fetched content for **&t06**, ARGOS is designed to serve **3,200 group employees** as a conversational assistant for searching, summarizing, and comparing internal documentation.",
+     "correct": true,
+     "inTk": 4207,
+     "error": null
+    },
+    "reg": {
+     "route": "&t06/purpose",
+     "routingHit": true,
+     "fetchedChars": 2327,
+     "answer": "Based on the fetched content from **&t06/purpose**, ARGOS is designed to serve **3,200 employees** across intranet, SharePoint, and business document spaces.",
+     "correct": true,
+     "inTk": 10190,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F5",
+   "type": "in",
+   "doc": "EN-T13",
+   "addr": "t13",
+   "q": "In which field of expertise is the AI invited to position itself?",
+   "gold": "Web application design for corporate support functions.",
+   "conds": {
+    "doc": {
+     "route": "&t06, &t09, &t04",
+     "routingHit": false,
+     "fetchedChars": 10549,
+     "answer": "Based on the fetched content, **none of the three documents** (&t06, &t09, &t04) invite the AI to position itself in any field of expertise. On the contrary, all three explicitly restrict the AI from doing so: ARGOS must not fill gaps with unverified general knowledge and must clearly distinguish source facts from model summaries; Portfolio Sentinel must not interpolate missing values or treat informal input as validated data; and MeetingPilot must never invent information or send external messages on its own initiative.\n\nIf this question refers to a different document, the relevant address to fetch would need to be identified from the map — but none of the map entries strongly suggest such content either.",
+     "correct": false,
+     "inTk": 5580,
+     "error": null
+    },
+    "reg": {
+     "route": "&t06/purpose, &t09/identity, &t04/stable-context",
+     "routingHit": false,
+     "fetchedChars": 5016,
+     "answer": "Based on the fetched content, **ARGOS is explicitly prohibited from positioning itself in any field of expertise**. Its function is strictly limited to helping users **access and understand information** from internal documents. Any decisions with legal, financial, HR, or security implications remain the responsibility of an identified human — never ARGOS (`t06/purpose`).\n\nIf the question refers to a different agent or document, the relevant node to fetch would need to be specified, as no other fetched content describes an AI invited to claim domain expertise.",
+     "correct": false,
+     "inTk": 10835,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F5",
+   "type": "out",
+   "doc": "EN-T04",
+   "addr": "t04",
+   "q": "What is the name of the agent?",
+   "gold": "MeetingPilot.",
+   "conds": {
+    "doc": {
+     "route": "&t04, &t09, &t17",
+     "routingHit": true,
+     "fetchedChars": 7107,
+     "answer": "Based on the fetched content, there are **three agents** described:\n\n1. **\"MeetingPilot\"** (t04) — prepares and follows the Atlas product committee.\n2. **\"Portfolio Sentinel\"** (t09) — a Group PMO assistant for steering a project portfolio.\n3. **\"KRONOS-V4\"** (t17) — an Autonomous Ledger Auditor handling accounting compliance and transaction reconciliation.",
+     "correct": true,
+     "inTk": 4966,
+     "error": null
+    },
+    "reg": {
+     "route": "&t04/stable-context, &t09/identity, &t06/purpose",
+     "routingHit": true,
+     "fetchedChars": 5016,
+     "answer": "Based on the fetched content, two agent names are mentioned:\n\n1. **MeetingPilot** — the agent described in &t04, responsible for persistent memory and action rules for the Atlas committee (referenced in the stable-context and post-meeting sections).\n2. **ARGOS** — the conversational assistant described in &t06, designed for internal document search and summarization for 3,200 employees.\n\nThe fetched content does not include &t09/identity's agent name in the map summary, but the fetched content confirms it is **Portfolio Sentinel**, the assistant to the Group PMO.",
+     "correct": true,
+     "inTk": 10825,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F5",
+   "type": "out",
+   "doc": "EN-T19",
+   "addr": "t19",
+   "q": "What is the exact name of the strategic industrial plan validated by the Executive Committee?",
+   "gold": "The H2-Green Plan.",
+   "conds": {
+    "doc": {
+     "route": "&t19",
+     "routingHit": true,
+     "fetchedChars": 3420,
+     "answer": "Based on the fetched content, the strategic industrial plan validated by the Executive Committee is called the **\"H2-Green Plan\"**, with its full designation being the **\"Industrial Pivot and Energy Transition\"** plan. It was validated during an extraordinary Executive Committee meeting held at general-management headquarters, with the purpose of driving the energy transition of the Carling petrochemical hub toward low-carbon hydrogen production.",
+     "correct": true,
+     "inTk": 4003,
+     "error": null
+    },
+    "reg": {
+     "route": "&t19/context, &t19/financing",
+     "routingHit": true,
+     "fetchedChars": 3374,
+     "answer": "Based on the fetched content, the Executive Committee did **not** adopt a named strategic industrial plan — rather, it adopted a **financing scenario**. The scenario officially adopted is called **\"Alpha Scenario\"** (Alpha: Equity & Private Loan), which was unanimously validated, while the Beta Scenario was formally and unanimously rejected. No broader named strategic industrial plan (beyond this financing scenario) is referenced in the fetched content.",
+     "correct": false,
+     "inTk": 10533,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F6",
+   "type": "in",
+   "doc": "EN-T01",
+   "addr": "t01",
+   "q": "Which tool is currently used by the sales department?",
+   "gold": "ClientBase.",
+   "conds": {
+    "doc": {
+     "route": "&t01",
+     "routingHit": true,
+     "fetchedChars": 2015,
+     "answer": "Based on the fetched content of **&t01**, the sales department currently uses **ClientBase**, a CRM tool that has been in use for **9 years**. It handles opportunities, contacts, and sales forecasts for 420 users across France, Belgium, and Spain. Its publisher support ends on **2027-03-31**, which is driving the migration to NovaCRM.",
+     "correct": true,
+     "inTk": 3694,
+     "error": null
+    },
+    "reg": {
+     "route": "&t01/context",
+     "routingHit": true,
+     "fetchedChars": 1658,
+     "answer": "Based on the fetched content from **&t01/context**, the sales department currently uses **ClientBase**, a tool they have been using for **9 years**. It is used to track opportunities, contacts, and forecasts. However, its publisher is ending support on **March 31, 2027**, which is driving the migration to NovaCRM.",
+     "correct": true,
+     "inTk": 10157,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F6",
+   "type": "in",
+   "doc": "EN-T09",
+   "addr": "t09",
+   "q": "What is the primary role of Portfolio Sentinel?",
+   "gold": "Detect situations requiring human attention, prepare reliable summaries, and maintain a structured memory.",
+   "conds": {
+    "doc": {
+     "route": "&t09",
+     "routingHit": true,
+     "fetchedChars": 4347,
+     "answer": "Based on the fetched content of **&t09**, Portfolio Sentinel is a Group PMO assistant whose primary role is to **detect cases requiring human attention, produce reliable summaries, and maintain structured memory of commitments, decisions, and risks** across the project portfolio. It explicitly is **not** a direct project manager. Its formal data sources are ORBIT, approved steering minutes, and the FINTRACK monthly financial register.",
+     "correct": true,
+     "inTk": 4146,
+     "error": null
+    },
+    "reg": {
+     "route": "&t09/identity",
+     "routingHit": true,
+     "fetchedChars": 1715,
+     "answer": "Based on the fetched content from **&t09/identity**, Portfolio Sentinel is an **assistant to the Group PMO** — explicitly *not* a direct project manager. Its primary role is to **detect situations needing human attention, prepare reliable summaries, and maintain structured memory** of commitments, decisions, and risks. It operates from three authorised formal sources: the ORBIT portfolio tool, steering committee minutes, and the FINTRACK monthly financial register.",
+     "correct": true,
+     "inTk": 10058,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F6",
+   "type": "out",
+   "doc": "EN-T07",
+   "addr": "t07",
+   "q": "What is the minimum objective for direct emissions reduction?",
+   "gold": "40% between the 2024 reference and the end of 2030.",
+   "conds": {
+    "doc": {
+     "route": "&t07",
+     "routingHit": true,
+     "fetchedChars": 4361,
+     "answer": "Based on the fetched content from **&t07**, the minimum objective for direct CO₂ reduction is **≥40%** compared to the 2024 reference level, to be achieved by the end of 2030. This reduction must come from efficiency improvements, technological changes, or energy substitution — explicitly **excluding** production reduction as a lever and **excluding** carbon certificates from the direct-reduction calculation.",
+     "correct": true,
+     "inTk": 4228,
+     "error": null
+    },
+    "reg": {
+     "route": "&t07/scope",
+     "routingHit": true,
+     "fetchedChars": 3722,
+     "answer": "Based on the fetched content from **&t07/scope**, the minimum objective for direct CO₂ emissions reduction is **40%** compared to the 2024 reference year, to be achieved by the end of 2030. This target applies strictly to direct emissions and must be reached through efficiency, technology change, or energy substitution — production reduction is explicitly excluded as an acceptable lever.",
+     "correct": true,
+     "inTk": 10597,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F6",
+   "type": "out",
+   "doc": "EN-T23",
+   "addr": "t23",
+   "q": "What is the unique EudraCT registry number assigned to this Phase III trial?",
+   "gold": "EudraCT-2026-004512-11.",
+   "conds": {
+    "doc": {
+     "route": "&t23",
+     "routingHit": true,
+     "fetchedChars": 2452,
+     "answer": "Based on the fetched content of document **&t23**, the unique EudraCT registry number assigned to this Phase III clinical trial for NeuroX-72 is **EudraCT-2026-004512-11**. This identifier is listed under the study/framework section as the regulatory identifier for the international multicenter Phase III trial.",
+     "correct": true,
+     "inTk": 3777,
+     "error": null
+    },
+    "reg": {
+     "route": "&t23/regulatory-framework",
+     "routingHit": true,
+     "fetchedChars": 1695,
+     "answer": "Based on the fetched content from **&t23/regulatory-framework**, the unique EudraCT registry number assigned to this Phase III trial is **EudraCT-2026-004512-11**, registered with European health authorities. This identifier is associated with the NeuroX-72 candidate molecule, a next-generation enzyme inhibitor targeting the stabilization of synaptic degradation pathways in early-to-moderate Alzheimer's disease.",
+     "correct": true,
+     "inTk": 10094,
+     "error": null
+    }
+   }
+  }
+ ]
+}

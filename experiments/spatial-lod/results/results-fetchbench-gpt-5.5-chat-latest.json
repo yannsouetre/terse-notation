@@ -1,0 +1,681 @@
+{
+ "tool": "fetchbench v0.1",
+ "provider": "openai",
+ "model": "chat-latest",
+ "env": "file://local-file",
+ "date": "2026-08-08T23:13:21.994Z",
+ "questions": [
+  {
+   "task": "F1",
+   "type": "in",
+   "doc": "EN-T05",
+   "addr": "t05",
+   "q": "How many vehicles are affected?",
+   "gold": "60.",
+   "conds": {
+    "doc": {
+     "route": "&t05",
+     "routingHit": true,
+     "fetchedChars": 1309,
+     "answer": "60 intervention vehicles are affected.",
+     "correct": true,
+     "inTk": 2858,
+     "error": null
+    },
+    "reg": {
+     "route": "&t05/scope",
+     "routingHit": true,
+     "fetchedChars": 1434,
+     "answer": "60 intervention vehicles are affected. Their contracts end between January and June 2027.",
+     "correct": true,
+     "inTk": 8350,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F1",
+   "type": "in",
+   "doc": "EN-T14",
+   "addr": "t14",
+   "q": "What is the exact version of the ERP software that will be replaced as part of the Apollo-ERP project?",
+   "gold": "The obsolete SAP ECC6 version.",
+   "conds": {
+    "doc": {
+     "route": "&t14",
+     "routingHit": true,
+     "fetchedChars": 1828,
+     "answer": "The Apollo-ERP project will replace the on-premise SAP ECC6 ERP.",
+     "correct": true,
+     "inTk": 3024,
+     "error": null
+    },
+    "reg": {
+     "route": "&t14/scope",
+     "routingHit": true,
+     "fetchedChars": 963,
+     "answer": "The ERP software being replaced is SAP ECC6 (on-premise). It will be migrated to a hybrid SAP S/4HANA Cloud solution with a custom WMS module.",
+     "correct": true,
+     "inTk": 8272,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F1",
+   "type": "out",
+   "doc": "EN-T08",
+   "addr": "t08",
+   "q": "What is the priority objective of the runbook?",
+   "gold": "Limit propagation and preserve elements useful for investigation.",
+   "conds": {
+    "doc": {
+     "route": "&t08",
+     "routingHit": true,
+     "fetchedChars": 4331,
+     "answer": "The priority objective is to limit propagation and preserve evidence. Rapid recovery is secondary.",
+     "correct": true,
+     "inTk": 3358,
+     "error": null
+    },
+    "reg": {
+     "route": "&t08/purpose",
+     "routingHit": true,
+     "fetchedChars": 1703,
+     "answer": "The priority objective is to limit propagation and preserve investigation elements. Rapid workstation recovery is secondary to containment.",
+     "correct": true,
+     "inTk": 8352,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F1",
+   "type": "out",
+   "doc": "EN-T17",
+   "addr": "t17",
+   "q": "What is the session ID of the agent KRONOS-V4?",
+   "gold": "TX-AUDIT-2026-8942.",
+   "conds": {
+    "doc": {
+     "route": "&t17",
+     "routingHit": true,
+     "fetchedChars": 1387,
+     "answer": "The session ID of KRONOS-V4 is `TX-AUDIT-2026-8942`.",
+     "correct": true,
+     "inTk": 2972,
+     "error": null
+    },
+    "reg": {
+     "route": "&t17/context",
+     "routingHit": true,
+     "fetchedChars": 775,
+     "answer": "The session ID of KRONOS-V4 is TX-AUDIT-2026-8942.",
+     "correct": true,
+     "inTk": 8271,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F2",
+   "type": "in",
+   "doc": "EN-T03",
+   "addr": "t03",
+   "q": "To which system does this runbook apply?",
+   "gold": "PayrollFlow.",
+   "conds": {
+    "doc": {
+     "route": "&t03",
+     "routingHit": true,
+     "fetchedChars": 1331,
+     "answer": "This runbook applies to PayrollFlow, specifically its normal monthly payroll-file processing.",
+     "correct": true,
+     "inTk": 2898,
+     "error": null
+    },
+    "reg": {
+     "route": "&t16/scope",
+     "routingHit": false,
+     "fetchedChars": 871,
+     "answer": "This runbook applies exclusively to the B2B payment gateway, specifically when its API request failure rate crosses 8% over a 5-minute rolling window.",
+     "correct": false,
+     "inTk": 8237,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F2",
+   "type": "in",
+   "doc": "EN-T12",
+   "addr": "t12",
+   "q": "What is the general objective of the requested web page?",
+   "gold": "To display in a custom and well-designed manner documents hosted on the user's Google account.",
+   "conds": {
+    "doc": {
+     "route": "&t12",
+     "routingHit": true,
+     "fetchedChars": 1018,
+     "answer": "The objective is to create a custom-designed web page for presenting documents stored on the user’s Google account, accessible online to people who have the link. The page’s main focus is video, with additional audio and image-display features.",
+     "correct": true,
+     "inTk": 2814,
+     "error": null
+    },
+    "reg": {
+     "route": "&t12/scope",
+     "routingHit": true,
+     "fetchedChars": 1486,
+     "answer": "The objective is to create a single custom web page hosted on a Google account that displays media assets from the same account: one video, one MP3 audio file, and six images. The video is intended to be the page’s primary content element.",
+     "correct": true,
+     "inTk": 8369,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F2",
+   "type": "out",
+   "doc": "EN-T06",
+   "addr": "t06",
+   "q": "How many employees should ARGOS potentially serve?",
+   "gold": "3,200.",
+   "conds": {
+    "doc": {
+     "route": "&t06",
+     "routingHit": true,
+     "fetchedChars": 4829,
+     "answer": "ARGOS is intended to potentially serve 3,200 group employees.",
+     "correct": true,
+     "inTk": 3510,
+     "error": null
+    },
+    "reg": {
+     "route": "&t06/purpose",
+     "routingHit": true,
+     "fetchedChars": 2327,
+     "answer": "ARGOS should potentially serve 3,200 employees. This is specified in &t06/purpose.",
+     "correct": true,
+     "inTk": 8492,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F2",
+   "type": "out",
+   "doc": "EN-T22",
+   "addr": "t22",
+   "q": "What specific type of imaging will the IRIS-3 constellation exploit for Earth observation?",
+   "gold": "Hyperspectral (and thermal infrared) imaging.",
+   "conds": {
+    "doc": {
+     "route": "&t22",
+     "routingHit": true,
+     "fetchedChars": 2182,
+     "answer": "IRIS-3 will exploit real-time hyperspectral imaging, using high-performance thermal infrared imagers operating in the Long-Wave Infrared (LWIR) bands.",
+     "correct": true,
+     "inTk": 3101,
+     "error": null
+    },
+    "reg": {
+     "route": "&t22/vision",
+     "routingHit": true,
+     "fetchedChars": 957,
+     "answer": "IRIS-3 will exploit real-time hyperspectral imaging for Earth observation, using a high-performance Long-Wave Infrared (LWIR) thermal imager as its main payload.",
+     "correct": true,
+     "inTk": 8261,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F3",
+   "type": "in",
+   "doc": "EN-T07",
+   "addr": "t07",
+   "q": "What is the minimum objective for direct emissions reduction?",
+   "gold": "40% between the 2024 reference and the end of 2030.",
+   "conds": {
+    "doc": {
+     "route": "&t07",
+     "routingHit": true,
+     "fetchedChars": 4361,
+     "answer": "The minimum objective is a 40% reduction in direct CO₂ emissions between the 2024 reference year and the end of 2030.",
+     "correct": true,
+     "inTk": 3547,
+     "error": null
+    },
+    "reg": {
+     "route": "&t07/scope",
+     "routingHit": true,
+     "fetchedChars": 3722,
+     "answer": "The minimum objective is a 40% reduction in direct CO₂ emissions versus the 2024 reference year, by the end of 2030. Production reduction cannot be used as a lever.",
+     "correct": true,
+     "inTk": 8849,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F3",
+   "type": "in",
+   "doc": "EN-T11",
+   "addr": "t11",
+   "q": "What type of application does the user want to develop?",
+   "gold": "A team life management application prototype for their consulting firm.",
+   "conds": {
+    "doc": {
+     "route": "&t11",
+     "routingHit": true,
+     "fetchedChars": 1689,
+     "answer": "The user wants to develop a team-life management application prototype for a consulting firm. It should be an installable Progressive Web App (PWA) for Android and iOS smartphones that behaves like a native app.",
+     "correct": true,
+     "inTk": 2930,
+     "error": null
+    },
+    "reg": {
+     "route": "&t11/scope,&t13/scope,&t12/scope",
+     "routingHit": true,
+     "fetchedChars": 3378,
+     "answer": "The user wants to develop a prototype team-life-management application for a consulting firm, aimed at the firm’s team members. It is intended initially for a small test group of about 10–15 people, with possible later development into an Apple/Android store product.",
+     "correct": true,
+     "inTk": 8811,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F3",
+   "type": "out",
+   "doc": "EN-T02",
+   "addr": "t02",
+   "q": "How many orders were pending on Wednesday morning?",
+   "gold": "1,840.",
+   "conds": {
+    "doc": {
+     "route": "&t02",
+     "routingHit": true,
+     "fetchedChars": 1534,
+     "answer": "At 08:00 on Wednesday, 1,840 orders were pending, compared with about 300 normally.",
+     "correct": true,
+     "inTk": 2934,
+     "error": null
+    },
+    "reg": {
+     "route": "&t02/situation",
+     "routingHit": true,
+     "fetchedChars": 1355,
+     "answer": "At 08:00 on Wednesday morning, 1,840 orders were pending, compared with about 300 normally.",
+     "correct": true,
+     "inTk": 8311,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F3",
+   "type": "out",
+   "doc": "EN-T15",
+   "addr": "t15",
+   "q": "What exact quantity of data was exfiltrated by the attackers before the server was isolated?",
+   "gold": "45 GB.",
+   "conds": {
+    "doc": {
+     "route": "&t15",
+     "routingHit": true,
+     "fetchedChars": 1717,
+     "answer": "45 GB of sensitive data was exfiltrated before `Prod-DB-04` was isolated.",
+     "correct": true,
+     "inTk": 3006,
+     "error": null
+    },
+    "reg": {
+     "route": "&t15/timeline",
+     "routingHit": true,
+     "fetchedChars": 2171,
+     "answer": "45 GB of sensitive data was exfiltrated before the server was isolated.",
+     "correct": true,
+     "inTk": 8537,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F4",
+   "type": "in",
+   "doc": "EN-T02",
+   "addr": "t02",
+   "q": "How many orders were pending on Wednesday morning?",
+   "gold": "1,840.",
+   "conds": {
+    "doc": {
+     "route": "&t02",
+     "routingHit": true,
+     "fetchedChars": 1534,
+     "answer": "At 08:00 on Wednesday morning, 1,840 orders were pending, compared with about 300 normally.",
+     "correct": true,
+     "inTk": 2934,
+     "error": null
+    },
+    "reg": {
+     "route": "&t02/situation",
+     "routingHit": true,
+     "fetchedChars": 1355,
+     "answer": "At 08:00 on Wednesday morning, 1,840 orders were pending, compared with about 300 normally.",
+     "correct": true,
+     "inTk": 8311,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F4",
+   "type": "in",
+   "doc": "EN-T16",
+   "addr": "t16",
+   "q": "What is the unique identification code of this DevOps runbook?",
+   "gold": "RUN-B2B-HOTFIX-09.",
+   "conds": {
+    "doc": {
+     "route": "&t20",
+     "routingHit": false,
+     "fetchedChars": 2947,
+     "answer": "The unique identification code is “DRP-CLOUD-V2”.",
+     "correct": false,
+     "inTk": 3251,
+     "error": null
+    },
+    "reg": {
+     "route": "&t16",
+     "routingHit": true,
+     "fetchedChars": 2734,
+     "answer": "The unique identification code is RUN-B2B-HOTFIX-09.",
+     "correct": true,
+     "inTk": 8681,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F4",
+   "type": "out",
+   "doc": "EN-T10",
+   "addr": "t10",
+   "q": "What are the four objectives of the procedure, in order?",
+   "gold": "Protect people; stabilize the rail situation; organize a realistic transport solution; restore normal service.",
+   "conds": {
+    "doc": {
+     "route": "&t10",
+     "routingHit": true,
+     "fetchedChars": 6522,
+     "answer": "The four objectives, in order, are: 1) protect passengers, staff, and responders; 2) stabilize the rail situation; 3) provide a realistic transport solution; and 4) restore normal service.",
+     "correct": true,
+     "inTk": 3796,
+     "error": null
+    },
+    "reg": {
+     "route": "&t10/purpose",
+     "routingHit": true,
+     "fetchedChars": 1010,
+     "answer": "The four objectives, in strict priority order, are: 1) protect passengers, staff, and responders; 2) stabilize the rail situation; 3) organize a realistic transport solution; and 4) restore normal service.",
+     "correct": true,
+     "inTk": 8237,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F4",
+   "type": "out",
+   "doc": "EN-T21",
+   "addr": "t21",
+   "q": "What are the code names of the three artificial intelligence sub-agents that collaborate in this network?",
+   "gold": "Agent-Parser-01, Agent-GraphAnalyser-02, and Agent-RiskScorer-03.",
+   "conds": {
+    "doc": {
+     "route": "&t21",
+     "routingHit": true,
+     "fetchedChars": 2640,
+     "answer": "The three AI sub-agents are Agent-Parser-01, Agent-GraphAnalyser-02, and Agent-RiskScorer-03.",
+     "correct": true,
+     "inTk": 3288,
+     "error": null
+    },
+    "reg": {
+     "route": "&t21/system-context",
+     "routingHit": true,
+     "fetchedChars": 1424,
+     "answer": "The three sub-agents are Agent-Parser-01, Agent-GraphAnalyser-02, and Agent-RiskScorer-03.",
+     "correct": true,
+     "inTk": 8382,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F5",
+   "type": "in",
+   "doc": "EN-T06",
+   "addr": "t06",
+   "q": "How many employees should ARGOS potentially serve?",
+   "gold": "3,200.",
+   "conds": {
+    "doc": {
+     "route": "&t06",
+     "routingHit": true,
+     "fetchedChars": 4829,
+     "answer": "ARGOS should potentially serve 3,200 group employees.",
+     "correct": true,
+     "inTk": 3510,
+     "error": null
+    },
+    "reg": {
+     "route": "&t06/purpose",
+     "routingHit": true,
+     "fetchedChars": 2327,
+     "answer": "ARGOS should potentially serve 3,200 employees. This is stated in &t06/purpose.",
+     "correct": true,
+     "inTk": 8492,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F5",
+   "type": "in",
+   "doc": "EN-T13",
+   "addr": "t13",
+   "q": "In which field of expertise is the AI invited to position itself?",
+   "gold": "Web application design for corporate support functions.",
+   "conds": {
+    "doc": {
+     "route": "&t11",
+     "routingHit": false,
+     "fetchedChars": 1689,
+     "answer": "The AI is invited to position itself as an expert and guide in PWA/web application development, including architecture, hosting, deployment, and technical specification. This is particularly important because the user is new to PWAs and wants guidance throughout the project.",
+     "correct": true,
+     "inTk": 2934,
+     "error": null
+    },
+    "reg": {
+     "route": "&t17/context",
+     "routingHit": false,
+     "fetchedChars": 775,
+     "answer": "The AI, KRONOS-V4, is positioned in accounting compliance and cross-border interbank transaction auditing/reconciliation. It operates under “Accounting compliance ruleset v9.1.”",
+     "correct": false,
+     "inTk": 8269,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F5",
+   "type": "out",
+   "doc": "EN-T04",
+   "addr": "t04",
+   "q": "What is the name of the agent?",
+   "gold": "MeetingPilot.",
+   "conds": {
+    "doc": {
+     "route": "&t04",
+     "routingHit": true,
+     "fetchedChars": 1369,
+     "answer": "The agent’s name is “MeetingPilot.”",
+     "correct": true,
+     "inTk": 2872,
+     "error": null
+    },
+    "reg": {
+     "route": "&t04/stable-context",
+     "routingHit": true,
+     "fetchedChars": 970,
+     "answer": "The agent is named “MeetingPilot.”",
+     "correct": true,
+     "inTk": 8226,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F5",
+   "type": "out",
+   "doc": "EN-T19",
+   "addr": "t19",
+   "q": "What is the exact name of the strategic industrial plan validated by the Executive Committee?",
+   "gold": "The H2-Green Plan.",
+   "conds": {
+    "doc": {
+     "route": "&t19",
+     "routingHit": true,
+     "fetchedChars": 3420,
+     "answer": "The exact name is the “H2-Green Plan — Industrial Pivot and Energy Transition.”",
+     "correct": false,
+     "inTk": 3330,
+     "error": null
+    },
+    "reg": {
+     "route": "&t19/context",
+     "routingHit": true,
+     "fetchedChars": 2518,
+     "answer": "The exact name is “Alpha Scenario” (Equity & Private Loan), officially adopted by the Executive Committee.",
+     "correct": false,
+     "inTk": 8564,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F6",
+   "type": "in",
+   "doc": "EN-T01",
+   "addr": "t01",
+   "q": "Which tool is currently used by the sales department?",
+   "gold": "ClientBase.",
+   "conds": {
+    "doc": {
+     "route": "&t01",
+     "routingHit": true,
+     "fetchedChars": 2015,
+     "answer": "The sales department currently uses ClientBase.",
+     "correct": true,
+     "inTk": 3059,
+     "error": null
+    },
+    "reg": {
+     "route": "&t01/context",
+     "routingHit": true,
+     "fetchedChars": 1658,
+     "answer": "The sales department currently uses ClientBase, which it has used for 9 years to track opportunities, contacts, and forecasts.",
+     "correct": true,
+     "inTk": 8450,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F6",
+   "type": "in",
+   "doc": "EN-T09",
+   "addr": "t09",
+   "q": "What is the primary role of Portfolio Sentinel?",
+   "gold": "Detect situations requiring human attention, prepare reliable summaries, and maintain a structured memory.",
+   "conds": {
+    "doc": {
+     "route": "&t09",
+     "routingHit": true,
+     "fetchedChars": 4347,
+     "answer": "Portfolio Sentinel is the Group PMO assistant, not a direct project manager. Its primary role is to identify cases requiring human attention, produce reliable summaries, and maintain structured memory of commitments, decisions, and risks.",
+     "correct": true,
+     "inTk": 3482,
+     "error": null
+    },
+    "reg": {
+     "route": "&t09/identity",
+     "routingHit": true,
+     "fetchedChars": 1715,
+     "answer": "Portfolio Sentinel is an assistant to the Group PMO, not a direct project manager. Its primary role is to detect situations requiring human attention, prepare reliable summaries, and maintain structured memory of commitments, decisions, and risks.",
+     "correct": true,
+     "inTk": 8380,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F6",
+   "type": "out",
+   "doc": "EN-T07",
+   "addr": "t07",
+   "q": "What is the minimum objective for direct emissions reduction?",
+   "gold": "40% between the 2024 reference and the end of 2030.",
+   "conds": {
+    "doc": {
+     "route": "&t07",
+     "routingHit": true,
+     "fetchedChars": 4361,
+     "answer": "The minimum objective is a 40% reduction in direct CO₂ emissions between the 2024 reference level and the end of 2030. Carbon certificates do not count toward this direct-reduction objective.",
+     "correct": true,
+     "inTk": 3547,
+     "error": null
+    },
+    "reg": {
+     "route": "&t07/scope",
+     "routingHit": true,
+     "fetchedChars": 3722,
+     "answer": "The minimum objective is to reduce the Valmont site's direct CO₂ emissions by at least 40% versus the 2024 reference level, by the end of 2030. Production reduction cannot be used as a lever.",
+     "correct": true,
+     "inTk": 8849,
+     "error": null
+    }
+   }
+  },
+  {
+   "task": "F6",
+   "type": "out",
+   "doc": "EN-T23",
+   "addr": "t23",
+   "q": "What is the unique EudraCT registry number assigned to this Phase III trial?",
+   "gold": "EudraCT-2026-004512-11.",
+   "conds": {
+    "doc": {
+     "route": "&t23",
+     "routingHit": true,
+     "fetchedChars": 2452,
+     "answer": "The EudraCT registry number is EudraCT-2026-004512-11.",
+     "correct": true,
+     "inTk": 3084,
+     "error": null
+    },
+    "reg": {
+     "route": "&t23/regulatory-framework",
+     "routingHit": true,
+     "fetchedChars": 1695,
+     "answer": "The EudraCT registry number is EudraCT-2026-004512-11.",
+     "correct": true,
+     "inTk": 8387,
+     "error": null
+    }
+   }
+  }
+ ]
+}
