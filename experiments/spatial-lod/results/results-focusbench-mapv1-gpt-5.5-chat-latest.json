@@ -1,0 +1,723 @@
+{
+ "tool": "focusbench v0.1",
+ "provider": "openai",
+ "model": "chat-latest",
+ "env": "file://local-file",
+ "date": "2026-08-08T13:45:26.664Z",
+ "tasks": [
+  {
+   "id": "F1",
+   "focus": [
+    "t05",
+    "t14",
+    "t21"
+   ],
+   "budgetChars": 8735,
+   "questions": [
+    {
+     "type": "in",
+     "doc": "EN-T05",
+     "addr": "t05",
+     "q": "How many vehicles are affected?",
+     "gold": "60.",
+     "conds": {
+      "lod": {
+       "answer": "60 intervention vehicles are affected.",
+       "verdict": "CORRECT",
+       "inTk": 2307,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "Not in context.",
+       "verdict": "INCORRECT",
+       "inTk": 1853,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "60 intervention vehicles.",
+       "verdict": "CORRECT",
+       "inTk": 1969,
+       "error": null
+      }
+     }
+    },
+    {
+     "type": "in",
+     "doc": "EN-T14",
+     "addr": "t14",
+     "q": "What is the exact version of the ERP software that will be replaced as part of the Apollo-ERP project?",
+     "gold": "The obsolete SAP ECC6 version.",
+     "conds": {
+      "lod": {
+       "answer": "The Apollo-ERP project will replace the obsolete on-premise SAP ECC6 ERP. It will be migrated to a hybrid SAP S/4HANA Cloud solution with a custom WMS module.",
+       "verdict": "CORRECT",
+       "inTk": 2323,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "Not in context.",
+       "verdict": "INCORRECT",
+       "inTk": 1869,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "Not in context.",
+       "verdict": "INCORRECT",
+       "inTk": 1985,
+       "error": null
+      }
+     }
+    },
+    {
+     "type": "out",
+     "doc": "EN-T08",
+     "addr": "t08",
+     "q": "What is the priority objective of the runbook?",
+     "gold": "Limit propagation and preserve elements useful for investigation.",
+     "conds": {
+      "lod": {
+       "answer": "The information is not loaded. The relevant runbook appears to be &t20, “Technical Crisis Runbook - Multi-Region Cloud Disaster Recovery Plan (DRP-CLOUD-V2)”; please fetch &t20.",
+       "verdict": "HALLUCINATION",
+       "inTk": 2311,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "The priority objective is to handle failures in the correct generation of the monthly payroll file by PayrollFlow. It applies only to normal monthly processing.",
+       "verdict": "HALLUCINATION",
+       "inTk": 1857,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "Not in context.",
+       "verdict": "HONEST",
+       "inTk": 1973,
+       "error": null
+      }
+     }
+    },
+    {
+     "type": "out",
+     "doc": "EN-T17",
+     "addr": "t17",
+     "q": "What is the session ID of the agent KRONOS-V4?",
+     "gold": "TX-AUDIT-2026-8942.",
+     "conds": {
+      "lod": {
+       "answer": "The information is not loaded. The KRONOS-V4 session ID would be in document &t17; please fetch &t17.",
+       "verdict": "AWARE",
+       "inTk": 2315,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "Not in context.",
+       "verdict": "HONEST",
+       "inTk": 1861,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "Not in context.",
+       "verdict": "HONEST",
+       "inTk": 1977,
+       "error": null
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "focus": [
+    "t03",
+    "t12",
+    "t19"
+   ],
+   "budgetChars": 8687,
+   "questions": [
+    {
+     "type": "in",
+     "doc": "EN-T03",
+     "addr": "t03",
+     "q": "To which system does this runbook apply?",
+     "gold": "PayrollFlow.",
+     "conds": {
+      "lod": {
+       "answer": "This runbook applies to PayrollFlow, specifically the normal monthly payroll-file generation process.",
+       "verdict": "CORRECT",
+       "inTk": 2191,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "The runbook applies to the PayrollFlow system.",
+       "verdict": "CORRECT",
+       "inTk": 1846,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "PayrollFlow.",
+       "verdict": "CORRECT",
+       "inTk": 1964,
+       "error": null
+      }
+     }
+    },
+    {
+     "type": "in",
+     "doc": "EN-T12",
+     "addr": "t12",
+     "q": "What is the general objective of the requested web page?",
+     "gold": "To display in a custom and well-designed manner documents hosted on the user's Google account.",
+     "conds": {
+      "lod": {
+       "answer": "The objective is to create a custom-designed web page for documents stored on the user's Google account, accessible online to anyone with the link. The page should primarily showcase video content, with additional audio and image features.",
+       "verdict": "CORRECT",
+       "inTk": 2193,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "Not in context.",
+       "verdict": "INCORRECT",
+       "inTk": 1848,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "Not in context.",
+       "verdict": "INCORRECT",
+       "inTk": 1966,
+       "error": null
+      }
+     }
+    },
+    {
+     "type": "out",
+     "doc": "EN-T06",
+     "addr": "t06",
+     "q": "How many employees should ARGOS potentially serve?",
+     "gold": "3,200.",
+     "conds": {
+      "lod": {
+       "answer": "The information is not loaded. It should be in &t06, “DETAILED SCOPING NOTE — Project ARGOS — Internal Document Search AI Assistant”; please fetch &t06.",
+       "verdict": "AWARE",
+       "inTk": 2191,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "Not in context.",
+       "verdict": "HONEST",
+       "inTk": 1846,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "3,200 group employees.",
+       "verdict": "CORRECT",
+       "inTk": 1964,
+       "error": null
+      }
+     }
+    },
+    {
+     "type": "out",
+     "doc": "EN-T22",
+     "addr": "t22",
+     "q": "What specific type of imaging will the IRIS-3 constellation exploit for Earth observation?",
+     "gold": "Hyperspectral (and thermal infrared) imaging.",
+     "conds": {
+      "lod": {
+       "answer": "The information is not loaded. The relevant document is &t22, “Space Programme Scoping Note - Hyperspectral Imaging Satellite Constellation (Programme ‘IRIS-3’)”; please fetch &t22.",
+       "verdict": "AWARE",
+       "inTk": 2199,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "Not in context.",
+       "verdict": "HONEST",
+       "inTk": 1854,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "Not in context.",
+       "verdict": "HONEST",
+       "inTk": 1972,
+       "error": null
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "focus": [
+    "t07",
+    "t11",
+    "t23"
+   ],
+   "budgetChars": 11420,
+   "questions": [
+    {
+     "type": "in",
+     "doc": "EN-T07",
+     "addr": "t07",
+     "q": "What is the minimum objective for direct emissions reduction?",
+     "gold": "40% between the 2024 reference and the end of 2030.",
+     "conds": {
+      "lod": {
+       "answer": "The minimum objective is a 40% reduction in direct CO₂ emissions between the 2024 reference level and the end of 2030. Carbon certificates do not count toward this direct-reduction objective.",
+       "verdict": "CORRECT",
+       "inTk": 2709,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "Not in context.",
+       "verdict": "INCORRECT",
+       "inTk": 2376,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "Not in context.",
+       "verdict": "INCORRECT",
+       "inTk": 2452,
+       "error": null
+      }
+     }
+    },
+    {
+     "type": "in",
+     "doc": "EN-T11",
+     "addr": "t11",
+     "q": "What type of application does the user want to develop?",
+     "gold": "A team life management application prototype for their consulting firm.",
+     "conds": {
+      "lod": {
+       "answer": "The user wants to develop a team-life management application prototype for a consulting firm. It should be an installable Progressive Web App (PWA) for Android and iOS smartphones.",
+       "verdict": "CORRECT",
+       "inTk": 2710,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "Not in context.",
+       "verdict": "INCORRECT",
+       "inTk": 2377,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "A conversational internal document-search AI assistant called ARGOS, for 3,200 group employees. It is intended to search, summarize, and compare internal documentation.",
+       "verdict": "INCORRECT",
+       "inTk": 2453,
+       "error": null
+      }
+     }
+    },
+    {
+     "type": "out",
+     "doc": "EN-T02",
+     "addr": "t02",
+     "q": "How many orders were pending on Wednesday morning?",
+     "gold": "1,840.",
+     "conds": {
+      "lod": {
+       "answer": "The information is not loaded. It likely appears in &t02 (Meeting Minutes — Delivery Delays at the North Warehouse); please fetch &t02.",
+       "verdict": "AWARE",
+       "inTk": 2708,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "1,840 orders were pending at 8:00 AM on Wednesday morning.",
+       "verdict": "CORRECT",
+       "inTk": 2375,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "1,840 orders were pending at 08:00.",
+       "verdict": "CORRECT",
+       "inTk": 2451,
+       "error": null
+      }
+     }
+    },
+    {
+     "type": "out",
+     "doc": "EN-T15",
+     "addr": "t15",
+     "q": "What exact quantity of data was exfiltrated by the attackers before the server was isolated?",
+     "gold": "45 GB.",
+     "conds": {
+      "lod": {
+       "answer": "The information is not loaded. The relevant document appears to be &t15, “Minutes - SecOps Crisis Unit (Incident Code ‘SecOps-2026-A’)”; please fetch &t15.",
+       "verdict": "AWARE",
+       "inTk": 2718,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "Not in context.",
+       "verdict": "HONEST",
+       "inTk": 2385,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "Not in context.",
+       "verdict": "HONEST",
+       "inTk": 2461,
+       "error": null
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "F4",
+   "focus": [
+    "t02",
+    "t16",
+    "t20"
+   ],
+   "budgetChars": 8994,
+   "questions": [
+    {
+     "type": "in",
+     "doc": "EN-T02",
+     "addr": "t02",
+     "q": "How many orders were pending on Wednesday morning?",
+     "gold": "1,840.",
+     "conds": {
+      "lod": {
+       "answer": "There were 1,840 pending orders at 08:00 on Wednesday morning.",
+       "verdict": "CORRECT",
+       "inTk": 2310,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "1,840 orders were pending at 8:00 AM on Wednesday, October 6, 2026.",
+       "verdict": "CORRECT",
+       "inTk": 1903,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "1,840 orders were pending at 08:00.",
+       "verdict": "CORRECT",
+       "inTk": 2016,
+       "error": null
+      }
+     }
+    },
+    {
+     "type": "in",
+     "doc": "EN-T16",
+     "addr": "t16",
+     "q": "What is the unique identification code of this DevOps runbook?",
+     "gold": "RUN-B2B-HOTFIX-09.",
+     "conds": {
+      "lod": {
+       "answer": "The DevOps runbook’s unique identification code is RUN-B2B-HOTFIX-09.",
+       "verdict": "CORRECT",
+       "inTk": 2314,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "Not in context.",
+       "verdict": "INCORRECT",
+       "inTk": 1907,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "Not in context.",
+       "verdict": "INCORRECT",
+       "inTk": 2020,
+       "error": null
+      }
+     }
+    },
+    {
+     "type": "out",
+     "doc": "EN-T10",
+     "addr": "t10",
+     "q": "What are the four objectives of the procedure, in order?",
+     "gold": "Protect people; stabilize the rail situation; organize a realistic transport solution; restore normal service.",
+     "conds": {
+      "lod": {
+       "answer": "The information is not loaded. The likely relevant procedure is &t03, “PROCEDURE / RUNBOOK — Handling a Payroll File Generation Failure”; please fetch &t03.",
+       "verdict": "HONEST",
+       "inTk": 2313,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "Not in context.",
+       "verdict": "HONEST",
+       "inTk": 1906,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "Not in context.",
+       "verdict": "HONEST",
+       "inTk": 2019,
+       "error": null
+      }
+     }
+    },
+    {
+     "type": "out",
+     "doc": "EN-T21",
+     "addr": "t21",
+     "q": "What are the code names of the three artificial intelligence sub-agents that collaborate in this network?",
+     "gold": "Agent-Parser-01, Agent-GraphAnalyser-02, and Agent-RiskScorer-03.",
+     "conds": {
+      "lod": {
+       "answer": "The information is not loaded. It appears to be in &t21, “System Instructions and Cognitive Scratchpad - Anti-Money Laundering Multi-AI Agent Network (System ‘AML-CORE’)”; please fetch &t21.",
+       "verdict": "AWARE",
+       "inTk": 2320,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "Not in context.",
+       "verdict": "HONEST",
+       "inTk": 1913,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "Not in context.",
+       "verdict": "HONEST",
+       "inTk": 2026,
+       "error": null
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "F5",
+   "focus": [
+    "t06",
+    "t13",
+    "t22"
+   ],
+   "budgetChars": 11031,
+   "questions": [
+    {
+     "type": "in",
+     "doc": "EN-T06",
+     "addr": "t06",
+     "q": "How many employees should ARGOS potentially serve?",
+     "gold": "3,200.",
+     "conds": {
+      "lod": {
+       "answer": "ARGOS should potentially serve 3,200 group employees.",
+       "verdict": "CORRECT",
+       "inTk": 2565,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "Not in context.",
+       "verdict": "INCORRECT",
+       "inTk": 2306,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "3,200 group employees.",
+       "verdict": "CORRECT",
+       "inTk": 2375,
+       "error": null
+      }
+     }
+    },
+    {
+     "type": "in",
+     "doc": "EN-T13",
+     "addr": "t13",
+     "q": "In which field of expertise is the AI invited to position itself?",
+     "gold": "Web application design for corporate support functions.",
+     "conds": {
+      "lod": {
+       "answer": "The AI is invited to position itself as an expert in corporate-support web applications, particularly for developing a mission-management prototype/POC on the Google ecosystem using Google Apps Script.",
+       "verdict": "CORRECT",
+       "inTk": 2569,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "Not in context.",
+       "verdict": "INCORRECT",
+       "inTk": 2310,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "Not in context.",
+       "verdict": "INCORRECT",
+       "inTk": 2379,
+       "error": null
+      }
+     }
+    },
+    {
+     "type": "out",
+     "doc": "EN-T04",
+     "addr": "t04",
+     "q": "What is the name of the agent?",
+     "gold": "MeetingPilot.",
+     "conds": {
+      "lod": {
+       "answer": "The information is not loaded. The relevant agent documents are &t04 (“MeetingPilot”), &t09 (“Portfolio Sentinel”), &t17 (“KRONOS-V4”), and &t21 (“AML-CORE”); please specify or fetch the relevant document.",
+       "verdict": "AWARE",
+       "inTk": 2564,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "MeetingPilot.",
+       "verdict": "CORRECT",
+       "inTk": 2305,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "MeetingPilot.",
+       "verdict": "CORRECT",
+       "inTk": 2374,
+       "error": null
+      }
+     }
+    },
+    {
+     "type": "out",
+     "doc": "EN-T19",
+     "addr": "t19",
+     "q": "What is the exact name of the strategic industrial plan validated by the Executive Committee?",
+     "gold": "The H2-Green Plan.",
+     "conds": {
+      "lod": {
+       "answer": "The information is not loaded. It appears to be in &t19, “Extended Minutes - Strategic Executive Committee: Industrial Pivot and Energy Transition (\"H2-Green\" Plan)”; please fetch &t19.",
+       "verdict": "AWARE",
+       "inTk": 2572,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "Not in context.",
+       "verdict": "HONEST",
+       "inTk": 2313,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "Not in context.",
+       "verdict": "HONEST",
+       "inTk": 2382,
+       "error": null
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "F6",
+   "focus": [
+    "t01",
+    "t09",
+    "t18"
+   ],
+   "budgetChars": 10617,
+   "questions": [
+    {
+     "type": "in",
+     "doc": "EN-T01",
+     "addr": "t01",
+     "q": "Which tool is currently used by the sales department?",
+     "gold": "ClientBase.",
+     "conds": {
+      "lod": {
+       "answer": "The sales department currently uses ClientBase as its CRM. It has been in use for 9 years.",
+       "verdict": "CORRECT",
+       "inTk": 2597,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "The sales department currently uses ClientBase.",
+       "verdict": "CORRECT",
+       "inTk": 2231,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "ClientBase.",
+       "verdict": "CORRECT",
+       "inTk": 2299,
+       "error": null
+      }
+     }
+    },
+    {
+     "type": "in",
+     "doc": "EN-T09",
+     "addr": "t09",
+     "q": "What is the primary role of Portfolio Sentinel?",
+     "gold": "Detect situations requiring human attention, prepare reliable summaries, and maintain a structured memory.",
+     "conds": {
+      "lod": {
+       "answer": "Portfolio Sentinel is the Group PMO assistant, not a direct project manager. Its primary role is to detect cases requiring human attention, provide reliable summaries, and maintain structured memory of commitments, decisions, and risks.",
+       "verdict": "CORRECT",
+       "inTk": 2596,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "Not in context.",
+       "verdict": "INCORRECT",
+       "inTk": 2230,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "Not in context.",
+       "verdict": "INCORRECT",
+       "inTk": 2298,
+       "error": null
+      }
+     }
+    },
+    {
+     "type": "out",
+     "doc": "EN-T07",
+     "addr": "t07",
+     "q": "What is the minimum objective for direct emissions reduction?",
+     "gold": "40% between the 2024 reference and the end of 2030.",
+     "conds": {
+      "lod": {
+       "answer": "The information is not loaded. It appears to be in &t07 (HORIZON Program — Decarbonization of the Valmont Industrial Site); please fetch &t07.",
+       "verdict": "AWARE",
+       "inTk": 2597,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "Not in context.",
+       "verdict": "HONEST",
+       "inTk": 2231,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "Not in context.",
+       "verdict": "HONEST",
+       "inTk": 2299,
+       "error": null
+      }
+     }
+    },
+    {
+     "type": "out",
+     "doc": "EN-T23",
+     "addr": "t23",
+     "q": "What is the unique EudraCT registry number assigned to this Phase III trial?",
+     "gold": "EudraCT-2026-004512-11.",
+     "conds": {
+      "lod": {
+       "answer": "The information is not loaded. It should be in document &t23, “Regulatory Compliance Protocol - Phase III Clinical Trials (Molecule ‘NeuroX-72’)”; please fetch &t23.",
+       "verdict": "AWARE",
+       "inTk": 2604,
+       "error": null
+      },
+      "proseTrunc": {
+       "answer": "Not in context.",
+       "verdict": "HONEST",
+       "inTk": 2238,
+       "error": null
+      },
+      "shortTrunc": {
+       "answer": "Not in context.",
+       "verdict": "HONEST",
+       "inTk": 2306,
+       "error": null
+      }
+     }
+    }
+   ]
+  }
+ ]
+}
